@@ -9,6 +9,7 @@
 
   /* ========== ビュー切替 ========== */
   var views = ["scenes", "detail", "lookup", "learn", "talk", "logs"];
+  var currentView = "scenes";
   function show(view) {
     views.forEach(function (v) {
       $("#view-" + v).classList.toggle("active", v === view);
@@ -18,6 +19,8 @@
         (b.dataset.view === "scenes" && (view === "detail" || view === "logs")));
     });
     window.scrollTo(0, 0);
+    currentView = view;
+    bgmRefresh();
   }
   document.querySelectorAll("nav button").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -464,6 +467,46 @@
     if (canvasReady) paintBg();
   });
   $("#penClear").addEventListener("click", function () { if (canvasReady) paintBg(); });
+
+  /* ========== BGM（おだやかなアンビエント・SoyogiAudioエンジン） ==========
+   * ・ヘッダー🎵で即ミュート（ON/OFF設定は保存）
+   * ・つたえる（トーキングエイド）中は自動でBGMを止め、他ページに移ると即復帰
+   */
+  var bgmBtn = null, audioUnlocked = false;
+  function bgmPaint() {
+    var A = window.SoyogiAudio;
+    if (!A || !bgmBtn) return;
+    var on = A.getBgmVolume() > 0;
+    bgmBtn.textContent = on ? "🎵" : "🔇";
+    bgmBtn.classList.toggle("off", !on);
+    bgmBtn.title = on ? "BGM オン（タップで消音）" : "BGM オフ（タップで再生）";
+  }
+  function bgmRefresh() {
+    // つたえる中はBGMを止める（読み上げ・会話の邪魔をしない）。他ページで復帰。
+    var A = window.SoyogiAudio;
+    if (!A) return;
+    if (audioUnlocked && A.getBgmVolume() > 0 && currentView !== "talk") A.startBGM();
+    else A.stopBGM();
+  }
+  (function initBGM() {
+    var A = window.SoyogiAudio;
+    bgmBtn = $("#bgmToggle");
+    if (!A || !bgmBtn) return;
+    bgmPaint();
+    bgmBtn.addEventListener("click", function () {
+      A.unlock(); audioUnlocked = true;
+      if (A.getBgmVolume() > 0) A.setBgmVolume(0);
+      else A.setBgmVolume(0.5);
+      bgmPaint(); bgmRefresh();
+    });
+    // 初回のユーザー操作でオーディオ解禁＋（設定ON かつ つたえる以外なら）BGM開始
+    function firstGesture() {
+      A.unlock(); audioUnlocked = true;
+      bgmRefresh(); bgmPaint();
+      window.removeEventListener("pointerdown", firstGesture, true);
+    }
+    window.addEventListener("pointerdown", firstGesture, true);
+  })();
 
   /* ========== 起動 ========== */
   renderScenes();
