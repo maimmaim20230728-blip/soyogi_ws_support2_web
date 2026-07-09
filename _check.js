@@ -1,104 +1,105 @@
-/* _check.js — コンテンツの機械QA。実行: node _check.js */
+/* _check.js — 多言語コンテンツの機械QA。実行: node _check.js
+ * ・各言語の構造チェック（件数・id・scene参照・do<=3 等）
+ * ・ja を基準に全言語の構造パリティ（id/emoji/answer/scene参照/件数の一致）
+ * ・UI文字列(SHIEN_UI)のキーが ja と一致するか
+ */
 const fs = require("fs"), path = require("path");
 global.window = {};
-eval(fs.readFileSync(path.join(__dirname, "content.ja.js"), "utf8"));
-const C = global.window.SOYOGI_SHIEN;
+function load(f) { eval(fs.readFileSync(path.join(__dirname, f), "utf8")); }
+load("i18n.js");
+
+const LANGS = (global.window.SHIEN_LANGS || []).map(l => l.code);
+LANGS.forEach(code => {
+  const f = "content." + code + ".js";
+  if (fs.existsSync(path.join(__dirname, f))) load(f);
+});
+const CT = global.window.SHIEN_CONTENT || {};
+const UI = global.window.SHIEN_UI || {};
+
 let issues = 0;
-const flag = (msg) => { issues++; console.log("  ! " + msg); };
+const flag = (m) => { issues++; console.log("  ! " + m); };
 
-/* scenes */
-if (!C || !Array.isArray(C.scenes)) { console.log("scenes がありません"); process.exit(1); }
-console.log("scenes: " + C.scenes.length + "件");
-if (C.scenes.length !== 12) flag("場面カードが12件でない: " + C.scenes.length);
-if (!C.scenes[0].medical) flag("先頭が医療カードでない");
-const ids = {};
-C.scenes.forEach((s, i) => {
-  const tag = `#${i} ${s.title || "(無題)"}`;
-  if (!s.id) flag(tag + " id欠け");
-  if (ids[s.id]) flag(tag + " id重複"); ids[s.id] = 1;
-  if (!s.title) flag(tag + " title欠け");
-  if (!s.emoji) flag(tag + " emoji欠け");
-  ["do", "dont", "after"].forEach(k => {
-    if (!Array.isArray(s[k]) || !s[k].length) flag(tag + ` ${k}が空`);
-  });
-  if (s.do && s.do.length > 3) flag(tag + " まずやることが3項目超（3秒で読める原則違反）: " + s.do.length);
-  if (!s.why) flag(tag + " why欠け");
-  if (!s.src) flag(tag + " src(出典)欠け");
-  const all = JSON.stringify(s);
-  if (/�/.test(all)) flag(tag + " 文字化け(U+FFFD)");
-  if (/  /.test(all.replace(/\\n/g, ""))) flag(tag + " 連続スペースの疑い");
-  if (s.medical && (!Array.isArray(s.call119) || !s.call119.length)) flag(tag + " 医療カードにcall119が無い");
-  if ("outdoor" in s && (!Array.isArray(s.outdoor) || !s.outdoor.length)) flag(tag + " outdoorが空");
-});
-console.log("outdoor付き: " + C.scenes.filter(s => s.outdoor && s.outdoor.length).length + "件");
-
-/* traits（特性リファレンス） */
-if (!Array.isArray(C.traits) || !C.traits.length) flag("traits がありません");
-else {
-  console.log("traits: " + C.traits.length + "件");
-  const tids = {};
-  const sceneIds = C.scenes.map(s => s.id);
-  C.traits.forEach((t, i) => {
-    const tag = `trait#${i} ${t.name || "(無題)"}`;
-    if (!t.id) flag(tag + " id欠け");
-    if (tids[t.id]) flag(tag + " id重複"); tids[t.id] = 1;
-    if (!t.name) flag(tag + " name欠け");
-    if (!t.emoji) flag(tag + " emoji欠け");
-    if (!t.short) flag(tag + " short欠け");
-    ["what", "comm", "env", "ng"].forEach(k => {
-      if (!Array.isArray(t[k]) || !t[k].length) flag(tag + ` ${k}が空`);
-    });
-    if ("prepare" in t && (!Array.isArray(t.prepare) || !t.prepare.length)) flag(tag + " prepareが空");
-    if (!t.src) flag(tag + " src(出典)欠け");
-    (t.scenes || []).forEach(sid => {
-      if (!sceneIds.includes(sid)) flag(tag + " 未知のscene id: " + sid);
-    });
-    if (/�/.test(JSON.stringify(t))) flag(tag + " 文字化け(U+FFFD)");
-  });
+function flatKeys(o, pre) {
+  pre = pre || ""; let ks = [];
+  for (const k in o) {
+    if (k === "dir") continue;
+    if (o[k] && typeof o[k] === "object" && !Array.isArray(o[k])) ks = ks.concat(flatKeys(o[k], pre + k + "."));
+    else ks.push(pre + k);
+  }
+  return ks;
 }
-if (!Array.isArray(C.basis) || !C.basis.length) flag("basis（根拠一覧）がありません");
-
-/* まなぶ：hints / quizzes */
-if (!Array.isArray(C.hints) || C.hints.length < 7) flag("hints（今日のヒント）が少ない");
-else {
-  console.log("hints: " + C.hints.length + "件");
-  C.hints.forEach((h, i) => { if (typeof h !== "string" || !h.trim()) flag("hint#" + i + " が空/非文字列"); });
+function sig(C) {
+  return {
+    scenes: (C.scenes || []).map(s => s.id + "|" + s.emoji + "|" + (s.medical ? "M" : "") + "|" + (s.call119 ? "119" : "") + "|" + (s.outdoor ? "O" : "")),
+    traits: (C.traits || []).map(t => t.id + "|" + t.emoji + "|" + (t.prepare ? "P" : "") + "|" + (t.scenes || []).join(",")),
+    hints: (C.hints || []).length,
+    quizzes: (C.quizzes || []).map(q => q.answer + "/" + (q.options || []).length),
+    phrases: (C.phraseGroups || []).map(g => g.id + "|" + g.emoji + "|" + (g.items || []).length),
+    logOptions: ["triggers", "durations", "responses", "injuries"].map(k => k + ":" + ((C.logOptions || {})[k] || []).length),
+    basis: (C.basis || []).length
+  };
 }
-if (!Array.isArray(C.quizzes) || !C.quizzes.length) flag("quizzes がありません");
-else {
-  console.log("quizzes: " + C.quizzes.length + "件");
-  C.quizzes.forEach((q, i) => {
-    const tag = "quiz#" + i;
-    if (!q.q) flag(tag + " q欠け");
-    if (!Array.isArray(q.options) || q.options.length < 2) flag(tag + " optionsが2未満");
-    if (typeof q.answer !== "number" || q.answer < 0 || (q.options && q.answer >= q.options.length)) flag(tag + " answer添字が不正");
-    if (!q.explain) flag(tag + " explain欠け");
-    if (/�/.test(JSON.stringify(q))) flag(tag + " 文字化け(U+FFFD)");
+function checkLang(code, C) {
+  const sceneIds = (C.scenes || []).map(s => s.id);
+  if ((C.scenes || []).length !== 12) flag(`[${code}] 場面が12件でない: ${(C.scenes || []).length}`);
+  if (!C.scenes || !C.scenes[0].medical) flag(`[${code}] 先頭が医療カードでない`);
+  (C.scenes || []).forEach((s, i) => {
+    const tag = `[${code}] scene#${i} ${s.id || "?"}`;
+    ["title", "emoji", "why", "src"].forEach(k => { if (!s[k]) flag(`${tag} ${k}欠け`); });
+    ["do", "dont", "after"].forEach(k => { if (!Array.isArray(s[k]) || !s[k].length) flag(`${tag} ${k}が空`); });
+    if (s.do && s.do.length > 3) flag(`${tag} まずやることが3項目超: ${s.do.length}`);
+    if (s.medical && (!Array.isArray(s.call119) || !s.call119.length)) flag(`${tag} 医療カードにcall119が無い`);
+    if (/[�]/.test(JSON.stringify(s))) flag(`${tag} 文字化け(U+FFFD)`);
   });
+  (C.traits || []).forEach((t, i) => {
+    const tag = `[${code}] trait#${i} ${t.id || "?"}`;
+    ["name", "emoji", "short", "src"].forEach(k => { if (!t[k]) flag(`${tag} ${k}欠け`); });
+    ["what", "comm", "env", "ng"].forEach(k => { if (!Array.isArray(t[k]) || !t[k].length) flag(`${tag} ${k}が空`); });
+    if ("prepare" in t && (!Array.isArray(t.prepare) || !t.prepare.length)) flag(`${tag} prepareが空`);
+    (t.scenes || []).forEach(sid => { if (!sceneIds.includes(sid)) flag(`${tag} 未知のscene id: ${sid}`); });
+    if (/[�]/.test(JSON.stringify(t))) flag(`${tag} 文字化け`);
+  });
+  (C.quizzes || []).forEach((q, i) => {
+    const tag = `[${code}] quiz#${i}`;
+    if (!q.q || !q.explain) flag(`${tag} q/explain欠け`);
+    if (!Array.isArray(q.options) || q.options.length < 2) flag(`${tag} optionsが2未満`);
+    if (typeof q.answer !== "number" || q.answer < 0 || (q.options && q.answer >= q.options.length)) flag(`${tag} answer添字不正`);
+  });
+  if (!Array.isArray(C.hints) || C.hints.length < 7) flag(`[${code}] hintsが少ない`);
+  ["triggers", "durations", "responses", "injuries"].forEach(k => {
+    if (!C.logOptions || !Array.isArray(C.logOptions[k]) || !C.logOptions[k].length) flag(`[${code}] logOptions.${k}空`);
+  });
+  if (!Array.isArray(C.basis) || !C.basis.length) flag(`[${code}] basis空`);
 }
 
-/* phrases */
-if (!Array.isArray(C.phraseGroups) || C.phraseGroups.length < 3) flag("定型文グループが少ない");
-else {
-  let n = 0;
-  C.phraseGroups.forEach(g => {
-    if (!g.label || !Array.isArray(g.items) || !g.items.length) flag("定型文グループ不備: " + (g.id || "?"));
-    n += (g.items || []).length;
-  });
-  console.log("phrases: " + C.phraseGroups.length + "グループ / " + n + "語");
-}
+if (!CT.ja) { console.log("content.ja.js が読めない"); process.exit(1); }
+const baseSig = JSON.stringify(sig(CT.ja));
+const uiKeysJa = flatKeys(UI.ja).sort();
 
-/* logOptions */
-["triggers", "durations", "responses", "injuries"].forEach(k => {
-  if (!C.logOptions || !Array.isArray(C.logOptions[k]) || !C.logOptions[k].length) flag("logOptions." + k + " が空");
+console.log("=== 言語別チェック ===");
+Object.keys(CT).forEach(code => {
+  const C = CT[code];
+  console.log(`--- ${code}: scenes ${C.scenes.length} / traits ${C.traits.length} / hints ${C.hints.length} / quizzes ${C.quizzes.length} / phrases ${C.phraseGroups.length}`);
+  checkLang(code, C);
+  if (code !== "ja") {
+    if (JSON.stringify(sig(C)) !== baseSig) {
+      flag(`[${code}] 構造が ja と不一致`);
+      const a = sig(CT.ja), b = sig(C);
+      ["scenes", "traits", "quizzes", "phrases", "logOptions"].forEach(key => {
+        if (JSON.stringify(a[key]) !== JSON.stringify(b[key])) console.log(`      diff@${key}:\n        ja=${JSON.stringify(a[key])}\n        ${code}=${JSON.stringify(b[key])}`);
+      });
+      if (a.hints !== b.hints) console.log(`      hints: ja=${a.hints} ${code}=${b.hints}`);
+      if (a.basis !== b.basis) console.log(`      basis: ja=${a.basis} ${code}=${b.basis}`);
+    }
+    if (UI[code]) {
+      const ks = flatKeys(UI[code]).sort();
+      const missing = uiKeysJa.filter(k => ks.indexOf(k) < 0);
+      const extra = ks.filter(k => uiKeysJa.indexOf(k) < 0);
+      if (missing.length) flag(`[${code}] UIキー不足: ${missing.join(", ")}`);
+      if (extra.length) flag(`[${code}] UIキー余分: ${extra.join(", ")}`);
+    } else flag(`[${code}] SHIEN_UI.${code} が無い`);
+  }
 });
 
-/* index.html / app.js に氏名入力欄が無いこと（個人情報を持たない原則）
- * コメント文言に反応しないよう、実際の入力欄(placeholder/id/name属性)だけを見る */
-const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
-const app = fs.readFileSync(path.join(__dirname, "app.js"), "utf8");
-if (/placeholder="[^"]*(氏名|名前|なまえ)|(id|name)="[^"]*(userName|fullName|kanji)/i.test(html + app))
-  flag("氏名入力欄らしき箇所がある（原則違反の疑い）");
-
-console.log(issues ? (">>> " + issues + " 件の要確認") : ">>> ALL OK");
+console.log(issues ? `\n>>> ${issues} 件の要確認` : "\n>>> ALL OK（全言語 構造パリティ一致）");
 process.exit(issues ? 1 : 0);

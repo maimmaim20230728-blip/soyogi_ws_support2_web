@@ -5,7 +5,8 @@
  *  - 医療判断はしない。迷ったら119・主治医の指示書へ誘導する。
  *  - 文言は総監督（現場・介護福祉士/サ責/行動援護）の監修を受けて確定する。
  */
-window.SOYOGI_SHIEN = {
+window.SHIEN_CONTENT = window.SHIEN_CONTENT || {};
+window.SHIEN_CONTENT.ja = {
   version: 1,
 
   /* このアプリの土台にしている国際的な枠組み・基準（根拠） */

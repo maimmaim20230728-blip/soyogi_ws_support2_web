@@ -47,7 +47,7 @@
 
   /* ===== ヘッダー ===== */
   header{
-    text-align:center; padding:18px 16px 10px; position:relative;
+    text-align:center; padding:56px 16px 10px; position:relative;
   }
   .bgm-toggle{
     position:absolute; top:12px; right:12px; width:42px; height:42px; border-radius:50%;
@@ -57,6 +57,12 @@
   }
   .bgm-toggle:active{ background:#f3f8fc; }
   .bgm-toggle.off{ opacity:.45; }
+  .lang-select{
+    position:absolute; top:14px; left:12px; max-width:44%;
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:6px 8px; font-size:.78rem; color:var(--brand-deep); font-weight:700;
+    box-shadow:0 1px 4px rgba(78,142,196,.14);
+  }
   header h1{ font-size:1.25rem; color:var(--brand-deep); font-weight:700; }
   header .tagline{ font-size:.8rem; color:var(--muted); }
 
@@ -227,6 +233,11 @@
     word-break:break-all;
   }
   .kana-out .ph{ color:#c3d2de; font-size:1.0rem; font-weight:400; }
+  .type-input{
+    width:100%; min-height:110px; background:var(--card); border:1.5px solid var(--line);
+    border-radius:16px; padding:12px 14px; font:inherit; font-size:1.3rem; font-weight:700;
+    color:var(--text); margin-bottom:10px; resize:vertical;
+  }
   .kana-actions{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:10px; }
   .kana-actions button{
     background:var(--card); border:1.5px solid var(--line); border-radius:12px;
@@ -280,9 +291,10 @@
 <body>
 
 <header>
+  <select id="langSelect" class="lang-select" aria-label="言語 / Language"></select>
   <button id="bgmToggle" class="bgm-toggle" aria-label="BGMのオン・オフ" title="BGM">🎵</button>
-  <h1>そよぎ 支援サポート</h1>
-  <div class="tagline">支援の、お守りに。― 障害福祉スタッフのための支援サポート ―</div>
+  <h1 id="appName">そよぎ 支援サポート</h1>
+  <div class="tagline" id="tagline">支援の、お守りに。― 障害福祉スタッフのための支援サポート ―</div>
 </header>
 
 <main>
@@ -297,27 +309,18 @@
   <!-- 🗣️ つたえる -->
   <section id="view-talk" class="view">
     <div class="talk-tabs">
-      <button data-pane="phrases" class="on">ていけいぶん</button>
-      <button data-pane="kana">もじばん</button>
-      <button data-pane="draw">ひつだん</button>
+      <button data-pane="phrases" class="on"></button>
+      <button data-pane="type"></button>
+      <button data-pane="draw"></button>
     </div>
     <div id="pane-phrases" class="talk-pane active"></div>
-    <div id="pane-kana" class="talk-pane">
-      <div class="kana-out" id="kanaOut"><span class="ph">ここに もじが でます</span></div>
-      <div class="kana-actions">
-        <button id="kanaSpeak" class="primary">🔊 よむ</button>
-        <button id="kanaShow">👀 みせる</button>
-        <button id="kanaBack">← けす</button>
-        <button id="kanaClear">ぜんぶけす</button>
-      </div>
-      <div class="kana-board" id="kanaBoard"></div>
-    </div>
+    <div id="pane-type" class="talk-pane"></div>
     <div id="pane-draw" class="talk-pane">
       <div class="draw-tools">
-        <button id="penThin">ほそい</button>
-        <button id="penThick" class="on">ふとい</button>
-        <button id="penInvert">はんてん</button>
-        <button id="penClear">けす</button>
+        <button id="penThin"></button>
+        <button id="penThick" class="on"></button>
+        <button id="penInvert"></button>
+        <button id="penClear"></button>
       </div>
       <canvas id="drawCanvas"></canvas>
     </div>
@@ -344,6 +347,7 @@
   <button data-view="talk"><span class="e">🗣️</span><span class="t">つたえる</span></button>
 </nav>
 
+<script src="i18n.js"></script>
 <script src="content.ja.js"></script>
 <script src="audio.js"></script>
 <script src="app.js"></script>

@@ -1,19 +1,99 @@
-/* そよぎ 支援サポート - アプリロジック
+/* そよぎ 支援サポート - アプリロジック（多言語対応）
  * 原則：個人情報を持たない（氏名欄を作らない）・記録は端末内のみ・タップだけで数十秒で完結
+ * i18n：C = SHIEN_CONTENT[lang]（本文）／ T = SHIEN_UI[lang]（UI文字列）
  */
 (function () {
   "use strict";
-  var C = window.SOYOGI_SHIEN;
   var $ = function (s) { return document.querySelector(s); };
   var LOG_KEY = "shien.logs";
+  var LANG_KEY = "shien.lang";
+  var C = null, T = null, LANG = "ja", SEP = "・";
+
+  var SPEAK_LANG = {
+    ja: "ja-JP", en: "en-US", zh: "zh-CN", es: "es-ES", hi: "hi-IN", ar: "ar-SA",
+    pt: "pt-BR", fr: "fr-FR", ru: "ru-RU", id: "id-ID", de: "de-DE", ko: "ko-KR",
+    it: "it-IT", bn: "bn-BD"
+  };
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function list(items) {
+    return "<ul>" + items.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>";
+  }
+
+  /* ========== 言語 ========== */
+  function availableLangs() {
+    return (window.SHIEN_LANGS || []).filter(function (l) { return window.SHIEN_UI && window.SHIEN_UI[l.code]; });
+  }
+  function resolveLang() {
+    var saved = null;
+    try { saved = localStorage.getItem(LANG_KEY); } catch (e) {}
+    if (saved && window.SHIEN_UI[saved]) return saved;
+    var nav = (navigator.language || "ja").slice(0, 2).toLowerCase();
+    if (window.SHIEN_UI[nav]) return nav;
+    return "ja";
+  }
+  function loadContent(lang, cb) {
+    if (window.SHIEN_CONTENT[lang]) { cb(true); return; }
+    var s = document.createElement("script");
+    s.src = "content." + lang + ".js";
+    s.onload = function () { cb(!!window.SHIEN_CONTENT[lang]); };
+    s.onerror = function () { cb(false); };
+    document.head.appendChild(s);
+  }
+  function setLang(lang) {
+    loadContent(lang, function (ok) {
+      if (!ok || !window.SHIEN_UI[lang]) lang = "ja";
+      LANG = lang;
+      C = window.SHIEN_CONTENT[lang];
+      T = window.SHIEN_UI[lang] || window.SHIEN_UI.ja;
+      SEP = lang === "ja" ? "・" : ", ";
+      try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+      document.documentElement.lang = lang;
+      document.documentElement.dir = T.dir || "ltr";
+      applyStaticUI();
+      renderPhrases();
+      buildTypePane();
+      renderScenes();
+      show("scenes");
+    });
+  }
+  function buildLangSelect() {
+    var sel = $("#langSelect"); if (!sel) return;
+    sel.innerHTML = availableLangs().map(function (l) {
+      return '<option value="' + l.code + '">🌐 ' + esc(l.name) + '</option>';
+    }).join("");
+    sel.value = LANG;
+    sel.addEventListener("change", function () { setLang(sel.value); });
+  }
+  function setNavLabel(view, text) {
+    var b = document.querySelector('nav button[data-view="' + view + '"] .t'); if (b) b.textContent = text;
+  }
+  function setPaneLabel(pane, text) {
+    var b = document.querySelector('.talk-tabs button[data-pane="' + pane + '"]'); if (b) b.textContent = text;
+  }
+  function applyStaticUI() {
+    document.title = T.appName;
+    $("#appName").textContent = T.appName;
+    $("#tagline").textContent = T.tagline;
+    setNavLabel("scenes", T.nav.scenes); setNavLabel("lookup", T.nav.lookup);
+    setNavLabel("learn", T.nav.learn); setNavLabel("talk", T.nav.talk);
+    setPaneLabel("phrases", T.talkPhrases); setPaneLabel("type", T.talkType); setPaneLabel("draw", T.talkDraw);
+    $("#penThin").textContent = T.drawThin; $("#penThick").textContent = T.drawThick;
+    $("#penInvert").textContent = T.drawInvert; $("#penClear").textContent = T.drawClear;
+    var oh = document.querySelector("#showOverlay .hint"); if (oh) oh.textContent = T.overlayHint;
+    var ls = $("#langSelect"); if (ls) ls.value = LANG;
+    bgmPaint();
+  }
 
   /* ========== ビュー切替 ========== */
   var views = ["scenes", "detail", "lookup", "learn", "talk", "logs"];
   var currentView = "scenes";
   function show(view) {
-    views.forEach(function (v) {
-      $("#view-" + v).classList.toggle("active", v === view);
-    });
+    views.forEach(function (v) { $("#view-" + v).classList.toggle("active", v === view); });
     document.querySelectorAll("nav button").forEach(function (b) {
       b.classList.toggle("on", b.dataset.view === view ||
         (b.dataset.view === "scenes" && (view === "detail" || view === "logs")));
@@ -31,29 +111,22 @@
   });
 
   /* ========== こまった：一覧 ========== */
-  function esc(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-    });
-  }
   function renderScenes() {
     var med = C.scenes.filter(function (s) { return s.medical; })[0];
     var rest = C.scenes.filter(function (s) { return !s.medical; });
-    var html = "";
-    html += '<div class="gentle-note">ここにあるのは「傾向とヒント」です。いちばんの手がかりは、目の前のその人です。</div>';
+    var html = '<div class="gentle-note">' + esc(T.scenesNote) + "</div>";
     html += '<button class="medical-btn" data-id="' + med.id + '">' +
       '<span style="font-size:1.8rem">' + med.emoji + "</span>" +
-      '<span><span class="t">' + esc(med.title) + '</span><br><span class="s">医療のことは迷わずこちら → 119の目安</span></span></button>';
+      '<span><span class="t">' + esc(med.title) + '</span><br><span class="s">' + esc(T.medicalSub) + "</span></span></button>";
     html += '<div class="scene-grid">';
     rest.forEach(function (s) {
       html += '<button class="scene-btn" data-id="' + s.id + '">' +
         '<span class="e">' + s.emoji + '</span><span class="t">' + esc(s.title) + "</span></button>";
     });
     html += "</div>";
-    html += '<div class="footer-links"><button id="openLogs">📝 きろくをみる</button></div>';
-    html += '<div class="app-foot">このアプリは医療判断をしません。緊急時は119へ。<br>個人情報は収集しません（きろくは この端末の中だけ に保存されます）。</div>';
+    html += '<div class="footer-links"><button id="openLogs">' + esc(T.seeLogs) + "</button></div>";
+    html += '<div class="app-foot">' + esc(T.footMedical) + "<br>" + esc(T.footPrivacy) + "</div>";
     $("#view-scenes").innerHTML = html;
-
     document.querySelectorAll("#view-scenes [data-id]").forEach(function (b) {
       b.addEventListener("click", function () { renderDetail(b.dataset.id); show("detail"); });
     });
@@ -61,68 +134,60 @@
   }
 
   /* ========== こまった：カード詳細 ========== */
-  function list(items) {
-    return "<ul>" + items.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>";
-  }
   function renderDetail(id) {
     var s = C.scenes.filter(function (x) { return x.id === id; })[0];
     if (!s) return;
-    var html = '<button class="back-btn" id="backBtn">← もどる</button>';
+    var html = '<button class="back-btn" id="backBtn">' + esc(T.back) + "</button>";
     html += '<div class="card-title">' + s.emoji + " " + esc(s.title) + "</div>";
     if (s.medical && s.lead) html += '<div class="lead-med">' + esc(s.lead) + "</div>";
-    html += '<div class="block block-do"><h3>🟢 まずやること</h3>' + list(s.do) + "</div>";
+    html += '<div class="block block-do"><h3>🟢 ' + esc(T.blkDo) + "</h3>" + list(s.do) + "</div>";
     if (s.call119) {
-      html += '<div class="block block-119"><h3>🚑 すぐ119の目安</h3>' + list(s.call119);
+      html += '<div class="block block-119"><h3>🚑 ' + esc(T.blk119) + "</h3>" + list(s.call119);
       if (s.note) html += '<div class="note">' + esc(s.note) + "</div>";
       html += "</div>";
     }
-    html += '<div class="block block-ng"><h3>🚫 やってはいけないこと</h3>' + list(s.dont) + "</div>";
-    if (s.outdoor) html += '<div class="block block-out"><h3>🚶 外出先では（駅・人混みなど）</h3>' + list(s.outdoor) + "</div>";
-    html += '<div class="block block-after"><h3>🕊️ おちついたら</h3>' + list(s.after) + "</div>";
-    html += '<button class="record-btn" data-scene="' + s.id + '">📝 いまのことを きろくする（30秒）</button>';
-    html += '<details class="why"><summary>💡 なぜ起きる？（よみもの）</summary><p>' + esc(s.why) + "</p></details>";
-    html += '<div class="src">参考：' + esc(s.src) + "</div>";
+    html += '<div class="block block-ng"><h3>🚫 ' + esc(T.blkDont) + "</h3>" + list(s.dont) + "</div>";
+    if (s.outdoor) html += '<div class="block block-out"><h3>🚶 ' + esc(T.blkOutdoor) + "</h3>" + list(s.outdoor) + "</div>";
+    html += '<div class="block block-after"><h3>🕊️ ' + esc(T.blkAfter) + "</h3>" + list(s.after) + "</div>";
+    html += '<button class="record-btn" data-scene="' + s.id + '">📝 ' + esc(T.recordBtn) + "</button>";
+    html += '<details class="why"><summary>💡 ' + esc(T.blkWhy) + "</summary><p>" + esc(s.why) + "</p></details>";
+    html += '<div class="src">' + esc(T.ref) + esc(s.src) + "</div>";
     $("#view-detail").innerHTML = html;
-
     $("#backBtn").addEventListener("click", function () { show("scenes"); });
     $("#view-detail .record-btn").addEventListener("click", function () { openRecord(s.id); });
   }
 
-  /* ========== きろく：モーダル（タップのみ・約30秒） ========== */
+  /* ========== きろく：モーダル ========== */
   var rec = null;
   function chipRow(label, name, options, multi) {
-    var html = '<div class="q"><div class="label">' + label + '</div><div class="chips" data-name="' + name + '" data-multi="' + (multi ? 1 : 0) + '">';
+    var html = '<div class="q"><div class="label">' + esc(label) + '</div><div class="chips" data-name="' + name + '" data-multi="' + (multi ? 1 : 0) + '">';
     options.forEach(function (o) { html += '<button class="chip" data-v="' + esc(o) + '">' + esc(o) + "</button>"; });
     return html + "</div></div>";
+  }
+  function stamp(ts) {
+    var d = new Date(ts);
+    return (d.getMonth() + 1) + "/" + d.getDate() + " " + d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
   }
   function openRecord(sceneId) {
     var scene = C.scenes.filter(function (x) { return x.id === sceneId; })[0];
     rec = { ts: Date.now(), scene: scene ? scene.title : "", triggers: [], duration: "", responses: [], injury: "", memo: "" };
-    var d = new Date(rec.ts);
-    var when = (d.getMonth() + 1) + "/" + d.getDate() + " " + d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
-    var html = "<h2>📝 きろく</h2>" +
-      '<div class="sub">' + when + "・" + esc(rec.scene) + "（この端末の中にだけ保存されます）</div>";
-    html += chipRow("きっかけ（いくつでも）", "triggers", C.logOptions.triggers, true);
-    html += chipRow("つづいた時間", "duration", C.logOptions.durations, false);
-    html += chipRow("対応したこと（いくつでも）", "responses", C.logOptions.responses, true);
-    html += chipRow("けが・物損", "injury", C.logOptions.injuries, false);
-    html += '<div class="q"><div class="label">備考（なくてOK・ひとことだけ）</div>' +
-      '<input class="memo-input" id="memoInput" type="text" maxlength="60" placeholder="例：おやつの前だった"></div>';
-    html += '<div class="modal-actions"><button class="btn-cancel" id="recCancel">やめる</button>' +
-      '<button class="btn-save" id="recSave">ほぞん</button></div>';
+    var html = "<h2>📝 " + esc(T.recTitle) + "</h2>" +
+      '<div class="sub">' + stamp(rec.ts) + "・" + esc(rec.scene) + esc(T.recSaveNote) + "</div>";
+    html += chipRow(T.recTriggers, "triggers", C.logOptions.triggers, true);
+    html += chipRow(T.recDuration, "duration", C.logOptions.durations, false);
+    html += chipRow(T.recResponses, "responses", C.logOptions.responses, true);
+    html += chipRow(T.recInjury, "injury", C.logOptions.injuries, false);
+    html += '<div class="q"><div class="label">' + esc(T.recMemo) + "</div>" +
+      '<input class="memo-input" id="memoInput" type="text" maxlength="60" placeholder="' + esc(T.recMemoPh) + '"></div>';
+    html += '<div class="modal-actions"><button class="btn-cancel" id="recCancel">' + esc(T.recCancel) + "</button>" +
+      '<button class="btn-save" id="recSave">' + esc(T.recSave) + "</button></div>";
     $("#recordModal").innerHTML = html;
     $("#modalWrap").classList.add("open");
-
     document.querySelectorAll("#recordModal .chips").forEach(function (row) {
       row.addEventListener("click", function (e) {
         var chip = e.target.closest(".chip"); if (!chip) return;
-        var multi = row.dataset.multi === "1";
-        if (multi) {
-          chip.classList.toggle("on");
-        } else {
-          row.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("on"); });
-          chip.classList.add("on");
-        }
+        if (row.dataset.multi === "1") { chip.classList.toggle("on"); }
+        else { row.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("on"); }); chip.classList.add("on"); }
       });
     });
     $("#recCancel").addEventListener("click", closeRecord);
@@ -153,33 +218,29 @@
     try { return JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); } catch (e) { return []; }
   }
   function fmtLog(l) {
-    var d = new Date(l.ts);
-    var when = (d.getMonth() + 1) + "/" + d.getDate() + " " + d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
-    var parts = ["[" + when + "] " + l.scene];
-    if (l.triggers.length) parts.push("きっかけ: " + l.triggers.join("・"));
-    if (l.duration) parts.push("時間: " + l.duration);
-    if (l.responses.length) parts.push("対応: " + l.responses.join("・"));
-    if (l.injury) parts.push("けが: " + l.injury);
-    if (l.memo) parts.push("備考: " + l.memo);
+    var parts = ["[" + stamp(l.ts) + "] " + l.scene];
+    if (l.triggers.length) parts.push(T.logTrigger + ": " + l.triggers.join(SEP));
+    if (l.duration) parts.push(T.logDur + ": " + l.duration);
+    if (l.responses.length) parts.push(T.logResp + ": " + l.responses.join(SEP));
+    if (l.injury) parts.push(T.logInj + ": " + l.injury);
+    if (l.memo) parts.push(T.logMemo + ": " + l.memo);
     return parts.join(" ｜ ");
   }
   function renderLogs() {
     var logs = loadLogs();
-    var html = '<button class="back-btn" id="logsBack">← もどる</button>';
-    html += '<div class="card-title">📝 きろく</div>';
+    var html = '<button class="back-btn" id="logsBack">' + esc(T.back) + "</button>";
+    html += '<div class="card-title">📝 ' + esc(T.logsTitle) + "</div>";
     if (!logs.length) {
-      html += '<div class="empty">まだ きろくはありません。<br>場面カードの「きろくする」から、タップだけで残せます。</div>';
+      html += '<div class="empty">' + esc(T.logsEmpty) + "</div>";
     } else {
-      html += '<button class="copy-btn" id="copyLogs">📋 ぜんぶコピー（申し送りに貼れます）</button>';
+      html += '<button class="copy-btn" id="copyLogs">' + esc(T.logsCopy) + "</button>";
       logs.forEach(function (l, i) {
-        var d = new Date(l.ts);
-        var when = (d.getMonth() + 1) + "/" + d.getDate() + " " + d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
         html += '<div class="log-item"><button class="del" data-i="' + i + '">✕</button>' +
-          '<span class="when">' + when + "・" + esc(l.scene) + "</span><br>" +
-          esc([l.triggers.join("・"), l.duration, l.responses.join("・"), l.injury, l.memo]
+          '<span class="when">' + stamp(l.ts) + "・" + esc(l.scene) + "</span><br>" +
+          esc([l.triggers.join(SEP), l.duration, l.responses.join(SEP), l.injury, l.memo]
             .filter(Boolean).join(" ｜ ")) + "</div>";
       });
-      html += '<div class="app-foot">きろくは この端末の中だけ に保存されています（最大200件）。</div>';
+      html += '<div class="app-foot">' + esc(T.logsFoot) + "</div>";
     }
     $("#view-logs").innerHTML = html;
     $("#logsBack").addEventListener("click", function () { show("scenes"); });
@@ -187,16 +248,14 @@
     if (cp) cp.addEventListener("click", function () {
       var text = loadLogs().map(fmtLog).join("\n");
       navigator.clipboard.writeText(text).then(function () {
-        cp.textContent = "✅ コピーしました";
-        setTimeout(function () { cp.textContent = "📋 ぜんぶコピー（申し送りに貼れます）"; }, 1600);
+        cp.textContent = T.logsCopied;
+        setTimeout(function () { cp.textContent = T.logsCopy; }, 1600);
       });
     });
     document.querySelectorAll("#view-logs .del").forEach(function (b) {
       b.addEventListener("click", function () {
-        var logs2 = loadLogs();
-        logs2.splice(Number(b.dataset.i), 1);
-        localStorage.setItem(LOG_KEY, JSON.stringify(logs2));
-        renderLogs();
+        var logs2 = loadLogs(); logs2.splice(Number(b.dataset.i), 1);
+        localStorage.setItem(LOG_KEY, JSON.stringify(logs2)); renderLogs();
       });
     });
   }
@@ -207,8 +266,8 @@
     return s ? { emoji: s.emoji, title: s.title } : null;
   }
   function renderLookup() {
-    var html = '<div class="gentle-note">ここにあるのは「傾向とヒント」です。表れ方は一人ひとり違います。いちばんの手がかりは、目の前のその人です。</div>';
-    html += '<div class="lookup-lead">特性から調べる</div>';
+    var html = '<div class="gentle-note">' + esc(T.lookupNote) + "</div>";
+    html += '<div class="lookup-lead">' + esc(T.byTrait) + "</div>";
     html += '<div class="scene-grid">';
     C.traits.forEach(function (t) {
       html += '<button class="scene-btn" data-trait="' + t.id + '">' +
@@ -216,12 +275,11 @@
         '<span class="ts">' + esc(t.short) + "</span></button>";
     });
     html += "</div>";
-    html += '<div class="lookup-lead">場面から調べる</div>';
-    html += '<div class="gentle-note" style="margin-bottom:12px">困っている“場面”からは、下の <b>🚨 こまった</b> から引けます。<br>' +
-      '<button class="inline-link" id="toScenes">→ こまった を開く</button></div>';
-    html += '<div class="footer-links"><button id="toBasis">📚 このアプリの根拠について</button></div>';
+    html += '<div class="lookup-lead">' + esc(T.byScene) + "</div>";
+    html += '<div class="gentle-note" style="margin-bottom:12px">' + esc(T.bySceneNote) + "<br>" +
+      '<button class="inline-link" id="toScenes">' + esc(T.openScenes) + "</button></div>";
+    html += '<div class="footer-links"><button id="toBasis">' + esc(T.aboutBasis) + "</button></div>";
     $("#view-lookup").innerHTML = html;
-
     document.querySelectorAll("#view-lookup [data-trait]").forEach(function (b) {
       b.addEventListener("click", function () { renderTrait(b.dataset.trait); });
     });
@@ -231,24 +289,23 @@
   function renderTrait(id) {
     var t = C.traits.filter(function (x) { return x.id === id; })[0];
     if (!t) return;
-    var html = '<button class="back-btn" id="lkBack">← 特性一覧へ</button>';
+    var html = '<button class="back-btn" id="lkBack">' + esc(T.backTraits) + "</button>";
     html += '<div class="card-title">' + t.emoji + " " + esc(t.name) + "</div>";
-    html += '<div class="block block-what"><h3>ℹ️ どんな特性か</h3>' + list(t.what) + "</div>";
-    if (t.prepare && t.prepare.length) html += '<div class="block block-prep"><h3>🗓️ そなえる（事前の準備・計画がいちばん大事）</h3>' + list(t.prepare) + "</div>";
-    html += '<div class="block block-comm"><h3>💬 コミュニケーションのコツ</h3>' + list(t.comm) + "</div>";
-    html += '<div class="block block-env"><h3>🧩 環境の工夫</h3>' + list(t.env) + "</div>";
+    html += '<div class="block block-what"><h3>ℹ️ ' + esc(T.trWhat) + "</h3>" + list(t.what) + "</div>";
+    if (t.prepare && t.prepare.length) html += '<div class="block block-prep"><h3>🗓️ ' + esc(T.trPrepare) + "</h3>" + list(t.prepare) + "</div>";
+    html += '<div class="block block-comm"><h3>💬 ' + esc(T.trComm) + "</h3>" + list(t.comm) + "</div>";
+    html += '<div class="block block-env"><h3>🧩 ' + esc(T.trEnv) + "</h3>" + list(t.env) + "</div>";
     if (t.scenes && t.scenes.length) {
-      html += '<div class="block block-scenes"><h3>🚨 よくある場面と対応</h3><div class="scene-links">';
+      html += '<div class="block block-scenes"><h3>🚨 ' + esc(T.trScenes) + '</h3><div class="scene-links">';
       t.scenes.forEach(function (sid) {
         var s = sceneTitle(sid);
         if (s) html += '<button class="scene-link" data-scene="' + sid + '">' + s.emoji + " " + esc(s.title) + "</button>";
       });
       html += "</div></div>";
     }
-    html += '<div class="block block-ng"><h3>🚫 こんな対応は避けて</h3>' + list(t.ng) + "</div>";
-    html += '<div class="src">参考：' + esc(t.src) + "</div>";
+    html += '<div class="block block-ng"><h3>🚫 ' + esc(T.trNg) + "</h3>" + list(t.ng) + "</div>";
+    html += '<div class="src">' + esc(T.ref) + esc(t.src) + "</div>";
     $("#view-lookup").innerHTML = html;
-
     $("#lkBack").addEventListener("click", renderLookup);
     document.querySelectorAll("#view-lookup .scene-link").forEach(function (b) {
       b.addEventListener("click", function () { renderDetail(b.dataset.scene); show("detail"); });
@@ -256,38 +313,34 @@
     window.scrollTo(0, 0);
   }
   function renderBasis() {
-    var html = '<button class="back-btn" id="bsBack">← しらべるへ</button>';
-    html += '<div class="card-title">📚 このアプリの根拠</div>';
-    html += '<div class="gentle-note">このアプリは、現場の経験だけでなく、国内外で広く使われている支援の枠組み・医学的知見を土台にしています。あくまで“ヒント”であり、最終的な判断は目の前の本人と、専門職・主治医の指示を優先してください。</div>';
+    var html = '<button class="back-btn" id="bsBack">' + esc(T.backLookup) + "</button>";
+    html += '<div class="card-title">' + esc(T.basisTitle) + "</div>";
+    html += '<div class="gentle-note">' + esc(T.basisNote) + "</div>";
     html += '<div class="block block-what"><ul>' +
       C.basis.map(function (b) { return "<li>" + esc(b) + "</li>"; }).join("") + "</ul></div>";
-    html += '<div class="src">※各場面カード・各特性ページの末尾にも、個別の参考元を示しています。</div>';
+    html += '<div class="src">' + esc(T.basisFoot) + "</div>";
     $("#view-lookup").innerHTML = html;
     $("#bsBack").addEventListener("click", renderLookup);
     window.scrollTo(0, 0);
   }
 
-  /* ========== まなぶ：今日のヒント＋ケースクイズ ========== */
+  /* ========== まなぶ ========== */
   function todayIndex(len) {
-    var now = new Date();
-    var start = new Date(now.getFullYear(), 0, 0);
-    var day = Math.floor((now - start) / 86400000);
-    return day % len;
+    var now = new Date(), start = new Date(now.getFullYear(), 0, 0);
+    return Math.floor((now - start) / 86400000) % len;
   }
   var lastQuiz = -1;
   function pickQuiz() {
     if (C.quizzes.length <= 1) return 0;
-    var i;
-    do { i = Math.floor(Math.random() * C.quizzes.length); } while (i === lastQuiz);
-    lastQuiz = i;
-    return i;
+    var i; do { i = Math.floor(Math.random() * C.quizzes.length); } while (i === lastQuiz);
+    lastQuiz = i; return i;
   }
   function renderLearn() {
     var hint = C.hints[todayIndex(C.hints.length)];
-    var html = '<div class="learn-hint"><div class="lh-label">🌱 今日のヒント</div>' +
+    var html = '<div class="learn-hint"><div class="lh-label">' + esc(T.todayHint) + "</div>" +
       "<p>" + esc(hint) + "</p>" +
-      '<button class="lh-more" id="hintMore">別のヒントを見る</button></div>';
-    html += '<div class="lookup-lead">ケースクイズ ― 正解より“なぜ”を</div>';
+      '<button class="lh-more" id="hintMore">' + esc(T.anotherHint) + "</button></div>";
+    html += '<div class="lookup-lead">' + esc(T.quizLead) + "</div>";
     html += '<div id="quizArea"></div>';
     $("#view-learn").innerHTML = html;
     $("#hintMore").addEventListener("click", function () {
@@ -298,17 +351,13 @@
   function renderQuiz(qi) {
     var q = C.quizzes[qi];
     var html = '<div class="quiz-card"><div class="quiz-q">' + esc(q.q) + '</div><div class="quiz-opts">';
-    q.options.forEach(function (o, i) {
-      html += '<button class="quiz-opt" data-i="' + i + '">' + esc(o) + "</button>";
-    });
+    q.options.forEach(function (o, i) { html += '<button class="quiz-opt" data-i="' + i + '">' + esc(o) + "</button>"; });
     html += '</div><div class="quiz-explain" id="quizExplain"></div></div>';
     $("#quizArea").innerHTML = html;
-
     var answered = false;
     document.querySelectorAll("#quizArea .quiz-opt").forEach(function (b) {
       b.addEventListener("click", function () {
-        if (answered) return;
-        answered = true;
+        if (answered) return; answered = true;
         var chosen = Number(b.dataset.i);
         document.querySelectorAll("#quizArea .quiz-opt").forEach(function (x) {
           var xi = Number(x.dataset.i);
@@ -317,14 +366,11 @@
           x.disabled = true;
         });
         var ex = $("#quizExplain");
-        ex.innerHTML = '<div class="qe-head">' + (chosen === q.answer ? "◎ そのとおり" : "△ もう一度みてみましょう") + "</div>" +
+        ex.innerHTML = '<div class="qe-head">' + (chosen === q.answer ? esc(T.quizRight) : esc(T.quizWrong)) + "</div>" +
           "<p>" + esc(q.explain) + "</p>" +
-          '<button class="quiz-next" id="quizNext">次の問題 →</button>';
+          '<button class="quiz-next" id="quizNext">' + esc(T.quizNext) + "</button>";
         ex.classList.add("show");
-        $("#quizNext").addEventListener("click", function () {
-          renderQuiz(pickQuiz());
-          window.scrollTo(0, 0);
-        });
+        $("#quizNext").addEventListener("click", function () { renderQuiz(pickQuiz()); window.scrollTo(0, 0); });
       });
     });
   }
@@ -333,84 +379,87 @@
   document.querySelectorAll(".talk-tabs button").forEach(function (b) {
     b.addEventListener("click", function () {
       document.querySelectorAll(".talk-tabs button").forEach(function (x) { x.classList.toggle("on", x === b); });
-      ["phrases", "kana", "draw"].forEach(function (p) {
-        $("#pane-" + p).classList.toggle("active", p === b.dataset.pane);
-      });
+      ["phrases", "type", "draw"].forEach(function (p) { $("#pane-" + p).classList.toggle("active", p === b.dataset.pane); });
       if (b.dataset.pane === "draw") initCanvas();
     });
   });
-
   function speak(text) {
     if (!("speechSynthesis" in window) || !text) return;
     window.speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
-    u.lang = "ja-JP"; u.rate = 0.9;
+    u.lang = SPEAK_LANG[LANG] || LANG; u.rate = 0.9;
     window.speechSynthesis.speak(u);
   }
-
-  /* --- ていけいぶん --- */
-  (function renderPhrases() {
-    var html = '<div class="gentle-note">タップすると 読み上げて、大きく表示します。</div>';
+  function renderPhrases() {
+    var html = '<div class="gentle-note">' + esc(T.phrasesNote) + "</div>";
     C.phraseGroups.forEach(function (g) {
       html += '<div class="phrase-group"><h3>' + g.emoji + " " + esc(g.label) + '</h3><div class="phrase-grid">';
       g.items.forEach(function (p) { html += '<button class="phrase-btn" data-p="' + esc(p) + '">' + esc(p) + "</button>"; });
       html += "</div></div>";
     });
-    $("#pane-phrases").innerHTML = html;
-    $("#pane-phrases").addEventListener("click", function (e) {
+    var pane = $("#pane-phrases");
+    pane.innerHTML = html;
+    pane.onclick = function (e) {
       var b = e.target.closest(".phrase-btn"); if (!b) return;
       speak(b.dataset.p); showBig(b.dataset.p);
-    });
-  })();
+    };
+  }
 
-  /* --- もじばん（50音） --- */
+  /* --- 入力ペイン（日本語=50音／他言語=テキスト入力） --- */
   var DAKU = { "か": "が", "き": "ぎ", "く": "ぐ", "け": "げ", "こ": "ご", "さ": "ざ", "し": "じ", "す": "ず", "せ": "ぜ", "そ": "ぞ", "た": "だ", "ち": "ぢ", "つ": "づ", "て": "で", "と": "ど", "は": "ば", "ひ": "び", "ふ": "ぶ", "へ": "べ", "ほ": "ぼ", "う": "ゔ" };
   var HANDAKU = { "は": "ぱ", "ひ": "ぴ", "ふ": "ぷ", "へ": "ぺ", "ほ": "ぽ" };
   var SMALL = { "あ": "ぁ", "い": "ぃ", "う": "ぅ", "え": "ぇ", "お": "ぉ", "つ": "っ", "や": "ゃ", "ゆ": "ゅ", "よ": "ょ", "わ": "ゎ" };
-  var kanaText = "";
-  var ROWS = [
-    "あいうえお", "かきくけこ", "さしすせそ", "たちつてと", "なにぬねの",
-    "はひふへほ", "まみむめも", "や　ゆ　よ", "らりるれろ", "わ　を　ん"
-  ];
-  (function renderKana() {
+  var ROWS = ["あいうえお", "かきくけこ", "さしすせそ", "たちつてと", "なにぬねの", "はひふへほ", "まみむめも", "や　ゆ　よ", "らりるれろ", "わ　を　ん"];
+  var typeText = "";
+  function getTypeText() { if (LANG === "ja") return typeText; var ta = $("#typeInput"); return ta ? ta.value : ""; }
+  function updateKanaOut() {
+    var el = $("#kanaOut"); if (!el) return;
+    el.innerHTML = typeText ? esc(typeText) : '<span class="ph">' + esc(T.typePh) + "</span>";
+  }
+  function buildKanaBoard() {
     var html = "";
     ROWS.forEach(function (row) {
-      row.split("").forEach(function (ch) {
-        if (ch === "　") html += "<span></span>";
-        else html += '<button data-k="' + ch + '">' + ch + "</button>";
-      });
+      row.split("").forEach(function (ch) { html += ch === "　" ? "<span></span>" : '<button data-k="' + ch + '">' + ch + "</button>"; });
     });
-    html += '<button class="fn" data-fn="daku">゛</button>';
-    html += '<button class="fn" data-fn="handaku">゜</button>';
-    html += '<button class="fn" data-fn="small">小さく</button>';
-    html += '<button data-k="ー">ー</button>';
-    html += '<button data-k="　">スペース</button>';
-    $("#kanaBoard").innerHTML = html;
-    $("#kanaBoard").addEventListener("click", function (e) {
+    html += '<button class="fn" data-fn="daku">゛</button><button class="fn" data-fn="handaku">゜</button>' +
+      '<button class="fn" data-fn="small">小さく</button><button data-k="ー">ー</button><button data-k="　">スペース</button>';
+    var bd = $("#kanaBoard"); bd.innerHTML = html;
+    bd.onclick = function (e) {
       var b = e.target.closest("button"); if (!b) return;
-      if (b.dataset.k) kanaText += b.dataset.k;
+      if (b.dataset.k) typeText += b.dataset.k;
       else if (b.dataset.fn) {
-        var last = kanaText.slice(-1);
+        var last = typeText.slice(-1);
         var map = b.dataset.fn === "daku" ? DAKU : b.dataset.fn === "handaku" ? HANDAKU : SMALL;
-        if (map[last]) kanaText = kanaText.slice(0, -1) + map[last];
+        if (map[last]) typeText = typeText.slice(0, -1) + map[last];
       }
       updateKanaOut();
+    };
+  }
+  function buildTypePane() {
+    var pane = $("#pane-type");
+    var actions = '<div class="kana-actions">' +
+      '<button id="typeRead" class="primary">' + esc(T.read) + "</button>" +
+      '<button id="typeShow">' + esc(T.showBig) + "</button>" +
+      (LANG === "ja" ? '<button id="typeBack">' + esc(T.del) + "</button>" : "") +
+      '<button id="typeClear">' + esc(T.clearAll) + "</button></div>";
+    if (LANG === "ja") {
+      pane.innerHTML = '<div class="kana-out" id="kanaOut"></div>' + actions + '<div class="kana-board" id="kanaBoard"></div>';
+      typeText = ""; buildKanaBoard(); updateKanaOut();
+    } else {
+      pane.innerHTML = '<textarea id="typeInput" class="type-input" rows="3" placeholder="' + esc(T.typeInputPh) + '"></textarea>' + actions;
+    }
+    $("#typeRead").addEventListener("click", function () { speak(getTypeText()); });
+    $("#typeShow").addEventListener("click", function () { var t = getTypeText(); if (t) showBig(t); });
+    $("#typeClear").addEventListener("click", function () {
+      if (LANG === "ja") { typeText = ""; updateKanaOut(); } else { $("#typeInput").value = ""; }
     });
-    $("#kanaBack").addEventListener("click", function () { kanaText = kanaText.slice(0, -1); updateKanaOut(); });
-    $("#kanaClear").addEventListener("click", function () { kanaText = ""; updateKanaOut(); });
-    $("#kanaSpeak").addEventListener("click", function () { speak(kanaText); });
-    $("#kanaShow").addEventListener("click", function () { if (kanaText) showBig(kanaText); });
-  })();
-  function updateKanaOut() {
-    $("#kanaOut").innerHTML = kanaText ? esc(kanaText) : '<span class="ph">ここに もじが でます</span>';
+    if (LANG === "ja") $("#typeBack").addEventListener("click", function () { typeText = typeText.slice(0, -1); updateKanaOut(); });
   }
 
   /* --- みせる（全画面表示） --- */
   function showBig(text) {
-    var el = $("#showTxt");
-    el.textContent = text;
-    var size = text.length <= 4 ? "5rem" : text.length <= 8 ? "3.6rem" : text.length <= 16 ? "2.6rem" : "1.9rem";
-    el.style.fontSize = size;
+    var el = $("#showTxt"); el.textContent = text;
+    el.style.fontSize = text.length <= 4 ? "5rem" : text.length <= 8 ? "3.6rem" : text.length <= 16 ? "2.6rem" : "1.9rem";
     $("#showOverlay").classList.add("open");
   }
   $("#showOverlay").addEventListener("click", function () { this.classList.remove("open"); });
@@ -420,94 +469,66 @@
   var penWidth = 9, inverted = false, canvasReady = false;
   function initCanvas() {
     if (canvasReady) return;
-    var rect = canvas.getBoundingClientRect();
-    var dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx = canvas.getContext("2d");
-    ctx.scale(dpr, dpr);
+    var rect = canvas.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    canvas.width = rect.width * dpr; canvas.height = rect.height * dpr;
+    ctx = canvas.getContext("2d"); ctx.scale(dpr, dpr);
     ctx.lineCap = "round"; ctx.lineJoin = "round";
-    paintBg();
-    canvasReady = true;
+    paintBg(); canvasReady = true;
   }
   function paintBg() {
     var rect = canvas.getBoundingClientRect();
-    ctx.fillStyle = inverted ? "#111" : "#fff";
-    ctx.fillRect(0, 0, rect.width, rect.height);
+    ctx.fillStyle = inverted ? "#111" : "#fff"; ctx.fillRect(0, 0, rect.width, rect.height);
   }
-  function pos(e) {
-    var r = canvas.getBoundingClientRect();
-    return { x: e.clientX - r.left, y: e.clientY - r.top };
-  }
+  function pos(e) { var r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
   canvas.addEventListener("pointerdown", function (e) {
     if (!canvasReady) initCanvas();
-    drawing = true;
-    canvas.setPointerCapture(e.pointerId);
-    var p = pos(e);
-    ctx.beginPath(); ctx.moveTo(p.x, p.y);
-    ctx.strokeStyle = inverted ? "#fff" : "#222";
-    ctx.lineWidth = penWidth;
+    drawing = true; canvas.setPointerCapture(e.pointerId);
+    var p = pos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y);
+    ctx.strokeStyle = inverted ? "#fff" : "#222"; ctx.lineWidth = penWidth;
   });
-  canvas.addEventListener("pointermove", function (e) {
-    if (!drawing) return;
-    var p = pos(e);
-    ctx.lineTo(p.x, p.y); ctx.stroke();
-  });
-  ["pointerup", "pointercancel"].forEach(function (ev) {
-    canvas.addEventListener(ev, function () { drawing = false; });
-  });
+  canvas.addEventListener("pointermove", function (e) { if (!drawing) return; var p = pos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+  ["pointerup", "pointercancel"].forEach(function (ev) { canvas.addEventListener(ev, function () { drawing = false; }); });
   $("#penThin").addEventListener("click", function () { penWidth = 4; toolOn(this); });
   $("#penThick").addEventListener("click", function () { penWidth = 9; toolOn(this); });
-  function toolOn(btn) {
-    $("#penThin").classList.remove("on"); $("#penThick").classList.remove("on");
-    btn.classList.add("on");
-  }
-  $("#penInvert").addEventListener("click", function () {
-    inverted = !inverted; this.classList.toggle("on", inverted);
-    if (canvasReady) paintBg();
-  });
+  function toolOn(btn) { $("#penThin").classList.remove("on"); $("#penThick").classList.remove("on"); btn.classList.add("on"); }
+  $("#penInvert").addEventListener("click", function () { inverted = !inverted; this.classList.toggle("on", inverted); if (canvasReady) paintBg(); });
   $("#penClear").addEventListener("click", function () { if (canvasReady) paintBg(); });
 
-  /* ========== BGM（おだやかなアンビエント・SoyogiAudioエンジン） ==========
+  /* ========== BGM ==========
    * ・ヘッダー🎵で即ミュート（ON/OFF設定は保存）
-   * ・つたえる（トーキングエイド）中は自動でBGMを止め、他ページに移ると即復帰
+   * ・つたえる中は自動でBGMを止め、他ページに移ると即復帰
    */
   var bgmBtn = null, audioUnlocked = false;
   function bgmPaint() {
-    var A = window.SoyogiAudio;
-    if (!A || !bgmBtn) return;
+    var A = window.SoyogiAudio; if (!A || !bgmBtn) return;
     var on = A.getBgmVolume() > 0;
     bgmBtn.textContent = on ? "🎵" : "🔇";
     bgmBtn.classList.toggle("off", !on);
-    bgmBtn.title = on ? "BGM オン（タップで消音）" : "BGM オフ（タップで再生）";
+    bgmBtn.title = on ? (T ? T.bgmOn : "BGM") : (T ? T.bgmOff : "BGM");
   }
   function bgmRefresh() {
-    // つたえる中はBGMを止める（読み上げ・会話の邪魔をしない）。他ページで復帰。
-    var A = window.SoyogiAudio;
-    if (!A) return;
+    var A = window.SoyogiAudio; if (!A) return;
     if (audioUnlocked && A.getBgmVolume() > 0 && currentView !== "talk") A.startBGM();
     else A.stopBGM();
   }
   (function initBGM() {
-    var A = window.SoyogiAudio;
-    bgmBtn = $("#bgmToggle");
+    var A = window.SoyogiAudio; bgmBtn = $("#bgmToggle");
     if (!A || !bgmBtn) return;
     bgmPaint();
     bgmBtn.addEventListener("click", function () {
       A.unlock(); audioUnlocked = true;
-      if (A.getBgmVolume() > 0) A.setBgmVolume(0);
-      else A.setBgmVolume(0.5);
+      if (A.getBgmVolume() > 0) A.setBgmVolume(0); else A.setBgmVolume(0.5);
       bgmPaint(); bgmRefresh();
     });
-    // 初回のユーザー操作でオーディオ解禁＋（設定ON かつ つたえる以外なら）BGM開始
     function firstGesture() {
-      A.unlock(); audioUnlocked = true;
-      bgmRefresh(); bgmPaint();
+      A.unlock(); audioUnlocked = true; bgmRefresh(); bgmPaint();
       window.removeEventListener("pointerdown", firstGesture, true);
     }
     window.addEventListener("pointerdown", firstGesture, true);
   })();
 
   /* ========== 起動 ========== */
-  renderScenes();
+  LANG = resolveLang();
+  buildLangSelect();
+  setLang(LANG);
 })();
