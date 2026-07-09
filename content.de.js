@@ -682,7 +682,21 @@ window.SHIEN_CONTENT.de = {
     "Wachsen die Ausdrucksmittel, können Rufen und Aggression abnehmen. Karten und Geräte sind auch „Sprache“.",
     "Das „Lieblings-“ der Person ist der größte Verbündete. Lieblingsbeschäftigung, -ding, -thema: die Abkürzung zur Sicherheit.",
     "Die Ruhe der Begleitperson ist vor Ort der stärkste beruhigende Faktor.",
-    "Achten Sie auch auf sich. Fällt die Begleitung aus, endet die Unterstützung. Ausruhen gehört zur Arbeit."
+    "Achten Sie auch auf sich. Fällt die Begleitung aus, endet die Unterstützung. Ausruhen gehört zur Arbeit.",
+    "Verhalten hat „Vorzeichen“ (Unruhe, lauter werdende Stimme, veränderte Bewegungen). Kleine Antworten, bevor die Welle ihren Kamm erreicht, wirken am besten.",
+    "Direkt nach dem Abklingen kommt eine zerbrechliche Erholungsphase — leicht flammt alles wieder auf. Erst Wasser und Ruhe; Aktivitäten und Anforderungen langsam zurückholen.",
+    "Vor jeder helfenden Berührung ein Wort vorweg („Ich berühre jetzt Ihren Arm“). Unangekündigter Kontakt sät Angst und Abwehrreaktionen.",
+    "Statt frontal gegenüber: schräg oder Seite an Seite stehen. Weniger Druck — und man spricht mit Blick auf dieselbe Aussicht.",
+    "Der Tonfall kommt vor den Worten an. Tief, langsam, wenige Worte.",
+    "Nimmt das Verhalten plötzlich zu, zuerst den Körper verdächtigen (Schmerz, Hunger, Schlaf, Verstopfung, Hitze). Unaussprechliches Unwohlsein zeigt sich als Verhalten.",
+    "Auch Etiketten, Nähte und Stoffe der Kleidung können sensorisch belasten. Der Tragekomfort gehört zur Unterstützung.",
+    "An einem neuen Ort zuerst Ausgänge, Toiletten und eine ruhige Ecke zum Verschnaufen ausmachen — beruhigt beide.",
+    "Als Erwachsenen behandeln. Hilfe mag nötig sein — entscheiden tut die Person selbst.",
+    "Nie vor der Person über sie sprechen, als wäre sie nicht da. Würde wohnt im Detail.",
+    "Wenn es nicht läuft: das Design der Unterstützung überprüfen, nicht den Menschen. In dem Moment, in dem es „seine Schuld“ ist, endet die Unterstützung.",
+    "Im Protokoll das Gesehene (Fakten) vom Gedachten (Vermutungen) trennen — das zahlt sich bei der nächsten Unterstützung aus.",
+    "Neues eines nach dem anderen ausprobieren. Wer alles auf einmal ändert, weiß nie, was gewirkt hat.",
+    "Abwechseln ist keine Niederlage, sondern Technik. Wenn es festfährt: Personenwechsel verändert die Luft. Dieser Spielraum ist die Stärke eines Teams."
   ],
 
   /* ===== Lernen: Fallquiz (das „Warum“ zählt mehr als richtig/falsch) ===== */
@@ -770,6 +784,102 @@ window.SHIEN_CONTENT.de = {
       options: ["Festhalten und einflößen", "Einmal zurückziehen, Zeit lassen; hält es an, Ärztin/Arzt oder Apotheke fragen", "Heimlich unters Essen mischen"],
       answer: 1,
       explain: "Verweigerung hat Gründe (schwer zu schlucken, belastende Nebenwirkungen, unverstandener Sinn). Zwang kostet Vertrauen. Zurückziehen und Zeit lassen, Form oder Zeitpunkt ändern. Hält es an: nicht selbst entscheiden, sondern zu Ärztin/Arzt oder Apotheke. Heimliches Untermischen nur mit Zustimmung von Ärztin/Arzt und Familie."
+    },
+    {
+      q: "Unruhe kommt auf, die Stimme wird lauter — Sie haben die „Vorzeichen“ bemerkt. Wann handeln?",
+      options: ["Noch ist nichts passiert — erst einmal beobachten", "Im Vorzeichen-Stadium: Reize senken und eine Pause anbieten", "Warten, bis das Verhalten beginnt, dann mit voller Kraft reagieren"],
+      answer: 1,
+      explain: "Verhalten steigt wie eine Welle. Auf dem Kamm kommen Worte und Kniffe kaum noch an. Kleine Schritte im Vorzeichen-Stadium (weniger Reize, eine Pause, Ortswechsel) wirken mit der geringsten Belastung. Vorzeichen-Muster notieren und teilen — sie werden zum Schatz des Teams."
+    },
+    {
+      q: "Die Panik ist gerade abgeklungen. Der nächste Zug?",
+      options: ["Die unterbrochene Aktivität sofort wieder aufnehmen", "Wasser und Ruhe; langsam wieder einsteigen und dabei beobachten", "Zur Reflexion anhalten, damit es nie wieder passiert"],
+      answer: 1,
+      explain: "Direkt nach dem Abklingen beginnt eine „Erholungsphase“: Körper und Geist sind erschöpft, ein Rückfall ist leicht. Zu frühe Anforderungen können alles zurückholen. Erst Wasser und Ruhe, Wiedereinstieg in Etappen. Ermahnungen und Aufarbeitung kommen in dieser Zeit nicht an."
+    },
+    {
+      q: "Vor dem Berühren beim Umkleiden — was kommt zuerst?",
+      options: ["Ein Wort vorweg: „Ich berühre jetzt Ihren Arm“", "Schnell und lautlos fertig werden, um nicht zu erschrecken", "Von hinten stützen und die Person zuerst bewegen"],
+      answer: 0,
+      explain: "Unangekündigter Kontakt löst Angst und Abwehr aus (losreißen, schlagen). Gerade bei Trauma-Erfahrung oder sensorischer Empfindlichkeit gilt: aus sichtbarer Position, nach einem Wort. Die Geschwindigkeit der Sicherheit geht vor der Geschwindigkeit der Aufgabe."
+    },
+    {
+      q: "Eine Aktivität zur Wahl stellen — welche Form kommt am besten an?",
+      options: ["Auf zwei eingrenzen: „A oder B — was möchtest du?“", "Möglichst viele Optionen zur freien Wahl auslegen", "Selbst entscheiden, damit die Person sich nicht sorgt"],
+      answer: 0,
+      explain: "Wählen können beruhigt — doch zu viele Optionen werden zur neuen Angst. Bei zwei (höchstens drei) wählt es sich gelassen. Das Gefühl „ich habe entschieden“ gibt dem nächsten Schritt Kraft."
+    },
+    {
+      q: "Seit Tagen nimmt das Verhalten plötzlich zu. Was zuerst prüfen?",
+      options: ["Annehmen, der Eigensinn sei stärker geworden", "Härtere Strafen, um es zu stoppen", "Körper (Schmerz, Hunger, Schlaf, Verstopfung) und Umgebungsveränderungen prüfen"],
+      answer: 2,
+      explain: "Eine plötzliche Verhaltensänderung deutet zuerst auf körperliches Unwohlsein oder eine veränderte Umgebung. Zahnschmerz, Ohrentzündung, Verstopfung, Schlafmangel — was sich nicht sagen lässt, zeigt sich als Verhalten. Nicht „der Charakter hat sich geändert“, sondern „etwas geschieht“. Auch die Krankengeschichte prüfen."
+    },
+    {
+      q: "In der Bahn hält er sich die Ohren zu und kauert sich hin. Leute sammeln sich. Zuerst?",
+      options: ["Aufrichten — Priorität ist das Aussteigen an der nächsten Station", "Mit dem eigenen Körper die Blicke abschirmen und kurz sagen: „Alles in Ordnung“", "Allen ringsum die Lage laut erklären"],
+      answer: 1,
+      explain: "Die sich sammelnden Blicke sind selbst ein starker Reiz. Zuerst zur Wand werden: Sichtlinien und Menschen abschirmen, ein kurzes Wort an die Umgebung. Das Bewegen kann warten, bis Ruhe einkehrt — die Entscheidung übers Aussteigen kommt danach."
+    },
+    {
+      q: "Ein Anfall endete nach 3 Minuten; die Person ist benommen. Als Nächstes?",
+      options: ["Sofort aufrichten und gehen lassen, um das Bewusstsein zu prüfen", "In stabiler Seitenlage wachen; Dauer und Verlauf notieren", "Wasser und Zucker geben"],
+      answer: 1,
+      explain: "Nach dem Anfall kann die Benommenheit andauern. In stabiler Seitenlage ruhig wachen, Dauer und Bild des Anfalls notieren, Ärztin/Arzt und Familie informieren. Sofortiges Essen/Trinken birgt Aspirationsgefahr, erzwungenes Gehen Sturzgefahr."
+    },
+    {
+      q: "Welche Art, Protokoll zu schreiben, hilft der nächsten Unterstützung mehr?",
+      options: ["Eindruckszentriert: „Er war die ganze Zeit wütend“", "Fakten: „15 Uhr, vor dem Imbiss, 10 Min. laute Stimme, nach Platzwechsel ruhig“", "Lang und ausführlich, wie eine Erzählung"],
+      answer: 1,
+      explain: "Der Kniff: Gesehenes (Fakten) von Gedachtem (Vermutungen) trennen. Wann, wo, was, und was geholfen hat — kurz. Angesammelte Fakten machen Auslöser-Muster sichtbar: der Bauplan der nächsten Unterstützung."
+    },
+    {
+      q: "Ein Kollege fährt sich mitten im Einsatz fest; sein Gesicht wird hart. Was ist gut?",
+      options: ["„Ich übernehme“ sagen und wechseln", "Ihn allein bis zum Ende durchziehen lassen", "Jetzt nichts sagen und es später in der Besprechung anmerken"],
+      answer: 0,
+      explain: "Anspannung und Gereiztheit der Begleitung erreichen auch die Person. Abwechseln, wenn es festfährt, ist keine Niederlage — es ist Technik. Oft verändert allein der Personenwechsel die Luft. Ein Team, in dem der Wechsel angeboten und angenommen werden kann, schützt die Person."
+    },
+    {
+      q: "Eine Angehörige vertraut an: „Zu Hause ist es so schwer … vielleicht habe ich ihn falsch erzogen.“ Zuerst?",
+      options: ["Korrigieren: „Ihre Methode muss sich ändern“", "Anerkennen — „Sie haben das bis hierher getragen“ — und fragen, was zu Hause funktioniert", "Einseitig die Methode der Einrichtung erklären"],
+      answer: 1,
+      explain: "Die Familie ist die dienstälteste Begleiterin — sie trägt den Menschen am längsten. Vor dem Korrigieren und Belehren: Anerkennung. Was zu Hause funktioniert, ist ein kostbarer Hinweis. Am Ende trägt die Zusammenarbeit die Person am besten."
+    },
+    {
+      q: "Bildkarten, neuer Plan und Platzwechsel — am liebsten alles gleichzeitig. Was tun?",
+      options: ["Alles auf einmal ändern, um die Wirkung zu maximieren", "Eines nach dem anderen probieren und die Wirkung prüfen", "Nichts ändern — Änderungen verwirren"],
+      answer: 1,
+      explain: "Wer vieles auf einmal ändert, weiß nicht, was gewirkt hat (und was nicht passte) — und die Last für die Person wächst. Neues eines nach dem anderen, über das Protokoll bestätigt. Der Kniff ist nicht, Änderungen zu meiden, sondern der Reihe nach zu ändern."
+    },
+    {
+      q: "Die Person murmelt: „Ich will sterben.“ Was tun Sie?",
+      options: ["Das Thema wechseln: „So etwas sagt man nicht“", "Ernst nehmen, zuhören und rasch mit Leitung und Medizin verbinden", "Es kommt oft vor — überhören"],
+      answer: 1,
+      explain: "Jede Äußerung von Sterbenswünschen wird ernst genommen, egal wie häufig. Nicht verneinen, nicht ablenken — erst zuhören. Und nicht allein tragen: noch am selben Tag der Leitung melden, mit Medizin und Familie teilen. „Nie überhören“ ist der erste Schritt, ein Leben zu schützen."
+    },
+    {
+      q: "Ausflugsplanung an einen neuen Ort. Was zuerst festzulegen beruhigt?",
+      options: ["Den Laden für Mitbringsel", "Wo man ausruht, wann es heimgeht und wo der Ausgang ist", "Die Fotospots"],
+      answer: 1,
+      explain: "So wichtig wie das Vergnügungsprogramm: wo man bei Müdigkeit ausruht, welches Signal die Heimkehr einläutet, wo es hinausgeht. Vorab festgelegte Auswege und ein geplantes Ende geben der Begleitung Spielraum — und dieser Spielraum wird zur Sicherheit der Person."
+    },
+    {
+      q: "Die Unterstützung läuft seit Tagen schlecht. Eine gute Denkweise?",
+      options: ["Folgern, dass man für diese Arbeit nicht taugt", "Als Anlass nehmen, das Unterstützungsdesign zu überprüfen, und das Team einbeziehen", "Aufgeben — die Behinderung ist einfach zu schwer"],
+      answer: 1,
+      explain: "Wenn es nicht läuft, überprüft man das Design (Umgebung, Kommunikation, Plan, Reize) — keinen Menschen. Sich selbst oder die Person zu beschuldigen bringt nichts voran. Protokolle mitbringen und im Team überprüfen: So verbringen Profis ihre „schlechten Tage“."
+    },
+    {
+      q: "Jemandem, der erstarrt ist, das „Nächste“ mitteilen — wie?",
+      options: ["„Beeil dich, wir kommen zu spät!“", "„Danach: Tee“ — kurz, nur eines, in sichtbarer Form", "Den ganzen Tagesplan von Anfang bis Ende erklären"],
+      answer: 1,
+      explain: "Wenn der Übergang Zeit zum Verarbeiten braucht, überflutet mehr Information. Nur das nächste Eine — kurz, konkret, möglichst sichtbar. Antreibende Worte machen das Verarbeiten nur schwerer."
+    },
+    {
+      q: "Wohlmeinende Passanten sammeln sich: „Alles in Ordnung?!“ Eine gute Antwort?",
+      options: ["Diagnose und Vorgeschichte ausführlich erklären, damit sie verstehen", "Kurz sagen: „Alles gut — einen Moment, dann beruhigt es sich“, und die Blicke abschirmen", "Ignorieren und sich auf den Einsatz konzentrieren"],
+      answer: 1,
+      explain: "Auch wohlmeinende Aufmerksamkeit ist für die Person ein Reiz. Ein kurzer Satz beruhigt das Umfeld und lichtet Traube und Blicke — das ist echte Unterstützung. Private Details wie die Diagnose müssen nicht genannt werden. Ignorieren kann in einem Notruf enden — ein Satz, genau einer, ist das rechte Maß."
     }
   ]
 };

@@ -664,7 +664,21 @@ window.SHIEN_CONTENT.pt = {
     "Ao crescer as vias de comunicar, os gritos e a agressão costumam ir diminuindo. Cartões e dispositivos também são «palavras».",
     "Os «gostos» dela são seu maior aliado. Uma atividade, um objeto ou um tema favorito são um atalho para a calma.",
     "Sua calma é, naquele momento, a maior fonte de tranquilidade.",
-    "Cuide de você também. Se o cuidador cai, o apoio para. Descansar também é parte do trabalho."
+    "Cuide de você também. Se o cuidador cai, o apoio para. Descansar também é parte do trabalho.",
+    "O comportamento dá «sinais prévios» (inquietação, voz subindo, movimentos mudando). As pequenas respostas antes de a onda subir são as que mais funcionam.",
+    "Logo depois de acalmar vem um período de recuperação frágil, fácil de reacender. Primeiro água e descanso; retome atividades e demandas aos poucos.",
+    "Antes de tocar para ajudar, avise sempre com uma palavra («vou tocar seu braço agora»). O contato sem aviso semeia medo e reações defensivas.",
+    "Em vez de ficar de frente, fique na diagonal ou lado a lado. A pressão diminui — e dá para conversar olhando a mesma paisagem.",
+    "O tom de voz chega antes do conteúdo. Baixo, devagar e com poucas palavras.",
+    "Se o comportamento aumentar de repente, suspeite primeiro do corpo (dor, fome, sono, prisão de ventre, calor). O mal-estar que não se consegue dizer sai como comportamento.",
+    "Etiquetas, costuras e tecidos da roupa também podem ser sensibilidade sensorial. O conforto da roupa é parte do apoio.",
+    "Num lugar novo, confira primeiro as saídas, os banheiros e um canto tranquilo para descansar — tranquiliza os dois.",
+    "Trate como adulto. Pode precisar de ajuda, mas quem decide é a própria pessoa.",
+    "Não fale da pessoa na frente dela como se ela não estivesse ali. A dignidade mora nos detalhes.",
+    "Quando algo não funciona, revise o desenho do apoio, não a pessoa. No momento em que vira «culpa dela», o apoio para.",
+    "Nos registros, separe o que você viu (fatos) do que pensou (suposições) — rende no próximo apoio.",
+    "Experimente as novidades uma de cada vez. Mudando tudo de uma vez, nunca se sabe o que funcionou.",
+    "Revezar não é derrota: é técnica. Quando emperrar, trocar de pessoa muda o ar. Essa margem é a força da equipe."
   ],
 
   quizzes: [
@@ -751,6 +765,102 @@ window.SHIEN_CONTENT.pt = {
       options: ["Segurá-la e fazê-la engolir", "Recuar e deixar passar um tempo; se continuar, consultar o médico ou o farmacêutico", "Misturar na comida sem avisar"],
       answer: 1,
       explain: "A recusa tem um motivo (difícil de engolir, efeitos duros, não entende para quê). Forçar perde a confiança. Recue e deixe passar um tempo, mude a forma ou o momento. Se continuar, não decida sozinha: pergunte ao médico ou ao farmacêutico. Misturar às escondidas, só com o acordo do médico e da família."
+    },
+    {
+      q: "Está inquieto e a voz vai subindo — você notou os «sinais prévios». Quando agir?",
+      options: ["Nada aconteceu ainda, então só observo", "Na fase dos sinais: reduzo estímulos e convido para uma pausa", "Espero o comportamento começar e respondo com tudo"],
+      answer: 1,
+      explain: "O comportamento sobe como uma onda. Depois do pico, palavras e recursos mal chegam. As pequenas respostas na fase dos sinais (menos estímulos, uma pausa, mudar de lugar) funcionam com o menor desgaste. Registrar e compartilhar os padrões dos sinais vira um tesouro da equipe."
+    },
+    {
+      q: "O pânico acabou de se acalmar. Próximo passo?",
+      options: ["Retomar imediatamente a atividade interrompida", "Água e descanso; retomar devagar, observando como está", "Cobrar reflexão para que não aconteça de novo"],
+      answer: 1,
+      explain: "Logo depois de acalmar vem um «período de recuperação»: corpo e mente esgotados, fácil de reacender. Retomar as demandas cedo demais pode trazer tudo de volta. Primeiro água e descanso; retomar por etapas. Sermões e reflexão não chegam nesse momento."
+    },
+    {
+      q: "Antes de tocar o corpo para ajudar a trocar de roupa, o que vem primeiro?",
+      options: ["Avisar com uma palavra: «vou tocar seu braço agora»", "Terminar rápido e em silêncio para não assustar", "Segurar por trás e mover a pessoa primeiro"],
+      answer: 0,
+      explain: "O contato sem aviso dispara medo e reações defensivas (se soltar, bater). Especialmente com pessoas com trauma ou sensibilidade sensorial, a base é: de onde ela veja você, e depois de avisar. Priorize a velocidade da segurança sobre a velocidade da tarefa."
+    },
+    {
+      q: "Ao oferecer atividades para escolher, qual jeito funciona melhor?",
+      options: ["Reduzir a duas: «A ou B — qual você prefere?»", "Enfileirar o máximo de opções para escolha livre", "Decidir pela pessoa para não a preocupar"],
+      answer: 0,
+      explain: "Poder escolher traz segurança — mas opções demais viram uma nova ansiedade. Com duas (no máximo três), escolhe-se com calma. A própria sensação de «fui eu que decidi» dá força ao próximo passo."
+    },
+    {
+      q: "Nestes dias o comportamento aumentou de repente. O que verificar primeiro?",
+      options: ["Achar que ficou mais teimoso", "Endurecer os castigos para frear", "Verificar o corpo (dor, fome, sono, prisão de ventre) e mudanças no ambiente"],
+      answer: 2,
+      explain: "Uma mudança brusca de comportamento aponta primeiro para desconforto físico ou mudança de ambiente. Dor de dente, otite, prisão de ventre, sono perdido — o mal-estar que não se diz aparece como comportamento. Não é «a personalidade mudou»: «algo está acontecendo». Confira também o histórico médico."
+    },
+    {
+      q: "No trem, tapou os ouvidos e se agachou. Gente começa a se juntar. Primeiro?",
+      options: ["Levantar a pessoa — prioridade é descer na próxima estação", "Fazer de parede com o corpo, cortar os olhares e dizer breve: «está tudo bem»", "Explicar a situação em voz alta para todos"],
+      answer: 1,
+      explain: "Os olhares que se juntam são, por si só, um estímulo forte. Primeiro seja uma parede: corte as linhas de visão e as pessoas, com uma frase curta para o entorno. Mover pode esperar acalmar; a decisão de descer vem depois."
+    },
+    {
+      q: "Uma crise epiléptica terminou em 3 minutos; a pessoa está atordoada. Agora?",
+      options: ["Levantar e fazer andar já, para checar a consciência", "Vigiar na posição de recuperação; registrar duração e detalhes", "Dar água e açúcar"],
+      answer: 1,
+      explain: "Depois da crise, o atordoamento pode continuar. Vigie em silêncio na posição de recuperação, registre quanto durou e como foi, e informe o médico e a família. Comer ou beber logo traz risco de engasgo; forçar a andar, risco de queda."
+    },
+    {
+      q: "Qual jeito de escrever registros ajuda mais o próximo apoio?",
+      options: ["Centrado em impressões: «ficou bravo o tempo todo»", "Com fatos: «15h, antes do lanche, voz alta 10 min, acalmou ao trocar de lugar»", "Longo e detalhado, como uma história"],
+      answer: 1,
+      explain: "O truque é separar o que você viu (fatos) do que pensou (suposições). Quando, onde, o quê e o que ajudou — em breve. Os fatos acumulados revelam padrões de gatilho: a planta do próximo apoio."
+    },
+    {
+      q: "Um colega no meio do atendimento está emperrando; o rosto endurece. O que é bom?",
+      options: ["Dizer «eu assumo» e revezar", "Deixar que ele conclua sozinho até o fim", "Não dizer nada agora e apontar depois na reunião"],
+      answer: 0,
+      explain: "A tensão e a irritação do apoiador também chegam à pessoa. Revezar quando se emperra não é derrota: é técnica. Só de trocar a pessoa, o ar muda — e muito. Uma equipe onde o revezamento pode ser oferecido e aceito protege a pessoa."
+    },
+    {
+      q: "Um familiar confidencia: «em casa é muito difícil… talvez eu tenha criado errado». Primeiro?",
+      options: ["Corrigir: «o método de vocês precisa mudar»", "Reconhecer — «você sustentou isso até aqui» — e perguntar o que funciona em casa", "Explicar unilateralmente o método da instituição"],
+      answer: 1,
+      explain: "A família é a apoiadora mais veterana de todas — quem há mais tempo sustenta a pessoa. Antes de corrigir ou instruir, reconheça. O que funciona em casa é pista preciosa. No fim, a relação de parceria é o que melhor sustenta a pessoa."
+    },
+    {
+      q: "Você quer começar cartões com figuras, um horário novo e troca de lugar, tudo junto. O que fazer?",
+      options: ["Mudar tudo de uma vez para maximizar o efeito", "Experimentar um de cada vez, conferindo o efeito", "Não mudar nada — mudança confunde"],
+      answer: 1,
+      explain: "Mudando muita coisa de uma vez, não se sabe o que funcionou (nem o que não combinou), e o peso sobre a pessoa cresce. Novidades uma a uma, confirmadas pelos registros. O truque não é evitar mudar: é mudar em ordem."
+    },
+    {
+      q: "A pessoa murmura: «quero morrer». O que fazer?",
+      options: ["Mudar de assunto: «não diga isso»", "Levar a sério, escutar e conectar logo com a chefia e a área médica", "Como é frequente, deixar passar"],
+      answer: 1,
+      explain: "Toda menção a querer morrer é levada a sério, seja qual for a frequência. Sem negar nem desviar: primeiro escutar. E não carregar sozinho: informe a chefia no mesmo dia e compartilhe com a medicina e a família. «Nunca deixar passar» é o primeiro passo para proteger uma vida."
+    },
+    {
+      q: "Planejando um passeio a um lugar novo. O que tranquiliza decidir primeiro?",
+      options: ["A loja de lembrancinhas", "Onde descansar, quando voltar e por onde sair", "Os pontos de foto"],
+      answer: 1,
+      explain: "Tão importante quanto planejar a diversão: onde descansar se cansar, o que sinaliza a hora de voltar, por onde se sai. Decidir antes as rotas de fuga e o encerramento dá margem ao apoiador — e essa margem vira a tranquilidade da pessoa."
+    },
+    {
+      q: "O apoio não anda bem há dias. Um bom jeito de pensar?",
+      options: ["Concluir que você não serve para isso", "Encarar como chance de revisar o desenho do apoio e conversar com a equipe", "Desistir — a deficiência é grave demais"],
+      answer: 1,
+      explain: "Quando algo não funciona, o que se revisa é o desenho (ambiente, comunicação, horário, estímulos) — não uma pessoa. Culpar a si ou à pessoa não move nada. Levar os registros e revisar em equipe: é assim que os profissionais atravessam seus «dias ruins»."
+    },
+    {
+      q: "Para dizer «o próximo» a alguém que travou, como?",
+      options: ["«Anda logo, vamos nos atrasar!»", "«Depois disso, o chá» — curto, uma coisa só, de forma visível", "Explicar toda a agenda do dia, do começo ao fim"],
+      answer: 1,
+      explain: "Quando a transição está demorando a processar, mais informação transborda. Só a próxima coisa: curta, concreta e, se possível, visível. Palavras de pressa só deixam o processamento mais pesado."
+    },
+    {
+      q: "Durante o atendimento, transeuntes bem-intencionados se aproximam: «está tudo bem?!». Boa resposta?",
+      options: ["Explicar em detalhe o diagnóstico e o ocorrido para que entendam", "Dizer breve: «está tudo bem, um instante e ele se acalma», e cortar os olhares", "Ignorar e focar no atendimento"],
+      answer: 1,
+      explain: "A atenção bem-intencionada também é estímulo para a pessoa. Uma frase curta tranquiliza o entorno e desfaz a rodinha e os olhares — isso é apoio de verdade. Não é preciso contar dados privados como o diagnóstico. Ignorar pode acabar em chamado à polícia, então uma frase — só uma — é a medida certa."
     }
   ],
 

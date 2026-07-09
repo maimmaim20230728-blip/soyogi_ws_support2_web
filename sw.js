@@ -3,7 +3,7 @@
  * オフラインで完全に動くよう、アプリ一式をキャッシュします。
  * 中身を更新したら CACHE の数字を上げてください（例 v1 -> v2）。
  */
-var CACHE = "shien-v28";
+var CACHE = "shien-v29";
 var ASSETS = [
   "./",
   "./index.html",

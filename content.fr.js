@@ -682,7 +682,21 @@ window.SHIEN_CONTENT.fr = {
     "Plus les moyens de s'exprimer grandissent, plus cris et agressions peuvent diminuer. Cartes et appareils sont aussi des « mots ».",
     "Ce que la personne « aime » est votre meilleur allié. Activité, objet, sujet préféré : un raccourci vers la sécurité.",
     "Le calme de l'accompagnant est, sur place, le premier facteur d'apaisement.",
-    "Prenez soin de vous aussi. Si l'accompagnant s'effondre, l'accompagnement s'arrête. Se reposer fait partie du travail."
+    "Prenez soin de vous aussi. Si l'accompagnant s'effondre, l'accompagnement s'arrête. Se reposer fait partie du travail.",
+    "Le comportement a des « signes avant-coureurs » (agitation, voix qui monte, gestes qui changent). Les petites réponses avant le sommet de la vague sont les plus efficaces.",
+    "Juste après l'apaisement vient une période de récupération fragile, où tout peut se rallumer. D'abord eau et repos ; reprenez activités et demandes en douceur.",
+    "Avant de toucher pour aider, toujours prévenir d'un mot (« je vais toucher votre bras »). Le contact non annoncé nourrit la peur et les réactions défensives.",
+    "Plutôt que de faire face, placez-vous de biais ou côte à côte. La pression baisse — et l'on peut parler en regardant le même paysage.",
+    "Le ton de la voix arrive avant les mots. Bas, lent, et peu de mots.",
+    "Si le comportement augmente brusquement, soupçonnez d'abord le corps (douleur, faim, sommeil, constipation, chaleur). Le mal-être qui ne se dit pas sort en comportement.",
+    "Étiquettes, coutures et tissus des vêtements relèvent aussi de la sensibilité sensorielle. Le confort des habits fait partie de l'accompagnement.",
+    "Dans un lieu nouveau, repérez d'abord les sorties, les toilettes et un coin calme pour souffler — rassurant pour vous deux.",
+    "Traitez la personne en adulte. Elle peut avoir besoin d'aide, mais c'est elle qui décide.",
+    "Ne parlez jamais de la personne devant elle comme si elle n'était pas là. La dignité loge dans les détails.",
+    "Quand ça ne marche pas, revoyez la conception de l'accompagnement, pas la personne. À l'instant où c'est « sa faute », l'accompagnement s'arrête.",
+    "Dans le registre, séparez ce que vous avez vu (faits) de ce que vous avez pensé (suppositions) — cela paie au prochain accompagnement.",
+    "Essayez les nouveautés une à une. En changeant tout d'un coup, on ne sait plus ce qui a marché.",
+    "Se relayer n'est pas une défaite : c'est une technique. Quand ça coince, changer de personne change l'air. Cette marge est la force d'une équipe."
   ],
 
   /* ===== Apprendre : cas pratiques (le « pourquoi » plutôt que le juste/faux) ===== */
@@ -770,6 +784,102 @@ window.SHIEN_CONTENT.fr = {
       options: ["La maintenir et faire avaler", "Se retirer, laisser du temps ; si cela persiste, consulter médecin ou pharmacien", "Le mélanger à son repas sans lui dire"],
       answer: 1,
       explain: "Le refus a ses raisons (difficile à avaler, effets pénibles, sens incompris). Forcer fait perdre la confiance. Se retirer et laisser du temps, changer la forme ou le moment. Si cela persiste : médecin ou pharmacien, sans décider seul·e. Mélanger à l'insu : uniquement avec l'accord du médecin et de la famille."
+    },
+    {
+      q: "Elle s'agite, sa voix monte — vous avez repéré les « signes avant-coureurs ». Quand agir ?",
+      options: ["Rien ne s'est encore produit : on observe", "Dès les signes : réduire les stimulations et proposer une pause", "Attendre que le comportement éclate, puis répondre à fond"],
+      answer: 1,
+      explain: "Le comportement monte comme une vague. Au sommet, mots et astuces ne passent plus. Les petites réponses au stade des signes (moins de stimulations, une pause, changer de lieu) agissent avec le moins d'usure. Noter et partager les schémas de signes avant-coureurs devient un trésor d'équipe."
+    },
+    {
+      q: "La panique vient de retomber. Le geste suivant ?",
+      options: ["Relancer aussitôt l'activité interrompue", "Eau et repos ; reprendre lentement, en observant", "Faire réfléchir pour que cela ne se reproduise plus"],
+      answer: 1,
+      explain: "Juste après l'apaisement s'ouvre une « période de récupération » : corps et esprit épuisés, rechute facile. Relancer trop tôt les demandes peut tout rallumer. D'abord eau et repos, reprise par étapes. Leçons et bilans ne passent pas à ce moment-là."
+    },
+    {
+      q: "Avant de toucher le corps pour aider à se changer, que faire d'abord ?",
+      options: ["Prévenir d'un mot : « je vais toucher votre bras »", "Finir vite et sans bruit pour ne pas effrayer", "Soutenir par-derrière et déplacer d'abord"],
+      answer: 0,
+      explain: "Le contact non annoncé déclenche peur et réactions défensives (se dégager, frapper). Surtout avec un vécu traumatique ou une sensibilité sensorielle, la base : depuis un endroit visible, après un mot. La vitesse de la sécurité prime sur la vitesse de la tâche."
+    },
+    {
+      q: "Pour proposer un choix d'activités, quelle forme passe le mieux ?",
+      options: ["Réduire à deux : « A ou B, lequel veux-tu ? »", "Aligner le plus d'options possible pour un choix libre", "Décider à sa place pour lui éviter le souci"],
+      answer: 0,
+      explain: "Pouvoir choisir rassure — mais trop d'options deviennent une nouvelle angoisse. À deux (trois au plus), on choisit sereinement. Le sentiment même d'« avoir décidé » donne la force du pas suivant."
+    },
+    {
+      q: "Depuis quelques jours, le comportement augmente brusquement. Que vérifier d'abord ?",
+      options: ["Penser que les caprices empirent", "Durcir les punitions pour stopper", "Vérifier le corps (douleur, faim, sommeil, constipation) et les changements d'environnement"],
+      answer: 2,
+      explain: "Un changement brutal de comportement oriente d'abord vers un mal-être physique ou un changement d'environnement. Rage de dents, otite, constipation, manque de sommeil — la gêne indicible sort en comportement. Non pas « son caractère a changé », mais « quelque chose se passe ». Vérifiez aussi les antécédents médicaux."
+    },
+    {
+      q: "Dans le train, il se bouche les oreilles et s'accroupit. Les gens s'attroupent. D'abord ?",
+      options: ["Le relever : priorité à descendre à la prochaine gare", "Faire écran de son corps, couper les regards et dire bref : « tout va bien »", "Expliquer la situation à voix haute à tout le monde"],
+      answer: 1,
+      explain: "Les regards qui s'attroupent sont en eux-mêmes une stimulation forte. D'abord faire mur : couper les lignes de vue et la foule, un mot bref à l'entourage. Le déplacer attendra l'apaisement — la décision de descendre viendra après."
+    },
+    {
+      q: "Une crise d'épilepsie a cessé au bout de 3 minutes ; la personne est hébétée. Ensuite ?",
+      options: ["La relever et la faire marcher pour vérifier la conscience", "Veiller en position latérale de sécurité ; noter durée et déroulement", "Donner de l'eau et du sucre"],
+      answer: 1,
+      explain: "Après la crise, l'hébétude peut durer. Veiller en silence en position latérale de sécurité, noter la durée et l'aspect de la crise, informer médecin et famille. Boire ou manger tout de suite : risque de fausse route ; forcer la marche : risque de chute."
+    },
+    {
+      q: "Quelle façon d'écrire le registre sert le mieux l'accompagnement suivant ?",
+      options: ["Centrée sur l'impression : « il était fâché tout le temps »", "Les faits : « 15 h, avant le goûter, cris 10 min, apaisé après changement de place »", "Long et détaillé, comme un récit"],
+      answer: 1,
+      explain: "L'astuce : séparer ce qu'on a vu (faits) de ce qu'on a pensé (suppositions). Quand, où, quoi, et ce qui a aidé — en bref. Les faits accumulés font apparaître les schémas de déclencheurs : le plan du prochain accompagnement."
+    },
+    {
+      q: "Une collègue en pleine intervention s'enlise ; son visage se durcit. Que faire de bien ?",
+      options: ["Dire « je prends le relais » et permuter", "La laisser aller seule jusqu'au bout", "Ne rien dire et le signaler plus tard en réunion"],
+      answer: 0,
+      explain: "La tension et l'agacement de l'accompagnant atteignent aussi la personne. Se relayer quand ça coince n'est pas une défaite : c'est une technique. Changer de personne suffit souvent à changer l'air. Une équipe où le relais s'offre et s'accepte protège la personne."
+    },
+    {
+      q: "Une proche confie : « à la maison c'est très dur… je l'ai peut-être mal élevé ». D'abord ?",
+      options: ["Corriger : « il faut changer de méthode »", "Reconnaître — « vous avez tenu jusqu'ici » — et demander ce qui marche à la maison", "Exposer unilatéralement la méthode de l'établissement"],
+      answer: 1,
+      explain: "La famille est l'accompagnante la plus ancienne — celle qui soutient depuis le plus longtemps. Avant de corriger ou d'instruire, reconnaître. Ce qui marche à la maison est un indice précieux. Au bout du compte, la relation de coopération est ce qui soutient le mieux la personne."
+    },
+    {
+      q: "Vous voulez lancer en même temps cartes imagées, nouveau planning et changement de place. Que faire ?",
+      options: ["Tout changer d'un coup pour maximiser l'effet", "Essayer un à un, en vérifiant l'effet", "Ne rien changer : le changement perturbe"],
+      answer: 1,
+      explain: "En changeant beaucoup à la fois, on ne sait plus ce qui a marché (ni ce qui n'a pas convenu), et la charge pour la personne grandit. Les nouveautés une à une, validées par le registre. L'astuce n'est pas d'éviter le changement : c'est de changer dans l'ordre."
+    },
+    {
+      q: "La personne murmure : « je veux mourir ». Que faites-vous ?",
+      options: ["Changer de sujet : « ne dis pas ça »", "Prendre au sérieux, écouter, et relier vite au responsable et au médical", "C'est habituel : laisser passer"],
+      answer: 1,
+      explain: "Toute évocation du désir de mourir se prend au sérieux, quelle qu'en soit la fréquence. Ni nier ni détourner : écouter d'abord. Puis ne pas porter seul : informer le responsable le jour même, partager avec le médical et la famille. « Ne jamais laisser passer » est le premier pas pour protéger une vie."
+    },
+    {
+      q: "Sortie prévue vers un lieu inconnu. Que décider d'abord pour être serein ?",
+      options: ["La boutique de souvenirs", "Où se reposer, quand rentrer, et par où sortir", "Les endroits à photos"],
+      answer: 1,
+      explain: "Aussi important que le programme des plaisirs : où se reposer en cas de fatigue, quel signal déclenche le retour, par où l'on sort. Décider d'avance les issues et la fin donne de la marge à l'accompagnant — et cette marge devient la sérénité de la personne."
+    },
+    {
+      q: "L'accompagnement patine depuis des jours. Une bonne façon de penser ?",
+      options: ["Conclure qu'on n'est pas fait pour ce métier", "Y voir l'occasion de revoir la conception de l'accompagnement, et consulter l'équipe", "Renoncer : le handicap est trop lourd"],
+      answer: 1,
+      explain: "Quand ça ne marche pas, on revoit la conception (environnement, communication, planning, stimulations) — pas une personne. Se blâmer ou blâmer la personne ne fait rien avancer. Apporter les registres et revoir en équipe : c'est ainsi que les professionnels traversent leurs « mauvais jours »."
+    },
+    {
+      q: "Dire « la suite » à quelqu'un qui s'est figé — de quelle façon ?",
+      options: ["« Dépêche-toi, on va être en retard ! »", "« Après, le thé » — court, une seule chose, sous forme visible", "Expliquer tout le programme du jour du début à la fin"],
+      answer: 1,
+      explain: "Quand la transition met du temps à se traiter, ajouter de l'information déborde. Une seule chose suivante — courte, concrète, visible si possible. Les mots qui pressent alourdissent encore le traitement."
+    },
+    {
+      q: "Des passants bienveillants s'attroupent : « ça va ?! ». Une bonne réponse ?",
+      options: ["Expliquer en détail le diagnostic et l'historique pour qu'ils comprennent", "Dire bref : « tout va bien, un instant et ça se calme », et couper les regards", "Les ignorer et rester concentré sur l'intervention"],
+      answer: 1,
+      explain: "L'attention bienveillante reste une stimulation pour la personne. Une phrase courte rassure l'entourage et disperse l'attroupement et les regards — c'est cela, le vrai soutien. Inutile de livrer des détails privés comme le diagnostic. Ignorer peut finir en appel aux secours : une phrase — une seule — est le juste milieu."
     }
   ]
 };

@@ -682,7 +682,21 @@ window.SHIEN_CONTENT.it = {
     "Quando i mezzi per comunicare crescono, urla e aggressioni possono diminuire. Anche carte e dispositivi sono «parole».",
     "Il suo «preferito» è il vostro migliore alleato. Attività, oggetto, argomento amati: la scorciatoia verso la sicurezza.",
     "La calma dell'operatore è, sul posto, il primo fattore che rassicura.",
-    "Abbiate cura anche di voi. Se l'operatore crolla, il supporto finisce. Anche riposare fa parte del lavoro."
+    "Abbiate cura anche di voi. Se l'operatore crolla, il supporto finisce. Anche riposare fa parte del lavoro.",
+    "Il comportamento ha «segnali premonitori» (irrequietezza, voce che sale, movimenti che cambiano). Le piccole risposte prima che l'onda raggiunga la cresta sono le più efficaci.",
+    "Subito dopo la calma arriva un fragile periodo di recupero, in cui tutto può riaccendersi. Prima acqua e riposo; riprendete attività e richieste a poco a poco.",
+    "Prima di toccare per assistere, avvisate sempre con una parola («ora le tocco il braccio»). Il contatto non annunciato semina paura e reazioni difensive.",
+    "Invece di mettervi di fronte, state in diagonale o fianco a fianco. La pressione cala — e si può parlare guardando lo stesso paesaggio.",
+    "Il tono della voce arriva prima delle parole. Basso, lento, con poche parole.",
+    "Se il comportamento aumenta all'improvviso, sospettate prima del corpo (dolore, fame, sonno, stitichezza, caldo). Il malessere che non si riesce a dire esce come comportamento.",
+    "Anche etichette, cuciture e tessuti dei vestiti riguardano la sensibilità sensoriale. La comodità degli abiti è parte del supporto.",
+    "In un posto nuovo, individuate prima le uscite, i bagni e un angolo tranquillo per riposare: rassicura entrambi.",
+    "Trattatela da adulta. Può servire aiuto, ma a decidere è la persona.",
+    "Non parlate della persona davanti a lei come se non ci fosse. La dignità abita nei dettagli.",
+    "Quando qualcosa non va, rivedete il progetto del supporto, non la persona. Nell'istante in cui è «colpa sua», il supporto si ferma.",
+    "Nei registri, separate ciò che avete visto (fatti) da ciò che avete pensato (supposizioni): rende al supporto successivo.",
+    "Provate le novità una alla volta. Cambiando tutto insieme, non si saprà mai cosa ha funzionato.",
+    "Darsi il cambio non è una sconfitta: è tecnica. Quando ci si incaglia, cambiare persona cambia l'aria. Quel margine è la forza della squadra."
   ],
 
   /* ===== Imparare: quiz di casi (imparare il «perché», più che giusto/sbagliato) ===== */
@@ -770,6 +784,102 @@ window.SHIEN_CONTENT.it = {
       options: ["Bloccarla e farglielo prendere", "Ritirarsi e lasciar passare tempo; se continua, consultare medico o farmacista", "Mescolarlo di nascosto nel pasto"],
       answer: 1,
       explain: "Il rifiuto ha ragioni (difficile da ingoiare, effetti collaterali pesanti, senso non capito). Forzare fa perdere la fiducia. Ritirarsi e lasciar passare tempo, cambiare forma o momento. Se continua: senza decidere da soli, a medico o farmacista. Mescolare di nascosto solo con l'accordo di medico e famiglia."
+    },
+    {
+      q: "È irrequieta e la voce sale: avete colto i «segnali premonitori». Quando agire?",
+      options: ["Non è ancora successo nulla: osservo", "Alla fase dei segnali: riduco gli stimoli e propongo una pausa", "Aspetto che il comportamento esploda, poi rispondo con tutte le forze"],
+      answer: 1,
+      explain: "Il comportamento sale come un'onda. Sulla cresta, parole e accorgimenti arrivano appena. Le piccole risposte alla fase dei segnali (meno stimoli, una pausa, cambiare posto) agiscono con il minimo logorio. Registrare e condividere gli schemi dei segnali diventa un tesoro della squadra."
+    },
+    {
+      q: "Il panico si è appena calmato. La mossa successiva?",
+      options: ["Riprendere subito l'attività interrotta", "Acqua e riposo; riprendere piano, osservando come sta", "Farla riflettere perché non accada mai più"],
+      answer: 1,
+      explain: "Subito dopo la calma si apre un «periodo di recupero»: corpo e mente esausti, la ricaduta è facile. Riproporre le richieste troppo presto può riaccendere tutto. Prima acqua e riposo, ripresa per gradi. Prediche e riflessioni in quel momento non arrivano."
+    },
+    {
+      q: "Prima di toccare il corpo per aiutare a cambiarsi, cosa viene prima?",
+      options: ["Avvisare con una parola: «ora le tocco il braccio»", "Finire in fretta e in silenzio per non spaventare", "Sostenere da dietro e spostarla prima"],
+      answer: 0,
+      explain: "Il contatto non annunciato scatena paura e reazioni difensive (divincolarsi, colpire). Soprattutto con chi ha vissuto traumi o ha sensibilità sensoriale, la base è: da una posizione visibile, dopo una parola. Prima la velocità della sicurezza, poi quella del compito."
+    },
+    {
+      q: "Nel proporre attività tra cui scegliere, quale forma passa meglio?",
+      options: ["Ridurre a due: «A o B, quale preferisci?»", "Disporre più opzioni possibile per una scelta libera", "Decidere al posto suo per non farla faticare"],
+      answer: 0,
+      explain: "Poter scegliere rassicura — ma troppe opzioni diventano una nuova ansia. Con due (al massimo tre) si sceglie con calma. La sensazione stessa di «ho deciso io» dà forza al passo successivo."
+    },
+    {
+      q: "In questi giorni il comportamento è aumentato all'improvviso. Cosa controllare prima?",
+      options: ["Pensare che i capricci siano peggiorati", "Inasprire le punizioni per fermarlo", "Controllare il corpo (dolore, fame, sonno, stitichezza) e i cambiamenti dell'ambiente"],
+      answer: 2,
+      explain: "Un cambiamento brusco del comportamento indica anzitutto malessere fisico o un ambiente cambiato. Mal di denti, otite, stitichezza, sonno perso: il disagio indicibile esce come comportamento. Non «è cambiato il carattere», ma «sta accadendo qualcosa». Controllate anche la storia clinica."
+    },
+    {
+      q: "In treno si tappa le orecchie e si accovaccia. La gente comincia a radunarsi. Prima?",
+      options: ["Alzarla: la priorità è scendere alla prossima fermata", "Fare da muro con il corpo, tagliare gli sguardi e dire breve: «va tutto bene»", "Spiegare la situazione ad alta voce a tutti"],
+      answer: 1,
+      explain: "Gli sguardi che si radunano sono di per sé uno stimolo forte. Prima fate da muro: interrompete le linee di vista e la folla, con una frase breve all'intorno. Spostarla può attendere la calma — la decisione di scendere viene dopo."
+    },
+    {
+      q: "Una crisi epilettica è finita in 3 minuti; la persona è stordita. Ora?",
+      options: ["Rialzarla e farla camminare subito per verificare la coscienza", "Vegliare in posizione laterale di sicurezza; registrare durata e dettagli", "Dare acqua e zucchero"],
+      answer: 1,
+      explain: "Dopo la crisi lo stordimento può continuare. Vegliate in silenzio in posizione laterale di sicurezza, registrate quanto è durata e com'era, informate medico e famiglia. Mangiare o bere subito comporta rischio di soffocamento; forzare la marcia, rischio di caduta."
+    },
+    {
+      q: "Quale modo di scrivere i registri aiuta di più il supporto successivo?",
+      options: ["Centrato sulle impressioni: «è stato arrabbiato tutto il tempo»", "Con i fatti: «ore 15, prima della merenda, voce alta 10 min, calmato cambiando posto»", "Lungo e dettagliato, come un racconto"],
+      answer: 1,
+      explain: "Il trucco è separare ciò che avete visto (fatti) da ciò che avete pensato (supposizioni). Quando, dove, cosa e cosa ha aiutato — in breve. I fatti accumulati fanno emergere gli schemi dei fattori scatenanti: il progetto del supporto successivo."
+    },
+    {
+      q: "Un collega in piena gestione si sta incagliando; il viso si indurisce. Cosa è bene fare?",
+      options: ["Dire «ti do il cambio» e subentrare", "Lasciare che finisca da solo fino in fondo", "Non dire nulla ora e farlo notare poi in riunione"],
+      answer: 0,
+      explain: "La tensione e l'irritazione dell'operatore raggiungono anche la persona. Darsi il cambio quando ci si incaglia non è sconfitta: è tecnica. Spesso basta cambiare persona perché cambi l'aria. Una squadra dove il cambio si può offrire e accettare protegge la persona."
+    },
+    {
+      q: "Una familiare confida: «a casa è durissima… forse l'ho cresciuto male». Prima?",
+      options: ["Correggere: «dovete cambiare metodo»", "Riconoscere — «ha sostenuto tutto questo fin qui» — e chiederle cosa funziona a casa", "Spiegare unilateralmente il metodo della struttura"],
+      answer: 1,
+      explain: "La famiglia è l'operatrice più anziana di tutte: sostiene la persona da più tempo di chiunque. Prima di correggere o istruire, riconoscere. Ciò che funziona a casa è un indizio prezioso. Alla fine, è la relazione di collaborazione a sostenere meglio la persona."
+    },
+    {
+      q: "Vorreste avviare insieme carte illustrate, un nuovo programma e un cambio di posto. Che fare?",
+      options: ["Cambiare tutto in una volta per massimizzare l'effetto", "Provare una cosa alla volta, verificando l'effetto", "Non cambiare nulla: i cambiamenti confondono"],
+      answer: 1,
+      explain: "Cambiando molte cose insieme non si capisce cosa ha funzionato (né cosa non andava), e il carico sulla persona cresce. Le novità una alla volta, confermate dai registri. Il trucco non è evitare il cambiamento: è cambiare in ordine."
+    },
+    {
+      q: "La persona mormora: «voglio morire». Cosa fate?",
+      options: ["Cambiare argomento: «non dire queste cose»", "Prenderla sul serio, ascoltare e collegare presto responsabile e area medica", "È un'abitudine: lasciar correre"],
+      answer: 1,
+      explain: "Ogni accenno al desiderio di morire va preso sul serio, qualunque sia la frequenza. Senza negare né deviare: prima ascoltare. E non portarlo da soli: informare il responsabile in giornata e condividere con medicina e famiglia. «Non lasciar correre» è il primo passo per proteggere una vita."
+    },
+    {
+      q: "Pianificate un'uscita in un posto nuovo. Cosa rassicura decidere per primo?",
+      options: ["Il negozio dei souvenir", "Dove riposare, quando rientrare e da dove uscire", "I punti per le foto"],
+      answer: 1,
+      explain: "Importante quanto il programma dei divertimenti: dove riposare se ci si stanca, quale segnale indica il rientro, da dove si esce. Decidere prima le vie di fuga e la chiusura dà margine all'operatore — e quel margine diventa la serenità della persona."
+    },
+    {
+      q: "Il supporto va male da giorni. Un buon modo di pensarla?",
+      options: ["Concludere di non essere adatti a questo lavoro", "Considerarlo l'occasione di rivedere il progetto del supporto e consultare la squadra", "Arrendersi: la disabilità è troppo grave"],
+      answer: 1,
+      explain: "Quando non funziona, si rivede il progetto (ambiente, comunicazione, programma, stimoli) — non una persona. Colpevolizzare sé o la persona non fa avanzare nulla. Portare i registri e rivedere in squadra: è così che i professionisti attraversano i loro «giorni storti»."
+    },
+    {
+      q: "Dire «il prossimo passo» a chi si è bloccato: in che modo?",
+      options: ["«Sbrigati, facciamo tardi!»", "«Dopo questo, il tè»: corto, una cosa sola, in forma visibile", "Spiegare l'intero programma della giornata dall'inizio alla fine"],
+      answer: 1,
+      explain: "Quando la transizione richiede tempo per essere elaborata, aggiungere informazioni manda in overflow. Solo la prossima cosa: corta, concreta e, se possibile, visibile. Le parole che mettono fretta rendono l'elaborazione ancora più pesante."
+    },
+    {
+      q: "Passanti ben intenzionati si radunano: «tutto bene?!». Una buona risposta?",
+      options: ["Spiegare in dettaglio diagnosi e vicenda perché capiscano", "Dire breve: «tutto bene, un attimo e si calma», e tagliare gli sguardi", "Ignorarli e concentrarsi sulla gestione"],
+      answer: 1,
+      explain: "Anche l'attenzione ben intenzionata è uno stimolo per la persona. Una frase breve rassicura chi sta intorno e dirada capannello e sguardi: questo è vero supporto. Non serve rivelare dati privati come la diagnosi. Ignorare può finire in una chiamata ai soccorsi: una frase — una sola — è la misura giusta."
     }
   ]
 };

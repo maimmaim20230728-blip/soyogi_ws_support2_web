@@ -665,7 +665,21 @@ window.SHIEN_CONTENT.en = {
     "As ways to communicate grow, loud voices and aggression often fade. Cards and devices are “words” too.",
     "The person's “likes” are your greatest ally. A favourite activity, object, or topic is a shortcut to reassurance.",
     "Your own calm is, in that moment, the greatest source of reassurance.",
-    "Take care of yourself, too. If a supporter falls, the support stops. Resting is part of the job."
+    "Take care of yourself, too. If a supporter falls, the support stops. Resting is part of the job.",
+    "Behaviour has warning signs (restlessness, a rising voice, changing movements). Small responses before the wave peaks work best.",
+    "Right after things settle is a fragile recovery period — easy to flare up again. Water and rest first; restart activities and requests slowly.",
+    "Before touching someone to assist, always say a word first (\"I'm going to touch your arm now\"). Unannounced contact breeds fear and defensive reactions.",
+    "Rather than facing someone head-on, stand at an angle or side by side. Less pressure — and you can talk while looking at the same view.",
+    "Your tone of voice arrives before your words. Low, slow, and few.",
+    "If behaviour suddenly increases, suspect the body first (pain, hunger, sleep, constipation, heat). Discomfort that can't be spoken often shows up as behaviour.",
+    "Clothing tags, seams, and fabrics can be sensory triggers too. The comfort of clothes is part of support.",
+    "In a new place, first check the exits, the toilets, and a quiet spot to rest — reassuring for both of you.",
+    "Treat them as an adult. They may need assistance, but the decisions are theirs.",
+    "Never talk about someone in front of them as if they weren't there. Dignity lives in the details.",
+    "When things aren't working, review the design of the support, not the person. The moment it becomes \"their fault,\" support stops.",
+    "In records, separate what you saw (facts) from what you thought (guesses) — it pays off in the next support.",
+    "Try new ideas one at a time. Change everything at once and you'll never know what worked.",
+    "Swapping out isn't defeat — it's a skill. When you're stuck, changing the person changes the air. That margin is a team's strength."
   ],
 
   quizzes: [
@@ -752,6 +766,102 @@ window.SHIEN_CONTENT.en = {
       options: ["Hold them down and make them take it", "Step back and leave it a while; if it continues, consult the doctor or pharmacist", "Mix it into their food without telling them"],
       answer: 1,
       explain: "Refusal has a reason (hard to swallow, painful side effects, no understanding of why). Forcing it loses trust. Step back and leave it, change the form or timing. If it continues, don't decide alone — ask the doctor or pharmacist. Mixing it in secretly is only with the doctor's and family's agreement."
+    },
+    {
+      q: "They're getting restless and their voice is rising — you've noticed the warning signs. When do you act?",
+      options: ["Nothing has happened yet, so just watch", "At the warning-sign stage: reduce stimulation and offer a break", "Wait until the behaviour starts, then respond with full force"],
+      answer: 1,
+      explain: "Behaviour builds like a wave. Once it peaks, words and tactics barely reach. Small moves at the warning-sign stage — fewer stimuli, a break, a change of place — work with the least strain on everyone. Record and share the warning-sign patterns, and they become the team's treasure."
+    },
+    {
+      q: "A meltdown has just settled. Your next move?",
+      options: ["Restart the interrupted activity right away", "Water and rest; restart slowly while watching how they are", "Prompt reflection so it never happens again"],
+      answer: 1,
+      explain: "Just after settling is a recovery period — body and mind are drained, and things flare up easily. Restarting demands too soon can bring it all back. Water and rest first; resume in steps. Lectures and reflection don't land during this time."
+    },
+    {
+      q: "Before touching someone to help them change clothes, what comes first?",
+      options: ["Say a word first: \"I'm going to touch your arm now\"", "Finish quickly and silently so as not to startle them", "Support them from behind and get them moving first"],
+      answer: 0,
+      explain: "Unannounced contact triggers fear and defensive reactions (pulling away, striking out). Especially for people with trauma or sensory sensitivity, the basics are: from where they can see you, after a word. Prioritise the speed of reassurance over the speed of the task."
+    },
+    {
+      q: "When offering a choice of activities, which way works best?",
+      options: ["Narrow it to two: \"A or B — which would you like?\"", "Line up as many options as possible for free choice", "Decide for them so they don't have to worry"],
+      answer: 0,
+      explain: "Being able to choose brings reassurance — but too many options become a new anxiety. Two (three at most) lets them choose with ease. The very feeling of \"I decided\" powers the next step."
+    },
+    {
+      q: "Behaviour has suddenly increased these past few days. What do you check first?",
+      options: ["Assume they have become more selfish", "Strengthen the punishments to stop the behaviour", "Check their body (pain, hunger, sleep, constipation) and changes in the environment"],
+      answer: 2,
+      explain: "A sudden change in behaviour points first to physical discomfort or a change in the environment. A toothache, an ear infection, constipation, lost sleep — discomfort that can't be put into words comes out as behaviour. Not \"their personality changed\" but \"something is happening.\" Check the medical history too."
+    },
+    {
+      q: "On the train they cover their ears and crouch down. People start gathering. First?",
+      options: ["Get them standing — the priority is getting off at the next station", "Shield them from view with your body and say briefly, \"It's OK\"", "Explain the situation loudly to everyone around"],
+      answer: 1,
+      explain: "The gathering eyes are themselves a powerful stimulus. First be a wall: block the sightlines and the crowd, with one short word to those around. Moving them can wait until they've settled — the decision about getting off can come after."
+    },
+    {
+      q: "A seizure ended after 3 minutes; the person is dazed. Next?",
+      options: ["Get them up and walking right away to check consciousness", "Watch over them in the recovery position; record the duration and details", "Give them water and some sugar"],
+      answer: 1,
+      explain: "Confusion can continue right after a seizure. Watch quietly in the recovery position, record how long it lasted and what it looked like, and report to their doctor and family. Eating or drinking right away risks choking; forcing them to walk risks a fall."
+    },
+    {
+      q: "Which way of writing records helps the next support more?",
+      options: ["Centre it on impressions: \"They were angry the whole time\"", "Write the facts: \"3 pm, before snack, loud voice for 10 min, settled after moving seats\"", "Write it long and detailed, like a story"],
+      answer: 1,
+      explain: "The trick is to separate what you saw (facts) from what you thought (guesses). When, where, what, and what helped — briefly. Facts accumulate into visible trigger patterns: a blueprint for the next support."
+    },
+    {
+      q: "A colleague mid-response is getting stuck; their face is hardening. What's good?",
+      options: ["Say \"I'll take over\" and swap in", "Let them see it through alone to the end", "Say nothing now and point it out at the debrief"],
+      answer: 0,
+      explain: "A supporter's tension and irritation reach the person too. Swapping out when stuck isn't defeat — it's a skill. Just changing the person often changes the air. A team where a swap can be offered and accepted protects the person."
+    },
+    {
+      q: "A family member confides: \"It's so hard at home… maybe I raised them wrong.\" First?",
+      options: ["Correct them: \"Your methods need to change\"", "Acknowledge them — \"You have carried this so far\" — and ask what works at home", "Explain the facility's methods one-way"],
+      answer: 1,
+      explain: "Families are the longest-serving supporters of all. Before correcting or instructing, appreciate them. What works at home is precious hint material. In the end, a collaborative relationship is what supports the person best."
+    },
+    {
+      q: "You want to start picture cards, a new schedule, and a seat change all at once. What do you do?",
+      options: ["Change everything at once to maximise the effect", "Try one at a time, checking the effect as you go", "Change nothing — change causes confusion"],
+      answer: 1,
+      explain: "Change many things at once and you can't tell what worked (or what didn't suit them) — and the burden on the person grows. New ideas one at a time, confirmed through records. The trick isn't to avoid change; it's to change in sequence."
+    },
+    {
+      q: "The person murmurs, \"I want to die.\" What do you do?",
+      options: ["Change the subject: \"Don't say such things\"", "Take it seriously, listen, and promptly connect to your supervisor and medical care", "It's a regular thing, so let it pass"],
+      answer: 1,
+      explain: "Take every mention of wanting to die seriously, regardless of how often it comes. Don't deny it or deflect — listen first. Then don't carry it alone: report to your supervisor that same day and share with medical care and the family. \"Never letting it pass\" is the first step in protecting a life."
+    },
+    {
+      q: "Planning an outing to a new place. What is reassuring to decide first?",
+      options: ["The shop for souvenirs", "Where to rest, when to head home, and the way out", "The photo spots"],
+      answer: 1,
+      explain: "As important as planning the fun: where to rest when tired, what signals that it's time to go home, where the exits are. Deciding the escape routes and the ending first gives the supporter margin — and that margin becomes the person's reassurance."
+    },
+    {
+      q: "The support hasn't been going well for days. A good way to think about it?",
+      options: ["Conclude that you're not cut out to be a supporter", "Treat it as a chance to review the support design, and consult the team", "Give up — the disability is simply too severe"],
+      answer: 1,
+      explain: "What you review when things go wrong is the design (environment, communication, schedule, stimuli) — not a person. Blaming yourself or blaming the person moves nothing forward. Bring the records and review as a team: that is how professionals spend their \"bad days.\""
+    },
+    {
+      q: "Telling someone who has frozen what comes next — which way?",
+      options: ["\"Hurry up, we'll be late!\"", "\"After this, tea\" — short, one thing only, in a visible form", "Explain today's whole schedule from start to finish"],
+      answer: 1,
+      explain: "When a transition is taking time to process, more information overwhelms. Just the next one thing — short, concrete, visible if possible. Hurrying words only make the processing heavier."
+    },
+    {
+      q: "Well-meaning passers-by gather: \"Are you alright?!\" A good response?",
+      options: ["Explain the diagnosis and background in detail so they understand", "Say briefly, \"We're fine — give it a moment and they'll settle,\" and shield them from view", "Ignore them and focus on the response"],
+      answer: 1,
+      explain: "Well-meaning attention is still stimulation for the person. One short line reassures the crowd and thins the eyes — that is real support. There is no need to share private details like a diagnosis. Ignoring people can end in a call to the authorities, so one line — just one — is the sweet spot."
     }
   ],
 

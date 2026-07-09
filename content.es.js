@@ -664,7 +664,21 @@ window.SHIEN_CONTENT.es = {
     "Al crecer las vías de comunicar, los gritos y la agresión suelen ir menguando. Las tarjetas y los dispositivos también son «palabras».",
     "Sus «gustos» son tu mayor aliado. Una actividad, un objeto o un tema favorito son un atajo a la calma.",
     "Tu calma es, en ese momento, la mayor fuente de tranquilidad.",
-    "Cuídate también tú. Si el cuidador cae, el apoyo se detiene. Descansar también es parte del trabajo."
+    "Cuídate también tú. Si el cuidador cae, el apoyo se detiene. Descansar también es parte del trabajo.",
+    "La conducta tiene «señales previas» (inquietud, voz que sube, movimientos que cambian). Las pequeñas respuestas antes de que suba la ola son las que mejor funcionan.",
+    "Justo después de calmarse llega un período de recuperación frágil, fácil de reavivar. Primero agua y descanso; retoma actividades y demandas poco a poco.",
+    "Antes de tocar para asistir, avisa siempre con una palabra («voy a tocarte el brazo»). El contacto sin aviso siembra miedo y reacciones defensivas.",
+    "Mejor que ponerse de frente, colócate en diagonal o al lado. Baja la presión y se puede hablar mirando el mismo paisaje.",
+    "El tono de voz llega antes que el contenido. Bajo, lento y con pocas palabras.",
+    "Si la conducta aumenta de golpe, sospecha primero del cuerpo (dolor, hambre, sueño, estreñimiento, calor). El malestar que no se puede decir suele salir como conducta.",
+    "Las etiquetas, costuras y telas de la ropa también pueden ser sensibilidad sensorial. La comodidad de la ropa es parte del apoyo.",
+    "En un lugar nuevo, localiza primero las salidas, los baños y un rincón tranquilo para descansar: tranquiliza a ambos.",
+    "Trátala como a una persona adulta. Puede necesitar ayuda, pero quien decide es ella.",
+    "No hables de la persona delante de ella como si no estuviera. La dignidad vive en los detalles.",
+    "Cuando algo no funciona, revisa el diseño del apoyo, no a la persona. En el momento en que es «culpa suya», el apoyo se detiene.",
+    "En los registros, separa lo que viste (hechos) de lo que pensaste (suposiciones): rinde en el siguiente apoyo.",
+    "Prueba las novedades de una en una. Si cambias todo a la vez, nunca sabrás qué funcionó.",
+    "Relevarse no es una derrota: es técnica. Cuando te atascas, cambiar de persona cambia el aire. Ese margen es la fuerza del equipo."
   ],
 
   quizzes: [
@@ -751,6 +765,102 @@ window.SHIEN_CONTENT.es = {
       options: ["Sujetarla y hacérsela tragar", "Retirarte y dejar pasar un rato; si continúa, consultar al médico o al farmacéutico", "Mezclarla en la comida sin decírselo"],
       answer: 1,
       explain: "El rechazo tiene un motivo (cuesta tragar, efectos duros, no entiende para qué). Forzar pierde su confianza. Retírate y deja pasar un rato, cambia la forma o el momento. Si continúa, no decidas sola: pregunta al médico o al farmacéutico. Mezclarla a escondidas, solo con el acuerdo del médico y la familia."
+    },
+    {
+      q: "Está inquieta y su voz va subiendo: has notado las «señales previas». ¿Cuándo actúas?",
+      options: ["Aún no ha pasado nada, así que observo", "En la fase de señales: reduzco estímulos e invito a un descanso", "Espero a que empiece la conducta y respondo con todo"],
+      answer: 1,
+      explain: "La conducta sube como una ola. Una vez en la cresta, las palabras y los recursos apenas llegan. Las pequeñas respuestas en la fase de señales (menos estímulos, un descanso, cambiar de sitio) funcionan con el menor desgaste. Registrar y compartir los patrones de señales se convierte en un tesoro del equipo."
+    },
+    {
+      q: "El pánico acaba de calmarse. ¿Siguiente paso?",
+      options: ["Retomar de inmediato la actividad interrumpida", "Agua y descanso; retomar despacio, observando cómo está", "Hacerle reflexionar para que no vuelva a pasar"],
+      answer: 1,
+      explain: "Justo después de calmarse llega un «período de recuperación»: cuerpo y mente agotados, fácil de reavivar. Retomar las demandas demasiado pronto puede reactivarlo. Primero agua y descanso; retomar por etapas. Los sermones y la reflexión no llegan en ese momento."
+    },
+    {
+      q: "Antes de tocar el cuerpo para ayudar a cambiarse de ropa, ¿qué va primero?",
+      options: ["Avisar con una palabra: «voy a tocarte el brazo»", "Terminar rápido y en silencio para no asustar", "Sujetar desde atrás y moverla primero"],
+      answer: 0,
+      explain: "El contacto sin aviso provoca miedo y reacciones defensivas (zafarse, golpear). En especial con personas con trauma o sensibilidad sensorial, la base es: desde donde te vea, y tras avisar. Prioriza la velocidad de la tranquilidad sobre la velocidad de la tarea."
+    },
+    {
+      q: "Al ofrecer actividades para elegir, ¿qué manera funciona mejor?",
+      options: ["Reducir a dos: «¿A o B, cuál prefieres?»", "Poner tantas opciones como sea posible para que elija libremente", "Decidir por ella para que no se agobie"],
+      answer: 0,
+      explain: "Poder elegir da seguridad, pero demasiadas opciones se convierten en una nueva ansiedad. Con dos (tres como mucho) se elige con calma. La sensación misma de «lo decidí yo» impulsa el siguiente paso."
+    },
+    {
+      q: "Estos días la conducta ha aumentado de golpe. ¿Qué compruebas primero?",
+      options: ["Pensar que se ha vuelto más caprichosa", "Endurecer los castigos para frenar la conducta", "Revisar el cuerpo (dolor, hambre, sueño, estreñimiento) y los cambios del entorno"],
+      answer: 2,
+      explain: "Un cambio brusco de conducta apunta primero a malestar físico o cambios del entorno. Un dolor de muelas, una otitis, estreñimiento, falta de sueño: el malestar que no se puede decir sale como conducta. No es que «cambió su carácter»: «algo está pasando». Revisa también el historial médico."
+    },
+    {
+      q: "En el tren se tapa los oídos y se agacha. Empieza a juntarse gente. ¿Primero?",
+      options: ["Levantarla: la prioridad es bajar en la próxima estación", "Hacer de pared con tu cuerpo para cortar las miradas y decir breve: «está bien»", "Explicar la situación en voz alta a todos"],
+      answer: 1,
+      explain: "Las miradas que se juntan son, en sí mismas, un estímulo potente. Primero sé una pared: corta las líneas de visión y la gente, con una frase corta al entorno. Moverla puede esperar a que se calme; la decisión de bajar viene después."
+    },
+    {
+      q: "Una crisis epiléptica terminó a los 3 minutos; la persona está aturdida. ¿Ahora?",
+      options: ["Levantarla y hacerla caminar para comprobar la conciencia", "Vigilar en posición lateral de seguridad; registrar duración y detalles", "Darle agua y azúcar"],
+      answer: 1,
+      explain: "Tras la crisis puede continuar el aturdimiento. Vigila en silencio en posición lateral de seguridad, registra cuánto duró y cómo fue, e informa a su médico y a la familia. Comer o beber enseguida trae riesgo de atragantamiento; forzar la marcha, riesgo de caída."
+    },
+    {
+      q: "¿Qué forma de escribir registros ayuda más al siguiente apoyo?",
+      options: ["Centrada en impresiones: «estuvo enfadada todo el rato»", "Con hechos: «15:00, antes de la merienda, voz alta 10 min, se calmó al cambiar de sitio»", "Larga y detallada, como un relato"],
+      answer: 1,
+      explain: "El truco es separar lo que viste (hechos) de lo que pensaste (suposiciones). Cuándo, dónde, qué y qué ayudó: en breve. Los hechos acumulados dejan ver patrones de desencadenantes: el plano del siguiente apoyo."
+    },
+    {
+      q: "Una compañera se está atascando en plena intervención; su cara se endurece. ¿Qué es bueno?",
+      options: ["Decir «te relevo» y hacer el cambio", "Dejar que lo termine sola hasta el final", "No decir nada y señalarlo después en la reunión"],
+      answer: 0,
+      explain: "La tensión y la irritación del apoyo también llegan a la persona. Relevarse cuando uno se atasca no es derrota: es técnica. Solo con cambiar de persona, el aire cambia muchas veces. Un equipo donde el relevo se puede ofrecer y aceptar protege a la persona."
+    },
+    {
+      q: "Una familiar confiesa: «en casa es muy duro… quizá la crie mal». ¿Primero?",
+      options: ["Corregirla: «debe cambiar su método»", "Reconocerla — «ha sostenido esto hasta hoy» — y preguntarle qué funciona en casa", "Explicar unilateralmente el método del centro"],
+      answer: 1,
+      explain: "La familia es la «cuidadora más veterana», la que más tiempo lleva sosteniendo a la persona. Antes de corregir o instruir, reconoce su esfuerzo. Lo que funciona en casa es una pista valiosa. Al final, la relación de colaboración es lo que mejor sostiene a la persona."
+    },
+    {
+      q: "Quieres empezar a la vez tarjetas con dibujos, un horario nuevo y un cambio de sitio. ¿Qué haces?",
+      options: ["Cambiarlo todo de una vez para maximizar el efecto", "Probar de uno en uno, comprobando el efecto", "No cambiar nada: los cambios confunden"],
+      answer: 1,
+      explain: "Si cambias muchas cosas a la vez, no sabrás qué funcionó (ni qué no le sentó bien), y la carga para la persona crece. Las novedades, de una en una, confirmadas con registros. El truco no es no cambiar: es cambiar en orden."
+    },
+    {
+      q: "La persona murmura: «quiero morirme». ¿Qué haces?",
+      options: ["Cambiar de tema: «no digas esas cosas»", "Tomarlo en serio, escuchar y conectar pronto con la dirección y la atención médica", "Como es habitual, dejarlo pasar"],
+      answer: 1,
+      explain: "Toda mención de querer morir se toma en serio, sea cual sea su frecuencia. Sin negar ni desviar: primero escuchar. Y no cargarlo a solas: informa a tu superior ese mismo día y compártelo con la medicina y la familia. «No dejarlo pasar» es el primer paso para proteger una vida."
+    },
+    {
+      q: "Planificas una salida a un lugar nuevo. ¿Qué tranquiliza decidir primero?",
+      options: ["La tienda de recuerdos", "Dónde descansar, cuándo volver y por dónde salir", "Los sitios para fotos"],
+      answer: 1,
+      explain: "Tan importante como planear la diversión: dónde descansar si se cansa, qué señala que toca volver, por dónde se sale. Decidir antes las vías de escape y el final da margen al apoyo, y ese margen se convierte en la tranquilidad de la persona."
+    },
+    {
+      q: "El apoyo lleva días sin funcionar. ¿Una buena manera de pensarlo?",
+      options: ["Concluir que no sirves para esto", "Tomarlo como ocasión de revisar el diseño del apoyo y consultarlo en equipo", "Rendirse: la discapacidad es demasiado severa"],
+      answer: 1,
+      explain: "Cuando algo no funciona, lo que se revisa es el diseño (entorno, comunicación, horario, estímulos), no una persona. Culparte o culparla no hace avanzar nada. Llevar los registros y revisarlos en equipo: así pasan sus «malos días» los profesionales."
+    },
+    {
+      q: "Para decirle «lo siguiente» a alguien que se ha quedado bloqueado, ¿cómo?",
+      options: ["«¡Date prisa, que llegamos tarde!»", "«Después de esto, el té»: corto, una sola cosa y en forma visible", "Explicar todo el plan del día de principio a fin"],
+      answer: 1,
+      explain: "Cuando la transición está tardando en procesarse, más información desborda. Solo la siguiente cosa: corta, concreta y, si se puede, visible. Las palabras de prisa hacen el procesamiento aún más pesado."
+    },
+    {
+      q: "Durante la intervención se acercan transeúntes con buena intención: «¡¿Está bien?!». ¿Una buena respuesta?",
+      options: ["Explicar con detalle el diagnóstico y lo ocurrido para que entiendan", "Decir breve: «estamos bien, en un momento se calma», y cortar las miradas", "Ignorarlos y concentrarse en la intervención"],
+      answer: 1,
+      explain: "La atención bienintencionada también es estímulo para la persona. Una frase corta tranquiliza al entorno y reduce el corro y las miradas: eso es apoyo de verdad. No hace falta contar datos privados como el diagnóstico. Ignorar puede acabar en una llamada a emergencias, así que una frase — solo una — es el punto justo."
     }
   ],
 

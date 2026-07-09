@@ -682,7 +682,21 @@ window.SHIEN_CONTENT.id = {
     "Bila sarana menyampaikan bertambah, suara keras dan agresi bisa berkurang. Kartu dan alat pun adalah \"bahasa\".",
     "\"Kesukaan\"-nya adalah sekutu terbesar. Kegiatan, benda, topik favorit: jalan pintas menuju rasa aman.",
     "Ketenangan pendamping adalah bahan penenang nomor satu di tempat kejadian.",
-    "Sayangi juga dirimu. Jika pendamping tumbang, dukungan tak berlanjut. Beristirahat pun bagian dari pekerjaan."
+    "Sayangi juga dirimu. Jika pendamping tumbang, dukungan tak berlanjut. Beristirahat pun bagian dari pekerjaan.",
+    "Perilaku punya \"tanda awal\" (gelisah, suara meninggi, gerakan berubah). Respons kecil sebelum gelombang memuncak adalah yang paling manjur.",
+    "Sesaat setelah reda adalah masa pemulihan yang rapuh — mudah menyala lagi. Air dan istirahat dulu; kembalikan kegiatan dan tuntutan pelan-pelan.",
+    "Sebelum menyentuh untuk membantu, selalu beri tahu dengan sepatah kata (\"saya akan menyentuh lengan Anda\"). Sentuhan tanpa pemberitahuan menanam rasa takut dan reaksi bertahan.",
+    "Daripada berhadap-hadapan, berdirilah menyerong atau berdampingan. Tekanan berkurang — dan bisa bicara sambil memandang pemandangan yang sama.",
+    "Nada suara sampai lebih dulu daripada isi kata. Rendah, pelan, dan sedikit kata.",
+    "Bila perilaku mendadak bertambah, curigai tubuh dulu (nyeri, lapar, tidur, sembelit, panas). Ketidaknyamanan yang tak terucap sering keluar sebagai perilaku.",
+    "Label baju, jahitan, dan bahan kain juga bisa jadi kepekaan sensorik. Kenyamanan pakaian adalah bagian dari dukungan.",
+    "Di tempat baru, pastikan dulu pintu keluar, toilet, dan sudut tenang untuk beristirahat — menenangkan bagi kalian berdua.",
+    "Perlakukan sebagai orang dewasa. Bantuan mungkin perlu, tetapi yang memutuskan adalah dirinya.",
+    "Jangan membicarakan orangnya di depannya seolah ia tak ada di situ. Martabat hidup dalam hal-hal kecil.",
+    "Saat tak berjalan baik, tinjau rancangan dukungannya, bukan orangnya. Begitu menjadi \"salah dia\", dukungan berhenti.",
+    "Dalam catatan, pisahkan yang kaulihat (fakta) dari yang kaupikirkan (dugaan) — berguna untuk dukungan berikutnya.",
+    "Coba hal baru satu per satu. Mengubah semuanya sekaligus membuatmu tak tahu mana yang berhasil.",
+    "Bergantian bukan kekalahan — itu teknik. Saat buntu, mengganti orang mengubah suasana. Kelonggaran itulah kekuatan tim."
   ],
 
   /* ===== Belajar: kuis kasus (belajar \"mengapa\", bukan benar-salah) ===== */
@@ -770,6 +784,102 @@ window.SHIEN_CONTENT.id = {
       options: ["Menahan tubuhnya dan meminumkan", "Mundur dulu beri jeda; jika berlanjut, konsultasi ke dokter/apoteker", "Diam-diam mencampurkan ke makanannya"],
       answer: 1,
       explain: "Penolakan punya alasan (sulit ditelan, efek samping berat, tak paham maknanya). Memaksa menghilangkan kepercayaan. Mundur dan beri jeda, ubah bentuk atau waktunya. Jika berlanjut: jangan putuskan sendiri, ke dokter/apoteker. Mencampur diam-diam hanya bila ada persetujuan dokter dan keluarga."
+    },
+    {
+      q: "Mulai gelisah, suaranya meninggi — Anda menangkap \"tanda awal\". Kapan bertindak?",
+      options: ["Belum terjadi apa-apa, amati saja", "Pada tahap tanda awal: kurangi rangsangan dan ajak beristirahat", "Tunggu perilakunya muncul, lalu tangani sekuat tenaga"],
+      answer: 1,
+      explain: "Perilaku naik seperti gelombang. Setelah memuncak, kata-kata dan kiat nyaris tak sampai. Respons kecil di tahap tanda awal (mengurangi rangsangan, istirahat, pindah tempat) bekerja dengan beban paling ringan. Catat dan bagikan pola tanda awal — itu menjadi harta tim."
+    },
+    {
+      q: "Panik baru saja reda. Langkah berikutnya?",
+      options: ["Segera lanjutkan kegiatan yang terputus", "Air dan istirahat; lanjutkan pelan-pelan sambil mengamati", "Minta ia merenung agar tak terulang"],
+      answer: 1,
+      explain: "Sesaat setelah reda adalah \"masa pemulihan\": tubuh dan pikiran terkuras, mudah menyala lagi. Menuntut terlalu cepat bisa memicu ulang. Air dan istirahat dulu; kembalikan bertahap. Ceramah dan renungan tak sampai pada saat ini."
+    },
+    {
+      q: "Sebelum menyentuh tubuh untuk membantu ganti baju, apa yang lebih dulu?",
+      options: ["Beri tahu dengan sepatah kata: \"saya akan menyentuh lengan Anda\"", "Selesaikan cepat dan diam-diam agar tak mengagetkan", "Topang dari belakang dan gerakkan dulu"],
+      answer: 0,
+      explain: "Sentuhan tanpa pemberitahuan memicu rasa takut dan reaksi bertahan (menepis, memukul). Terutama bagi yang punya trauma atau kepekaan sensorik, dasarnya: dari tempat yang terlihat, setelah sepatah kata. Utamakan kecepatan rasa aman di atas kecepatan pekerjaan."
+    },
+    {
+      q: "Saat menawarkan pilihan kegiatan, cara mana yang paling sampai?",
+      options: ["Persempit jadi dua: \"A atau B, pilih mana?\"", "Jajarkan sebanyak mungkin pilihan agar bebas memilih", "Diputuskan pendamping agar ia tak bingung"],
+      answer: 0,
+      explain: "Bisa memilih memberi rasa aman — tetapi terlalu banyak pilihan justru jadi kecemasan baru. Dua (paling banyak tiga) membuatnya memilih dengan tenang. Rasa \"aku yang memutuskan\" itu sendiri menjadi tenaga langkah berikutnya."
+    },
+    {
+      q: "Beberapa hari ini perilaku mendadak bertambah. Apa yang diperiksa dulu?",
+      options: ["Menganggap makin manja", "Memperberat hukuman untuk menghentikan", "Periksa tubuh (nyeri, lapar, tidur, sembelit) dan perubahan lingkungan"],
+      answer: 2,
+      explain: "Perubahan perilaku yang mendadak pertama-tama menunjuk pada ketidaknyamanan fisik atau perubahan lingkungan. Sakit gigi, radang telinga, sembelit, kurang tidur — yang tak terucap keluar sebagai perilaku. Bukan \"sifatnya berubah\", melainkan \"sesuatu sedang terjadi\". Jangan lupa cek riwayat berobat."
+    },
+    {
+      q: "Di kereta ia menutup telinga dan berjongkok. Orang mulai berkerumun. Pertama?",
+      options: ["Berdirikan — prioritasnya turun di stasiun berikutnya", "Jadikan tubuh Anda dinding penghalang pandangan dan katakan singkat: \"tidak apa-apa\"", "Jelaskan situasinya keras-keras kepada semua orang"],
+      answer: 1,
+      explain: "Tatapan yang berkerumun itu sendiri rangsangan kuat. Jadilah dinding dulu: halangi arah pandang dan kerumunan, sepatah kata singkat ke sekitar. Memindahkan bisa menunggu ia tenang — keputusan turun bisa sesudahnya."
+    },
+    {
+      q: "Kejang berhenti setelah 3 menit; orangnya linglung. Berikutnya?",
+      options: ["Segera berdirikan dan ajak berjalan untuk memeriksa kesadaran", "Awasi dalam posisi pemulihan; catat durasi dan gambarannya", "Beri air dan gula"],
+      answer: 1,
+      explain: "Setelah kejang, kelinglungan bisa berlanjut. Awasi dengan tenang dalam posisi pemulihan, catat lama dan bentuk kejangnya, laporkan ke dokter dan keluarga. Makan-minum segera berisiko tersedak; memaksa berjalan berisiko jatuh."
+    },
+    {
+      q: "Cara menulis catatan mana yang lebih berguna bagi dukungan berikutnya?",
+      options: ["Berpusat pada kesan: \"marah terus-menerus\"", "Tulis fakta: \"pukul 15, sebelum camilan, suara keras 10 menit, reda setelah pindah tempat duduk\"", "Panjang dan rinci seperti cerita"],
+      answer: 1,
+      explain: "Kiatnya: pisahkan yang kaulihat (fakta) dari yang kaupikirkan (dugaan). Kapan, di mana, apa, dan apa yang menolong — singkat saja. Fakta yang menumpuk memperlihatkan pola pemicu: cetak biru dukungan berikutnya."
+    },
+    {
+      q: "Rekan yang sedang menangani mulai buntu; wajahnya mengeras. Yang baik?",
+      options: ["Katakan \"saya gantikan\" dan bergantian", "Biarkan ia menyelesaikan sendirian sampai akhir", "Diam dulu, tunjukkan nanti di rapat evaluasi"],
+      answer: 0,
+      explain: "Ketegangan dan kejengkelan pendamping juga sampai ke orangnya. Bergantian saat buntu bukan kekalahan — itu teknik. Hanya dengan berganti orang, suasana sering berubah. Tim yang bisa menawarkan dan menerima pergantian itulah yang melindungi orangnya."
+    },
+    {
+      q: "Keluarga mencurahkan hati: \"di rumah berat sekali… mungkin didikanku salah\". Pertama?",
+      options: ["Koreksi: \"cara Anda harus diubah\"", "Hargai — \"Anda sudah menopang sampai sejauh ini\" — lalu tanyakan kiat yang berhasil di rumah", "Jelaskan sepihak cara lembaga"],
+      answer: 1,
+      explain: "Keluarga adalah pendamping paling senior — yang paling lama menopang orangnya. Sebelum mengoreksi atau menggurui, hargai dulu. Kiat yang berhasil di rumah adalah petunjuk berharga. Pada akhirnya, hubungan kerja samalah yang paling menopang orangnya."
+    },
+    {
+      q: "Ingin memulai kartu gambar, jadwal baru, dan pindah tempat duduk sekaligus. Bagaimana?",
+      options: ["Ubah semuanya sekaligus agar efeknya maksimal", "Coba satu per satu sambil memastikan efeknya", "Tidak mengubah apa pun — perubahan membingungkan"],
+      answer: 1,
+      explain: "Mengubah banyak hal sekaligus membuat tak jelas mana yang berhasil (mana yang tak cocok), dan beban orangnya bertambah. Hal baru satu per satu, dipastikan lewat catatan. Kiatnya bukan menghindari perubahan, melainkan mengubah secara berurutan."
+    },
+    {
+      q: "Ia bergumam, \"aku ingin mati\". Apa yang dilakukan?",
+      options: ["Alihkan topik: \"jangan bicara begitu\"", "Terima dengan serius, dengarkan, dan segera hubungkan ke atasan dan medis", "Sudah biasa, jadi dibiarkan saja"],
+      answer: 1,
+      explain: "Setiap ucapan ingin mati diterima dengan serius, berapa pun seringnya. Jangan menyangkal atau mengalihkan — dengarkan dulu. Lalu jangan dipikul sendiri: laporkan ke atasan hari itu juga, bagikan ke medis dan keluarga. \"Tidak menganggap angin lalu\" adalah langkah pertama menjaga nyawa."
+    },
+    {
+      q: "Merencanakan bepergian ke tempat baru. Apa yang menenangkan bila diputuskan lebih dulu?",
+      options: ["Toko oleh-oleh", "Tempat beristirahat, waktu pulang, dan jalan keluar", "Spot foto"],
+      answer: 1,
+      explain: "Sama pentingnya dengan rencana bersenang-senang: di mana beristirahat saat lelah, tanda apa berarti waktunya pulang, dari mana keluar. Menetapkan jalan mundur dan cara mengakhiri lebih dulu memberi kelonggaran bagi pendamping — dan kelonggaran itu menjadi rasa aman orangnya."
+    },
+    {
+      q: "Dukungan tak berjalan baik selama berhari-hari. Cara berpikir yang baik?",
+      options: ["Menyimpulkan diri tak cocok jadi pendamping", "Menjadikannya kesempatan meninjau rancangan dukungan dan berunding dengan tim", "Menyerah — disabilitasnya terlalu berat"],
+      answer: 1,
+      explain: "Saat tak berjalan baik, yang ditinjau adalah rancangan (lingkungan, cara menyampaikan, jadwal, rangsangan) — bukan orang. Menyalahkan diri atau orangnya tak menggerakkan apa pun. Bawa catatan dan tinjau bersama tim — begitulah profesional menjalani \"hari-hari buruk\"-nya."
+    },
+    {
+      q: "Menyampaikan \"berikutnya\" kepada yang membeku, bagaimana?",
+      options: ["\"Cepat, nanti terlambat!\"", "\"Selesai ini, teh\" — singkat, satu hal saja, dalam bentuk terlihat", "Jelaskan seluruh jadwal hari ini dari awal sampai akhir"],
+      answer: 1,
+      explain: "Saat peralihan butuh waktu diproses, menambah informasi malah meluber. Cukup satu hal berikutnya — singkat, konkret, sebisanya terlihat mata. Kata-kata yang memburu membuat pemrosesan makin berat."
+    },
+    {
+      q: "Saat menangani, orang-orang baik hati berkerumun: \"tidak apa-apa?!\". Respons yang baik?",
+      options: ["Jelaskan rinci nama diagnosis dan kronologinya agar dipahami", "Katakan singkat: \"tidak apa-apa, sebentar lagi tenang\", lalu halangi pandangan", "Abaikan dan fokus menangani"],
+      answer: 1,
+      explain: "Perhatian yang baik hati pun tetap rangsangan bagi orangnya. Satu kalimat singkat menenangkan sekitar dan mengurangi kerumunan serta tatapan — itulah dukungan sesungguhnya. Tak perlu menceritakan privasi seperti nama diagnosis. Mengabaikan bisa berujung dilaporkan, jadi \"satu kalimat saja\" itu pas."
     }
   ]
 };
