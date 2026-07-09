@@ -1,0 +1,17 @@
+{
+  "name": "そよぎ 支援サポート",
+  "short_name": "支援サポート",
+  "description": "障害福祉スタッフのための支援サポート。困った場面の対応ヒント・トーキングエイド・筆談。支援の、お守りに。",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef5fa",
+  "theme_color": "#4e8ec4",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

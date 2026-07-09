@@ -1,0 +1,19 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "そよぎ 支援サポート",
+    "iconUrl": "https://soyogi-shien-support-web.vercel.app/icons/icon-512.png",
+    "homeUrl": "https://soyogi-shien-support-web.vercel.app/",
+    "imageUrl": "https://soyogi-shien-support-web.vercel.app/icons/farcaster-embed.png",
+    "buttonTitle": "🍃 ひらく / Open",
+    "splashImageUrl": "https://soyogi-shien-support-web.vercel.app/icons/icon-512.png",
+    "splashBackgroundColor": "#4e8ec4",
+    "primaryCategory": "health-fitness",
+    "tags": ["disability", "welfare", "support", "care", "soyogi"]
+  }
+}

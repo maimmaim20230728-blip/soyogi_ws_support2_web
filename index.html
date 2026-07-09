@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>そよぎ 支援サポート</title>
+<meta name="description" content="障害福祉スタッフのための支援サポート。困った場面の対応ヒント・トーキングエイド・筆談。支援の、お守りに。">
+<meta name="theme-color" content="#4e8ec4">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+<!-- OGP / Twitter（SNS共有カード） -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="そよぎ 支援サポート ― 障害福祉スタッフのための支援サポート">
+<meta property="og:description" content="困った場面の対応ヒント・特性リファレンス・トーキングエイド・筆談。支援の、お守りに。">
+<meta property="og:image" content="https://soyogi-shien-support-web.vercel.app/icons/farcaster-embed.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="そよぎ 支援サポート">
+<meta name="twitter:description" content="障害福祉スタッフのための支援サポートアプリ。">
+<meta name="twitter:image" content="https://soyogi-shien-support-web.vercel.app/icons/farcaster-embed.png">
+
+<!-- Farcaster Mini App 埋め込み（デプロイ後にドメインが変われば要更新） -->
+<meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://soyogi-shien-support-web.vercel.app/icons/farcaster-embed.png","button":{"title":"🍃 ひらく / Open","action":{"type":"launch_miniapp","name":"そよぎ 支援サポート","url":"https://soyogi-shien-support-web.vercel.app/","splashImageUrl":"https://soyogi-shien-support-web.vercel.app/icons/icon-512.png","splashBackgroundColor":"#4e8ec4"}}}'>
+
+<style>
+  :root{
+    --bg:#eef5fa; --card:#ffffff; --brand:#4e8ec4; --brand-deep:#35648f;
+    --text:#33475a; --muted:#7e93a6; --line:#dbe7f0;
+    --ok-bg:#eaf6f1; --ok:#2e7d64;
+    --ng-bg:#fdf0ef; --ng:#c25450;
+    --med-bg:#fbecec; --med:#b8433f;
+    --after-bg:#f2f7fb;
+    --radius:18px;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html{ color-scheme: light; }
+  body{
+    font-family:"Hiragino Maru Gothic ProN","BIZ UDPGothic","Yu Gothic UI","Noto Sans JP",Meiryo,sans-serif;
+    background:var(--bg); color:var(--text);
+    line-height:1.75; letter-spacing:.02em;
+    min-height:100dvh; padding-bottom:calc(76px + env(safe-area-inset-bottom));
+    overflow-x:hidden;
+  }
+  button{ font:inherit; color:inherit; border:none; background:none; cursor:pointer; }
+
+  /* ===== ヘッダー ===== */
+  header{
+    text-align:center; padding:18px 16px 10px;
+  }
+  header h1{ font-size:1.25rem; color:var(--brand-deep); font-weight:700; }
+  header .tagline{ font-size:.8rem; color:var(--muted); }
+
+  main{ max-width:640px; margin:0 auto; padding:0 14px; }
+  .view{ display:none; }
+  .view.active{ display:block; animation:fadein .18s ease; }
+  @keyframes fadein{ from{opacity:.55} to{opacity:1} }
+
+  /* ===== こまった：一覧 ===== */
+  .gentle-note{
+    background:var(--card); border-radius:var(--radius); padding:12px 16px;
+    font-size:.86rem; color:var(--muted); margin-bottom:12px; border:1px solid var(--line);
+  }
+  .medical-btn{
+    display:flex; align-items:center; gap:12px; width:100%;
+    background:var(--med-bg); border:2px solid #ecc7c5; border-radius:var(--radius);
+    padding:14px 16px; margin-bottom:14px; text-align:left;
+  }
+  .medical-btn .t{ font-weight:700; color:var(--med); font-size:1.02rem; }
+  .medical-btn .s{ font-size:.78rem; color:#a3625f; }
+  .scene-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .scene-btn{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    min-height:76px; padding:12px 10px; text-align:center;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+    box-shadow:0 1px 3px rgba(78,142,196,.08);
+  }
+  .scene-btn:active{ background:#f3f8fc; }
+  .scene-btn .e{ font-size:1.5rem; line-height:1.3; }
+  .scene-btn .t{ font-size:.95rem; font-weight:700; color:var(--brand-deep); }
+  .footer-links{ text-align:center; margin:18px 0 8px; }
+  .footer-links button{ color:var(--brand); font-size:.9rem; text-decoration:underline; padding:8px 12px; }
+
+  /* ===== カード詳細 ===== */
+  .back-btn{ color:var(--brand); font-size:.95rem; padding:10px 6px; margin:2px 0 6px; }
+  .card-title{ font-size:1.3rem; font-weight:700; color:var(--brand-deep); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+  .block{ background:var(--card); border-radius:var(--radius); padding:14px 16px; margin-bottom:12px; border:1px solid var(--line); }
+  .block h3{ font-size:.92rem; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+  .block ul{ list-style:none; }
+  .block li{ padding:6px 0 6px 1.4em; text-indent:-1.4em; font-size:1.0rem; }
+  .block-do{ background:var(--ok-bg); border-color:#cfe8de; }
+  .block-do h3{ color:var(--ok); }
+  .block-do li{ font-size:1.06rem; font-weight:600; }
+  .block-do li::before{ content:"✓ "; color:var(--ok); font-weight:700; }
+  .block-ng{ background:var(--ng-bg); border:2px solid #efc9c6; }
+  .block-ng h3{ color:var(--ng); }
+  .block-ng li::before{ content:"✕ "; color:var(--ng); font-weight:700; }
+  .block-119{ background:var(--med-bg); border:2px solid #ecc7c5; }
+  .block-119 h3{ color:var(--med); }
+  .block-119 li::before{ content:"📞 "; }
+  .block-119 .note{ font-size:.88rem; color:#8a5350; margin-top:8px; }
+  .block-out{ background:#faf6ec; border-color:#e9deca; }
+  .block-out h3{ color:#8a713d; }
+  .block-out li::before{ content:"・"; color:#8a713d; font-weight:700; }
+  .block-after{ background:var(--after-bg); }
+  .block-after h3{ color:var(--brand-deep); }
+  .block-after li::before{ content:"→ "; color:var(--brand); font-weight:700; }
+  /* しらべる */
+  .lookup-lead{ font-size:.9rem; font-weight:700; color:var(--brand-deep); margin:14px 4px 8px; }
+  .scene-btn .ts{ font-size:.72rem; font-weight:400; color:var(--muted); line-height:1.35; margin-top:2px; }
+  .inline-link{ color:var(--brand); font-weight:700; text-decoration:underline; padding:6px 0; }
+  .block-what{ background:#f2f7fb; }
+  .block-what h3{ color:var(--brand-deep); }
+  .block-what li::before{ content:"・"; color:var(--brand); font-weight:700; }
+  .block-prep{ background:#e8f1fb; border:2px solid #b8d3ee; }
+  .block-prep h3{ color:var(--brand-deep); }
+  .block-prep li{ font-weight:600; }
+  .block-prep li::before{ content:"◆ "; color:var(--brand); font-weight:700; }
+  .block-comm{ background:var(--ok-bg); border-color:#cfe8de; }
+  .block-comm h3{ color:var(--ok); }
+  .block-comm li::before{ content:"・"; color:var(--ok); font-weight:700; }
+  .block-env{ background:#faf6ec; border-color:#e9deca; }
+  .block-env h3{ color:#8a713d; }
+  .block-env li::before{ content:"・"; color:#8a713d; font-weight:700; }
+  .block-scenes h3{ color:var(--med); }
+  .scene-links{ display:flex; flex-direction:column; gap:8px; }
+  .scene-link{ text-align:left; background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:11px 14px; font-size:.95rem; font-weight:700; color:var(--brand-deep); }
+  .scene-link:active{ background:#f3f8fc; }
+  .lead-med{ background:var(--med-bg); border-radius:var(--radius); border:2px solid #ecc7c5;
+    padding:12px 16px; margin-bottom:12px; color:var(--med); font-weight:700; font-size:.98rem; }
+  details.why{ background:var(--card); border-radius:var(--radius); border:1px solid var(--line); padding:12px 16px; margin-bottom:12px; }
+  details.why summary{ cursor:pointer; color:var(--brand-deep); font-weight:700; font-size:.92rem; }
+  details.why p{ margin-top:8px; font-size:.95rem; }
+  .src{ font-size:.78rem; color:var(--muted); padding:0 6px 10px; }
+  .record-btn{
+    display:block; width:100%; background:var(--brand); color:#fff; font-weight:700;
+    border-radius:var(--radius); padding:14px; font-size:1.0rem; margin:4px 0 14px;
+  }
+  .record-btn:active{ background:var(--brand-deep); }
+
+  /* ===== きろく ===== */
+  .modal-wrap{ position:fixed; inset:0; background:rgba(51,71,90,.45); display:none; z-index:50; overflow-y:auto; }
+  .modal-wrap.open{ display:block; }
+  .modal{
+    background:var(--card); border-radius:22px 22px 0 0; max-width:640px; margin:8vh auto 0;
+    padding:18px 18px calc(24px + env(safe-area-inset-bottom)); min-height:70vh;
+  }
+  .modal h2{ font-size:1.1rem; color:var(--brand-deep); margin-bottom:4px; }
+  .modal .sub{ font-size:.8rem; color:var(--muted); margin-bottom:12px; }
+  .q{ margin-bottom:14px; }
+  .q .label{ font-size:.88rem; font-weight:700; color:var(--brand-deep); margin-bottom:6px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    border:1.5px solid var(--line); border-radius:999px; padding:8px 14px;
+    font-size:.92rem; background:#fff; color:var(--text);
+  }
+  .chip.on{ background:var(--brand); border-color:var(--brand); color:#fff; font-weight:700; }
+  .memo-input{
+    width:100%; border:1.5px solid var(--line); border-radius:12px; padding:10px 12px;
+    font:inherit; font-size:.95rem; background:#fff; color:var(--text);
+  }
+  .modal-actions{ display:flex; gap:10px; margin-top:16px; }
+  .modal-actions button{ flex:1; border-radius:var(--radius); padding:13px; font-weight:700; font-size:.98rem; }
+  .btn-save{ background:var(--brand); color:#fff; }
+  .btn-cancel{ background:#eef2f6; color:var(--muted); }
+
+  .log-item{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:12px 14px; margin-bottom:10px; font-size:.9rem; }
+  .log-item .when{ color:var(--brand-deep); font-weight:700; }
+  .log-item .del{ float:right; color:var(--muted); padding:2px 8px; }
+  .copy-btn{ display:block; width:100%; background:var(--brand); color:#fff; font-weight:700; border-radius:var(--radius); padding:13px; margin-bottom:14px; }
+  .empty{ text-align:center; color:var(--muted); padding:30px 10px; font-size:.92rem; }
+
+  /* ===== 準備中 ===== */
+  .soon{ background:var(--card); border-radius:var(--radius); border:1px solid var(--line); padding:26px 20px; text-align:center; }
+  .soon .e{ font-size:2.2rem; }
+  .soon h2{ color:var(--brand-deep); font-size:1.05rem; margin:6px 0; }
+  .soon p{ font-size:.9rem; color:var(--muted); text-align:left; }
+
+  /* ===== まなぶ ===== */
+  .learn-hint{ background:var(--ok-bg); border:1px solid #cfe8de; border-radius:var(--radius); padding:16px; margin-bottom:6px; }
+  .learn-hint .lh-label{ font-size:.85rem; font-weight:700; color:var(--ok); margin-bottom:6px; }
+  .learn-hint p{ font-size:1.06rem; font-weight:600; line-height:1.7; }
+  .learn-hint .lh-more{ margin-top:10px; color:var(--brand); font-size:.86rem; text-decoration:underline; padding:4px 0; }
+  .quiz-card{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+  .quiz-q{ font-size:1.05rem; font-weight:700; color:var(--brand-deep); margin-bottom:12px; line-height:1.6; }
+  .quiz-opts{ display:flex; flex-direction:column; gap:9px; }
+  .quiz-opt{ text-align:left; background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:13px 15px; font-size:1.0rem; font-weight:600; color:var(--text); }
+  .quiz-opt:active{ background:#f3f8fc; }
+  .quiz-opt:disabled{ opacity:1; }
+  .quiz-opt.correct{ background:var(--ok-bg); border-color:var(--ok); color:var(--ok); }
+  .quiz-opt.wrong{ background:var(--ng-bg); border-color:var(--ng); color:var(--ng); }
+  .quiz-explain{ display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); }
+  .quiz-explain.show{ display:block; }
+  .quiz-explain .qe-head{ font-weight:700; color:var(--brand-deep); margin-bottom:6px; }
+  .quiz-explain p{ font-size:.96rem; line-height:1.7; }
+  .quiz-next{ display:block; width:100%; background:var(--brand); color:#fff; font-weight:700; border-radius:14px; padding:13px; margin-top:14px; }
+  .quiz-next:active{ background:var(--brand-deep); }
+  /* ===== つたえる ===== */
+  .talk-tabs{ display:flex; gap:8px; margin-bottom:12px; }
+  .talk-tabs button{
+    flex:1; background:var(--card); border:1.5px solid var(--line); border-radius:14px;
+    padding:10px 4px; font-size:.9rem; font-weight:700; color:var(--muted);
+  }
+  .talk-tabs button.on{ background:var(--brand); border-color:var(--brand); color:#fff; }
+  .talk-pane{ display:none; }
+  .talk-pane.active{ display:block; }
+  .phrase-group{ margin-bottom:14px; }
+  .phrase-group h3{ font-size:.9rem; color:var(--brand-deep); margin-bottom:6px; }
+  .phrase-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .phrase-btn{
+    background:var(--card); border:1.5px solid var(--line); border-radius:16px;
+    min-height:64px; font-size:1.15rem; font-weight:700; color:var(--text);
+  }
+  .phrase-btn:active{ background:#f3f8fc; }
+  .kana-out{
+    width:100%; min-height:70px; background:var(--card); border:1.5px solid var(--line);
+    border-radius:16px; padding:12px 14px; font-size:1.5rem; font-weight:700; margin-bottom:10px;
+    word-break:break-all;
+  }
+  .kana-out .ph{ color:#c3d2de; font-size:1.0rem; font-weight:400; }
+  .kana-actions{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:10px; }
+  .kana-actions button{
+    background:var(--card); border:1.5px solid var(--line); border-radius:12px;
+    padding:10px 2px; font-size:.88rem; font-weight:700; color:var(--brand-deep);
+  }
+  .kana-actions button.primary{ background:var(--brand); border-color:var(--brand); color:#fff; }
+  .kana-board{ display:grid; grid-template-columns:repeat(5,1fr); gap:6px; }
+  .kana-board button{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    min-height:52px; font-size:1.25rem; font-weight:700;
+  }
+  .kana-board button:active{ background:#f3f8fc; }
+  .kana-board button.fn{ font-size:.9rem; color:var(--brand-deep); background:#f2f7fb; }
+  .draw-tools{ display:flex; gap:8px; margin-bottom:10px; }
+  .draw-tools button{
+    flex:1; background:var(--card); border:1.5px solid var(--line); border-radius:12px;
+    padding:10px 2px; font-size:.88rem; font-weight:700; color:var(--brand-deep);
+  }
+  .draw-tools button.on{ background:var(--brand); border-color:var(--brand); color:#fff; }
+  #drawCanvas{
+    width:100%; height:56vh; background:#fff; border:1.5px solid var(--line);
+    border-radius:16px; touch-action:none; display:block;
+  }
+  .show-overlay{
+    position:fixed; inset:0; background:#fff; z-index:100; display:none;
+    align-items:center; justify-content:center; padding:24px; text-align:center;
+  }
+  .show-overlay.open{ display:flex; }
+  .show-overlay .txt{ font-weight:700; color:#222; word-break:break-all; line-height:1.5; }
+  .show-overlay .hint{ position:fixed; bottom:14px; left:0; right:0; font-size:.8rem; color:#aaa; }
+
+  /* ===== 下部ナビ ===== */
+  nav{
+    position:fixed; bottom:0; left:0; right:0; z-index:40;
+    background:rgba(255,255,255,.96); border-top:1px solid var(--line);
+    display:flex; max-width:100%; padding-bottom:env(safe-area-inset-bottom);
+    backdrop-filter:blur(6px);
+  }
+  nav button{
+    flex:1; padding:9px 2px 7px; text-align:center; color:var(--muted);
+    display:flex; flex-direction:column; align-items:center; gap:1px;
+  }
+  nav button .e{ font-size:1.3rem; line-height:1.2; }
+  nav button .t{ font-size:.68rem; font-weight:700; }
+  nav button.on{ color:var(--brand-deep); }
+  nav button.on .t{ color:var(--brand); }
+
+  .app-foot{ text-align:center; font-size:.72rem; color:var(--muted); padding:16px 12px 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>そよぎ 支援サポート</h1>
+  <div class="tagline">支援の、お守りに。― 障害福祉スタッフのための支援サポート ―</div>
+</header>
+
+<main>
+  <!-- 🚨 こまった -->
+  <section id="view-scenes" class="view active"></section>
+  <!-- カード詳細 -->
+  <section id="view-detail" class="view"></section>
+  <!-- 📖 しらべる -->
+  <section id="view-lookup" class="view"></section>
+  <!-- 🌱 まなぶ -->
+  <section id="view-learn" class="view"></section>
+  <!-- 🗣️ つたえる -->
+  <section id="view-talk" class="view">
+    <div class="talk-tabs">
+      <button data-pane="phrases" class="on">ていけいぶん</button>
+      <button data-pane="kana">もじばん</button>
+      <button data-pane="draw">ひつだん</button>
+    </div>
+    <div id="pane-phrases" class="talk-pane active"></div>
+    <div id="pane-kana" class="talk-pane">
+      <div class="kana-out" id="kanaOut"><span class="ph">ここに もじが でます</span></div>
+      <div class="kana-actions">
+        <button id="kanaSpeak" class="primary">🔊 よむ</button>
+        <button id="kanaShow">👀 みせる</button>
+        <button id="kanaBack">← けす</button>
+        <button id="kanaClear">ぜんぶけす</button>
+      </div>
+      <div class="kana-board" id="kanaBoard"></div>
+    </div>
+    <div id="pane-draw" class="talk-pane">
+      <div class="draw-tools">
+        <button id="penThin">ほそい</button>
+        <button id="penThick" class="on">ふとい</button>
+        <button id="penInvert">はんてん</button>
+        <button id="penClear">けす</button>
+      </div>
+      <canvas id="drawCanvas"></canvas>
+    </div>
+  </section>
+  <!-- きろく一覧 -->
+  <section id="view-logs" class="view"></section>
+</main>
+
+<!-- きろくモーダル -->
+<div class="modal-wrap" id="modalWrap">
+  <div class="modal" id="recordModal"></div>
+</div>
+
+<!-- 見せるオーバーレイ -->
+<div class="show-overlay" id="showOverlay">
+  <div class="txt" id="showTxt"></div>
+  <div class="hint">画面をタップすると戻ります</div>
+</div>
+
+<nav>
+  <button data-view="scenes" class="on"><span class="e">🚨</span><span class="t">こまった</span></button>
+  <button data-view="lookup"><span class="e">📖</span><span class="t">しらべる</span></button>
+  <button data-view="learn"><span class="e">🌱</span><span class="t">まなぶ</span></button>
+  <button data-view="talk"><span class="e">🗣️</span><span class="t">つたえる</span></button>
+</nav>
+
+<script src="content.ja.js"></script>
+<script src="app.js"></script>
+<script>
+  if ("serviceWorker" in navigator && location.protocol.indexOf("http") === 0) {
+    window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
+  }
+</script>
+<!-- Farcaster Mini App SDK: ホスト内なら起動準備完了を通知。通常のWeb/PWAでは無害（失敗は握りつぶす）。 -->
+<script type="module">
+  try {
+    const { sdk } = await import("https://esm.sh/@farcaster/miniapp-sdk");
+    await sdk.actions.ready();
+  } catch (e) { /* Farcaster外／オフラインでは何もしない */ }
+</script>
+</body>
+</html>
