@@ -75,9 +75,11 @@
   function setPaneLabel(pane, text) {
     var b = document.querySelector('.talk-tabs button[data-pane="' + pane + '"]'); if (b) b.textContent = text;
   }
+  var BRAND = { ja: "そよぎ", ko: "소요기" }; /* 正式名「福祉サポーターズ・サポート　そよぎ（障害者版）」の「そよぎ」をバランス調整で2段目に表示（高齢者版と同形） */
   function applyStaticUI() {
     document.title = T.appName;
     $("#appName").textContent = T.appName;
+    var br = $("#appBrand"); if (br) br.textContent = BRAND[LANG] || "Soyogi";
     $("#tagline").textContent = T.tagline;
     setNavLabel("scenes", T.nav.scenes); setNavLabel("lookup", T.nav.lookup);
     setNavLabel("learn", T.nav.learn); setNavLabel("talk", T.nav.talk);
@@ -126,7 +128,7 @@
     html += "</div>";
     html += '<div class="footer-links"><button id="openLogs">' + esc(T.seeLogs) + "</button></div>";
     html += '<div class="app-foot">' + esc(T.footMedical) + "<br>" + esc(T.footPrivacy) +
-      '<br><a class="dev-credit" href="https://soyogi.hp.peraichi.com/top" target="_blank" rel="noopener">アプリ開発：介護と支援の相談どころ　そよぎ</a></div>';
+      '<br><a class="dev-credit" href="https://soyogi.hp.peraichi.com/top" target="_blank" rel="noopener">アプリ開発：介護と支援の相談どころ・そよぎ</a></div>';
     $("#view-scenes").innerHTML = html;
     document.querySelectorAll("#view-scenes [data-id]").forEach(function (b) {
       b.addEventListener("click", function () { renderDetail(b.dataset.id); show("detail"); });
