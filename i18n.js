@@ -1,5 +1,5 @@
 /*
- * そよぎ 支援サポート - UI文字列（i18n）
+ * 福祉サポーターズ・サポート（障害者版） - UI文字列（i18n）
  * 画面のラベル・ボタン等。コンテンツ本体は content.<lang>.js（SHIEN_CONTENT[lang]）。
  * 言語を足すときは：ここに SHIEN_UI.<lang> を追加し、content.<lang>.js を作る。
  * LANGS の並び順が言語切替メニューの順。dir:"rtl" は右書き言語。
@@ -26,7 +26,7 @@ window.SHIEN_LANGS = [
 
 window.SHIEN_UI.ja = {
   dir: "ltr",
-  appName: "そよぎ 支援サポート",
+  appName: "福祉サポーターズ・サポート（障害者版）",
   tagline: "支援の、お守りに。― 障害福祉スタッフのための支援サポート ―",
   nav: { scenes: "こまった", lookup: "しらべる", learn: "まなぶ", talk: "つたえる" },
   back: "← もどる",
@@ -108,7 +108,7 @@ window.SHIEN_UI.ja = {
 
 window.SHIEN_UI.en = {
   dir: "ltr",
-  appName: "Soyogi Support Guide",
+  appName: "Welfare Supporters' Support (Disability Edition)",
   tagline: "A little guardian for support. — for disability-support staff —",
   nav: { scenes: "When stuck", lookup: "Look up", learn: "Learn", talk: "Communicate" },
   back: "← Back",
@@ -190,7 +190,7 @@ window.SHIEN_UI.en = {
 
 window.SHIEN_UI.zh = {
   dir: "ltr",
-  appName: "Soyogi 支援指南",
+  appName: "福祉工作者支援（残障版）",
   tagline: "支援的护身符。—— 为残障福祉工作者 ——",
   nav: { scenes: "遇到难题", lookup: "查一查", learn: "学一学", talk: "来沟通" },
   back: "← 返回",
@@ -262,7 +262,7 @@ window.SHIEN_UI.zh = {
 
 window.SHIEN_UI.es = {
   dir: "ltr",
-  appName: "Soyogi Guía de Apoyo",
+  appName: "Apoyo para profesionales del cuidado (edición discapacidad)",
   tagline: "Un pequeño amuleto para el apoyo. — para profesionales del apoyo a la discapacidad —",
   nav: { scenes: "Ante un apuro", lookup: "Consultar", learn: "Aprender", talk: "Comunicar" },
   back: "← Atrás",
@@ -334,7 +334,7 @@ window.SHIEN_UI.es = {
 
 window.SHIEN_UI.hi = {
   dir: "ltr",
-  appName: "Soyogi सहायता गाइड",
+  appName: "कल्याण कर्मियों के लिए सहायता (दिव्यांग संस्करण)",
   tagline: "सहायता का एक छोटा-सा कवच। — विकलांगजन सहायता कर्मियों के लिए —",
   nav: { scenes: "मुश्किल में", lookup: "देखें", learn: "सीखें", talk: "बताएँ" },
   back: "← वापस",
@@ -406,7 +406,7 @@ window.SHIEN_UI.hi = {
 
 window.SHIEN_UI.pt = {
   dir: "ltr",
-  appName: "Soyogi Guia de Apoio",
+  appName: "Apoio para profissionais do cuidado (edição deficiência)",
   tagline: "Um pequeno amuleto para o apoio. — para profissionais do apoio à deficiência —",
   nav: { scenes: "Num aperto", lookup: "Consultar", learn: "Aprender", talk: "Comunicar" },
   back: "← Voltar",
@@ -478,7 +478,7 @@ window.SHIEN_UI.pt = {
 
 window.SHIEN_UI.fr = {
   dir: "ltr",
-  appName: "Soyogi Guide d'Accompagnement",
+  appName: "Soutien aux accompagnants (édition handicap)",
   tagline: "Un petit talisman pour l'accompagnement. — pour les professionnels du handicap —",
   nav: { scenes: "En difficulté", lookup: "Consulter", learn: "Apprendre", talk: "Communiquer" },
   back: "← Retour",
@@ -550,7 +550,7 @@ window.SHIEN_UI.fr = {
 
 window.SHIEN_UI.ru = {
   dir: "ltr",
-  appName: "Soyogi Гид поддержки",
+  appName: "Поддержка тех, кто поддерживает (версия: инвалидность)",
   tagline: "Маленький оберег для поддержки. — для специалистов сферы инвалидности —",
   nav: { scenes: "Трудный момент", lookup: "Справка", learn: "Учимся", talk: "Общение" },
   back: "← Назад",
@@ -622,7 +622,7 @@ window.SHIEN_UI.ru = {
 
 window.SHIEN_UI.id = {
   dir: "ltr",
-  appName: "Soyogi Panduan Dukungan",
+  appName: "Dukungan untuk Pendamping (Edisi Disabilitas)",
   tagline: "Jimat kecil untuk dukungan. — bagi staf dukungan disabilitas —",
   nav: { scenes: "Saat sulit", lookup: "Cari tahu", learn: "Belajar", talk: "Komunikasi" },
   back: "← Kembali",
@@ -694,7 +694,7 @@ window.SHIEN_UI.id = {
 
 window.SHIEN_UI.de = {
   dir: "ltr",
-  appName: "Soyogi Begleit-Guide",
+  appName: "Unterstützung für Fachkräfte (Edition Behindertenhilfe)",
   tagline: "Ein kleiner Talisman für die Begleitung. — für Fachkräfte der Behindertenhilfe —",
   nav: { scenes: "Im Notfall", lookup: "Nachschlagen", learn: "Lernen", talk: "Mitteilen" },
   back: "← Zurück",
@@ -766,7 +766,7 @@ window.SHIEN_UI.de = {
 
 window.SHIEN_UI.ko = {
   dir: "ltr",
-  appName: "Soyogi 지원 서포트",
+  appName: "복지 종사자 지원 앱 (장애인 편)",
   tagline: "지원의 부적으로. ― 장애복지 종사자를 위한 지원 서포트 ―",
   nav: { scenes: "곤란할 때", lookup: "찾아보기", learn: "배우기", talk: "전하기" },
   back: "← 뒤로",
@@ -838,7 +838,7 @@ window.SHIEN_UI.ko = {
 
 window.SHIEN_UI.it = {
   dir: "ltr",
-  appName: "Soyogi Guida al Supporto",
+  appName: "Supporto per operatori socio-sanitari (edizione disabilità)",
   tagline: "Un piccolo talismano per il supporto. — per gli operatori della disabilità —",
   nav: { scenes: "In difficoltà", lookup: "Consultare", learn: "Imparare", talk: "Comunicare" },
   back: "← Indietro",
@@ -910,7 +910,7 @@ window.SHIEN_UI.it = {
 
 window.SHIEN_UI.bn = {
   dir: "ltr",
-  appName: "Soyogi সহায়তা গাইড",
+  appName: "কল্যাণকর্মীদের সহায়তা (প্রতিবন্ধী সংস্করণ)",
   tagline: "সহায়তার এক ছোট্ট রক্ষাকবচ। — প্রতিবন্ধী-কল্যাণ কর্মীদের জন্য —",
   nav: { scenes: "বিপদে", lookup: "খুঁজে দেখা", learn: "শেখা", talk: "জানানো" },
   back: "← ফিরে যান",
@@ -982,7 +982,7 @@ window.SHIEN_UI.bn = {
 
 window.SHIEN_UI.ar = {
   dir: "rtl",
-  appName: "Soyogi دليل الدعم",
+  appName: "دعم العاملين في الرعاية (نسخة الإعاقة)",
   tagline: "تعويذة صغيرة للدعم. — للعاملين في رعاية ذوي الإعاقة —",
   nav: { scenes: "عند الشدة", lookup: "استرشاد", learn: "تعلُّم", talk: "تواصل" },
   back: "→ رجوع",

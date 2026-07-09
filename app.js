@@ -1,4 +1,4 @@
-/* そよぎ 支援サポート - アプリロジック（多言語対応）
+/* 福祉サポーターズ・サポート（障害者版） - アプリロジック（多言語対応）
  * 原則：個人情報を持たない（氏名欄を作らない）・記録は端末内のみ・タップだけで数十秒で完結
  * i18n：C = SHIEN_CONTENT[lang]（本文）／ T = SHIEN_UI[lang]（UI文字列）
  */
@@ -125,7 +125,8 @@
     });
     html += "</div>";
     html += '<div class="footer-links"><button id="openLogs">' + esc(T.seeLogs) + "</button></div>";
-    html += '<div class="app-foot">' + esc(T.footMedical) + "<br>" + esc(T.footPrivacy) + "</div>";
+    html += '<div class="app-foot">' + esc(T.footMedical) + "<br>" + esc(T.footPrivacy) +
+      '<br><a class="dev-credit" href="https://soyogi.hp.peraichi.com/top" target="_blank" rel="noopener">アプリ開発：介護と支援の相談どころ　そよぎ</a></div>';
     $("#view-scenes").innerHTML = html;
     document.querySelectorAll("#view-scenes [data-id]").forEach(function (b) {
       b.addEventListener("click", function () { renderDetail(b.dataset.id); show("detail"); });

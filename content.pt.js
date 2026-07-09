@@ -1,5 +1,5 @@
 /*
- * Soyogi Guia de Apoio - Conteúdo (Português)
+ * Apoio para profissionais do cuidado (edição deficiência) - Conteúdo (Português)
  * Princípios: são tendências e pistas, nunca rótulos. A pessoa à sua frente vem primeiro.
  *  Não toma decisões médicas. Na dúvida, oriente ao número de emergência local / ao médico.
  *  A estrutura (id / emoji / índices de resposta / referências de cena) é idêntica a content.ja.js.

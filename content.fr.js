@@ -1,5 +1,5 @@
 /*
- * Soyogi Guide d'Accompagnement - Contenu (français)
+ * Soutien aux accompagnants (édition handicap) - Contenu (français)
  * Principes :
  *  - Ce sont des tendances et des pistes, jamais des étiquettes. La personne en face de vous passe avant tout.
  *  - Pas de décision médicale. En cas de doute, orienter vers les urgences locales / le médecin traitant.

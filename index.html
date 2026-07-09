@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>そよぎ 支援サポート</title>
+<title>そよぎ｜福祉サポーターズ・サポート（障害者版）</title>
 <meta name="description" content="障害福祉スタッフのための支援サポート。困った場面の対応ヒント・トーキングエイド・筆談。支援の、お守りに。">
 <meta name="theme-color" content="#4e8ec4">
 <link rel="manifest" href="manifest.webmanifest">
@@ -13,16 +13,16 @@
 
 <!-- OGP / Twitter（SNS共有カード） -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="そよぎ 支援サポート ― 障害福祉スタッフのための支援サポート">
+<meta property="og:title" content="福祉サポーターズサポートアプリ・そよぎ（障害者版）">
 <meta property="og:description" content="困った場面の対応ヒント・特性リファレンス・トーキングエイド・筆談。支援の、お守りに。">
 <meta property="og:image" content="https://soyogi-ws-support2-web.vercel.app/icons/farcaster-embed.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="そよぎ 支援サポート">
+<meta name="twitter:title" content="福祉サポーターズ・サポート（障害者版）">
 <meta name="twitter:description" content="障害福祉スタッフのための支援サポートアプリ。">
 <meta name="twitter:image" content="https://soyogi-ws-support2-web.vercel.app/icons/farcaster-embed.png">
 
 <!-- Farcaster Mini App 埋め込み（デプロイ後にドメインが変われば要更新） -->
-<meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://soyogi-ws-support2-web.vercel.app/icons/farcaster-embed.png","button":{"title":"🍃 ひらく / Open","action":{"type":"launch_miniapp","name":"そよぎ 支援サポート","url":"https://soyogi-ws-support2-web.vercel.app/","splashImageUrl":"https://soyogi-ws-support2-web.vercel.app/icons/icon-512.png","splashBackgroundColor":"#4e8ec4"}}}'>
+<meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://soyogi-ws-support2-web.vercel.app/icons/farcaster-embed.png","button":{"title":"🍃 ひらく / Open","action":{"type":"launch_miniapp","name":"そよぎ（障害者版）","url":"https://soyogi-ws-support2-web.vercel.app/","splashImageUrl":"https://soyogi-ws-support2-web.vercel.app/icons/icon-512.png","splashBackgroundColor":"#4e8ec4"}}}'>
 
 <style>
   :root{
@@ -286,6 +286,7 @@
   nav button.on .t{ color:var(--brand); }
 
   .app-foot{ text-align:center; font-size:.72rem; color:var(--muted); padding:16px 12px 8px; }
+  .app-foot .dev-credit{ display:inline-block; margin-top:10px; color:var(--brand); text-decoration:underline; }
 </style>
 </head>
 <body>
@@ -293,7 +294,7 @@
 <header>
   <select id="langSelect" class="lang-select" aria-label="言語 / Language"></select>
   <button id="bgmToggle" class="bgm-toggle" aria-label="BGMのオン・オフ" title="BGM">🎵</button>
-  <h1 id="appName">そよぎ 支援サポート</h1>
+  <h1 id="appName">福祉サポーターズ・サポート（障害者版）</h1>
   <div class="tagline" id="tagline">支援の、お守りに。― 障害福祉スタッフのための支援サポート ―</div>
 </header>
 

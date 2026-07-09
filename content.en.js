@@ -1,5 +1,5 @@
 /*
- * Soyogi Support Guide - Content (English)
+ * Welfare Supporters' Support (Disability Edition) - Content (English)
  * Principles:
  *  - These are tendencies and hints. Never labels. The person in front of you comes first.
  *  - No medical decisions. When in doubt, guide to local emergency services / the person's doctor.

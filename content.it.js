@@ -1,5 +1,5 @@
 /*
- * Soyogi Guida al Supporto - Contenuti (italiano)
+ * Supporto per operatori socio-sanitari (edizione disabilità) - Contenuti (italiano)
  * Principi:
  *  - Queste sono tendenze e suggerimenti, mai etichette. La persona davanti a voi viene prima di tutto.
  *  - Nessuna decisione medica. In caso di dubbio, indirizzare al numero di emergenza locale / al medico curante.

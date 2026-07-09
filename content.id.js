@@ -1,5 +1,5 @@
 /*
- * Soyogi Panduan Dukungan - Konten (Bahasa Indonesia)
+ * Dukungan untuk Pendamping (Edisi Disabilitas) - Konten (Bahasa Indonesia)
  * Prinsip:
  *  - Ini adalah kecenderungan dan petunjuk, bukan label. Orang di hadapan Anda yang utama.
  *  - Tidak ada keputusan medis. Jika ragu, arahkan ke layanan darurat setempat / dokter yang merawat.

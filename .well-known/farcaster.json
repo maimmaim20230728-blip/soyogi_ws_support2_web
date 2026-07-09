@@ -6,7 +6,7 @@
   },
   "miniapp": {
     "version": "1",
-    "name": "そよぎ 支援サポート",
+    "name": "そよぎ（障害者版）",
     "iconUrl": "https://soyogi-ws-support2-web.vercel.app/icons/icon-512.png",
     "homeUrl": "https://soyogi-ws-support2-web.vercel.app/",
     "imageUrl": "https://soyogi-ws-support2-web.vercel.app/icons/farcaster-embed.png",

@@ -1,5 +1,5 @@
 /*
- * Soyogi Begleit-Guide - Inhalte (Deutsch)
+ * Unterstützung für Fachkräfte (Edition Behindertenhilfe) - Inhalte (Deutsch)
  * Grundsätze:
  *  - Dies sind Tendenzen und Hinweise, keine Etiketten. Der Mensch vor Ihnen kommt zuerst.
  *  - Keine medizinischen Entscheidungen. Im Zweifel an den örtlichen Notruf / die behandelnde Ärztin, den Arzt verweisen.

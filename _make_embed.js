@@ -20,9 +20,10 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" widt
     <circle cx="-146" cy="0" r="22" fill="url(#hand)"/>
     <circle cx="146" cy="0" r="22" fill="url(#hand)"/>
   </g>
-  <text x="600" y="530" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN','Yu Gothic',sans-serif" font-size="76" font-weight="700" fill="#ffffff">そよぎ 支援サポート</text>
-  <text x="600" y="600" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN','Yu Gothic',sans-serif" font-size="40" font-weight="700" fill="#eaf3fb">支援の、お守りに。</text>
-  <text x="600" y="660" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN','Yu Gothic',sans-serif" font-size="30" fill="#cfe3f2">障害福祉スタッフのための支援サポート</text>
+  <text x="600" y="520" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN','Yu Gothic',sans-serif" font-size="66" font-weight="700" fill="#ffffff">福祉サポーターズ・サポート</text>
+  <text x="600" y="578" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN','Yu Gothic',sans-serif" font-size="32" fill="#eaf3fb">― 障害者版 ―</text>
+  <text x="600" y="648" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN','Yu Gothic',sans-serif" font-size="40" font-weight="700" fill="#eaf3fb">支援の、お守りに。</text>
+  <text x="600" y="706" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN','Yu Gothic',sans-serif" font-size="30" fill="#cfe3f2">障害福祉スタッフのための支援サポート</text>
 </svg>`;
 sharp(Buffer.from(svg)).png().toFile(path.join(__dirname, "icons", "farcaster-embed.png"))
   .then(() => console.log("embed OK (1200x800)"))
