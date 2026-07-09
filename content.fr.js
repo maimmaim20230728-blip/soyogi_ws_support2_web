@@ -696,7 +696,37 @@ window.SHIEN_CONTENT.fr = {
     "Quand ça ne marche pas, revoyez la conception de l'accompagnement, pas la personne. À l'instant où c'est « sa faute », l'accompagnement s'arrête.",
     "Dans le registre, séparez ce que vous avez vu (faits) de ce que vous avez pensé (suppositions) — cela paie au prochain accompagnement.",
     "Essayez les nouveautés une à une. En changeant tout d'un coup, on ne sait plus ce qui a marché.",
-    "Se relayer n'est pas une défaite : c'est une technique. Quand ça coince, changer de personne change l'air. Cette marge est la force d'une équipe."
+    "Se relayer n'est pas une défaite : c'est une technique. Quand ça coince, changer de personne change l'air. Cette marge est la force d'une équipe.",
+    "Avant de parler, dites d'abord le prénom. Savoir que les mots lui sont adressés change déjà la façon dont ils arrivent.",
+    "« Quand le minuteur sonnera » vaut mieux que « encore cinq minutes ». Le temps passe mieux quand il devient un outil visible.",
+    "Rendez l'attente visible — que l'on voie ce qu'on attend. Le temps vide devient du temps d'angoisse.",
+    "La place habituelle, l'endroit habituel. Le repère fixe est un socle de sécurité. Ne le changez pas sans nécessité.",
+    "Le casque antibruit et les lunettes de soleil ne sont pas des « caprices » : ce sont des outils, comme les lunettes de vue. Qu'on les porte la tête haute.",
+    "Tenez la liste des sons, lumières et odeurs pénibles (une carte sensorielle). L'ajustement de l'environnement devient bien plus rapide.",
+    "« Encore une fois et c'est fini » — annoncer la fin compte autant qu'annoncer le début.",
+    "Consignez aussi les bons jours. Les réponses qui ont marché sont le trésor de l'équipe.",
+    "Non pas « il ne peut pas », mais « il ne l'a pas encore appris ». Changez le regard et le pas suivant apparaît.",
+    "Un escalier se monte marche par marche. Sautez les petites étapes et la montée devient impossible.",
+    "N'aidez pas trop. Même si cela prend du temps, le « j'ai réussi seul » devient la force suivante.",
+    "Sur le planning visuel, retirez (ou retournez) ce qui est terminé. La sensation d'avancer devient de la sérénité.",
+    "En récompense, un temps d'activité préférée vaut mieux qu'un objet. Cela dure plus et s'emmêle moins.",
+    "Aux premiers signes, changez de lieu. Le changement d'environnement est le geste le plus simple et le plus puissant.",
+    "En pleine crise de larmes et de cris, inutile de chercher les mots justes. Ce qu'il faut, c'est la sécurité et le temps.",
+    "S'asseoir à côté et regarder la même chose. Le « temps en parallèle » fait grandir la confiance en silence.",
+    "Ne pas parler ne veut pas dire ne pas comprendre. Comprendre et exprimer sont deux capacités distinctes.",
+    "Ne vous fiez pas trop au « oui ». Il y a des oui dits faute d'autre chose à dire. Vérifiez par l'action.",
+    "Gestes, pointage, objets réels. La parole n'est qu'un des outils pour communiquer.",
+    "Un sommeil déréglé mène tout droit à un comportement déréglé. Savoir s'il dort, c'est aussi de l'accompagnement.",
+    "La sélectivité alimentaire peut être sensorielle, pas un caprice. Plutôt que forcer : jouer sur la forme, la température, la texture.",
+    "La perspective, aussi dans les transports : « où, pour quoi faire, combien de temps » — avant de monter.",
+    "Le « bon retour » à l'arrivée. Un accueil stable soutient la sérénité de la prochaine sortie.",
+    "La compréhension d'autrui ne se construit pas en un jour. Gardez prêt un badge d'aide ou une petite carte d'explication.",
+    "Écrire les registres n'est que la moitié du travail. Ils prennent vie quand l'équipe prend le temps de les relire.",
+    "Quand vous vient un « encore ?! », c'est un signal de repos. La fatigue émousse le jugement sans bruit.",
+    "Après une intervention difficile, transmettez toujours. Fatigue et informations pèsent moins une fois partagées.",
+    "Son argent, ses affaires : non pas « gérer », mais « réfléchir ensemble à leur usage ». Les droits sont les siens.",
+    "Ce qui marchait l'an dernier peut ne plus marcher aujourd'hui. Les gens changent — l'accompagnement peut changer aussi.",
+    "N'oubliez pas les « merci » entre collègues. L'air de l'équipe parvient à la personne tel quel."
   ],
 
   /* ===== Apprendre : cas pratiques (le « pourquoi » plutôt que le juste/faux) ===== */
@@ -880,6 +910,126 @@ window.SHIEN_CONTENT.fr = {
       options: ["Expliquer en détail le diagnostic et l'historique pour qu'ils comprennent", "Dire bref : « tout va bien, un instant et ça se calme », et couper les regards", "Les ignorer et rester concentré sur l'intervention"],
       answer: 1,
       explain: "L'attention bienveillante reste une stimulation pour la personne. Une phrase courte rassure l'entourage et disperse l'attroupement et les regards — c'est cela, le vrai soutien. Inutile de livrer des détails privés comme le diagnostic. Ignorer peut finir en appel aux secours : une phrase — une seule — est le juste milieu."
+    },
+    {
+      q: "Vous avez donné une consigne, aucune réaction. Que vérifier d'abord ?",
+      options: ["Répéter plus fort", "Dire son prénom, vérifier que son attention est sur vous, puis dire court", "Le prendre par la main et le déplacer"],
+      answer: 1,
+      explain: "Des mots qui arrivent d'on ne sait où sont difficiles à reconnaître comme « adressés à moi ». D'abord le prénom. Vérifiez que l'attention est sur vous, puis dites court. L'important n'est pas le volume : c'est l'ordre d'arrivée."
+    },
+    {
+      q: "Il a répondu « oui » à « compris ? », mais l'action ne suit pas. Comment le penser ?",
+      options: ["C'était peut-être un « oui » faute de mieux. Vérifier en faisant faire réellement", "Il a menti : le reprendre", "Réexpliquer plus fort"],
+      answer: 0,
+      explain: "Il existe des « oui » dits parce que la question n'offre pas d'autre issue. Ne blâmez pas : changez la façon de vérifier. Plutôt que demander « compris ? », faites faire pour de vrai. L'action confirme la compréhension mieux que les mots."
+    },
+    {
+      q: "Il ne mange que du riz blanc et du pain. Une bonne réponse ?",
+      options: ["Pour sa santé, ne rien servir tant qu'il ne mange pas autre chose", "C'est peut-être sensoriel. Sans forcer : ajuster forme et température, et consulter médecine et nutrition", "C'est son choix : ne rien faire"],
+      answer: 1,
+      explain: "La sélectivité extrême n'est souvent pas un caprice, mais une sensibilité sensorielle au goût, à la texture, à l'aspect. Forcer transforme le repas lui-même en peur. De petits ajustements de forme et de température, et le volet nutritionnel avec les professionnels."
+    },
+    {
+      q: "La famille dit qu'il ne dort plus ces temps-ci. Les journées aussi sont agitées. D'abord ?",
+      options: ["Augmenter l'activité de jour pour le fatiguer", "Durcir la réponse au comportement", "Consigner le sommeil et le partager avec le médecin"],
+      answer: 2,
+      explain: "Un sommeil déréglé mène droit à un comportement déréglé. D'abord noter quand il s'endort, quand il se réveille, comment se passe la nuit — puis au médecin. La cause (traitement, santé, environnement, angoisse) s'évalue avec la médecine. Durcir seulement la journée ne change pas la racine."
+    },
+    {
+      q: "Avec le planning visuel, quel usage apaise le plus ?",
+      options: ["Retirer (ou retourner) les éléments terminés", "Laisser tout le planning tel quel", "Ne pas le laisser y toucher"],
+      answer: 0,
+      explain: "Voir jusqu'où l'on est arrivé donne une perspective sur ce qui reste — et cela apaise. Si c'est la personne qui retire ou retourne les éléments finis, il y a en plus la fierté d'accomplir. Le planning n'est pas le tableau du professionnel : c'est l'outil de la personne."
+    },
+    {
+      q: "Comme récompense d'un effort, qu'est-ce qui dure le mieux ?",
+      options: ["Acheter quelque chose de cher", "Un temps d'activité préférée (musique, promenade…)", "Des sucreries à chaque fois"],
+      answer: 1,
+      explain: "Les récompenses en objets ou en nourriture tendent à s'emballer ou à s'emmêler avec la santé. Le « temps d'activité préférée » est la joie même de la personne, s'intègre au quotidien et dure. Savoir ce qu'elle aime est déjà une force d'accompagnement."
+    },
+    {
+      q: "Une tâche prend beaucoup de temps. Jusqu'où aider ?",
+      options: ["Veiller à côté, n'aider qu'au point de blocage, au minimum", "C'est du temps perdu : tout faire à sa place", "Ne toucher à rien tant qu'il n'y arrive pas"],
+      answer: 0,
+      explain: "Tout faire à sa place lui vole l'expérience du « j'ai réussi seul », et ses capacités s'amenuisent. Mais l'abandonner n'est pas juste non plus. Veiller, et soutenir doucement au seul point d'achoppement. Prendre du temps n'est pas un échec."
+    },
+    {
+      q: "Début de la relation. Quelle approche fait grandir la confiance ?",
+      options: ["Poser beaucoup de questions pour collecter des informations", "S'asseoir à côté et cumuler du temps à faire la même activité ensemble", "Garder ses distances et s'en tenir à l'observation"],
+      answer: 1,
+      explain: "Les questions de face peuvent ressembler à un interrogatoire. Le « temps en parallèle » — côte à côte, à regarder la même chose — construit le « cette personne est sûre » même sans mots. La confiance passe avant la collecte d'informations."
+    },
+    {
+      q: "Les trajets en train tournent facilement au chahut. Une prévention efficace ?",
+      options: ["Lui faire promettre de descendre à la prochaine s'il fait du bruit", "Ne pas lui parler du tout à bord", "Avant de monter, dire « où, pour quoi faire, combien de temps », et emporter un objet rassurant"],
+      answer: 2,
+      explain: "Un trajet sans perspective est une boîte d'angoisse. Avant de monter, montrer visiblement la destination et la durée, et emporter de quoi s'apaiser (écouteurs, jouet, cartes). La prévention commence avant de monter. Annoncer une punition ne fait qu'ajouter de l'angoisse."
+    },
+    {
+      q: "En sortie, que préparer pour la compréhension de l'entourage ?",
+      options: ["Un badge d'aide ou une petite carte d'explication", "Une copie du dossier médical détaillé", "Rien de particulier"],
+      answer: 0,
+      explain: "Sur le moment, pas le temps de longues explications. Un badge d'aide, ou une carte brève du type « pardon si nous vous avons surpris — cela fait partie de son handicap », jette un pont en un instant. Inutile de transporter des données privées détaillées comme un dossier médical."
+    },
+    {
+      q: "Les registres s'accumulent. La prochaine étape ?",
+      options: ["Supprimer les plus anciens", "Créer un temps d'équipe pour les relire et chercher les schémas", "Les ranger dans un carnet personnel"],
+      answer: 1,
+      explain: "Écrire les registres n'est que la moitié du travail. C'est quand l'équipe les relit et y trouve les schémas de déclencheurs et les réponses efficaces qu'ils deviennent de l'accompagnement. Même court : un temps de relecture régulier."
+    },
+    {
+      q: "En pleine intervention monte un « encore ?! ». C'est… ?",
+      options: ["Un signal de fatigue. Penser pause ou relais", "Un sentiment naturel : continuer tel quel", "L'écraser à la volonté"],
+      answer: 0,
+      explain: "Le « encore ?! » ne dit pas que vous êtes mauvais — il dit que vous êtes fatigué. La fatigue émousse le jugement, filtre dans la voix et le visage, et atteint la personne. Penser pause ou relais n'est pas une faiblesse : c'est une technique qui protège la personne."
+    },
+    {
+      q: "Une méthode efficace jusqu'à l'an dernier perd son effet. Comment le penser ?",
+      options: ["Insister plus fort avec la même méthode jusqu'à ce que ça marche", "La personne a peut-être changé (grandi, situation nouvelle). Mettre à jour la lecture", "Conclure que son état s'est aggravé"],
+      answer: 1,
+      explain: "Les gens changent. Une méthode peut être dépassée par la croissance ; l'environnement et la santé bougent aussi. Méthode inefficace n'égale pas aggravation. Relire les registres et mettre à jour lecture et méthode pour qui elle est aujourd'hui. L'accompagnement est vivant."
+    },
+    {
+      q: "Sa façon de dépenser son argent de poche vous inquiète. Une bonne approche ?",
+      options: ["L'établissement gère tout", "Le laisser dépenser librement sans s'en mêler", "Y réfléchir ensemble (sa volonté au centre ; les petites erreurs deviennent apprentissage)"],
+      answer: 2,
+      explain: "L'argent est son droit. Tout gérer est sûr mais confisque le pouvoir de décider ; le laisser seul expose à l'exploitation. L'axe : « réfléchir ensemble » — accompagner les petites erreurs comme apprentissages, et ne faire digue que contre les grands risques (exploitation, contrats coûteux)."
+    },
+    {
+      q: "Avec quelqu'un qui ne parle pas, qu'est-ce qui est vrai ?",
+      options: ["Comprendre et exprimer sont des capacités distinctes. Lire aussi le comportement, l'expression, le regard", "Ne parle pas = ne comprend pas, donc on peut sauter les explications", "En parlant fort et lentement, ça passe"],
+      answer: 0,
+      explain: "Ne pas parler et ne pas comprendre sont deux choses différentes. Beaucoup comprennent très bien ce que vous dites. Ne sautez pas les explications devant la personne, ne la traitez pas en enfant — recevez aussi ses « réponses » par l'expression, le regard, la posture."
+    },
+    {
+      q: "Un collègue dit que le casque antibruit, « c'est le gâter ». Que répondre ?",
+      options: ["Il a peut-être raison : le faire retirer", "Expliquer que c'est « un outil, comme les lunettes » — un aménagement raisonnable pour la sensibilité sensorielle — et le partager en équipe", "Laisser dire"],
+      answer: 1,
+      explain: "Personne ne dit qu'on « gâte » quelqu'un en corrigeant sa vue avec des lunettes. Compenser la sensibilité auditive avec un casque, c'est exactement pareil. Quand l'équipe partage le sens de l'outil, la personne peut le porter la tête haute."
+    },
+    {
+      q: "Il tient à la même place et au même déroulé à chaque fois. La posture de base ?",
+      options: ["Repères fixes et routine sont un socle de sécurité. Ne pas y toucher sans nécessité", "Changer de place à chaque fois pour éviter la lassitude", "Casser exprès la routine pour corriger la fixation"],
+      answer: 0,
+      explain: "« Comme d'habitude », c'est un monde prévisible — la sécurité même. Casser sans nécessité, c'est retirer le socle. Seulement quand le changement s'impose : avec préavis, petit à petit."
+    },
+    {
+      q: "Première rencontre avec un nouvel usager. Que demander en priorité ?",
+      options: ["La liste détaillée des comportements-problèmes", "Ce qu'il aime, ce qui le rassure, ce qu'il sait bien faire", "Toute son histoire de vie"],
+      answer: 1,
+      explain: "Les informations sur les problèmes se rassemblent plus tard. Ce qu'on veut d'abord : « goûts, apaisements, forces » — l'entrée de l'accompagnement et la sortie de la panique s'y trouvent le plus souvent. Un accompagnement qui part des forces construit aussi la relation plus vite."
+    },
+    {
+      q: "Retour de sortie sans encombre. Le bilan qui prépare la suivante ?",
+      options: ["Tout s'est bien passé : pas de bilan", "Ne lister que les frayeurs", "Consigner aussi ce qui a bien marché et l'injecter dans le prochain plan"],
+      answer: 2,
+      explain: "Une sortie réussie est une mine d'or. Garder « ce qui était bien » (l'horaire, l'itinéraire, les affaires, les mots employés) devient la base du plan suivant. Registres des frayeurs et registres des réussites : ensemble, ils font le « mode d'emploi »."
+    },
+    {
+      q: "Qu'est-ce qu'une personne « douée pour l'accompagnement » ?",
+      options: ["Quelqu'un qui peut arrêter un comportement par la force", "Quelqu'un qui sait augmenter le temps que la personne passe sereine", "Quelqu'un qui anticipe tout et fait tout à sa place"],
+      answer: 1,
+      explain: "Plus que les prouesses de crise : bâtir un quotidien qui ne déborde pas. Plus la personne passe de temps en sécurité, moins il y a de moments difficiles tout court. Cela paraît modeste — et c'est la plus vraie des expertises."
     }
   ]
 };

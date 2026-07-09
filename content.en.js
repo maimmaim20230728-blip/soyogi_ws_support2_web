@@ -679,7 +679,37 @@ window.SHIEN_CONTENT.en = {
     "When things aren't working, review the design of the support, not the person. The moment it becomes \"their fault,\" support stops.",
     "In records, separate what you saw (facts) from what you thought (guesses) — it pays off in the next support.",
     "Try new ideas one at a time. Change everything at once and you'll never know what worked.",
-    "Swapping out isn't defeat — it's a skill. When you're stuck, changing the person changes the air. That margin is a team's strength."
+    "Swapping out isn't defeat — it's a skill. When you're stuck, changing the person changes the air. That margin is a team's strength.",
+    "Before speaking, say their name first. Just knowing the words are meant for them changes how they land.",
+    "\"When the timer rings\" beats \"five more minutes.\" Time gets through when it becomes a visible tool.",
+    "Make waiting visible — show what is being waited for. Blank time turns into anxious time.",
+    "The usual seat, the usual spot. A fixed place is a foundation of reassurance. Don't change it without need.",
+    "Ear muffs and sunglasses aren't \"being spoiled\" — they're tools, like glasses. Use them with confidence.",
+    "Keep a list of difficult sounds, lights, and smells (a sensory map). Adjusting the environment gets much faster.",
+    "\"One more time and we're done\" — announcing the end matters as much as announcing the start.",
+    "Record the good days too. Responses that worked are the team's treasure.",
+    "Not \"they can't\" but \"they haven't learned it yet.\" Change the view and the next move appears.",
+    "Stairs are climbed one step at a time. Skip the small steps and the climb becomes impossible.",
+    "Don't help too much. Even if it takes time, \"I did it myself\" becomes the next strength.",
+    "With a visual schedule, remove (or flip over) finished items. The feeling of progress becomes reassurance.",
+    "As a reward, time doing a favourite activity beats things. It lasts longer and tangles less.",
+    "When you see the signs, change the place. A change of scene is the simplest, strongest move there is.",
+    "In the middle of crying and screaming, you don't need to find the right words. What's needed is safety and time.",
+    "Sit beside them and look at the same thing. \"Parallel time\" quietly grows trust.",
+    "No speech does not mean no understanding. The power to understand and the power to express are different things.",
+    "Don't over-trust the \"yes.\" There are yeses said only because there was nothing else to say. Confirm through action.",
+    "Gestures, pointing, real objects. Words are only one of the tools for communicating.",
+    "Disturbed sleep leads straight to disturbed behaviour. Knowing whether they sleep is support too.",
+    "Picky eating can be a sensory matter, not selfishness. Instead of forcing, adjust shape, temperature, and texture.",
+    "Keep the outlook going even on the move: \"where, what for, how long\" — before boarding.",
+    "The \"welcome back\" when they return. A steady welcome supports the reassurance of the next outing.",
+    "The world's understanding isn't built in a day. Keep a help mark or a short explanation card ready.",
+    "Writing records is only half the work. They come alive when the team makes time to look back over them.",
+    "When \"not again\" crosses your mind, that's a signal to rest. Fatigue quietly dulls judgement.",
+    "After a hard response, always hand over. Fatigue and information both grow lighter when shared.",
+    "Their money and things: not \"managing\" but \"thinking together about how to use them.\" The rights are theirs.",
+    "What worked last year may not work today. People change — support may change too.",
+    "Don't forget \"thank you\" between supporters. The team's air reaches the person just as it is."
   ],
 
   quizzes: [
@@ -862,6 +892,126 @@ window.SHIEN_CONTENT.en = {
       options: ["Explain the diagnosis and background in detail so they understand", "Say briefly, \"We're fine — give it a moment and they'll settle,\" and shield them from view", "Ignore them and focus on the response"],
       answer: 1,
       explain: "Well-meaning attention is still stimulation for the person. One short line reassures the crowd and thins the eyes — that is real support. There is no need to share private details like a diagnosis. Ignoring people can end in a call to the authorities, so one line — just one — is the sweet spot."
+    },
+    {
+      q: "You gave an instruction and there's no response. What do you review first?",
+      options: ["Repeat it in a louder voice", "Say their name, make sure their attention is on you, then tell them briefly", "Take their hand and move them"],
+      answer: 1,
+      explain: "Words that fly in from somewhere can be hard to recognise as \"meant for me.\" Say the name first. Confirm their attention is on you, then keep it short. What matters isn't volume — it's the order in which things arrive."
+    },
+    {
+      q: "They answered \"yes\" to \"understood?\" but the action doesn't follow. How to think about it?",
+      options: ["It may have been a \"yes\" with no other option. Confirm by having them actually do it", "They lied, so point it out", "Explain again in a louder voice"],
+      answer: 0,
+      explain: "There are yeses said only because a question demands one. Don't blame — change how you confirm. Rather than asking \"understood?\", have them actually do it. Action confirms understanding better than words."
+    },
+    {
+      q: "They eat only white rice and bread. A good response?",
+      options: ["For their health, don't serve anything until they eat other foods", "It may be sensory. Don't force it — adjust shape and temperature, and consult medical and nutrition professionals", "It's their choice, so do nothing"],
+      answer: 1,
+      explain: "Extreme picky eating is often not selfishness but sensory sensitivity to taste, texture, or appearance. Forcing turns mealtimes themselves into fear. Layer small adjustments of shape and temperature, and work through nutrition with the professionals."
+    },
+    {
+      q: "The family says they haven't been sleeping lately. Daytime behaviour is rough too. First?",
+      options: ["Increase daytime activity to tire them out", "Respond more strictly to the behaviour", "Record their sleep and share it with their doctor"],
+      answer: 2,
+      explain: "Disturbed sleep leads straight to disturbed behaviour. First record when they sleep, when they wake, and how the night goes — then to the doctor. Work out the cause (medication, health, environment, anxiety) together with medicine. Tightening the daytime response alone changes nothing at the root."
+    },
+    {
+      q: "With a visual schedule, which use brings more reassurance?",
+      options: ["Remove (or flip over) the finished items", "Leave the whole schedule lined up as is", "Don't let them touch it"],
+      answer: 0,
+      explain: "Seeing how far they've come gives an outlook on what remains, and that brings reassurance. If they remove or flip the finished items themselves, there's a sense of accomplishment too. A schedule isn't the supporter's chart — it's the person's tool."
+    },
+    {
+      q: "As a reward for effort, which lasts best?",
+      options: ["Buying something expensive", "Time doing a favourite activity (music, a walk…)", "Sweets every time"],
+      answer: 1,
+      explain: "Rewards of things and food tend to escalate or tangle with health. \"Time doing a favourite activity\" is the person's own joy, fits easily into daily life, and lasts. Knowing what they love is itself a strength of support."
+    },
+    {
+      q: "A task is taking a long time. How far do you help?",
+      options: ["Watch over them, helping minimally only where they stumble", "It's a waste of time, so do it all for them", "Don't lift a finger until they manage"],
+      answer: 0,
+      explain: "Doing everything for them takes away the experience of \"I did it myself,\" and abilities quietly shrink. But abandoning them isn't right either. Watch, and support gently at the single point where they stumble. Taking time is not failure."
+    },
+    {
+      q: "Early in building a relationship. Which approach grows trust?",
+      options: ["Ask lots of questions to gather information", "Sit beside them and build up time doing the same activity together", "Keep your distance and stick to observation"],
+      answer: 1,
+      explain: "Head-on questions can feel like interrogation. \"Parallel time\" — sitting side by side looking at the same thing — builds \"this person is safe\" even without words. Trust comes before information gathering."
+    },
+    {
+      q: "Train rides tend to get noisy. An effective prevention?",
+      options: ["Make them promise to get off at the next station if they're noisy", "Don't speak to them at all on board", "Before boarding, tell them \"where, what for, how long,\" and bring something reassuring"],
+      answer: 2,
+      explain: "A journey without an outlook is a tin of anxiety. Before boarding, show the destination and duration visibly, and bring something calming (earphones, a toy, cards). Prevention starts before you board. Threatening punishment only adds anxiety."
+    },
+    {
+      q: "Going out — what's good to have ready for the public's understanding?",
+      options: ["A help mark or a short explanation card", "A copy of the detailed medical certificate", "Nothing in particular"],
+      answer: 0,
+      explain: "There's no time for long explanations on the spot. A help mark, or a short card like \"Sorry if we startled you — this is part of their disability,\" becomes a bridge in an instant. There's no need to carry detailed private records like medical certificates."
+    },
+    {
+      q: "Records have been piling up. The next step?",
+      options: ["Delete the old ones", "Make team time to look back and find the patterns", "Keep them in a personal notebook"],
+      answer: 1,
+      explain: "Writing records is only half the work. Only when the team looks back and finds the trigger patterns and the responses that worked do records turn into support. Even briefly — hold a regular review."
+    },
+    {
+      q: "Mid-response, the feeling \"not again\" wells up. This is…?",
+      options: ["A sign of fatigue. Consider a break or a swap", "A natural feeling, so continue as is", "Crush it with willpower"],
+      answer: 0,
+      explain: "\"Not again\" doesn't mean you're bad at this — it means you're tired. Fatigue dulls judgement, seeps into voice and face, and reaches the person. Considering a break or a swap isn't weakness; it's a skill that protects the person."
+    },
+    {
+      q: "A method that worked until last year is losing its effect. How to think about it?",
+      options: ["Keep the same method, only stronger, until it works", "The person may have changed (growth, new circumstances). Update your understanding", "Conclude their condition has worsened"],
+      answer: 1,
+      explain: "People change. Growth can outgrow a method; environment and health shift too. A method losing effect does not equal worsening. Look back through the records and update the picture and the method to fit who they are now. Support is a living thing."
+    },
+    {
+      q: "You're worried about how they spend their pocket money. A good approach?",
+      options: ["The facility manages all of it", "Let them spend freely and stay out of it", "Think about it together (their wishes at the centre; small failures become learning)"],
+      answer: 2,
+      explain: "Money is their right. Managing everything is safe but strips away the power to decide. Leaving them alone risks exploitation. The axis is \"thinking together\" — watch over small failures as learning, and stand as a breakwater only against big risks like exploitation and costly contracts."
+    },
+    {
+      q: "Which is true of working with someone who doesn't speak?",
+      options: ["Understanding and expressing are different powers. Read behaviour, expression, and gaze too", "No speech means no understanding, so explanations can be skipped", "Speak loudly and slowly and it will get through"],
+      answer: 0,
+      explain: "Not speaking and not understanding are different things. Many people understand what you say very well. Don't skip explanations in front of them or treat them like children — receive their \"replies\" through expression, gaze, and posture too."
+    },
+    {
+      q: "A colleague says ear muffs are \"coddling.\" How do you respond?",
+      options: ["They may be right, so have them removed", "Explain they're \"a tool, like glasses\" — a reasonable accommodation for sensory sensitivity — and share that with the team", "Let it pass"],
+      answer: 1,
+      explain: "Nobody calls correcting eyesight with glasses \"coddling.\" Compensating hearing sensitivity with ear muffs is exactly the same. When the team shares what the tool means, the person can use it with their head held high."
+    },
+    {
+      q: "They insist on the same seat and the same routine every time. The basic stance?",
+      options: ["A fixed place and routine are foundations of reassurance. Don't change them without need", "Change seats every time so they don't get bored", "Break the routine deliberately to fix the insistence"],
+      answer: 0,
+      explain: "\"Same as always\" is a predictable world — reassurance itself. Breaking it without need pulls the foundation out from under them. Only when change is truly necessary: with advance notice, a little at a time."
+    },
+    {
+      q: "Meeting a new person for the first time. What do you prioritise asking about?",
+      options: ["A detailed list of problem behaviours", "What they love, what reassures them, what they're good at", "Their entire life history"],
+      answer: 1,
+      explain: "Information about problems can be gathered later. What you want first is \"loves, reassurances, strengths\" — the entrance to support, and the exit from panic, are usually found there. Support that starts from strengths also builds the relationship faster."
+    },
+    {
+      q: "You've come home safely from an outing. The review that leads to the next one?",
+      options: ["It went fine, so no review", "List only the near-misses", "Record what went well too, and feed it into the next plan"],
+      answer: 2,
+      explain: "A successful outing is a treasure trove. Keep \"what was good\" — the time of day, the route, the belongings, the words used — and it becomes the base of the next plan. Near-miss records and success records together make the \"instruction manual.\""
+    },
+    {
+      q: "What kind of person is \"good at support\"?",
+      options: ["Someone who can stop behaviour with force", "Someone who can increase the time the person spends at ease", "Someone who anticipates everything and does it all for them"],
+      answer: 1,
+      explain: "More than flashy crisis skills: building a daily life that doesn't boil over in the first place. The longer the person spends feeling safe, the fewer difficult moments there are at all. It looks plain — and it is the truest expertise."
     }
   ],
 

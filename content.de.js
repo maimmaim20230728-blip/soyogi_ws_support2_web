@@ -696,7 +696,37 @@ window.SHIEN_CONTENT.de = {
     "Wenn es nicht läuft: das Design der Unterstützung überprüfen, nicht den Menschen. In dem Moment, in dem es „seine Schuld“ ist, endet die Unterstützung.",
     "Im Protokoll das Gesehene (Fakten) vom Gedachten (Vermutungen) trennen — das zahlt sich bei der nächsten Unterstützung aus.",
     "Neues eines nach dem anderen ausprobieren. Wer alles auf einmal ändert, weiß nie, was gewirkt hat.",
-    "Abwechseln ist keine Niederlage, sondern Technik. Wenn es festfährt: Personenwechsel verändert die Luft. Dieser Spielraum ist die Stärke eines Teams."
+    "Abwechseln ist keine Niederlage, sondern Technik. Wenn es festfährt: Personenwechsel verändert die Luft. Dieser Spielraum ist die Stärke eines Teams.",
+    "Vor dem Ansprechen zuerst den Namen. Allein zu wissen „das gilt mir“ verändert, wie Worte ankommen.",
+    "„Wenn der Timer klingelt“ schlägt „noch fünf Minuten“. Zeit kommt an, wenn sie zum sichtbaren Werkzeug wird.",
+    "Warten sichtbar machen — worauf wird gewartet? Leere Zeit wird zu Angstzeit.",
+    "Der gewohnte Platz, der gewohnte Ort. Ein fester Platz ist ein Fundament der Sicherheit. Nicht ohne Not ändern.",
+    "Gehörschutz und Sonnenbrille sind kein „Verwöhnen“ — sie sind Werkzeuge, wie eine Brille. Mit erhobenem Kopf benutzen.",
+    "Eine Liste schwieriger Geräusche, Lichter, Gerüche führen (eine Sinneskarte). Die Umgebungsanpassung wird viel schneller.",
+    "„Noch einmal, dann sind wir fertig“ — das Ende anzukündigen zählt so viel wie der Anfang.",
+    "Auch die guten Tage dokumentieren. Antworten, die gewirkt haben, sind der Schatz des Teams.",
+    "Nicht „er kann es nicht“, sondern „er hat es noch nicht gelernt“. Ändert sich der Blick, zeigt sich der nächste Zug.",
+    "Treppen steigt man Stufe für Stufe. Wer die kleinen Schritte überspringt, kommt nicht hinauf.",
+    "Nicht zu viel helfen. Auch wenn es dauert: „Ich habe es selbst geschafft“ wird zur nächsten Kraft.",
+    "Beim visuellen Plan Erledigtes abnehmen (oder umdrehen). Das Gefühl des Vorankommens wird zu Ruhe.",
+    "Als Belohnung schlägt Zeit für die Lieblingsbeschäftigung jedes Ding. Hält länger und verheddert sich weniger.",
+    "Bei ersten Zeichen: den Ort wechseln. Der Umgebungswechsel ist der einfachste und stärkste Zug.",
+    "Mitten in Weinen und Schreien braucht es keine richtigen Worte. Es braucht Sicherheit und Zeit.",
+    "Daneben sitzen und auf dasselbe schauen. „Parallele Zeit“ lässt Vertrauen still wachsen.",
+    "Nicht sprechen heißt nicht: nicht verstehen. Verstehen und Ausdrücken sind zwei verschiedene Kräfte.",
+    "Dem „Ja“ nicht zu sehr trauen. Es gibt Jas, die gesagt werden, weil nichts anderes bleibt. Durch Handeln prüfen.",
+    "Gesten, Zeigen, echte Gegenstände. Sprache ist nur eines der Werkzeuge der Verständigung.",
+    "Gestörter Schlaf führt geradewegs zu gestörtem Verhalten. Zu wissen, ob jemand schläft, ist auch Unterstützung.",
+    "Wählerisches Essen kann sensorisch sein, kein Trotz. Statt zu zwingen: Form, Temperatur, Konsistenz variieren.",
+    "Ausblick auch unterwegs: „wohin, wozu, wie lange“ — vor dem Einsteigen.",
+    "Das „Willkommen zurück“ bei der Heimkehr. Ein verlässlicher Empfang trägt die Ruhe des nächsten Ausflugs.",
+    "Das Verständnis der Umgebung entsteht nicht an einem Tag. Ein Hilfe-Zeichen oder eine kurze Erklärkarte bereithalten.",
+    "Protokolle schreiben ist nur die Hälfte. Sie leben auf, wenn das Team sich Zeit nimmt, sie durchzusehen.",
+    "Steigt ein „schon wieder?!“ auf, ist das ein Ruhesignal. Müdigkeit stumpft das Urteil leise ab.",
+    "Nach einem harten Einsatz immer übergeben. Müdigkeit und Wissen werden leichter, wenn man sie teilt.",
+    "Sein Geld, seine Sachen: nicht „verwalten“, sondern „gemeinsam über den Gebrauch nachdenken“. Die Rechte sind seine.",
+    "Was letztes Jahr wirkte, muss heute nicht wirken. Menschen ändern sich — Unterstützung darf sich mitändern.",
+    "Das „Danke“ unter Kolleginnen und Kollegen nicht vergessen. Die Luft des Teams erreicht den Menschen, wie sie ist."
   ],
 
   /* ===== Lernen: Fallquiz (das „Warum“ zählt mehr als richtig/falsch) ===== */
@@ -880,6 +910,126 @@ window.SHIEN_CONTENT.de = {
       options: ["Diagnose und Vorgeschichte ausführlich erklären, damit sie verstehen", "Kurz sagen: „Alles gut — einen Moment, dann beruhigt es sich“, und die Blicke abschirmen", "Ignorieren und sich auf den Einsatz konzentrieren"],
       answer: 1,
       explain: "Auch wohlmeinende Aufmerksamkeit ist für die Person ein Reiz. Ein kurzer Satz beruhigt das Umfeld und lichtet Traube und Blicke — das ist echte Unterstützung. Private Details wie die Diagnose müssen nicht genannt werden. Ignorieren kann in einem Notruf enden — ein Satz, genau einer, ist das rechte Maß."
+    },
+    {
+      q: "Sie geben eine Anweisung — keine Reaktion. Was zuerst überprüfen?",
+      options: ["Lauter wiederholen", "Den Namen sagen, sich der Aufmerksamkeit vergewissern, dann kurz sprechen", "An der Hand nehmen und führen"],
+      answer: 1,
+      explain: "Worte, die irgendwoher fliegen, sind schwer als „an mich gerichtet“ zu erkennen. Zuerst der Name. Vergewissern, dass die Aufmerksamkeit bei Ihnen ist, dann kurz sagen. Es zählt nicht die Lautstärke, sondern die Reihenfolge des Ankommens."
+    },
+    {
+      q: "Auf „verstanden?“ kam ein „Ja“, doch die Handlung bleibt aus. Wie deuten?",
+      options: ["Vielleicht ein „Ja“ mangels Alternative. Durch tatsächliches Tun prüfen lassen", "Er hat gelogen — zurechtweisen", "Noch einmal lauter erklären"],
+      answer: 0,
+      explain: "Es gibt Jas, die gesagt werden, weil die Frage nichts anderes zulässt. Nicht beschuldigen — die Prüfweise ändern. Statt „verstanden?“ zu fragen: wirklich machen lassen. Handeln bestätigt Verstehen sicherer als Worte."
+    },
+    {
+      q: "Er isst nur weißen Reis und Brot. Eine gute Antwort?",
+      options: ["Der Gesundheit zuliebe nichts servieren, bis er anderes isst", "Vielleicht sensorisch. Nicht zwingen: Form und Temperatur variieren und Medizin und Ernährungsberatung einbeziehen", "Seine Wahl — nichts tun"],
+      answer: 1,
+      explain: "Extrem wählerisches Essen ist oft kein Trotz, sondern sensorische Empfindlichkeit für Geschmack, Konsistenz, Aussehen. Zwang macht die Mahlzeit selbst zur Angst. Kleine Anpassungen von Form und Temperatur — und die Ernährung gemeinsam mit den Fachleuten."
+    },
+    {
+      q: "Die Familie berichtet, er schlafe kaum noch. Auch tagsüber ist das Verhalten rau. Zuerst?",
+      options: ["Die Tagesaktivität erhöhen, damit er müde wird", "Strenger auf das Verhalten reagieren", "Den Schlaf dokumentieren und mit dem Arzt teilen"],
+      answer: 2,
+      explain: "Gestörter Schlaf führt geradewegs zu gestörtem Verhalten. Zuerst festhalten, wann er einschläft, aufwacht, wie die Nacht verläuft — dann zum Arzt. Die Ursache (Medikament, Gesundheit, Umgebung, Angst) klärt man mit der Medizin. Nur den Tag zu verschärfen ändert die Wurzel nicht."
+    },
+    {
+      q: "Welcher Umgang mit dem visuellen Plan gibt mehr Ruhe?",
+      options: ["Erledigtes abnehmen (oder umdrehen)", "Den ganzen Plan unverändert hängen lassen", "Ihn nicht anfassen lassen"],
+      answer: 0,
+      explain: "Zu sehen, wie weit man gekommen ist, gibt Ausblick auf den Rest — und das beruhigt. Nimmt die Person Erledigtes selbst ab oder dreht es um, entsteht zudem ein Gefühl des Gelingens. Der Plan ist nicht die Tabelle der Begleitung — er ist das Werkzeug der Person."
+    },
+    {
+      q: "Welche Belohnung für Anstrengung hält am längsten?",
+      options: ["Etwas Teures kaufen", "Zeit für die Lieblingsbeschäftigung (Musik, Spaziergang…)", "Jedes Mal Süßigkeiten"],
+      answer: 1,
+      explain: "Belohnungen aus Dingen und Essen eskalieren leicht oder verheddern sich mit der Gesundheit. „Zeit für die Lieblingsbeschäftigung“ ist die eigene Freude der Person, fügt sich in den Alltag und hält. Zu wissen, was sie liebt, ist selbst eine Stärke der Unterstützung."
+    },
+    {
+      q: "Eine Aufgabe dauert lange. Wie weit helfen?",
+      options: ["Begleitend zusehen, nur am Stockpunkt minimal helfen", "Zeitverschwendung — alles für ihn erledigen", "Gar nicht eingreifen, bis er es schafft"],
+      answer: 0,
+      explain: "Alles zu erledigen raubt die Erfahrung „ich habe es selbst geschafft“, und Fähigkeiten schrumpfen leise. Ihn im Stich zu lassen ist aber auch falsch. Zusehen — und genau an dem einen Stockpunkt sanft stützen. Zeit zu brauchen ist kein Scheitern."
+    },
+    {
+      q: "Beginn der Beziehung. Welcher Umgang lässt Vertrauen wachsen?",
+      options: ["Viele Fragen stellen und Informationen sammeln", "Daneben sitzen und gemeinsame Zeit bei derselben Beschäftigung ansammeln", "Auf Abstand bleiben und nur beobachten"],
+      answer: 1,
+      explain: "Frontale Fragen können wie ein Verhör wirken. „Parallele Zeit“ — Seite an Seite auf dasselbe schauen — baut auch ohne Worte das „dieser Mensch ist sicher“ auf. Vertrauen kommt vor der Informationssammlung."
+    },
+    {
+      q: "Bahnfahrten werden leicht unruhig. Wirksame Vorbeugung?",
+      options: ["Versprechen lassen, bei Lärm an der nächsten Station auszusteigen", "Unterwegs gar nicht ansprechen", "Vor dem Einsteigen „wohin, wozu, wie lange“ sagen und etwas Beruhigendes mitnehmen"],
+      answer: 2,
+      explain: "Eine Fahrt ohne Ausblick ist eine Konservendose voller Angst. Vor dem Einsteigen Ziel und Dauer sichtbar zeigen und Beruhigendes mitnehmen (Kopfhörer, Spielzeug, Karten). Vorbeugung beginnt vor dem Einsteigen. Angekündigte Strafen fügen nur Angst hinzu."
+    },
+    {
+      q: "Unterwegs — was für das Verständnis der Umgebung bereithalten?",
+      options: ["Ein Hilfe-Zeichen oder eine kurze Erklärkarte", "Eine Kopie des ausführlichen Attests", "Nichts Besonderes"],
+      answer: 0,
+      explain: "Vor Ort bleibt keine Zeit für lange Erklärungen. Ein Hilfe-Zeichen oder eine kurze Karte wie „Entschuldigung, falls wir Sie erschreckt haben — das gehört zu seiner Behinderung“ schlägt in einem Augenblick die Brücke. Ausführliche private Unterlagen wie Atteste muss man nicht mitführen."
+    },
+    {
+      q: "Die Protokolle häufen sich. Der nächste Schritt?",
+      options: ["Die alten löschen", "Teamzeit schaffen, um zurückzublicken und Muster zu suchen", "Im persönlichen Heft verwahren"],
+      answer: 1,
+      explain: "Protokolle schreiben ist nur die Hälfte. Erst wenn das Team zurückblickt und die Auslöser-Muster und wirksamen Antworten findet, werden sie zu Unterstützung. Auch kurz — aber regelmäßig durchsehen."
+    },
+    {
+      q: "Mitten im Einsatz steigt ein „schon wieder?!“ auf. Das ist…?",
+      options: ["Ein Müdigkeitssignal. Pause oder Wechsel erwägen", "Ein natürliches Gefühl — einfach weitermachen", "Mit Willenskraft zerdrücken"],
+      answer: 0,
+      explain: "„Schon wieder?!“ heißt nicht, dass Sie schlecht sind — es heißt, dass Sie müde sind. Müdigkeit stumpft das Urteil ab, sickert in Stimme und Miene und erreicht die Person. Pause und Wechsel zu erwägen ist keine Schwäche, sondern eine Technik, die die Person schützt."
+    },
+    {
+      q: "Eine bis letztes Jahr wirksame Methode verliert ihre Wirkung. Wie deuten?",
+      options: ["Dieselbe Methode stärker fortsetzen, bis sie wirkt", "Der Mensch hat sich vielleicht verändert (Wachstum, neue Umstände). Das Bild aktualisieren", "Auf Verschlechterung schließen"],
+      answer: 1,
+      explain: "Menschen ändern sich. Methoden werden durch Wachstum überholt; auch Umgebung und Gesundheit verschieben sich. Wirkungsverlust heißt nicht Verschlechterung. Protokolle durchsehen und Bild wie Methode auf den Menschen von heute aktualisieren. Unterstützung ist etwas Lebendiges."
+    },
+    {
+      q: "Sie sorgen sich, wie er sein Taschengeld ausgibt. Ein guter Umgang?",
+      options: ["Die Einrichtung verwaltet alles", "Frei ausgeben lassen und sich heraushalten", "Gemeinsam nachdenken (sein Wille im Zentrum; kleine Fehler werden Lernen)"],
+      answer: 2,
+      explain: "Geld ist sein Recht. Alles zu verwalten ist sicher, nimmt aber die Kraft zu entscheiden; Laufenlassen birgt Ausbeutungsrisiken. Die Achse ist „gemeinsam nachdenken“ — kleine Fehler als Lernen begleiten und nur bei großen Risiken (Ausbeutung, teure Verträge) zum Wellenbrecher werden."
+    },
+    {
+      q: "Was stimmt im Umgang mit jemandem, der nicht spricht?",
+      options: ["Verstehen und Ausdrücken sind verschiedene Kräfte. Auch Verhalten, Miene und Blick lesen", "Spricht nicht = versteht nicht, Erklärungen kann man auslassen", "Laut und langsam gesprochen kommt es an"],
+      answer: 0,
+      explain: "Nicht sprechen und nicht verstehen sind zweierlei. Viele verstehen sehr gut, was Sie sagen. Lassen Sie Erklärungen vor der Person nicht aus und behandeln Sie sie nicht wie ein Kind — empfangen Sie ihre „Antworten“ auch über Miene, Blick und Haltung."
+    },
+    {
+      q: "Eine Kollegin nennt den Gehörschutz „Verwöhnen“. Wie antworten?",
+      options: ["Vielleicht stimmt es — abnehmen lassen", "Erklären: „ein Werkzeug, wie eine Brille“ — ein angemessener Ausgleich für sensorische Empfindlichkeit — und es im Team teilen", "Überhören"],
+      answer: 1,
+      explain: "Niemand nennt es „Verwöhnen“, die Sehkraft mit einer Brille auszugleichen. Die Hörempfindlichkeit mit Gehörschutz auszugleichen ist genau dasselbe. Teilt das Team den Sinn des Werkzeugs, kann die Person es mit erhobenem Kopf tragen."
+    },
+    {
+      q: "Er besteht jedes Mal auf demselben Platz, demselben Ablauf. Die Grundhaltung?",
+      options: ["Fester Platz und Routine sind ein Fundament der Sicherheit. Nicht ohne Not ändern", "Jedes Mal den Platz wechseln, damit es nicht langweilig wird", "Die Routine absichtlich brechen, um das Beharren zu korrigieren"],
+      answer: 0,
+      explain: "„Wie immer“ ist eine vorhersehbare Welt — Sicherheit selbst. Ohne Not zu brechen heißt, das Fundament herauszuziehen. Nur wenn Änderung wirklich nötig ist: mit Vorankündigung, Stück für Stück."
+    },
+    {
+      q: "Erstes Treffen mit einem neuen Menschen. Was zuerst erfragen?",
+      options: ["Die ausführliche Liste der Problemverhalten", "Was er liebt, was ihn beruhigt, was er gut kann", "Die ganze Lebensgeschichte"],
+      answer: 1,
+      explain: "Informationen über Probleme sammeln sich später. Zuerst will man „Lieben, Beruhigen, Können“ wissen — der Eingang der Unterstützung und der Ausgang aus der Panik liegen meist dort. Unterstützung, die bei den Stärken beginnt, baut auch die Beziehung schneller."
+    },
+    {
+      q: "Wohlbehalten vom Ausflug zurück. Der Rückblick, der zum nächsten führt?",
+      options: ["Alles gut gegangen — kein Rückblick", "Nur die Schrecksekunden auflisten", "Auch das Gelungene festhalten und in den nächsten Plan einfließen lassen"],
+      answer: 2,
+      explain: "Ein gelungener Ausflug ist eine Goldgrube. „Was gut war“ festhalten (Uhrzeit, Route, Mitgebrachtes, Worte) — das wird zur Basis des nächsten Plans. Schreck-Protokolle und Gelingens-Protokolle: erst zusammen ergeben sie die „Gebrauchsanleitung“."
+    },
+    {
+      q: "Was für ein Mensch ist „gut im Unterstützen“?",
+      options: ["Wer Verhalten mit Kraft stoppen kann", "Wer die Zeit vermehren kann, die der Mensch in Ruhe verbringt", "Wer alles vorwegnimmt und alles für ihn erledigt"],
+      answer: 1,
+      explain: "Mehr als glänzende Krisenkünste zählt: einen Alltag zu bauen, der gar nicht erst überkocht. Je länger der Mensch sich sicher fühlt, desto weniger schwierige Momente gibt es überhaupt. Es wirkt unscheinbar — und ist die echteste Professionalität."
     }
   ]
 };

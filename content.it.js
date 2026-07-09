@@ -696,7 +696,37 @@ window.SHIEN_CONTENT.it = {
     "Quando qualcosa non va, rivedete il progetto del supporto, non la persona. Nell'istante in cui è «colpa sua», il supporto si ferma.",
     "Nei registri, separate ciò che avete visto (fatti) da ciò che avete pensato (supposizioni): rende al supporto successivo.",
     "Provate le novità una alla volta. Cambiando tutto insieme, non si saprà mai cosa ha funzionato.",
-    "Darsi il cambio non è una sconfitta: è tecnica. Quando ci si incaglia, cambiare persona cambia l'aria. Quel margine è la forza della squadra."
+    "Darsi il cambio non è una sconfitta: è tecnica. Quando ci si incaglia, cambiare persona cambia l'aria. Quel margine è la forza della squadra.",
+    "Prima di parlare, dite il nome. Solo sapere che le parole sono rivolte a lei cambia il modo in cui arrivano.",
+    "Meglio «quando suona il timer» che «ancora cinque minuti». Il tempo arriva quando diventa uno strumento visibile.",
+    "Rendete visibile l'attesa — che si veda cosa si sta aspettando. Il tempo vuoto diventa tempo d'ansia.",
+    "Il posto di sempre, il solito angolo. Il posto fisso è un fondamento di sicurezza. Non cambiatelo senza necessità.",
+    "Le cuffie antirumore e gli occhiali da sole non sono «vizi»: sono strumenti, come gli occhiali da vista. Da usare a testa alta.",
+    "Tenete una lista di suoni, luci e odori difficili (una mappa sensoriale). Sistemare l'ambiente diventa molto più rapido.",
+    "«Ancora una volta e abbiamo finito» — annunciare la fine conta quanto annunciare l'inizio.",
+    "Registrate anche le giornate buone. Le risposte che hanno funzionato sono il tesoro della squadra.",
+    "Non «non può», ma «non l'ha ancora imparato». Cambia lo sguardo e appare la mossa successiva.",
+    "Le scale si salgono un gradino alla volta. Saltando i piccoli passi, la salita diventa impossibile.",
+    "Non aiutate troppo. Anche se ci vuole tempo, il «ce l'ho fatta da solo» diventa la forza successiva.",
+    "Nel programma visivo, togliete (o girate) le voci concluse. La sensazione di avanzare diventa serenità.",
+    "Come premio, il tempo di un'attività preferita batte gli oggetti. Dura di più e si ingarbuglia meno.",
+    "Visti i segnali, cambiate luogo. Il cambio d'ambiente è la mossa più semplice e potente che ci sia.",
+    "Nel pieno del pianto e delle urla non serve trovare le parole giuste. Servono sicurezza e tempo.",
+    "Sedersi accanto e guardare la stessa cosa. Il «tempo in parallelo» fa crescere la fiducia in silenzio.",
+    "Non parlare non significa non capire. La capacità di comprendere e quella di esprimersi sono cose diverse.",
+    "Non fidatevi troppo del «sì». Ci sono sì detti perché non c'era altro da dire. Verificate con l'azione.",
+    "Gesti, indicare, oggetti reali. La parola è solo uno degli strumenti per comunicare.",
+    "Il sonno sregolato porta dritto al comportamento sregolato. Sapere se dorme è anch'esso supporto.",
+    "La selettività alimentare può essere sensoriale, non un capriccio. Invece di forzare: forma, temperatura, consistenza.",
+    "Prospettiva anche in viaggio: «dove, per cosa, quanto tempo» — prima di salire.",
+    "Il «bentornato» al rientro. Un'accoglienza stabile sostiene la serenità della prossima uscita.",
+    "La comprensione altrui non si costruisce in un giorno. Tenete pronti un simbolo di aiuto o una breve carta di spiegazione.",
+    "Scrivere i registri è solo metà del lavoro. Prendono vita quando la squadra si dà il tempo di rileggerli.",
+    "Se affiora un «ancora?!», è un segnale di riposo. La fatica smussa il giudizio in silenzio.",
+    "Dopo un intervento duro, passate sempre le consegne. Fatica e informazioni pesano meno condivise.",
+    "I suoi soldi, le sue cose: non «amministrare», ma «pensare insieme a come usarli». I diritti sono suoi.",
+    "Ciò che funzionava l'anno scorso può non funzionare oggi. Le persone cambiano — anche il supporto può cambiare.",
+    "Non dimenticate i «grazie» tra colleghi. L'aria della squadra arriva alla persona così com'è."
   ],
 
   /* ===== Imparare: quiz di casi (imparare il «perché», più che giusto/sbagliato) ===== */
@@ -880,6 +910,126 @@ window.SHIEN_CONTENT.it = {
       options: ["Spiegare in dettaglio diagnosi e vicenda perché capiscano", "Dire breve: «tutto bene, un attimo e si calma», e tagliare gli sguardi", "Ignorarli e concentrarsi sulla gestione"],
       answer: 1,
       explain: "Anche l'attenzione ben intenzionata è uno stimolo per la persona. Una frase breve rassicura chi sta intorno e dirada capannello e sguardi: questo è vero supporto. Non serve rivelare dati privati come la diagnosi. Ignorare può finire in una chiamata ai soccorsi: una frase — una sola — è la misura giusta."
+    },
+    {
+      q: "Avete dato un'indicazione e non c'è risposta. Cosa rivedere per primo?",
+      options: ["Ripetere a voce più alta", "Dire il nome, verificare che l'attenzione sia su di voi, poi dire in breve", "Prenderla per mano e spostarla"],
+      answer: 1,
+      explain: "Parole che arrivano da chissà dove sono difficili da riconoscere come «rivolte a me». Prima il nome. Verificate che l'attenzione sia su di voi, poi dite in breve. Non conta il volume: conta l'ordine d'arrivo."
+    },
+    {
+      q: "Ha risposto «sì» a «hai capito?», ma l'azione non segue. Come pensarla?",
+      options: ["Forse era un «sì» per mancanza d'altro. Verificare facendo fare davvero", "Ha mentito: riprenderla", "Rispiegare a voce più alta"],
+      answer: 0,
+      explain: "Ci sono sì detti perché la domanda non lascia altra uscita. Non colpevolizzate: cambiate il modo di verificare. Più che chiedere «hai capito?», fate fare davvero. L'azione conferma la comprensione meglio delle parole."
+    },
+    {
+      q: "Mangia solo riso in bianco e pane. Una buona risposta?",
+      options: ["Per la salute, non servire nulla finché non mangia altro", "Può essere sensoriale. Senza forzare: variare forma e temperatura e consultare medicina e nutrizione", "È una sua scelta: non fare nulla"],
+      answer: 1,
+      explain: "La selettività estrema spesso non è capriccio, ma sensibilità sensoriale a gusto, consistenza, aspetto. Forzare trasforma il pasto stesso in paura. Piccoli aggiustamenti di forma e temperatura, e il lato nutrizionale con i professionisti."
+    },
+    {
+      q: "La famiglia riferisce che ultimamente non dorme. Anche il giorno è agitato. Prima cosa?",
+      options: ["Aumentare l'attività diurna per stancarla", "Irrigidire la risposta al comportamento", "Registrare il sonno e condividerlo con il medico"],
+      answer: 2,
+      explain: "Il sonno sregolato porta dritto al comportamento sregolato. Prima annotare quando si addormenta, quando si sveglia, come va la notte — poi dal medico. La causa (farmaci, salute, ambiente, ansia) si valuta con la medicina. Irrigidire solo il giorno non cambia la radice."
+    },
+    {
+      q: "Con il programma visivo, quale uso dà più serenità?",
+      options: ["Togliere (o girare) le voci concluse", "Lasciare tutto il programma com'è", "Non lasciarglielo toccare"],
+      answer: 0,
+      explain: "Vedere fin dove si è arrivati dà prospettiva su ciò che resta — e questo rasserena. Se è la persona stessa a togliere o girare le voci finite, nasce anche il senso di riuscita. Il programma non è la tabella dell'operatore: è lo strumento della persona."
+    },
+    {
+      q: "Come premio per l'impegno, cosa dura di più?",
+      options: ["Comprare qualcosa di costoso", "Tempo di un'attività preferita (musica, passeggiata…)", "Dolcetti ogni volta"],
+      answer: 1,
+      explain: "I premi in oggetti e cibo tendono a crescere su se stessi o a ingarbugliarsi con la salute. Il «tempo dell'attività preferita» è la gioia stessa della persona, entra facilmente nel quotidiano e dura. Sapere cosa ama è già forza di supporto."
+    },
+    {
+      q: "Un compito sta richiedendo molto tempo. Fin dove aiutare?",
+      options: ["Vegliare accanto e aiutare al minimo solo dove si inceppa", "È tempo perso: fare tutto al posto suo", "Non toccare nulla finché non ce la fa"],
+      answer: 0,
+      explain: "Fare tutto al posto suo ruba l'esperienza del «ce l'ho fatta da solo», e le capacità si riducono piano piano. Ma abbandonarla non è giusto nemmeno. Osservare, e sostenere con delicatezza nel solo punto dell'inciampo. Metterci tempo non è fallire."
+    },
+    {
+      q: "Inizio della relazione. Quale vicinanza fa crescere la fiducia?",
+      options: ["Fare molte domande per raccogliere informazioni", "Sedersi accanto e accumulare tempo facendo insieme la stessa attività", "Tenere le distanze e limitarsi a osservare"],
+      answer: 1,
+      explain: "Le domande frontali possono sembrare un interrogatorio. Il «tempo in parallelo» — fianco a fianco, guardando la stessa cosa — costruisce il «questa persona è sicura» anche senza parole. La fiducia viene prima della raccolta di informazioni."
+    },
+    {
+      q: "I viaggi in treno tendono a farsi rumorosi. Prevenzione efficace?",
+      options: ["Far promettere di scendere alla prossima se fa rumore", "Non rivolgerle la parola durante il tragitto", "Prima di salire, dire «dove, per cosa, quanto tempo» e portare qualcosa di rassicurante"],
+      answer: 2,
+      explain: "Un tragitto senza prospettiva è una scatola d'ansia. Prima di salire mostrare in modo visibile meta e durata, e portare qualcosa che calmi (auricolari, un gioco, delle carte). La prevenzione comincia prima di salire. Annunciare punizioni aggiunge solo ansia."
+    },
+    {
+      q: "In uscita, cosa conviene tenere pronto per la comprensione altrui?",
+      options: ["Un simbolo di aiuto o una breve carta di spiegazione", "Una copia del certificato medico dettagliato", "Niente di particolare"],
+      answer: 0,
+      explain: "Sul momento non c'è tempo per lunghe spiegazioni. Un simbolo di aiuto o una carta breve tipo «scusate se vi abbiamo spaventato — fa parte della sua disabilità» getta un ponte in un attimo. Non serve portare con sé dati privati dettagliati come i certificati."
+    },
+    {
+      q: "I registri si stanno accumulando. Il passo successivo?",
+      options: ["Cancellare i più vecchi", "Creare tempo di squadra per rileggerli e cercare gli schemi", "Custodirli in un quaderno personale"],
+      answer: 1,
+      explain: "Scrivere i registri è solo metà del lavoro. Solo quando la squadra li rilegge e vi trova gli schemi degli inneschi e le risposte efficaci, diventano supporto. Anche breve — ma una revisione periodica."
+    },
+    {
+      q: "Nel pieno dell'intervento affiora un «ancora?!». Questo è…?",
+      options: ["Un segnale di fatica. Valutare pausa o cambio", "Un sentimento naturale: continuare così", "Schiacciarlo con la forza di volontà"],
+      answer: 0,
+      explain: "L'«ancora?!» non dice che siete incapaci — dice che siete stanchi. La fatica smussa il giudizio, filtra nella voce e nel viso, e arriva alla persona. Valutare pausa o cambio non è debolezza: è una tecnica che protegge la persona."
+    },
+    {
+      q: "Un metodo efficace fino all'anno scorso sta perdendo effetto. Come pensarla?",
+      options: ["Insistere più forte con lo stesso metodo finché funziona", "La persona può essere cambiata (crescita, nuove circostanze). Aggiornare la lettura", "Concludere che il quadro è peggiorato"],
+      answer: 1,
+      explain: "Le persone cambiano. La crescita supera un metodo; anche ambiente e salute si spostano. Metodo senza effetto non è peggioramento. Rileggere i registri e aggiornare lettura e metodo su chi è oggi. Il supporto è cosa viva."
+    },
+    {
+      q: "Vi preoccupa come spende la paghetta. Un buon coinvolgimento?",
+      options: ["La struttura amministra tutto", "Lasciarla spendere liberamente senza entrarci", "Pensarci insieme (la sua volontà al centro; i piccoli errori diventano apprendimento)"],
+      answer: 2,
+      explain: "Il denaro è un suo diritto. Amministrare tutto è sicuro ma sottrae il potere di decidere; lasciar correre espone allo sfruttamento. L'asse è «pensare insieme»: accompagnare i piccoli errori come apprendimento e fare da frangiflutti solo davanti ai rischi grandi (sfruttamento, contratti costosi)."
+    },
+    {
+      q: "Sul lavorare con chi non parla, cosa è vero?",
+      options: ["Comprendere ed esprimere sono capacità diverse. Leggere anche comportamento, espressione, sguardo", "Non parla = non capisce, quindi si possono saltare le spiegazioni", "Parlando forte e piano arriva"],
+      answer: 0,
+      explain: "Non parlare e non capire sono cose diverse. Molte persone capiscono benissimo ciò che dite. Non saltate le spiegazioni davanti a lei né trattatela da bambina — ricevete le sue «risposte» anche da espressione, sguardo e postura."
+    },
+    {
+      q: "Un collega dice che le cuffie antirumore sono «viziarla». Come rispondere?",
+      options: ["Forse ha ragione: fargliele togliere", "Spiegare che sono «uno strumento, come gli occhiali» — un accomodamento ragionevole per la sensibilità sensoriale — e condividerlo con la squadra", "Lasciar correre"],
+      answer: 1,
+      explain: "Nessuno chiama «vizio» correggere la vista con gli occhiali. Compensare la sensibilità uditiva con le cuffie è esattamente lo stesso. Quando la squadra condivide il senso dello strumento, la persona può usarlo a testa alta."
+    },
+    {
+      q: "Insiste ogni volta sullo stesso posto e sulla stessa sequenza. La postura di base?",
+      options: ["Posto fisso e routine sono fondamenta di sicurezza. Non cambiarli senza necessità", "Cambiare posto ogni volta perché non si annoi", "Rompere apposta la routine per correggere l'insistenza"],
+      answer: 0,
+      explain: "«Come sempre» è un mondo prevedibile: la sicurezza stessa. Romperlo senza necessità è sfilare le fondamenta. Solo quando il cambiamento è davvero necessario: con preavviso, un poco alla volta."
+    },
+    {
+      q: "Primo incontro con una persona nuova. Cosa chiedere in via prioritaria?",
+      options: ["L'elenco dettagliato dei comportamenti problema", "Cosa ama, cosa la rassicura, in cosa è brava", "Tutta la storia di vita"],
+      answer: 1,
+      explain: "Le informazioni sui problemi si raccolgono anche dopo. Ciò che si vuole prima è «amori, rassicurazioni, talenti» — l'ingresso del supporto e l'uscita dal panico di solito stanno lì. Il supporto che parte dalle forze costruisce anche la relazione più in fretta."
+    },
+    {
+      q: "Siete tornati sani e salvi dall'uscita. La revisione che porta alla prossima?",
+      options: ["È andata bene: nessuna revisione", "Elencare solo gli spaventi", "Registrare anche ciò che è andato bene e versarlo nel prossimo piano"],
+      answer: 2,
+      explain: "Un'uscita riuscita è una miniera d'oro. Conservare «cosa è andato bene» (orario, percorso, effetti personali, parole usate) diventa la base del piano successivo. Registri degli spaventi e registri delle riuscite: insieme fanno il «manuale d'uso»."
+    },
+    {
+      q: "Com'è una persona «brava nel supporto»?",
+      options: ["Chi sa fermare il comportamento con la forza", "Chi sa aumentare il tempo che la persona trascorre serena", "Chi anticipa tutto e fa tutto al posto suo"],
+      answer: 1,
+      explain: "Più delle abilità vistose nella crisi: costruire un quotidiano che non arriva a bollire. Più a lungo la persona vive sentendosi al sicuro, meno momenti difficili esistono in assoluto. Sembra poco appariscente — ed è la competenza più vera."
     }
   ]
 };

@@ -328,18 +328,24 @@
   }
 
   /* ========== まなぶ ========== */
-  function todayIndex(len) {
-    var now = new Date(), start = new Date(now.getFullYear(), 0, 0);
-    return Math.floor((now - start) / 86400000) % len;
+  /* デッキ方式：ヒントもクイズも「重複なしで全件」出題。使い切ったら再シャッフル。
+   * メモリ内のみ＝アプリを閉じるとリセット。件数は全言語同一（_check.jsで担保）なので言語切替後も添字は有効。 */
+  function shuffled(n) {
+    var a = []; for (var i = 0; i < n; i++) a.push(i);
+    for (var j = a.length - 1; j > 0; j--) { var k = Math.floor(Math.random() * (j + 1)); var t = a[j]; a[j] = a[k]; a[k] = t; }
+    return a;
   }
-  var lastQuiz = -1;
-  function pickQuiz() {
-    if (C.quizzes.length <= 1) return 0;
-    var i; do { i = Math.floor(Math.random() * C.quizzes.length); } while (i === lastQuiz);
-    lastQuiz = i; return i;
+  var hintDeck = [], quizDeck = [];
+  function nextHint() {
+    if (!hintDeck.length) hintDeck = shuffled(C.hints.length);
+    return C.hints[hintDeck.pop()];
+  }
+  function nextQuizIndex() {
+    if (!quizDeck.length) quizDeck = shuffled(C.quizzes.length);
+    return quizDeck.pop();
   }
   function renderLearn() {
-    var hint = C.hints[todayIndex(C.hints.length)];
+    var hint = nextHint();
     var html = '<div class="learn-hint"><div class="lh-label">' + esc(T.todayHint) + "</div>" +
       "<p>" + esc(hint) + "</p>" +
       '<button class="lh-more" id="hintMore">' + esc(T.anotherHint) + "</button></div>";
@@ -347,14 +353,17 @@
     html += '<div id="quizArea"></div>';
     $("#view-learn").innerHTML = html;
     $("#hintMore").addEventListener("click", function () {
-      $("#view-learn .learn-hint p").textContent = C.hints[Math.floor(Math.random() * C.hints.length)];
+      $("#view-learn .learn-hint p").textContent = nextHint();
     });
-    renderQuiz(pickQuiz());
+    renderQuiz(nextQuizIndex());
   }
   function renderQuiz(qi) {
     var q = C.quizzes[qi];
+    /* 選択肢は表示のたびに並びをシャッフル＝正解の位置が固定されない */
+    var order = shuffled(q.options.length);
+    var correctPos = order.indexOf(q.answer);
     var html = '<div class="quiz-card"><div class="quiz-q">' + esc(q.q) + '</div><div class="quiz-opts">';
-    q.options.forEach(function (o, i) { html += '<button class="quiz-opt" data-i="' + i + '">' + esc(o) + "</button>"; });
+    order.forEach(function (oi, pos) { html += '<button class="quiz-opt" data-i="' + pos + '">' + esc(q.options[oi]) + "</button>"; });
     html += '</div><div class="quiz-explain" id="quizExplain"></div></div>';
     $("#quizArea").innerHTML = html;
     var answered = false;
@@ -364,16 +373,16 @@
         var chosen = Number(b.dataset.i);
         document.querySelectorAll("#quizArea .quiz-opt").forEach(function (x) {
           var xi = Number(x.dataset.i);
-          if (xi === q.answer) x.classList.add("correct");
+          if (xi === correctPos) x.classList.add("correct");
           else if (xi === chosen) x.classList.add("wrong");
           x.disabled = true;
         });
         var ex = $("#quizExplain");
-        ex.innerHTML = '<div class="qe-head">' + (chosen === q.answer ? esc(T.quizRight) : esc(T.quizWrong)) + "</div>" +
+        ex.innerHTML = '<div class="qe-head">' + (chosen === correctPos ? esc(T.quizRight) : esc(T.quizWrong)) + "</div>" +
           "<p>" + esc(q.explain) + "</p>" +
           '<button class="quiz-next" id="quizNext">' + esc(T.quizNext) + "</button>";
         ex.classList.add("show");
-        $("#quizNext").addEventListener("click", function () { renderQuiz(pickQuiz()); window.scrollTo(0, 0); });
+        $("#quizNext").addEventListener("click", function () { renderQuiz(nextQuizIndex()); window.scrollTo(0, 0); });
       });
     });
   }

@@ -696,7 +696,37 @@ window.SHIEN_CONTENT.id = {
     "Saat tak berjalan baik, tinjau rancangan dukungannya, bukan orangnya. Begitu menjadi \"salah dia\", dukungan berhenti.",
     "Dalam catatan, pisahkan yang kaulihat (fakta) dari yang kaupikirkan (dugaan) — berguna untuk dukungan berikutnya.",
     "Coba hal baru satu per satu. Mengubah semuanya sekaligus membuatmu tak tahu mana yang berhasil.",
-    "Bergantian bukan kekalahan — itu teknik. Saat buntu, mengganti orang mengubah suasana. Kelonggaran itulah kekuatan tim."
+    "Bergantian bukan kekalahan — itu teknik. Saat buntu, mengganti orang mengubah suasana. Kelonggaran itulah kekuatan tim.",
+    "Sebelum bicara, sebut namanya dulu. Sekadar tahu \"kata-kata ini untukku\" sudah mengubah cara sampainya.",
+    "\"Saat timer berbunyi\" lebih baik daripada \"lima menit lagi\". Waktu tersampaikan bila menjadi alat yang terlihat.",
+    "Buat penantian terlihat — apa yang sedang ditunggu. Waktu kosong berubah menjadi waktu cemas.",
+    "Kursi yang biasa, tempat yang biasa. Tempat tetap adalah fondasi rasa aman. Jangan diubah tanpa perlu.",
+    "Earmuff dan kacamata hitam bukan \"manja\" — itu alat, seperti kacamata. Pakailah dengan percaya diri.",
+    "Buat daftar suara, cahaya, dan bau yang sulit (peta sensorik). Menata lingkungan jadi jauh lebih cepat.",
+    "\"Sekali lagi lalu selesai\" — mengumumkan akhir sama pentingnya dengan mengumumkan awal.",
+    "Catat juga hari-hari yang lancar. Penanganan yang berhasil adalah harta tim.",
+    "Bukan \"tidak bisa\", melainkan \"belum belajar\". Ubah cara pandang, langkah berikutnya kelihatan.",
+    "Tangga dinaiki satu anak tangga demi satu. Melompati langkah kecil membuat pendakian mustahil.",
+    "Jangan membantu berlebihan. Meski makan waktu, \"aku bisa sendiri\" menjadi kekuatan berikutnya.",
+    "Pada jadwal visual, lepaskan (atau balik) butir yang selesai. Rasa maju itu menjadi ketenangan.",
+    "Sebagai hadiah, waktu kegiatan favorit mengalahkan barang. Lebih awet dan tak mudah kusut.",
+    "Melihat tanda-tandanya, pindahlah tempat. Mengganti lingkungan adalah langkah paling sederhana dan paling kuat.",
+    "Di tengah tangis dan jeritan, tak perlu mencari kata yang tepat. Yang dibutuhkan: keamanan dan waktu.",
+    "Duduk di sampingnya, pandangi hal yang sama. \"Waktu paralel\" menumbuhkan kepercayaan dalam diam.",
+    "Tidak bicara bukan berarti tidak paham. Kemampuan memahami dan mengungkapkan itu berbeda.",
+    "Jangan terlalu percaya pada \"iya\". Ada \"iya\" yang terucap karena tak ada jawaban lain. Pastikan lewat tindakan.",
+    "Isyarat, menunjuk, benda nyata. Bahasa hanyalah satu dari sekian alat berkomunikasi.",
+    "Tidur yang kacau langsung berujung perilaku yang kacau. Tahu apakah ia tidur juga bagian dari dukungan.",
+    "Pilih-pilih makanan bisa jadi soal sensorik, bukan manja. Daripada memaksa, utak-atik bentuk, suhu, dan tekstur.",
+    "Gambaran juga di kendaraan: \"ke mana, untuk apa, berapa lama\" — sebelum naik.",
+    "\"Selamat datang kembali\" saat pulang. Sambutan yang stabil menopang ketenangan bepergian berikutnya.",
+    "Pengertian orang sekitar tak terbangun sehari. Siapkan tanda bantuan atau kartu penjelasan singkat.",
+    "Menulis catatan baru separuh kerja. Catatan hidup saat tim meluangkan waktu meninjaunya kembali.",
+    "Bila terlintas \"lagi-lagi\", itu tanda untuk istirahat. Lelah diam-diam menumpulkan penilaian.",
+    "Setelah penanganan berat, selalu lakukan serah terima. Lelah dan informasi jadi ringan bila dibagi.",
+    "Uang dan barang miliknya: bukan \"dikelola\", melainkan \"dipikirkan bersama cara memakainya\". Haknya ada padanya.",
+    "Yang manjur tahun lalu belum tentu manjur hari ini. Orang berubah — dukungan pun boleh berubah.",
+    "Jangan lupakan \"terima kasih\" antar pendamping. Suasana tim sampai ke orangnya apa adanya."
   ],
 
   /* ===== Belajar: kuis kasus (belajar \"mengapa\", bukan benar-salah) ===== */
@@ -880,6 +910,126 @@ window.SHIEN_CONTENT.id = {
       options: ["Jelaskan rinci nama diagnosis dan kronologinya agar dipahami", "Katakan singkat: \"tidak apa-apa, sebentar lagi tenang\", lalu halangi pandangan", "Abaikan dan fokus menangani"],
       answer: 1,
       explain: "Perhatian yang baik hati pun tetap rangsangan bagi orangnya. Satu kalimat singkat menenangkan sekitar dan mengurangi kerumunan serta tatapan — itulah dukungan sesungguhnya. Tak perlu menceritakan privasi seperti nama diagnosis. Mengabaikan bisa berujung dilaporkan, jadi \"satu kalimat saja\" itu pas."
+    },
+    {
+      q: "Anda memberi arahan tapi tak ada respons. Apa yang diperiksa dulu?",
+      options: ["Mengulang dengan suara lebih keras", "Sebut namanya, pastikan perhatiannya ke Anda, lalu sampaikan singkat", "Menarik tangannya dan menggerakkan"],
+      answer: 1,
+      explain: "Kata-kata yang melayang entah dari mana sulit dikenali sebagai \"untukku\". Sebut nama dulu. Pastikan perhatiannya ke Anda, lalu bicara singkat. Yang penting bukan volume — melainkan urutan sampainya."
+    },
+    {
+      q: "Menjawab \"iya\" untuk \"paham?\", tapi tindakannya tak menyusul. Bagaimana memikirkannya?",
+      options: ["Mungkin \"iya\" karena tak ada pilihan lain. Pastikan dengan meminta melakukannya sungguhan", "Ia berbohong, jadi tegur", "Jelaskan lagi dengan suara lebih keras"],
+      answer: 0,
+      explain: "Ada \"iya\" yang terucap karena pertanyaan tak menyisakan jawaban lain. Jangan menyalahkan — ubah cara memastikan. Daripada bertanya \"paham?\", minta ia melakukannya sungguhan. Tindakan memastikan pemahaman lebih pasti daripada kata-kata."
+    },
+    {
+      q: "Hanya makan nasi putih dan roti. Penanganan yang baik?",
+      options: ["Demi kesehatan, jangan sajikan apa pun sampai mau makan yang lain", "Mungkin soal sensorik. Tanpa memaksa: utak-atik bentuk dan suhu, dan konsultasi ke medis serta ahli gizi", "Itu pilihannya, jadi biarkan saja"],
+      answer: 1,
+      explain: "Pilih-pilih makanan yang ekstrem sering bukan manja, melainkan kepekaan sensorik terhadap rasa, tekstur, atau tampilan. Memaksa membuat waktu makan itu sendiri jadi ketakutan. Tumpuk penyesuaian kecil bentuk dan suhu, dan sisi gizi bersama profesional."
+    },
+    {
+      q: "Keluarga bilang belakangan ia tak tidur. Perilaku siang pun kacau. Pertama?",
+      options: ["Menambah kegiatan siang agar lelah", "Memperketat respons terhadap perilaku", "Mencatat tidurnya dan berbagi dengan dokter"],
+      answer: 2,
+      explain: "Tidur yang kacau langsung berujung perilaku yang kacau. Catat dulu kapan tidur, kapan bangun, bagaimana malamnya — lalu ke dokter. Penyebab (obat, kesehatan, lingkungan, kecemasan) ditelaah bersama medis. Memperketat siang saja tak mengubah akarnya."
+    },
+    {
+      q: "Pada jadwal visual, pemakaian mana yang lebih menenangkan?",
+      options: ["Melepas (atau membalik) butir yang selesai", "Membiarkan seluruh jadwal terpasang apa adanya", "Tidak membiarkannya menyentuh"],
+      answer: 0,
+      explain: "Terlihat sudah sampai mana memberi gambaran sisa perjalanan — dan itu menenangkan. Bila orangnya sendiri yang melepas atau membalik, lahir pula rasa pencapaian. Jadwal bukan tabel pengelola pendamping — itu alat milik orangnya."
+    },
+    {
+      q: "Sebagai hadiah atas usaha, mana yang paling awet?",
+      options: ["Membelikan barang mahal", "Waktu kegiatan favorit (musik, jalan-jalan…)", "Camilan setiap kali"],
+      answer: 1,
+      explain: "Hadiah barang dan makanan cenderung meningkat terus atau kusut dengan kesehatan. \"Waktu kegiatan favorit\" adalah kegembiraan orang itu sendiri, mudah masuk keseharian, dan awet. Tahu apa kesukaannya sudah merupakan kekuatan dukungan."
+    },
+    {
+      q: "Pekerjaan berjalan lama. Sampai mana membantu?",
+      options: ["Mengawasi, membantu minimal hanya di titik tersendat", "Buang-buang waktu, kerjakan semua untuknya", "Tak menyentuh sama sekali sampai ia berhasil"],
+      answer: 0,
+      explain: "Mengerjakan semua merampas pengalaman \"aku bisa sendiri\", dan kemampuan pelan-pelan menyusut. Tapi melepas begitu saja juga keliru. Awasi, dan topang lembut hanya di satu titik tersendatnya. Makan waktu bukan berarti gagal."
+    },
+    {
+      q: "Awal membangun hubungan. Pergaulan mana yang menumbuhkan kepercayaan?",
+      options: ["Banyak bertanya untuk mengumpulkan informasi", "Duduk di sampingnya, menumpuk waktu melakukan kegiatan yang sama bersama", "Menjaga jarak, hanya mengamati"],
+      answer: 1,
+      explain: "Pertanyaan berhadap-hadapan bisa terasa seperti interogasi. \"Waktu paralel\" — berdampingan memandangi hal yang sama — menumpuk rasa \"orang ini aman\" bahkan tanpa kata. Kepercayaan datang sebelum pengumpulan informasi."
+    },
+    {
+      q: "Perjalanan kereta cenderung jadi ribut. Pencegahan yang efektif?",
+      options: ["Membuatnya berjanji turun di stasiun berikut kalau ribut", "Tidak mengajak bicara sama sekali di dalam", "Sebelum naik, beri tahu \"ke mana, untuk apa, berapa lama\", dan bawa benda penenang"],
+      answer: 2,
+      explain: "Perjalanan tanpa gambaran adalah kaleng berisi cemas. Sebelum naik, tunjukkan tujuan dan lamanya secara terlihat, bawa benda penenang (earphone, mainan, kartu). Pencegahan dimulai sebelum naik. Ancaman hukuman hanya menambah cemas."
+    },
+    {
+      q: "Saat keluar, apa yang baik disiapkan demi pengertian orang sekitar?",
+      options: ["Tanda bantuan atau kartu penjelasan singkat", "Fotokopi surat keterangan medis terperinci", "Tak perlu apa-apa"],
+      answer: 0,
+      explain: "Di tempat kejadian tak ada waktu menjelaskan panjang. Tanda bantuan atau kartu singkat seperti \"maaf bila mengejutkan — ini bagian dari disabilitasnya\" seketika menjadi jembatan. Tak perlu membawa-bawa data pribadi terperinci seperti surat keterangan medis."
+    },
+    {
+      q: "Catatan sudah menumpuk. Langkah berikutnya?",
+      options: ["Menghapus yang lama", "Membuat waktu tim untuk meninjau dan mencari pola", "Menyimpannya di buku pribadi"],
+      answer: 1,
+      explain: "Menulis catatan baru separuh kerja. Ketika tim meninjau dan menemukan pola pemicu serta penanganan yang berhasil, barulah catatan berubah menjadi dukungan. Meski singkat — adakan peninjauan berkala."
+    },
+    {
+      q: "Di tengah penanganan, muncul perasaan \"lagi-lagi\". Ini adalah…?",
+      options: ["Tanda kelelahan. Pertimbangkan istirahat atau bergantian", "Perasaan wajar, lanjutkan apa adanya", "Ditindas dengan tekad"],
+      answer: 0,
+      explain: "\"Lagi-lagi\" bukan berarti Anda buruk — berarti Anda lelah. Lelah menumpulkan penilaian, merembes ke suara dan wajah, dan sampai ke orangnya. Mempertimbangkan istirahat atau pergantian bukan kelemahan; itu teknik yang melindungi orangnya."
+    },
+    {
+      q: "Cara yang manjur sampai tahun lalu mulai tak mempan. Bagaimana memikirkannya?",
+      options: ["Teruskan cara yang sama, lebih keras, sampai mempan", "Mungkin orangnya berubah (tumbuh, keadaan berubah). Perbarui pemahaman", "Simpulkan kondisinya memburuk"],
+      answer: 1,
+      explain: "Orang berubah. Pertumbuhan membuat cara tak lagi pas; lingkungan dan kesehatan pun bergeser. Cara yang tak mempan ≠ memburuk. Tinjau catatan, perbarui pemahaman dan cara sesuai dirinya yang sekarang. Dukungan itu hidup."
+    },
+    {
+      q: "Khawatir dengan cara ia memakai uang sakunya. Keterlibatan yang baik?",
+      options: ["Seluruhnya dikelola lembaga", "Biarkan bebas memakai, tak ikut campur", "Memikirkan bersama (kehendaknya sebagai poros; kegagalan kecil jadi pembelajaran)"],
+      answer: 2,
+      explain: "Uang adalah haknya. Mengelola semuanya memang aman, tapi merampas kekuatan memutuskan; melepas total berisiko eksploitasi. Porosnya \"berpikir bersama\" — kegagalan kecil dikawal sebagai pembelajaran, dan jadi pemecah ombak hanya pada risiko besar (eksploitasi, kontrak mahal)."
+    },
+    {
+      q: "Tentang mendampingi orang yang tidak bicara, mana yang benar?",
+      options: ["Memahami dan mengungkapkan itu kemampuan berbeda. Baca juga perilaku, ekspresi, arah pandang", "Tak bicara = tak paham, jadi penjelasan boleh dilewati", "Bicara keras dan pelan-pelan pasti sampai"],
+      answer: 0,
+      explain: "Tak bisa bicara dan tak paham adalah dua hal berbeda. Banyak yang memahami ucapan Anda dengan sangat baik. Jangan melewati penjelasan di depannya atau memperlakukannya seperti anak kecil — terima \"jawabannya\" juga lewat ekspresi, arah pandang, dan sikap tubuh."
+    },
+    {
+      q: "Rekan berkata earmuff itu \"memanjakan\". Bagaimana menjawab?",
+      options: ["Mungkin benar, minta dilepas", "Jelaskan itu \"alat, seperti kacamata\" — akomodasi wajar bagi kepekaan sensorik — dan bagikan ke tim", "Biarkan saja"],
+      answer: 1,
+      explain: "Tak ada yang menyebut \"manja\" pada kacamata yang mengoreksi penglihatan. Mengimbangi kepekaan pendengaran dengan earmuff persis sama. Bila tim berbagi makna alat itu, orangnya bisa memakainya dengan lebih percaya diri."
+    },
+    {
+      q: "Selalu bersikeras kursi yang sama, urutan yang sama. Sikap dasar pendamping?",
+      options: ["Tempat tetap dan rutinitas adalah fondasi rasa aman. Jangan diubah tanpa perlu", "Ganti kursi tiap kali agar tak bosan", "Sengaja merusak rutinitas untuk mengoreksi kekakuan"],
+      answer: 0,
+      explain: "\"Seperti biasa\" berarti dunia yang bisa diprediksi = rasa aman itu sendiri. Merusaknya tanpa perlu sama dengan mencabut fondasi. Hanya bila perubahan benar-benar diperlukan: dengan pemberitahuan, sedikit demi sedikit."
+    },
+    {
+      q: "Bertemu pengguna layanan baru pertama kali. Apa yang diprioritaskan ditanya?",
+      options: ["Daftar rinci perilaku bermasalah", "Apa yang disukai, yang menenangkan, yang dikuasai", "Seluruh riwayat hidup"],
+      answer: 1,
+      explain: "Informasi masalah bisa dikumpulkan belakangan. Yang ingin diketahui dulu: \"suka, tenang, mahir\" — pintu masuk dukungan dan pintu keluar kepanikan biasanya ada di sana. Dukungan yang berangkat dari kekuatan juga lebih cepat membangun hubungan."
+    },
+    {
+      q: "Pulang bepergian dengan selamat. Peninjauan yang menyambung ke berikutnya?",
+      options: ["Selamat, jadi tak perlu ditinjau", "Mendaftar momen nyaris celaka saja", "Mencatat juga yang berjalan baik, dan memasukkannya ke rencana berikutnya"],
+      answer: 2,
+      explain: "Bepergian yang lancar justru gudang harta. Menyimpan \"apa yang baik\" (jam, rute, bawaan, kata-kata) menjadi dasar rencana berikutnya. Catatan nyaris-celaka dan catatan keberhasilan: keduanya bersama barulah menjadi \"buku panduan\"."
+    },
+    {
+      q: "Menurut Anda, seperti apa \"orang yang mahir mendukung\"?",
+      options: ["Yang bisa menghentikan perilaku dengan kekuatan", "Yang bisa menambah waktu orangnya merasa tenang", "Yang mendahului segalanya dan mengerjakan semua untuknya"],
+      answer: 1,
+      explain: "Lebih dari kecakapan krisis yang mencolok: membangun keseharian yang memang tak mendidih. Makin panjang waktu orangnya merasa aman, makin sedikit pula momen sulit itu sendiri. Tampak sederhana — dan itulah keahlian yang paling sejati."
     }
   ]
 };

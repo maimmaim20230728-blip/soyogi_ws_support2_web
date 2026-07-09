@@ -678,7 +678,37 @@ window.SHIEN_CONTENT.pt = {
     "Quando algo não funciona, revise o desenho do apoio, não a pessoa. No momento em que vira «culpa dela», o apoio para.",
     "Nos registros, separe o que você viu (fatos) do que pensou (suposições) — rende no próximo apoio.",
     "Experimente as novidades uma de cada vez. Mudando tudo de uma vez, nunca se sabe o que funcionou.",
-    "Revezar não é derrota: é técnica. Quando emperrar, trocar de pessoa muda o ar. Essa margem é a força da equipe."
+    "Revezar não é derrota: é técnica. Quando emperrar, trocar de pessoa muda o ar. Essa margem é a força da equipe.",
+    "Antes de falar, diga o nome. Só de saber que as palavras são para ela, elas chegam de outro jeito.",
+    "Melhor «quando o timer tocar» do que «mais cinco minutos». O tempo chega quando vira ferramenta visível.",
+    "Torne a espera visível — que se veja o que está sendo esperado. Tempo em branco vira tempo de ansiedade.",
+    "O lugar de sempre, o assento de sempre. Lugar fixo é alicerce de segurança. Não mude sem necessidade.",
+    "Abafadores de ouvido e óculos escuros não são «mimo»: são ferramentas, como os óculos. Que se usem de cabeça erguida.",
+    "Tenha uma lista de sons, luzes e cheiros difíceis (um mapa sensorial). Ajustar o ambiente fica bem mais rápido.",
+    "«Mais uma vez e acabamos» — anunciar o fim importa tanto quanto anunciar o começo.",
+    "Registre também os dias bons. As respostas que funcionaram são o tesouro da equipe.",
+    "Não é «não consegue», é «ainda não aprendeu». Muda o olhar e o próximo passo aparece.",
+    "Escada se sobe degrau por degrau. Pule os passos pequenos e a subida fica impossível.",
+    "Não ajude demais. Mesmo que demore, o «eu consegui sozinho» vira a força seguinte.",
+    "No cronograma visual, retire (ou vire) os itens concluídos. A sensação de avanço vira segurança.",
+    "Como prêmio, tempo de atividade favorita vale mais que coisas. Dura mais e enrosca menos.",
+    "Viu os sinais, mude de lugar. Trocar de ambiente é a jogada mais simples e poderosa que existe.",
+    "No meio do choro e dos gritos, não precisa achar as palavras certas. O que é preciso é segurança e tempo.",
+    "Sente ao lado e olhem a mesma coisa. O «tempo em paralelo» cria confiança em silêncio.",
+    "Não falar não significa não entender. A capacidade de compreender e a de expressar são coisas distintas.",
+    "Não confie demais no «sim». Há sins ditos só porque não havia outra coisa a dizer. Confirme pela ação.",
+    "Gestos, apontar, objetos reais. A palavra é só uma das ferramentas de comunicação.",
+    "Sono desregulado leva direto a comportamento desregulado. Saber se dorme também é apoio.",
+    "Seletividade alimentar pode ser questão sensorial, não birra. Em vez de forçar, ajuste forma, temperatura e textura.",
+    "Perspectiva também no transporte: «aonde, para quê, quanto tempo» — antes de embarcar.",
+    "O «bem-vindo de volta» no retorno. Uma recepção estável sustenta a tranquilidade da próxima saída.",
+    "A compreensão do entorno não se constrói num dia. Tenha à mão um símbolo de ajuda ou um cartão breve de explicação.",
+    "Escrever registros é só metade. Eles ganham vida quando a equipe reserva tempo para revê-los.",
+    "Se pensar «de novo não», é sinal de descanso. A fadiga embota o julgamento em silêncio.",
+    "Depois de um atendimento difícil, sempre passe o bastão. Cansaço e informação pesam menos compartilhados.",
+    "O dinheiro e as coisas dela: não «administrar», mas «pensar juntos como usar». Os direitos são dela.",
+    "O que funcionou no ano passado pode não funcionar hoje. As pessoas mudam — o apoio também pode mudar.",
+    "Não esqueça o «obrigado» entre colegas. O ar da equipe chega à pessoa exatamente como é."
   ],
 
   quizzes: [
@@ -861,6 +891,126 @@ window.SHIEN_CONTENT.pt = {
       options: ["Explicar em detalhe o diagnóstico e o ocorrido para que entendam", "Dizer breve: «está tudo bem, um instante e ele se acalma», e cortar os olhares", "Ignorar e focar no atendimento"],
       answer: 1,
       explain: "A atenção bem-intencionada também é estímulo para a pessoa. Uma frase curta tranquiliza o entorno e desfaz a rodinha e os olhares — isso é apoio de verdade. Não é preciso contar dados privados como o diagnóstico. Ignorar pode acabar em chamado à polícia, então uma frase — só uma — é a medida certa."
+    },
+    {
+      q: "Você deu uma instrução e não houve resposta. O que revisa primeiro?",
+      options: ["Repetir com voz mais alta", "Dizer o nome, confirmar que a atenção está em você e falar breve", "Pegar pela mão e conduzir"],
+      answer: 1,
+      explain: "Palavras que chegam de qualquer lugar são difíceis de reconhecer como «para mim». Primeiro o nome. Confirme que a atenção está em você e fale curto. O que importa não é o volume — é a ordem de chegada."
+    },
+    {
+      q: "Respondeu «sim» ao «entendeu?», mas a ação não veio. Como pensar?",
+      options: ["Pode ter sido um «sim» sem outra saída. Confirmar fazendo de verdade", "Mentiu, então repreender", "Explicar de novo em voz mais alta"],
+      answer: 0,
+      explain: "Há sins que se dizem porque a pergunta não deixa outra saída. Não culpe — mude o jeito de confirmar. Mais do que perguntar «entendeu?», peça que faça de verdade. A ação confirma a compreensão melhor que as palavras."
+    },
+    {
+      q: "Só come arroz branco e pão. Uma boa resposta?",
+      options: ["Pela saúde, não servir nada até comer outras coisas", "Pode ser sensorial. Sem forçar: ajustar forma e temperatura e consultar medicina e nutrição", "É escolha dele, então não fazer nada"],
+      answer: 1,
+      explain: "A seletividade extrema costuma não ser birra, mas sensibilidade sensorial a sabor, textura ou aparência. Forçar transforma a própria refeição em medo. Pequenos ajustes de forma e temperatura, e o lado nutricional com os profissionais."
+    },
+    {
+      q: "A família conta que ele não anda dormindo. O dia também está agitado. Primeiro?",
+      options: ["Aumentar a atividade diurna para cansar", "Endurecer a resposta ao comportamento", "Registrar o sono e compartilhar com o médico"],
+      answer: 2,
+      explain: "Sono desregulado leva direto a comportamento desregulado. Primeiro registre quando dorme, quando acorda e como vai a noite — e leve ao médico. A causa (remédio, saúde, ambiente, ansiedade) se estuda com a medicina. Endurecer só o dia não muda a raiz."
+    },
+    {
+      q: "No cronograma visual, qual uso traz mais segurança?",
+      options: ["Retirar (ou virar) os itens concluídos", "Deixar o cronograma inteiro como está", "Não deixar a pessoa tocar"],
+      answer: 0,
+      explain: "Ver até onde avançou dá perspectiva do que falta — e isso dá segurança. Se a própria pessoa retira ou vira os itens, há também senso de conquista. O cronograma não é a planilha do apoiador: é a ferramenta da pessoa."
+    },
+    {
+      q: "Como prêmio pelo esforço, o que dura mais?",
+      options: ["Comprar algo caro", "Tempo de atividade favorita (música, passeio…)", "Doces toda vez"],
+      answer: 1,
+      explain: "Prêmios de coisas e comida tendem a escalar ou enroscar com a saúde. O «tempo de atividade favorita» é a própria alegria da pessoa, cabe no cotidiano e dura. Saber do que ela gosta já é força de apoio."
+    },
+    {
+      q: "Uma tarefa está demorando. Até onde ajudar?",
+      options: ["Acompanhar de perto, ajudando o mínimo só onde trava", "É desperdício de tempo: fazer tudo por ela", "Não tocar em nada até conseguir"],
+      answer: 0,
+      explain: "Fazer tudo por ela rouba a experiência do «eu consegui», e as habilidades vão encolhendo. Mas abandonar também não é. Observar, e apoiar de leve só no ponto exato do tropeço. Demorar não é fracassar."
+    },
+    {
+      q: "Início da relação. Qual convivência cria confiança?",
+      options: ["Fazer muitas perguntas para reunir informação", "Sentar ao lado e acumular tempo fazendo a mesma atividade juntos", "Manter distância e só observar"],
+      answer: 1,
+      explain: "Perguntas de frente podem soar como interrogatório. O «tempo em paralelo» — lado a lado, olhando a mesma coisa — constrói o «essa pessoa é segura» mesmo sem palavras. A confiança vem antes da coleta de dados."
+    },
+    {
+      q: "As viagens de trem tendem a ficar agitadas. Prevenção eficaz?",
+      options: ["Fazer prometer que desce na próxima se fizer barulho", "Não falar nada durante o trajeto", "Antes de embarcar, dizer «aonde, para quê, quanto tempo» e levar algo tranquilizador"],
+      answer: 2,
+      explain: "Trajeto sem perspectiva é uma lata de ansiedade. Antes de embarcar, mostre destino e duração de forma visível e leve algo que acalme (fones, brinquedo, cartões). A prevenção começa antes de embarcar. Ameaçar castigo só soma ansiedade."
+    },
+    {
+      q: "Ao sair, o que convém ter pronto para a compreensão do entorno?",
+      options: ["Um símbolo de ajuda ou um cartão breve de explicação", "Cópia do laudo médico detalhado", "Nada em particular"],
+      answer: 0,
+      explain: "Na hora não há tempo para explicações longas. Um símbolo de ajuda, ou um cartão curto tipo «desculpe se assustamos — é parte da deficiência dele», vira ponte num instante. Não é preciso carregar documentos privados detalhados como laudos."
+    },
+    {
+      q: "Os registros foram se acumulando. O próximo passo?",
+      options: ["Apagar os antigos", "Criar tempo de equipe para rever e achar padrões", "Guardar num caderno pessoal"],
+      answer: 1,
+      explain: "Escrever registros é só metade. Só quando a equipe revê e encontra os padrões de gatilho e as respostas que funcionaram é que os registros viram apoio. Mesmo breve — mantenha uma revisão periódica."
+    },
+    {
+      q: "No meio do atendimento, sobe um «de novo não». Isso é…?",
+      options: ["Sinal de fadiga. Considerar pausa ou revezamento", "Sentimento natural: seguir como está", "Esmagar na força de vontade"],
+      answer: 0,
+      explain: "O «de novo não» não significa que você é ruim nisso — significa que está cansado. A fadiga embota o julgamento, escorre para a voz e o rosto, e chega à pessoa. Considerar pausa ou troca não é fraqueza: é técnica que protege a pessoa."
+    },
+    {
+      q: "Um método que funcionava até o ano passado está perdendo efeito. Como pensar?",
+      options: ["Insistir no mesmo método, mais forte, até funcionar", "A pessoa pode ter mudado (crescimento, novas circunstâncias). Atualizar o olhar", "Concluir que o quadro piorou"],
+      answer: 1,
+      explain: "Pessoas mudam. O crescimento faz um método deixar de servir; ambiente e saúde também mudam. Método sem efeito não é piora. Reveja os registros e atualize o olhar e o método para quem ela é hoje. O apoio é coisa viva."
+    },
+    {
+      q: "Preocupa como ele gasta a mesada. Um bom envolvimento?",
+      options: ["A instituição administra tudo", "Deixar gastar livre e não se envolver", "Pensar juntos (a vontade dele no centro; falhas pequenas viram aprendizado)"],
+      answer: 2,
+      explain: "Dinheiro é direito dele. Administrar tudo é seguro, mas rouba o poder de decidir. Soltar de vez arrisca exploração. O eixo é «pensar juntos» — acompanhar as falhas pequenas como aprendizado e ser quebra-mar só nos riscos grandes (exploração, contratos caros)."
+    },
+    {
+      q: "Sobre conviver com alguém que não fala, o que é correto?",
+      options: ["Compreender e expressar são capacidades distintas. Ler também comportamento, expressão e olhar", "Não fala = não entende, então dá para pular explicações", "Falando alto e devagar, chega"],
+      answer: 0,
+      explain: "Não falar e não entender são coisas diferentes. Muita gente entende muito bem o que você diz. Não pule explicações na frente dela nem trate como criança — receba as «respostas» também pela expressão, pelo olhar e pela postura."
+    },
+    {
+      q: "Um colega diz que o abafador de ouvido é «mimo». Como responder?",
+      options: ["Pode ser, então tirar", "Explicar que é «ferramenta, como óculos» — adaptação razoável para a sensibilidade sensorial — e compartilhar com a equipe", "Deixar passar"],
+      answer: 1,
+      explain: "Ninguém chama de «mimo» corrigir a visão com óculos. Compensar a sensibilidade auditiva com abafador é exatamente a mesma coisa. Quando a equipe compartilha o sentido da ferramenta, a pessoa pode usá-la de cabeça erguida."
+    },
+    {
+      q: "Insiste no mesmo assento e na mesma rotina toda vez. A postura básica?",
+      options: ["Lugar fixo e rotina são alicerce de segurança. Não mudar sem necessidade", "Trocar de assento toda vez para não enjoar", "Quebrar de propósito para corrigir a insistência"],
+      answer: 0,
+      explain: "«Como sempre» é um mundo previsível — a própria segurança. Quebrar sem necessidade é arrancar o alicerce. Só quando a mudança é realmente necessária: com aviso prévio, um pouco de cada vez."
+    },
+    {
+      q: "Primeira conversa com uma pessoa nova. O que priorizar perguntar?",
+      options: ["A lista detalhada de comportamentos-problema", "Do que gosta, o que a acalma, no que é boa", "Toda a história de vida"],
+      answer: 1,
+      explain: "A informação dos problemas se reúne depois. O que se quer primeiro é «gostos, calmarias, talentos» — a entrada do apoio e a saída do pânico costumam estar aí. O apoio que começa pelas forças também constrói a relação mais rápido."
+    },
+    {
+      q: "Voltaram sãos e salvos do passeio. A revisão que leva ao próximo?",
+      options: ["Deu certo, então sem revisão", "Listar só os sustos", "Registrar também o que deu certo e levar ao próximo plano"],
+      answer: 2,
+      explain: "Um passeio que deu certo é uma mina de ouro. Guardar «o que foi bom» (horário, rota, pertences, palavras usadas) vira a base do próximo plano. Registros de sustos e de acertos: juntos formam o «manual de instruções»."
+    },
+    {
+      q: "Como é uma pessoa «boa de apoio»?",
+      options: ["A que consegue parar o comportamento na força", "A que sabe aumentar o tempo em que a pessoa fica tranquila", "A que se antecipa a tudo e faz tudo por ela"],
+      answer: 1,
+      explain: "Mais que habilidade vistosa de crise: construir um cotidiano que nem chega a ferver. Quanto mais tempo a pessoa passa em segurança, menos momentos difíceis existem ao todo. Parece simples — e é a perícia mais verdadeira."
     }
   ],
 
