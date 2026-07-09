@@ -32,7 +32,7 @@
 
 ## 公開
 
-- Web 配信：Vercel（`soyogi-shien-support-web.vercel.app` を想定）
+- Web 配信：Vercel（`soyogi-ws-support2-web.vercel.app` を想定）
 - Farcaster Mini App：`.well-known/farcaster.json` の `accountAssociation` は、デプロイ後に Manifest ツールで署名して差し込む
 - Android：別途 Capacitor 版で AAB を作成予定
 
