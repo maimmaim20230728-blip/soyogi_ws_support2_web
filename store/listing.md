@@ -28,7 +28,7 @@ appId：`com.soyogi.wssupport2` / 提供：介護と支援の相談どころ そ
 ・こまった … パニック・自傷・他害・飛び出し・てんかん発作など12の場面カード。「まずやること」は3つだけ、「やってはいけないこと」は赤枠で明示。駅や人混みなど「外出先では」の項目つき。対応後はタップだけ・約30秒の簡易記録（申し送りに貼り付け可）。
 ・しらべる … 自閉スペクトラム症・ADHD・知的障害・統合失調症・てんかん・強度行動障害など11の特性リファレンス。コミュニケーションのコツ、環境の工夫、避けたい対応、事前準備（そなえる）を特性ごとに。内容の根拠を辿れる「根拠ページ」つき。
 ・まなぶ … 日替わりの「今日のヒント」と、正解より“なぜ”を学ぶケースクイズ。
-・つたえる … 声でのやりとりが難しい場面のためのトーキングエイド（定型文の読み上げ・文字盤）と筆談ボード。
+・つたえる … 声でのやりとりが難しい場面のためのトーキングエイド（定型文の読み上げ・文字盤）と筆談ボード。さらに「見通しの見える化」に使える大きなビジュアルタイマー（デジタル／アナログ切替・5/10/15分＋自由設定・終了音はピピピピ／チーン／音声「おしまい」から選択）つき。
 
 ■ 特長
 ・「まずやること」は必ず3つまで。緊急時に読み切れる分量に絞り込み
@@ -64,7 +64,7 @@ With invisible disabilities — autism, mental illness, intellectual disability,
 • When stuck — 12 situation cards (panic, self-harm, aggression, running off, seizures, and more). "First, do this" is always just three items; "what NOT to do" is marked in red. Each card includes an "out and about" section for stations and crowds. Afterwards, save a record in about 30 seconds with taps only (paste it into your handover).
 • Look up — a reference of 11 traits (autism spectrum, ADHD, intellectual disability, schizophrenia, epilepsy, severe behavioral challenges, and more): communication tips, environmental adjustments, approaches to avoid, and advance preparation. An evidence page shows what the content is grounded in.
 • Learn — a hint of the day, plus case quizzes where the "why" matters more than the right answer.
-• Communicate — a talking aid (spoken phrases and a keyboard) and a writing board for moments when speaking is hard.
+• Communicate — a talking aid (spoken phrases and a keyboard) and a writing board for moments when speaking is hard. Plus a big visual timer for making time visible: digital or analog (Time-Timer style), 5/10/15-minute presets plus custom, with a choice of end sounds (beeps, a chime, or a voice saying "Finished").
 
 ■ Highlights
 • "First, do this" is capped at three items — an amount you can actually read in an emergency

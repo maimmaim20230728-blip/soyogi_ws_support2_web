@@ -84,6 +84,21 @@
     setNavLabel("scenes", T.nav.scenes); setNavLabel("lookup", T.nav.lookup);
     setNavLabel("learn", T.nav.learn); setNavLabel("talk", T.nav.talk);
     setPaneLabel("phrases", T.talkPhrases); setPaneLabel("type", T.talkType); setPaneLabel("draw", T.talkDraw);
+    setPaneLabel("timer", T.talkTimer);
+    var tmd = $("#tmModeDigital");
+    if (tmd) {
+      tmd.textContent = T.tmDigital;
+      $("#tmModeAnalog").textContent = T.tmAnalog60;
+      $("#tmModeFull").textContent = T.tmAnalogFull;
+      var pm = document.querySelectorAll(".tm-preset");
+      if (pm.length >= 3) { pm[0].textContent = T.tmMin5; pm[1].textContent = T.tmMin10; pm[2].textContent = T.tmMin15; }
+      $("#tmCustomBtn").textContent = T.tmCustom;
+      $("#tmReset").textContent = T.tmReset;
+      $("#tmSoundLabel").textContent = T.tmSound;
+      var sb = document.querySelectorAll(".tm-sound");
+      if (sb.length >= 3) { sb[0].textContent = T.tmBeep; sb[1].textContent = T.tmChime; sb[2].textContent = T.tmVoice; }
+      tmPaintCtl(); tmPaintCustom(); tmPaint();
+    }
     $("#penThin").textContent = T.drawThin; $("#penThick").textContent = T.drawThick;
     $("#penInvert").textContent = T.drawInvert; $("#penClear").textContent = T.drawClear;
     var oh = document.querySelector("#showOverlay .hint"); if (oh) oh.textContent = T.overlayHint;
@@ -391,10 +406,191 @@
   document.querySelectorAll(".talk-tabs button").forEach(function (b) {
     b.addEventListener("click", function () {
       document.querySelectorAll(".talk-tabs button").forEach(function (x) { x.classList.toggle("on", x === b); });
-      ["phrases", "type", "draw"].forEach(function (p) { $("#pane-" + p).classList.toggle("active", p === b.dataset.pane); });
+      ["phrases", "type", "draw", "timer"].forEach(function (p) { $("#pane-" + p).classList.toggle("active", p === b.dataset.pane); });
+      talkPane = b.dataset.pane;
       if (b.dataset.pane === "draw") initCanvas();
+      if (b.dataset.pane === "timer") tmPaint();
+      bgmRefresh();
     });
   });
+  var talkPane = "phrases";
+
+  /* --- タイマー（見通しの可視化）---
+   * デジタル/アナログ切替・5/10/15分+自由設定(1〜90分)・終了音=ピピピピ/チーン/こえ(各言語で「おしまい」)。
+   * アナログは現場で使われるタイムタイマー式（60分文字盤・赤い残りが12時から反時計回りに減る。60分超は全周比率）。
+   * 音はWeb Audio合成＝完全オフライン。実行中は画面スリープを抑止（Wake Lock・非対応環境では無視）。 */
+  var tmTotal = 5 * 60, tmRemain = 5 * 60, tmRunning = false, tmEndAt = 0, tmTimerId = null;
+  var tmMode = "digital", tmSoundSel = "beep", tmCustomMin = 20, tmWake = null, tmActx = null;
+  function tmFmt(s) {
+    s = Math.max(0, Math.ceil(s));
+    var m = Math.floor(s / 60), ss = s % 60;
+    return (m < 10 ? "0" : "") + m + ":" + (ss < 10 ? "0" : "") + ss;
+  }
+  function tmAudio() {
+    var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return null;
+    if (!tmActx) tmActx = new AC();
+    if (tmActx.state === "suspended") tmActx.resume();
+    return tmActx;
+  }
+  function tmBeepSound() { /* ピピピピ×3回 */
+    var ctx = tmAudio(); if (!ctx) return;
+    var t0 = ctx.currentTime + 0.05;
+    for (var r = 0; r < 3; r++) {
+      for (var i = 0; i < 4; i++) {
+        var t = t0 + r * 1.15 + i * 0.19;
+        var o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = "square"; o.frequency.value = 960;
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.linearRampToValueAtTime(0.2, t + 0.015);
+        g.gain.setValueAtTime(0.2, t + 0.1);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + 0.16);
+        o.connect(g); g.connect(ctx.destination);
+        o.start(t); o.stop(t + 0.18);
+      }
+    }
+  }
+  function tmChimeSound() { /* チンッ！＝昔の電子レンジのベル（一打・高め・短い余韻＋わずかなうなり） */
+    var ctx = tmAudio(); if (!ctx) return;
+    var t = ctx.currentTime + 0.03;
+    [[1760, 0.3, 1.5], [1749, 0.12, 1.5], [2212, 0.1, 1.0], [3520, 0.05, 0.7]].forEach(function (p) {
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = "sine"; o.frequency.value = p[0];
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(p[1], t + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + p[2]);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t); o.stop(t + p[2] + 0.1);
+    });
+  }
+  function tmPlaySound(kind) {
+    if (kind === "beep") tmBeepSound();
+    else if (kind === "chime") tmChimeSound();
+    else speak(T.tmVoiceWord);
+  }
+  function tmPaint() {
+    var d = $("#tmDigital"); if (!d) return;
+    d.textContent = tmFmt(tmRemain);
+    var disp = $("#tmDisplay");
+    disp.classList.toggle("tm-digital-mode", tmMode === "digital");
+    disp.classList.toggle("tm-analog-mode", tmMode !== "digital");
+    if (tmMode !== "digital") tmDrawDial();
+  }
+  function tmDrawDial() {
+    var cv = $("#tmCanvas"); if (!cv) return;
+    var ctx = cv.getContext("2d"), W = cv.width, cx = W / 2, cy = W / 2, R = W / 2 - 14;
+    ctx.clearRect(0, 0, W, W);
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2);
+    ctx.fillStyle = "#ffffff"; ctx.fill();
+    ctx.lineWidth = 6; ctx.strokeStyle = "#dbe7f0"; ctx.stroke();
+    /* アナログ60＝タイムタイマー式（60分文字盤に実残り分数）／まんたん＝設定時間を満タンとして全周比率で減る */
+    var frac = tmMode === "analog60" ? Math.min(1, tmRemain / 3600) : tmRemain / Math.max(1, tmTotal);
+    frac = Math.max(0, Math.min(1, frac));
+    if (frac > 0) {
+      ctx.beginPath(); ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, R - 8, -Math.PI / 2, -Math.PI / 2 - frac * Math.PI * 2, true);
+      ctx.closePath(); ctx.fillStyle = "#ef7f61"; ctx.fill();
+    }
+    var ticks = tmMode === "analog60" ? 60 : 12;
+    for (var i = 0; i < ticks; i++) {
+      var a = -Math.PI / 2 + i * Math.PI * 2 / ticks;
+      var big = tmMode === "analog60" ? i % 5 === 0 : true;
+      var r1 = R - (big ? 28 : 16), r2 = R - 4;
+      ctx.beginPath();
+      ctx.moveTo(cx + r1 * Math.cos(a), cy + r1 * Math.sin(a));
+      ctx.lineTo(cx + r2 * Math.cos(a), cy + r2 * Math.sin(a));
+      ctx.lineWidth = big ? 6 : 3; ctx.strokeStyle = big ? "#35648f" : "#b8cddd"; ctx.stroke();
+    }
+    ctx.beginPath(); ctx.arc(cx, cy, 10, 0, Math.PI * 2); ctx.fillStyle = "#35648f"; ctx.fill();
+  }
+  function tmWakeLock(on) {
+    try {
+      if (on && navigator.wakeLock) navigator.wakeLock.request("screen").then(function (w) { tmWake = w; }).catch(function () {});
+      else if (!on && tmWake) { tmWake.release().catch(function () {}); tmWake = null; }
+    } catch (e) {}
+  }
+  function tmSetTotal(sec) {
+    tmHalt(); tmTotal = sec; tmRemain = sec;
+    $("#tmDisplay").classList.remove("alarm");
+    tmPaint();
+  }
+  function tmTick() {
+    tmRemain = (tmEndAt - Date.now()) / 1000;
+    if (tmRemain <= 0) {
+      tmRemain = 0; tmHalt();
+      $("#tmDisplay").classList.add("alarm");
+      tmPlaySound(tmSoundSel);
+    }
+    tmPaint();
+  }
+  function tmGo() {
+    if (tmRemain <= 0) { tmRemain = tmTotal; $("#tmDisplay").classList.remove("alarm"); }
+    tmAudio(); /* ユーザー操作中にAudioContextを起こす（自動再生制限対策） */
+    tmEndAt = Date.now() + tmRemain * 1000;
+    tmRunning = true;
+    tmTimerId = setInterval(tmTick, 200);
+    tmWakeLock(true);
+    tmPaintCtl();
+    bgmRefresh(); /* カウントダウン開始→BGM再生 */
+  }
+  function tmHalt() {
+    tmRunning = false;
+    if (tmTimerId) { clearInterval(tmTimerId); tmTimerId = null; }
+    tmWakeLock(false);
+    tmPaintCtl();
+    bgmRefresh(); /* 一時停止・終了・設定変更→BGM停止（次の開始か他画面まで） */
+  }
+  function tmPaintCtl() {
+    var b = $("#tmStart"); if (!b || !T) return;
+    b.textContent = tmRunning ? T.tmPause : T.tmStart;
+    b.classList.toggle("running", tmRunning);
+  }
+  function tmPaintCustom() {
+    var v = $("#tmCustomVal"); if (v) v.textContent = tmCustomMin + (T ? " " + T.tmMinSuffix : "");
+  }
+  function tmSetMode(m, btn) {
+    tmMode = m;
+    document.querySelectorAll(".tm-modes button").forEach(function (x) { x.classList.toggle("on", x === btn); });
+    tmPaint();
+  }
+  $("#tmModeDigital").addEventListener("click", function () { tmSetMode("digital", this); });
+  $("#tmModeAnalog").addEventListener("click", function () { tmSetMode("analog60", this); });
+  $("#tmModeFull").addEventListener("click", function () { tmSetMode("full", this); });
+  document.querySelectorAll(".tm-preset").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll(".tm-preset, #tmCustomBtn").forEach(function (x) { x.classList.remove("on"); });
+      b.classList.add("on");
+      $("#tmCustomRow").classList.remove("show");
+      tmSetTotal(Number(b.dataset.min) * 60);
+    });
+  });
+  $("#tmCustomBtn").addEventListener("click", function () {
+    document.querySelectorAll(".tm-preset, #tmCustomBtn").forEach(function (x) { x.classList.remove("on"); });
+    $("#tmCustomBtn").classList.add("on");
+    $("#tmCustomRow").classList.add("show");
+    tmPaintCustom();
+  });
+  document.querySelectorAll(".tm-step").forEach(function (b) {
+    b.addEventListener("click", function () {
+      tmCustomMin = Math.max(1, Math.min(90, tmCustomMin + Number(b.dataset.d)));
+      tmPaintCustom();
+    });
+  });
+  $("#tmCustomSet").addEventListener("click", function () { tmSetTotal(tmCustomMin * 60); });
+  $("#tmStart").addEventListener("click", function () {
+    if (tmRunning) { tmRemain = Math.max(0, (tmEndAt - Date.now()) / 1000); tmHalt(); tmPaint(); }
+    else tmGo();
+  });
+  $("#tmReset").addEventListener("click", function () {
+    tmHalt(); tmRemain = tmTotal; $("#tmDisplay").classList.remove("alarm"); tmPaint();
+  });
+  document.querySelectorAll(".tm-sound").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll(".tm-sound").forEach(function (x) { x.classList.remove("on"); });
+      b.classList.add("on"); tmSoundSel = b.dataset.s;
+      tmPlaySound(tmSoundSel); /* 選んだ音をその場で試聴できる */
+    });
+  });
+
   function speak(text) {
     if (!("speechSynthesis" in window) || !text) return;
     window.speechSynthesis.cancel();
@@ -520,7 +716,11 @@
   }
   function bgmRefresh() {
     var A = window.SoyogiAudio; if (!A) return;
-    if (audioUnlocked && A.getBgmVolume() > 0 && currentView !== "talk") A.startBGM();
+    /* つたえる中はBGM停止。ただしタイマーペインで「カウントダウン中」だけは再生
+     * （設定中・一時停止中・終了後は停止のまま＝終了音や声がはっきり聞こえる）。
+     * 他の画面に移れば従来どおり自動復帰。 */
+    var talkOk = talkPane === "timer" && tmRunning;
+    if (audioUnlocked && A.getBgmVolume() > 0 && (currentView !== "talk" || talkOk)) A.startBGM();
     else A.stopBGM();
   }
   (function initBGM() {
