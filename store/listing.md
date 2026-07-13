@@ -53,7 +53,7 @@ appId：`com.soyogi.wssupport2` / 提供：介護と支援の相談どころ そ
 Soyogi — Care Support Guide
 
 ### Short description (max 80 chars)
-Quick response hints for tough moments in disability support, plus a trait guide, case quizzes, a talking aid, and a writing board. A charm for support staff.
+Crisis response hints & tools for disability support staff in tough moments.
 
 ### Full description (max 4000 chars)
 In the middle of a meltdown, there is no time to search for what to do. — This app is a little "support charm" for staff working in disability services: response hints you can pull up in seconds, and everyday reading that quietly sharpens your support skills.
