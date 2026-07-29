@@ -591,8 +591,31 @@
     });
   });
 
+  /* Play版(Capacitor)のWebViewはWeb Speech API非対応の端末が多い。
+     その場合は端末内蔵のTTSエンジン(ネイティブ)へ橋渡しして読み上げる。 */
+  var nativeTTS = (function () {
+    try {
+      var c = window.Capacitor;
+      if (c && typeof c.isNativePlatform === "function" && c.isNativePlatform() &&
+          typeof c.registerPlugin === "function") {
+        return c.registerPlugin("TextToSpeech");
+      }
+    } catch (e) {}
+    return null;
+  })();
   function speak(text) {
-    if (!("speechSynthesis" in window) || !text) return;
+    if (!text) return;
+    if (nativeTTS) {
+      nativeTTS.stop().catch(function () {}).then(function () {
+        nativeTTS.speak({
+          text: text,
+          lang: SPEAK_LANG[LANG] || LANG,
+          rate: 0.9, pitch: 1.0, volume: 1.0
+        }).catch(function () {});
+      });
+      return;
+    }
+    if (!("speechSynthesis" in window)) return;
     window.speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
     u.lang = SPEAK_LANG[LANG] || LANG; u.rate = 0.9;
