@@ -47,22 +47,34 @@
 
   /* ===== ヘッダー ===== */
   header{
-    text-align:center; padding:56px 16px 10px; position:relative;
+    text-align:center; position:relative;
+    padding:calc(12px + env(safe-area-inset-top)) 14px 10px;
+  }
+  /* 言語切替＋BGMの操作バー。
+     以前は絶対配置（言語=左上・BGM=右上・言語select は max-width:44%）で、
+     幅の狭い機種では長い言語名（Bahasa Indonesia 等）が枠内で見切れ、
+     上部にノッチ/ステータスバーのある機種（viewport-fit=cover）では
+     操作そのものが隠れることがあった。通常フローの横並びに変え、
+     言語select を伸縮させて常に画面内へ収める。
+     RTL言語（アラビア語）では flex が自動で左右反転（言語=右／BGM=左）。 */
+  .top-bar{
+    display:flex; align-items:center; gap:10px;
+    max-width:612px; margin:0 auto 12px;
+  }
+  .lang-select{
+    flex:1 1 auto; min-width:0;
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:9px 12px; font-size:.9rem; color:var(--brand-deep); font-weight:700;
+    box-shadow:0 1px 4px rgba(78,142,196,.14);
   }
   .bgm-toggle{
-    position:absolute; top:12px; right:12px; width:42px; height:42px; border-radius:50%;
-    background:#fff; border:1px solid var(--line); font-size:1.15rem; line-height:1;
+    flex:0 0 auto; width:44px; height:44px; border-radius:50%;
+    background:#fff; border:1px solid var(--line); font-size:1.2rem; line-height:1;
     box-shadow:0 1px 4px rgba(78,142,196,.14); color:var(--brand-deep);
     display:flex; align-items:center; justify-content:center;
   }
   .bgm-toggle:active{ background:#f3f8fc; }
   .bgm-toggle.off{ opacity:.45; }
-  .lang-select{
-    position:absolute; top:14px; left:12px; max-width:44%;
-    background:#fff; border:1px solid var(--line); border-radius:14px;
-    padding:6px 8px; font-size:.78rem; color:var(--brand-deep); font-weight:700;
-    box-shadow:0 1px 4px rgba(78,142,196,.14);
-  }
   header h1{ font-size:1.25rem; color:var(--brand-deep); font-weight:700; }
   header .app-brand{ font-size:.85rem; color:var(--muted); margin-top:2px; }
   header .tagline{ font-size:.8rem; color:var(--muted); }
@@ -336,8 +348,10 @@
 <body>
 
 <header>
-  <select id="langSelect" class="lang-select" aria-label="言語 / Language"></select>
-  <button id="bgmToggle" class="bgm-toggle" aria-label="BGMのオン・オフ" title="BGM">🎵</button>
+  <div class="top-bar">
+    <select id="langSelect" class="lang-select" aria-label="言語 / Language"></select>
+    <button id="bgmToggle" class="bgm-toggle" aria-label="BGMのオン・オフ" title="BGM">🎵</button>
+  </div>
   <h1 id="appName">福祉サポーターズ・サポート（障害者版）</h1>
   <div class="app-brand" id="appBrand">そよぎ</div>
   <div class="tagline" id="tagline">支援の、お守りに。― 障害福祉スタッフのための支援サポート ―</div>

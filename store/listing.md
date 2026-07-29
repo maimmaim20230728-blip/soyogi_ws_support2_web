@@ -4,7 +4,7 @@
 appId：`com.soyogi.wssupport2` / 提供：介護と支援の相談どころ そよぎ
 
 - カテゴリ案：**メディカル**（または「健康＆フィットネス」）
-- コンテンツレーティング：全年齢（個人情報の収集・入力なし）
+- 対象ユーザー：13歳以上のみ（個人情報の収集・送信なし。記録は端末内のみ保存）
 - プライバシーポリシーURL：`https://soyogi-ws-support2-web.vercel.app/privacy.html`
 - フィーチャーグラフィック：`store/feature-graphic.png`（1024×500）
 - アプリアイコン：`store/play-icon-512.png`（512×512）
