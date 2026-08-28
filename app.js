@@ -143,7 +143,7 @@
     html += "</div>";
     html += '<div class="footer-links"><button id="openLogs">' + esc(T.seeLogs) + "</button></div>";
     html += '<div class="app-foot">' + esc(T.footMedical) + "<br>" + esc(T.footPrivacy) +
-      '<br><a class="dev-credit" href="https://soyogi.hp.peraichi.com/top" target="_blank" rel="noopener">アプリ開発：介護と支援の相談どころ・そよぎ</a></div>';
+      '<br><a class="dev-credit" href="https://soudansoyogi.com/" target="_blank" rel="noopener">アプリ開発：介護と支援の相談どころ・そよぎ</a></div>';
     $("#view-scenes").innerHTML = html;
     document.querySelectorAll("#view-scenes [data-id]").forEach(function (b) {
       b.addEventListener("click", function () { renderDetail(b.dataset.id); show("detail"); });
