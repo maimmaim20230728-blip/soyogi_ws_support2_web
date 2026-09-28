@@ -344,7 +344,9 @@ window.SHIEN_CONTENT.de = {
       short: "Eigenheiten in Kontakt, Ritualen, Wahrnehmung",
       what: [
         "Eine Besonderheit, in der sich ein eigener Stil von Kontakt und Kommunikation, starke Interessen und Rituale sowie erhöhte (oder verringerte) Sinnesempfindlichkeit überlagern. Mit oder ohne intellektuelle Beeinträchtigung.",
-        "Die Ausprägung unterscheidet sich stark von Mensch zu Mensch („Spektrum“ = Kontinuum). Nicht festlegen — den Menschen ansehen.",
+        "Die Ausprägung unterscheidet sich stark von Mensch zu Mensch („Spektrum“ = Kontinuum). Nicht festlegen — den Menschen ansehen."
+      ],
+      feel: [
         "Für die Person ist die Welt schwer vorhersehbar und reizintensiv — diese Angst zu verringern ist der Kern der Unterstützung."
       ],
       prepare: [
@@ -376,7 +378,9 @@ window.SHIEN_CONTENT.de = {
       short: "Starke Unaufmerksamkeit, Unruhe, Impulsivität",
       what: [
         "Unaufmerksamkeit (leicht abgelenkt, vergesslich) und Hyperaktivität-Impulsivität (schwer stillzusitzen, schwer zu warten), unverhältnismäßig stark für das Alter.",
-        "Weder Faulheit noch Charakter, sondern eine andere Arbeitsweise der „Exekutivfunktionen“ des Gehirns.",
+        "Weder Faulheit noch Charakter, sondern eine andere Arbeitsweise der „Exekutivfunktionen“ des Gehirns."
+      ],
+      feel: [
         "Durch ständiges Schimpfen geht leicht das Selbstvertrauen verloren. Zuwendung, die auf Gelungenes blickt, wirkt."
       ],
       comm: [
@@ -402,7 +406,9 @@ window.SHIEN_CONTENT.de = {
       short: "Verstehen und Urteilen brauchen Zeit",
       what: [
         "Verstehen und Urteilen, Lesen-Schreiben-Rechnen, Umgang mit Geld und Zeit entwickeln sich langsamer — der Alltag wird „schwer durchschaubar“.",
-        "Grad wie Stärken und Schwächen sind individuell. Nicht wie ein Kind behandeln — Respekt dem Alter gemäß.",
+        "Grad wie Stärken und Schwächen sind individuell. Nicht wie ein Kind behandeln — Respekt dem Alter gemäß."
+      ],
+      feel: [
         "Oft kann „ich verstehe nicht“ nicht gesagt werden, und die Person leidet. Ändert man die Vermittlung, kommt es an."
       ],
       prepare: [
@@ -460,7 +466,9 @@ window.SHIEN_CONTENT.de = {
       short: "Halluzinationen, Wahn, Antriebsverlust — in Wellen",
       what: [
         "Eine psychische Erkrankung, bei der Halluzinationen (nicht vorhandene Stimmen hören u. a.), Wahn, zerfahrenes Denken, Antriebsverlust auftreten können.",
-        "Es gibt Wellen — auch gute Phasen. Mit passender Behandlung und Unterstützung lässt sich ruhig leben.",
+        "Es gibt Wellen — auch gute Phasen. Mit passender Behandlung und Unterstützung lässt sich ruhig leben."
+      ],
+      feel: [
         "„Für die Person ist es Wirklichkeit“ — nicht streiten, der Angst beistehen: das ist die Basis."
       ],
       comm: [
@@ -486,8 +494,10 @@ window.SHIEN_CONTENT.de = {
       short: "Tiefes Herabgestimmtsein / Stimmungswellen",
       what: [
         "„Depression“: anhaltendes Herabgestimmtsein, Verlust von Antrieb und Interesse. „Bipolar“: Pendeln zwischen Depression und Hochphase (Manie).",
-        "Mit Willenskraft heilt es nicht. „Streng dich an“ kann die Person in die Enge treiben.",
         "Die Wellen verstehen, nicht überfordern, begleiten — das trägt."
+      ],
+      feel: [
+        "Mit Willenskraft heilt es nicht. „Streng dich an“ kann die Person in die Enge treiben."
       ],
       comm: [
         "Kein „streng dich an“, kein „reine Kopfsache“. Zuerst das Leid annehmen",
@@ -538,8 +548,10 @@ window.SHIEN_CONTENT.de = {
       short: "Schweres Erleben von früher wirkt bis heute",
       what: [
         "Schweres Erleben von früher (Misshandlung, Katastrophe, Unfall …) setzt sich fort als Flashbacks, Überempfindlichkeit, Vermeidung. Manche tragen auch Bindungswunden.",
-        "Weder „Übertreibung“ noch „Vergangenheit“: eine Reaktion, die jetzt andauert.",
         "Sicherheit, Geborgenheit und das gewachsene Vertrauen „dieser Mensch ist verlässlich“ sind der Boden der Genesung."
+      ],
+      feel: [
+        "Weder „Übertreibung“ noch „Vergangenheit“: eine Reaktion, die jetzt andauert."
       ],
       comm: [
         "Nicht plötzlich berühren, nicht von hinten nähern (nicht erschrecken)",
@@ -590,8 +602,10 @@ window.SHIEN_CONTENT.de = {
       short: "Unsichtbare Beeinträchtigung nach Unfall/Krankheit",
       what: [
         "Nach Unfall oder Krankheit (Hirnverletzung, Schlaganfall …) sind Gedächtnis, Aufmerksamkeit, Planen, Gefühlskontrolle auf schwer sichtbare Weise beeinträchtigt.",
-        "Von außen kaum erkennbar — „er hat sich verändert“, heißt es fälschlich. Auch die Person selbst ist verunsichert.",
         "Vieles bleibt erhalten. Kniffe zum Ausgleich der Schwächen erweitern das Leben."
+      ],
+      feel: [
+        "Von außen kaum erkennbar — „er hat sich verändert“, heißt es fälschlich. Auch die Person selbst ist verunsichert."
       ],
       comm: [
         "Eins nach dem anderen, kurz. Notizen und Erinnerungen dazu",
@@ -616,8 +630,10 @@ window.SHIEN_CONTENT.de = {
       short: "Selbst-/Fremdverletzung usw.; Zustand mit hohem Unterstützungsbedarf",
       what: [
         "Ein „Zustand“ — keine Diagnose —, in dem Selbstverletzung, Fremdaggression, starke Rituale, Zerstörung so häufig und heftig auftreten, dass besonders intensive Unterstützung nötig ist.",
-        "Die Person ist kein „schwieriger Mensch“, sondern „in Not“. Dahinter stehen Nicht-Ankommen und Unpassung zur Umgebung.",
         "Mit Positive Behaviour Support (PBS) die Gründe des Verhaltens lesen und das Umfeld gestalten — dann ändert sich viel."
+      ],
+      feel: [
+        "Die Person ist kein „schwieriger Mensch“, sondern „in Not“. Dahinter stehen Nicht-Ankommen und Unpassung zur Umgebung."
       ],
       prepare: [
         "Die eigentliche Arbeit liegt „vor dem Verhalten“. Ausflüge und Ereignisse beginnen mit einem sorgfältig geknüpften, machbaren Plan.",
@@ -726,7 +742,10 @@ window.SHIEN_CONTENT.de = {
     "Nach einem harten Einsatz immer übergeben. Müdigkeit und Wissen werden leichter, wenn man sie teilt.",
     "Sein Geld, seine Sachen: nicht „verwalten“, sondern „gemeinsam über den Gebrauch nachdenken“. Die Rechte sind seine.",
     "Was letztes Jahr wirkte, muss heute nicht wirken. Menschen ändern sich — Unterstützung darf sich mitändern.",
-    "Das „Danke“ unter Kolleginnen und Kollegen nicht vergessen. Die Luft des Teams erreicht den Menschen, wie sie ist."
+    "Das „Danke“ unter Kolleginnen und Kollegen nicht vergessen. Die Luft des Teams erreicht den Menschen, wie sie ist.",
+    "Aus „Nicht …!“ wird „Wir …“. Sagen Zuhause, Schule und Einrichtung es gleich, weiß die Person, woran sie ist.",
+    "Hilft die Person mit: gleich in dem Moment „Danke, das hat mir echt geholfen!“ sagen. Die Erfahrung, nützlich gewesen zu sein, lässt „erlaubtes Verhalten“ wachsen, das an die Stelle schwierigen Verhaltens treten kann.",
+    "Bei „Warte kurz, ja?“ das Ende sichtbar machen (Timer, „bis das Lied zu Ende ist“). Klappt das Warten, genau das konkret loben."
   ],
 
   /* ===== Lernen: Fallquiz (das „Warum“ zählt mehr als richtig/falsch) ===== */
@@ -1030,6 +1049,24 @@ window.SHIEN_CONTENT.de = {
       options: ["Wer Verhalten mit Kraft stoppen kann", "Wer die Zeit vermehren kann, die der Mensch in Ruhe verbringt", "Wer alles vorwegnimmt und alles für ihn erledigt"],
       answer: 1,
       explain: "Mehr als glänzende Krisenkünste zählt: einen Alltag zu bauen, der gar nicht erst überkocht. Je länger der Mensch sich sicher fühlt, desto weniger schwierige Momente gibt es überhaupt. Es wirkt unscheinbar — und ist die echteste Professionalität."
+    },
+    {
+      q: "Eine Angehörige bittet um Rat: „Egal wie oft ich zu Hause ‚Nicht rennen!‘ sage, er rennt trotzdem.“ Welchen Kniff geben Sie zuerst weiter?",
+      options: ["Noch lauter ermahnen", "Auf eine Formulierung umstellen, die das gewünschte Verhalten sagt: „Wir gehen langsam, ja?“", "Eine Strafe fürs Rennen festlegen"],
+      answer: 1,
+      explain: "Ein bloßes „Nicht“ sagt kaum, was man stattdessen tun soll. Das gewünschte Verhalten kurz zu sagen, wie „Wir gehen langsam, ja?“, kommt leichter an. Formulieren Zuhause, Schule und Einrichtung es gleich, sinkt die Verunsicherung noch weiter."
+    },
+    {
+      q: "Die Person hat beim Austeilen des Essens geholfen. Welche Art der Zuwendung ist gut?",
+      options: ["Das ist selbstverständlich, also nichts sagen", "Gleich in dem Moment sagen: „Danke, das hat mir echt geholfen!“", "„Da geht noch mehr“ denken und gleich die nächste Aufgabe dazugeben"],
+      answer: 1,
+      explain: "Die Erfahrung, nützlich gewesen zu sein und Dank bekommen zu haben, gibt Kraft für das nächste Handeln. Auch bei scheinbar Selbstverständlichem: sofort und konkret „Danke“ sagen."
+    },
+    {
+      q: "Eine Lehrkraft aus der Schule bittet um Rat: „Er kann nicht warten, bis er dran ist, und drängelt sich vor.“ Was schlagen Sie zuerst vor?",
+      options: ["Bei jedem Vordrängeln streng schimpfen", "Sichtbar machen, wie viele noch vor ihm dran sind oder an welcher Stelle er steht, und loben, wenn das Warten klappt", "Ihn gar nicht erst in der Schlange anstehen lassen"],
+      answer: 1,
+      explain: "Wem Warten schwerfällt, dem wächst die Angst, wenn kein Ende in Sicht ist. Sichtbar machen, etwa „noch 2 Personen“ oder „du bist mit der Nummer auf dieser Karte dran“, und gelungenes Warten sofort konkret loben. Mit Schimpfen allein lernt man das Warten kaum."
     }
   ]
 };

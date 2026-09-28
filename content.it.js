@@ -344,7 +344,9 @@ window.SHIEN_CONTENT.it = {
       short: "Peculiarità di relazione, fissazioni, sensi",
       what: [
         "Una caratteristica in cui si sovrappongono un modo particolare di relazionarsi e comunicare, interessi e fissazioni intensi e una sensibilità sensoriale accentuata (o ridotta). C'è chi ha anche un ritardo intellettivo e chi no.",
-        "Le manifestazioni variano molto da persona a persona («spettro» = continuum). Non etichettate: guardate quella persona.",
+        "Le manifestazioni variano molto da persona a persona («spettro» = continuum). Non etichettate: guardate quella persona."
+      ],
+      feel: [
         "Per lei il mondo è poco prevedibile e pieno di stimoli — ridurre quell'ansia è il cuore del supporto."
       ],
       prepare: [
@@ -376,7 +378,9 @@ window.SHIEN_CONTENT.it = {
       short: "Disattenzione, iperattività, impulsività marcate",
       what: [
         "Disattenzione (si distrae, dimentica) e iperattività-impulsività (fatica a stare fermo, ad aspettare), di intensità sproporzionata all'età.",
-        "Non è pigrizia né carattere: è un diverso modo di funzionare delle «funzioni esecutive» del cervello.",
+        "Non è pigrizia né carattere: è un diverso modo di funzionare delle «funzioni esecutive» del cervello."
+      ],
+      feel: [
         "A furia di rimproveri perde facilmente fiducia in sé. Funziona un coinvolgimento che guarda a ciò che è riuscito."
       ],
       comm: [
@@ -402,7 +406,9 @@ window.SHIEN_CONTENT.it = {
       short: "Comprensione e giudizio più lenti",
       what: [
         "Comprensione e giudizio, lettura-scrittura-calcolo, gestione di denaro e tempo si sviluppano più lentamente: la vita quotidiana risulta «difficile da decifrare».",
-        "Grado e punti di forza variano da persona a persona. Niente trattamento infantile: rispetto adeguato all'età.",
+        "Grado e punti di forza variano da persona a persona. Niente trattamento infantile: rispetto adeguato all'età."
+      ],
+      feel: [
         "Spesso non riesce a dire «non ho capito» e resta in difficoltà. Cambiate il modo di trasmettere e il messaggio arriva."
       ],
       prepare: [
@@ -460,7 +466,9 @@ window.SHIEN_CONTENT.it = {
       short: "Allucinazioni, deliri, cali di slancio — a ondate",
       what: [
         "Una malattia psichica in cui possono comparire allucinazioni (sentire voci inesistenti ecc.), deliri, pensiero disorganizzato, calo dello slancio vitale.",
-        "Va a ondate, con periodi buoni. Con cure e supporto adeguati si può vivere serenamente.",
+        "Va a ondate, con periodi buoni. Con cure e supporto adeguati si può vivere serenamente."
+      ],
+      feel: [
         "«Per la persona è realtà» — non contestate, state accanto all'ansia: è la base."
       ],
       comm: [
@@ -486,8 +494,10 @@ window.SHIEN_CONTENT.it = {
       short: "Abbattimento profondo / onde dell'umore",
       what: [
         "La «depressione»: abbattimento intenso, calo di slancio e interesse che si protraggono. Il «bipolare»: alternanza fra depressione ed euforia (mania).",
-        "Non si guarisce con la forza di volontà. Un «forza!» può mettere la persona alle strette.",
         "Capire le onde, non far strafare, vegliare: è questo che sostiene."
+      ],
+      feel: [
+        "Non si guarisce con la forza di volontà. Un «forza!» può mettere la persona alle strette."
       ],
       comm: [
         "Non dire «forza» né «è solo questione di testa». Prima accogliere la sofferenza",
@@ -538,8 +548,10 @@ window.SHIEN_CONTENT.it = {
       short: "Un vissuto doloroso che continua ancora oggi",
       what: [
         "Un vissuto doloroso del passato (maltrattamenti, catastrofi, incidenti…) che continua sotto forma di flashback, ipersensibilità, evitamento. C'è chi porta anche ferite dell'attaccamento.",
-        "Non è «esagerazione» né «acqua passata»: è una reazione che dura tuttora.",
         "Sicurezza, serenità e la fiducia accumulata «di questa persona mi posso fidare» sono la base della guarigione."
+      ],
+      feel: [
+        "Non è «esagerazione» né «acqua passata»: è una reazione che dura tuttora."
       ],
       comm: [
         "Non toccare all'improvviso, non avvicinarsi da dietro (non spaventare)",
@@ -590,8 +602,10 @@ window.SHIEN_CONTENT.it = {
       short: "Disabilità invisibile dopo incidenti o malattie",
       what: [
         "Dopo un incidente o una malattia (trauma cranico, ictus…), memoria, attenzione, organizzazione, controllo delle emozioni risultano compromessi in modo poco visibile.",
-        "Dall'esterno non si nota: si fraintende con «è cambiato». Anche la persona stessa è disorientata.",
         "Restano molte capacità. Gli accorgimenti che compensano le difficoltà allargano la vita quotidiana."
+      ],
+      feel: [
+        "Dall'esterno non si nota: si fraintende con «è cambiato». Anche la persona stessa è disorientata."
       ],
       comm: [
         "Una cosa alla volta, in breve. Affiancate promemoria e reminder",
@@ -616,8 +630,10 @@ window.SHIEN_CONTENT.it = {
       short: "Autolesionismo, aggressioni ecc.: stato che richiede supporto intensivo",
       what: [
         "Uno «stato» — non una diagnosi — in cui autolesionismo, aggressioni, fissazioni intense, distruzione avvengono con frequenza e intensità così alte da richiedere un supporto particolarmente intensivo.",
-        "La persona non è «una persona problematica»: è «in difficoltà». Sullo sfondo ci sono il non riuscire a farsi capire e il disallineamento con l'ambiente.",
         "Con il Positive Behaviour Support (PBS), leggendo le ragioni del comportamento e adattando l'ambiente, le cose cambiano molto."
+      ],
+      feel: [
+        "La persona non è «una persona problematica»: è «in difficoltà». Sullo sfondo ci sono il non riuscire a farsi capire e il disallineamento con l'ambiente."
       ],
       prepare: [
         "Il vero palcoscenico del supporto è «prima che il comportamento avvenga». Uscite ed eventi cominciano dal tessere con cura un piano sostenibile.",
@@ -726,7 +742,10 @@ window.SHIEN_CONTENT.it = {
     "Dopo un intervento duro, passate sempre le consegne. Fatica e informazioni pesano meno condivise.",
     "I suoi soldi, le sue cose: non «amministrare», ma «pensare insieme a come usarli». I diritti sono suoi.",
     "Ciò che funzionava l'anno scorso può non funzionare oggi. Le persone cambiano — anche il supporto può cambiare.",
-    "Non dimenticate i «grazie» tra colleghi. L'aria della squadra arriva alla persona così com'è."
+    "Non dimenticate i «grazie» tra colleghi. L'aria della squadra arriva alla persona così com'è.",
+    "Trasformate il «non fare» in un «facciamo». Se a casa, a scuola e nella struttura si usano le stesse parole, la persona non si disorienta.",
+    "Quando vi dà una mano, dite subito: «Grazie, mi hai proprio aiutato!». L'esperienza di aver potuto aiutare fa crescere «cose che si possono fare», che possono prendere il posto dei comportamenti difficili.",
+    "Per «Aspetta un attimo, va bene?», rendete visibile la fine (timer, «finché non finisce questa canzone»). Se riesce ad aspettare, lodate concretamente proprio questo."
   ],
 
   /* ===== Imparare: quiz di casi (imparare il «perché», più che giusto/sbagliato) ===== */
@@ -1030,6 +1049,24 @@ window.SHIEN_CONTENT.it = {
       options: ["Chi sa fermare il comportamento con la forza", "Chi sa aumentare il tempo che la persona trascorre serena", "Chi anticipa tutto e fa tutto al posto suo"],
       answer: 1,
       explain: "Più delle abilità vistose nella crisi: costruire un quotidiano che non arriva a bollire. Più a lungo la persona vive sentendosi al sicuro, meno momenti difficili esistono in assoluto. Sembra poco appariscente — ed è la competenza più vera."
+    },
+    {
+      q: "Una familiare vi chiede consiglio: «A casa gli ripeto mille volte “Non correre!”, ma lui corre lo stesso». Quale accorgimento suggerireste per primo?",
+      options: ["Richiamarlo a voce ancora più alta", "Cambiare modo di dire, indicando il comportamento desiderato: «Camminiamo, va bene?»", "Stabilire una punizione per quando corre"],
+      answer: 1,
+      explain: "Con il solo «non» è difficile capire cosa fare. Dire in breve il comportamento desiderato, come «Camminiamo, va bene?», arriva più facilmente. Se casa, scuola e struttura usano le stesse parole, il disorientamento cala ancora di più."
+    },
+    {
+      q: "La persona ha aiutato a distribuire i pasti. Quale approccio è buono?",
+      options: ["È normale, quindi non dire nulla", "Dire subito: «Grazie, mi hai proprio aiutato!»", "Pensare «può fare di più» e aggiungere un altro compito"],
+      answer: 1,
+      explain: "L'esperienza di rendersi utile e di sentirsi dire grazie dà forza all'azione successiva. Anche per ciò che sembra scontato, dite «grazie» subito e in modo concreto."
+    },
+    {
+      q: "Un insegnante vi chiede consiglio: «Non riesce ad aspettare il suo turno e salta la fila». Cosa proporre per primo?",
+      options: ["Sgridarlo forte ogni volta che salta la fila", "Rendere visibile quante persone mancano o che numero è, e lodarlo quando riesce ad aspettare", "Non farlo mettere in fila"],
+      answer: 1,
+      explain: "Per chi fa fatica ad aspettare, se la fine non si vede l'ansia cresce. Rendete la cosa visibile, come «ancora 2 persone» o «il tuo turno è il numero di questo biglietto», e quando riesce ad aspettare lodatelo subito in modo concreto. Solo sgridando, ad aspettare si impara difficilmente."
     }
   ]
 };

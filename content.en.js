@@ -328,7 +328,9 @@ window.SHIEN_CONTENT.en = {
       short: "Distinct social style, fixations, sensory differences",
       what: [
         "A profile where a distinct social/communication style overlaps with strong interests, fixations, and heightened (or reduced) sensory sensitivity. Some have an intellectual disability, some don't.",
-        "How it shows up varies greatly from person to person (a “spectrum” — a continuum). Don't assume; look at this person.",
+        "How it shows up varies greatly from person to person (a “spectrum” — a continuum). Don't assume; look at this person."
+      ],
+      feel: [
         "For them, the world is hard to predict and strongly stimulating — reducing that anxiety is the heart of support."
       ],
       prepare: [
@@ -360,7 +362,9 @@ window.SHIEN_CONTENT.en = {
       short: "Strong inattention, hyperactivity, impulsivity",
       what: [
         "A profile where inattention (distractible, forgetful) and hyperactivity/impulsivity (hard to sit still, hard to wait) are strong for the person's age.",
-        "Not laziness or a bad character — a difference in how the brain's “executive function” works.",
+        "Not laziness or a bad character — a difference in how the brain's “executive function” works."
+      ],
+      feel: [
         "Easy to lose confidence after being scolded so often. Engaging with what they get right works."
       ],
       comm: [
@@ -386,7 +390,9 @@ window.SHIEN_CONTENT.en = {
       short: "Understanding and judgement develop slowly",
       what: [
         "A profile where understanding, judgement, reading/writing/arithmetic, handling money and time develop slowly, with everyday “hard-to-grasp” moments.",
-        "Degree and strengths/weaknesses differ from person to person. Not child-like treatment — respect appropriate to their age.",
+        "Degree and strengths/weaknesses differ from person to person. Not child-like treatment — respect appropriate to their age."
+      ],
+      feel: [
         "Often they can't say “I don't understand” and are quietly stuck. Change how you convey things and it gets through."
       ],
       prepare: [
@@ -444,7 +450,9 @@ window.SHIEN_CONTENT.en = {
       short: "Waves of hallucinations, delusions, low motivation",
       what: [
         "A mental illness in which hallucinations (e.g. hearing voices that aren't there), delusions, disorganised thinking, and low motivation can occur.",
-        "It comes in waves, with better periods too. With the right treatment and support, people live calmly.",
+        "It comes in waves, with better periods too. With the right treatment and support, people live calmly."
+      ],
+      feel: [
         "“To them it is real” — don't argue; stay alongside the anxiety. That's the basis."
       ],
       comm: [
@@ -470,8 +478,10 @@ window.SHIEN_CONTENT.en = {
       short: "Deep lows / swings of mood",
       what: [
         "There is “depression” — a lasting deep low with loss of drive and interest — and “bipolar,” which swings between depression and elevation (mania).",
-        "It isn't cured by willpower. “Try harder” can corner the person.",
         "Understanding the waves and not pushing — watching over them — is what supports."
+      ],
+      feel: [
+        "It isn't cured by willpower. “Try harder” can corner the person."
       ],
       comm: [
         "Don't say “Try harder” or “It's mind over matter.” First take in the pain",
@@ -522,8 +532,10 @@ window.SHIEN_CONTENT.en = {
       short: "Past painful experiences still playing out now",
       what: [
         "A state where past painful experiences (abuse, disaster, accident) continue as flashbacks, hypervigilance, and avoidance. Some carry attachment wounds.",
-        "Not “an overreaction” or “in the past” — it's a reaction still happening now.",
         "Safety, reassurance, and building trust — “this person is OK” — are the foundation of recovery."
+      ],
+      feel: [
+        "Not “an overreaction” or “in the past” — it's a reaction still happening now."
       ],
       comm: [
         "Don't touch suddenly or approach from behind (don't startle them)",
@@ -574,8 +586,10 @@ window.SHIEN_CONTENT.en = {
       short: "A hard-to-see disability after accident or illness",
       what: [
         "A state where, after an accident or illness (head injury, stroke, etc.), memory, attention, planning, and emotional control are impaired in ways that are hard to see.",
-        "Hard to tell from the outside, and easily misread as “they've changed.” The person is bewildered too.",
         "Much ability remains. With ways to shore up the weak spots, life opens up."
+      ],
+      feel: [
+        "Hard to tell from the outside, and easily misread as “they've changed.” The person is bewildered too."
       ],
       comm: [
         "One thing at a time, short. Back it up with notes and reminders",
@@ -600,8 +614,10 @@ window.SHIEN_CONTENT.en = {
       short: "Self-harm, aggression, etc. so intense that specialist support is needed",
       what: [
         "A “state” where self-harm, harm to others, strong fixations, and destruction occur at very high frequency and intensity, so that specially intensive support is needed (it is not a diagnosis).",
-        "The person isn't “a difficult person” — they are in difficulty. Being unable to get through, and a mismatch with the environment, lie behind it.",
         "With Positive Behaviour Support (PBS) — reading the reason behind the behaviour and shaping the environment — a great deal changes."
+      ],
+      feel: [
+        "The person isn't “a difficult person” — they are in difficulty. Being unable to get through, and a mismatch with the environment, lie behind it."
       ],
       prepare: [
         "The real work of support is “before the behaviour.” An outing or event begins with carefully planning it, well within their limits.",
@@ -709,7 +725,10 @@ window.SHIEN_CONTENT.en = {
     "After a hard response, always hand over. Fatigue and information both grow lighter when shared.",
     "Their money and things: not \"managing\" but \"thinking together about how to use them.\" The rights are theirs.",
     "What worked last year may not work today. People change — support may change too.",
-    "Don't forget \"thank you\" between supporters. The team's air reaches the person just as it is."
+    "Don't forget \"thank you\" between supporters. The team's air reaches the person just as it is.",
+    "Turn “Don't …” into “Let's …”. When home, school, and the service all say it the same way, the person isn't left confused.",
+    "When they help, say “Thanks, that really helped!” right then and there. Experiences of being useful grow “things it's OK to do”, which can take the place of difficult behaviour.",
+    "When you say “Just wait a minute, OK?”, make the end visible (a timer, “until this song is over”). When they manage to wait, praise that specifically."
   ],
 
   quizzes: [
@@ -1012,6 +1031,24 @@ window.SHIEN_CONTENT.en = {
       options: ["Someone who can stop behaviour with force", "Someone who can increase the time the person spends at ease", "Someone who anticipates everything and does it all for them"],
       answer: 1,
       explain: "More than flashy crisis skills: building a daily life that doesn't boil over in the first place. The longer the person spends feeling safe, the fewer difficult moments there are at all. It looks plain — and it is the truest expertise."
+    },
+    {
+      q: "A family member comes to you for advice: “At home I say ‘Don't run!’ over and over, and they still run.” What idea would you share first?",
+      options: ["Tell them off in a louder voice", "Switch to wording that says the action you want, like “Let's walk”", "Decide on a punishment for when they run"],
+      answer: 1,
+      explain: "“Don't” on its own doesn't really tell them what they should do. Saying the action you want briefly, like “Let's walk”, gets through more easily. When home, school, and the service use the same wording, there's even less confusion."
+    },
+    {
+      q: "The person helped serve the meals. What's a good way to engage?",
+      options: ["It's only what's expected, so say nothing", "Say “Thanks, that really helped!” right then and there", "Think “they can do more” and add another job"],
+      answer: 1,
+      explain: "The experience of being useful and being thanked powers the next action. Even for things that seem only to be expected, say a specific “thank you” right then and there."
+    },
+    {
+      q: "A school teacher comes to you for advice: “They can't wait their turn and push in.” What would you suggest first?",
+      options: ["Scold them strongly every time they push in", "Make it visible how many people are still ahead or what number they are, and praise them when they manage to wait", "Don't let them join the queue"],
+      answer: 1,
+      explain: "For people who find waiting hard, anxiety grows when they can't see the end. Make it visible, like “two more people” or “your turn is the number on this card”, and when they manage to wait, praise them specifically, right then and there. Scolding alone rarely teaches how to wait."
     }
   ],
 

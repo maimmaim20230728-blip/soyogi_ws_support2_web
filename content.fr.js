@@ -344,7 +344,9 @@ window.SHIEN_CONTENT.fr = {
       short: "Particularités du lien, des intérêts, des sens",
       what: [
         "Une particularité qui associe une façon singulière d'être en relation et de communiquer, des intérêts et rituels marqués, et une sensibilité sensorielle accrue (ou diminuée). Avec ou sans déficience intellectuelle.",
-        "L'expression varie énormément d'une personne à l'autre (« spectre » = continuum). Ne collez pas d'étiquette : regardez la personne.",
+        "L'expression varie énormément d'une personne à l'autre (« spectre » = continuum). Ne collez pas d'étiquette : regardez la personne."
+      ],
+      feel: [
         "Pour elle, le monde est difficile à prévoir et très stimulant — réduire cette insécurité est le cœur de l'accompagnement."
       ],
       prepare: [
@@ -376,7 +378,9 @@ window.SHIEN_CONTENT.fr = {
       short: "Inattention, agitation, impulsivité marquées",
       what: [
         "Inattention (distraction, oublis) et hyperactivité-impulsivité (difficulté à rester en place, à attendre), d'une intensité inhabituelle pour l'âge.",
-        "Ni paresse ni trait de caractère : une façon différente de fonctionner des « fonctions exécutives » du cerveau.",
+        "Ni paresse ni trait de caractère : une façon différente de fonctionner des « fonctions exécutives » du cerveau."
+      ],
+      feel: [
         "À force d'être grondées, ces personnes perdent confiance. Valoriser ce qui est réussi porte ses fruits."
       ],
       comm: [
@@ -402,7 +406,9 @@ window.SHIEN_CONTENT.fr = {
       short: "Compréhension et jugement plus lents",
       what: [
         "Un développement plus lent de la compréhension, du jugement, de la lecture-écriture-calcul, du maniement de l'argent et du temps, qui rend le quotidien « difficile à déchiffrer ».",
-        "Le degré, les points forts et faibles varient selon les personnes. Pas d'infantilisation : un respect à la mesure de l'âge.",
+        "Le degré, les points forts et faibles varient selon les personnes. Pas d'infantilisation : un respect à la mesure de l'âge."
+      ],
+      feel: [
         "Souvent, la personne n'arrive pas à dire « je ne comprends pas » et reste en difficulté. Changez la façon de transmettre, et le message passe."
       ],
       prepare: [
@@ -460,7 +466,9 @@ window.SHIEN_CONTENT.fr = {
       short: "Hallucinations, délire, baisse d'élan — par vagues",
       what: [
         "Une maladie psychique où peuvent survenir hallucinations (entendre des voix inexistantes), idées délirantes, pensée désorganisée, perte d'élan.",
-        "Elle évolue par vagues, avec de bonnes périodes. Avec un traitement et un accompagnement adaptés, on vit paisiblement.",
+        "Elle évolue par vagues, avec de bonnes périodes. Avec un traitement et un accompagnement adaptés, on vit paisiblement."
+      ],
+      feel: [
         "« Pour la personne, c'est réel » — ne pas disputer, accompagner l'angoisse : c'est la base."
       ],
       comm: [
@@ -486,8 +494,10 @@ window.SHIEN_CONTENT.fr = {
       short: "Abattement profond / vagues de l'humeur",
       what: [
         "La « dépression » : abattement durable, perte d'élan et d'intérêt. Le « trouble bipolaire » : alternance entre dépression et exaltation (manie).",
-        "La volonté ne guérit pas. « Courage ! » peut même enfoncer la personne.",
         "Comprendre les vagues, ne pas surmener, veiller : c'est cela qui soutient."
+      ],
+      feel: [
+        "La volonté ne guérit pas. « Courage ! » peut même enfoncer la personne."
       ],
       comm: [
         "Ne pas dire « courage » ni « c'est dans la tête ». D'abord accueillir la souffrance",
@@ -538,8 +548,10 @@ window.SHIEN_CONTENT.fr = {
       short: "Un vécu douloureux qui se prolonge aujourd'hui",
       what: [
         "Un vécu douloureux (maltraitance, catastrophe, accident…) qui se prolonge en flashbacks, hypervigilance, évitement. Certaines personnes portent aussi des blessures d'attachement.",
-        "Ni « exagération » ni « du passé » : une réaction qui continue aujourd'hui.",
         "Sécurité, apaisement et la confiance « cette personne ne me fera rien » sont le socle du rétablissement."
+      ],
+      feel: [
+        "Ni « exagération » ni « du passé » : une réaction qui continue aujourd'hui."
       ],
       comm: [
         "Ne pas toucher brusquement, ne pas approcher par-derrière (ne pas surprendre)",
@@ -590,8 +602,10 @@ window.SHIEN_CONTENT.fr = {
       short: "Handicap invisible après accident ou maladie",
       what: [
         "Après un accident ou une maladie (traumatisme crânien, AVC…), la mémoire, l'attention, l'organisation, le contrôle des émotions sont atteints de façon peu visible.",
-        "Cela ne se voit pas de l'extérieur : « il a changé », entend-on à tort. La personne elle-même est désorientée.",
         "Beaucoup de capacités demeurent. Des astuces de compensation élargissent la vie quotidienne."
+      ],
+      feel: [
+        "Cela ne se voit pas de l'extérieur : « il a changé », entend-on à tort. La personne elle-même est désorientée."
       ],
       comm: [
         "Une chose à la fois, court. Ajouter mémos et rappels",
@@ -616,8 +630,10 @@ window.SHIEN_CONTENT.fr = {
       short: "Automutilation, agression… un état exigeant un accompagnement renforcé",
       what: [
         "Un « état » — pas un diagnostic — où automutilation, agression, fixations intenses, casse surviennent avec une fréquence et une intensité telles qu'un accompagnement particulièrement renforcé est nécessaire.",
-        "La personne n'est pas « quelqu'un qui pose problème » : elle est en difficulté. En toile de fond : l'impossibilité de se faire comprendre, l'inadéquation avec l'environnement.",
         "Avec le soutien comportemental positif (PBS), lire les raisons du comportement et aménager l'environnement change beaucoup les choses."
+      ],
+      feel: [
+        "La personne n'est pas « quelqu'un qui pose problème » : elle est en difficulté. En toile de fond : l'impossibilité de se faire comprendre, l'inadéquation avec l'environnement."
       ],
       prepare: [
         "Le vrai travail se joue « avant que le comportement survienne ». Sorties et événements commencent par un plan réaliste, soigneusement préparé.",
@@ -726,7 +742,10 @@ window.SHIEN_CONTENT.fr = {
     "Après une intervention difficile, transmettez toujours. Fatigue et informations pèsent moins une fois partagées.",
     "Son argent, ses affaires : non pas « gérer », mais « réfléchir ensemble à leur usage ». Les droits sont les siens.",
     "Ce qui marchait l'an dernier peut ne plus marcher aujourd'hui. Les gens changent — l'accompagnement peut changer aussi.",
-    "N'oubliez pas les « merci » entre collègues. L'air de l'équipe parvient à la personne tel quel."
+    "N'oubliez pas les « merci » entre collègues. L'air de l'équipe parvient à la personne tel quel.",
+    "Remplacer « Ne … pas ! » par « On … ». Quand la maison, l'école et la structure emploient les mêmes mots, la personne ne se sent pas perdue.",
+    "Quand la personne donne un coup de main, dire sur le moment : « Merci, tu m'as bien rendu service ! » Avoir été utile fait grandir des « choses qu'on a le droit de faire », capables de remplacer les comportements difficiles.",
+    "Pour « Attends un peu, d'accord ? », rendre la fin visible (minuteur, « jusqu'à la fin de cette chanson »). Si la personne arrive à attendre, la féliciter concrètement pour cela."
   ],
 
   /* ===== Apprendre : cas pratiques (le « pourquoi » plutôt que le juste/faux) ===== */
@@ -1030,6 +1049,24 @@ window.SHIEN_CONTENT.fr = {
       options: ["Quelqu'un qui peut arrêter un comportement par la force", "Quelqu'un qui sait augmenter le temps que la personne passe sereine", "Quelqu'un qui anticipe tout et fait tout à sa place"],
       answer: 1,
       explain: "Plus que les prouesses de crise : bâtir un quotidien qui ne déborde pas. Plus la personne passe de temps en sécurité, moins il y a de moments difficiles tout court. Cela paraît modeste — et c'est la plus vraie des expertises."
+    },
+    {
+      q: "Un proche vous demande conseil : « À la maison, j'ai beau lui dire “Ne cours pas !”, il court quand même. » Quelle astuce partager en premier ?",
+      options: ["Le reprendre en haussant encore le ton", "Changer de formule pour dire le comportement attendu : « On marche, d'accord ? »", "Prévoir une punition s'il court"],
+      answer: 1,
+      explain: "Avec un simple « non », on comprend mal ce qu'il faut faire. Dire brièvement le comportement attendu, comme « On marche, d'accord ? », passe plus facilement. Si la maison, l'école et la structure emploient la même formule, la personne hésite encore moins."
+    },
+    {
+      q: "La personne a aidé à servir le repas. Quelle attitude adopter ?",
+      options: ["C'est normal, donc ne rien dire", "Dire sur le moment : « Merci, tu m'as bien rendu service ! »", "Se dire « elle peut faire plus » et ajouter une autre tâche"],
+      answer: 1,
+      explain: "L'expérience d'être utile et d'être remercié donne de l'élan au comportement suivant. Même pour ce qui semble aller de soi, dites « merci » sur le moment, et concrètement."
+    },
+    {
+      q: "Un enseignant vous demande conseil : « Il n'arrive pas à attendre son tour et passe devant les autres. » Que proposer en premier ?",
+      options: ["Le gronder sévèrement chaque fois qu'il passe devant", "Rendre visible combien de personnes restent avant lui ou quel est son rang, et le féliciter quand il a su attendre", "L'empêcher de se mettre dans la file"],
+      answer: 1,
+      explain: "Quand attendre est difficile, ne pas voir la fin fait monter l'inquiétude. Rendre les choses visibles, comme « encore 2 personnes » ou « ton tour, c'est le numéro de ce ticket », et quand il a su attendre, le féliciter concrètement sur le moment. Se contenter de gronder n'apprend guère à attendre."
     }
   ]
 };

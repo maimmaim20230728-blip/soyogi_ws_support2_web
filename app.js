@@ -310,6 +310,8 @@
     var html = '<button class="back-btn" id="lkBack">' + esc(T.backTraits) + "</button>";
     html += '<div class="card-title">' + t.emoji + " " + esc(t.name) + "</div>";
     html += '<div class="block block-what"><h3>ℹ️ ' + esc(T.trWhat) + "</h3>" + list(t.what) + "</div>";
+    // 本人の側から見た感じ方（傾向）。what に散っていた文をここにまとめた（特性によっては無い）
+    if (t.feel && t.feel.length) html += '<div class="block block-feel"><h3>💭 ' + esc(T.trFeel) + "</h3>" + list(t.feel) + "</div>";
     if (t.prepare && t.prepare.length) html += '<div class="block block-prep"><h3>🗓️ ' + esc(T.trPrepare) + "</h3>" + list(t.prepare) + "</div>";
     html += '<div class="block block-comm"><h3>💬 ' + esc(T.trComm) + "</h3>" + list(t.comm) + "</div>";
     html += '<div class="block block-env"><h3>🧩 ' + esc(T.trEnv) + "</h3>" + list(t.env) + "</div>";

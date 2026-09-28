@@ -327,7 +327,9 @@ window.SHIEN_CONTENT.es = {
       short: "Estilo social, fijaciones y sensorialidad particulares",
       what: [
         "Un perfil donde un estilo social/comunicativo particular se superpone con intereses y fijaciones intensos y una sensibilidad (o hiposensibilidad) sensorial. Algunas personas tienen discapacidad intelectual; otras no.",
-        "Cómo se manifiesta varía mucho de una persona a otra («espectro», un continuo). No des por sentado; mira a esta persona.",
+        "Cómo se manifiesta varía mucho de una persona a otra («espectro», un continuo). No des por sentado; mira a esta persona."
+      ],
+      feel: [
         "Para ella, el mundo es difícil de prever y muy estimulante: reducir esa ansiedad es el corazón del apoyo."
       ],
       prepare: [
@@ -359,7 +361,9 @@ window.SHIEN_CONTENT.es = {
       short: "Inatención, hiperactividad e impulsividad marcadas",
       what: [
         "Un perfil donde la inatención (se distrae, olvida) y la hiperactividad/impulsividad (le cuesta estarse quieta, esperar) son fuertes para su edad.",
-        "No es pereza ni carácter: una diferencia en cómo funcionan las «funciones ejecutivas» del cerebro.",
+        "No es pereza ni carácter: una diferencia en cómo funcionan las «funciones ejecutivas» del cerebro."
+      ],
+      feel: [
         "Es fácil que pierda confianza de tanto que la regañan. Fijarse en lo que logra funciona."
       ],
       comm: [
@@ -385,7 +389,9 @@ window.SHIEN_CONTENT.es = {
       short: "La comprensión y el juicio se desarrollan despacio",
       what: [
         "Un perfil donde la comprensión, el juicio, leer/escribir/calcular y el manejo del dinero y el tiempo se desarrollan despacio, con momentos cotidianos «difíciles de captar».",
-        "El grado y las fortalezas/debilidades varían de una persona a otra. No un trato infantil, sino un respeto acorde a su edad.",
+        "El grado y las fortalezas/debilidades varían de una persona a otra. No un trato infantil, sino un respeto acorde a su edad."
+      ],
+      feel: [
         "A menudo no puede decir «no lo entiendo» y se queda atascada en silencio. Cambia el modo de transmitir y llega."
       ],
       prepare: [
@@ -443,7 +449,9 @@ window.SHIEN_CONTENT.es = {
       short: "Olas de alucinaciones, delirios y bajada de motivación",
       what: [
         "Una enfermedad mental en la que pueden darse alucinaciones (p. ej. oír voces que no están), delirios, un pensamiento difícil de hilar y bajada de motivación.",
-        "Va por olas, también con épocas buenas. Con el tratamiento y el apoyo adecuados, se vive con calma.",
+        "Va por olas, también con épocas buenas. Con el tratamiento y el apoyo adecuados, se vive con calma."
+      ],
+      feel: [
         "«Para la persona es real»: no discutas; acompaña la ansiedad. Esa es la base."
       ],
       comm: [
@@ -469,8 +477,10 @@ window.SHIEN_CONTENT.es = {
       short: "Bajones intensos / oscilaciones del ánimo",
       what: [
         "Está la «depresión» —un bajón intenso y duradero con pérdida de ganas e interés— y el «bipolar», que oscila entre depresión y euforia (manía).",
-        "No se cura con voluntad. «Ánimo» puede acorralar a la persona.",
         "Entender las olas, no forzar y acompañar: eso es lo que sostiene."
+      ],
+      feel: [
+        "No se cura con voluntad. «Ánimo» puede acorralar a la persona."
       ],
       comm: [
         "No digas «esfuérzate» ni «es cuestión de actitud». Primero acoge el dolor",
@@ -521,8 +531,10 @@ window.SHIEN_CONTENT.es = {
       short: "Experiencias dolorosas del pasado que siguen actuando hoy",
       what: [
         "Un estado en que experiencias dolorosas pasadas (maltrato, catástrofe, accidente) continúan como recuerdos intrusivos, hipervigilancia y evitación. Algunas personas cargan heridas del apego.",
-        "No es «exagerar» ni «cosa del pasado»: es una reacción que sigue ocurriendo hoy.",
         "La seguridad, la calma y acumular confianza —«esta persona es de fiar»— son la base de la recuperación."
+      ],
+      feel: [
+        "No es «exagerar» ni «cosa del pasado»: es una reacción que sigue ocurriendo hoy."
       ],
       comm: [
         "No la toques de repente ni te acerques por detrás (no la asustes)",
@@ -573,8 +585,10 @@ window.SHIEN_CONTENT.es = {
       short: "Una discapacidad poco visible tras accidente o enfermedad",
       what: [
         "Un estado en que, tras un accidente o enfermedad (traumatismo craneal, ictus, etc.), la memoria, la atención, la planificación y el control emocional quedan afectados de forma poco visible.",
-        "Difícil de notar por fuera y fácil de malinterpretar como «ha cambiado». La persona también está desconcertada.",
         "Le queda mucha capacidad. Con apoyos para suplir lo débil, la vida se abre."
+      ],
+      feel: [
+        "Difícil de notar por fuera y fácil de malinterpretar como «ha cambiado». La persona también está desconcertada."
       ],
       comm: [
         "De una en una, corto. Apóyate en notas y recordatorios",
@@ -599,8 +613,10 @@ window.SHIEN_CONTENT.es = {
       short: "Autolesión, agresión, etc. tan intensas que requieren apoyo especial",
       what: [
         "Un «estado» en que la autolesión, la agresión, las fijaciones intensas y la destrucción se dan con muchísima frecuencia e intensidad, de modo que se necesita un apoyo especialmente intensivo (no es un diagnóstico).",
-        "La persona no es «difícil»: está en dificultad. Detrás hay una falta de vías para comunicarse y un desajuste con el entorno.",
         "Con Apoyo Conductual Positivo (PBS) —leer el motivo de la conducta y adaptar el entorno— cambia mucho."
+      ],
+      feel: [
+        "La persona no es «difícil»: está en dificultad. Detrás hay una falta de vías para comunicarse y un desajuste con el entorno."
       ],
       prepare: [
         "La verdadera labor del apoyo es «antes de que ocurra». Una salida o un evento empiezan por planificarlo con cuidado, dentro de sus límites.",
@@ -708,7 +724,10 @@ window.SHIEN_CONTENT.es = {
     "Tras una intervención dura, siempre pasa el relevo. El cansancio y la información pesan menos compartidos.",
     "Su dinero y sus cosas: no «administrarlos», sino «pensar juntos cómo usarlos». Los derechos son suyos.",
     "Lo que funcionó el año pasado puede no funcionar hoy. Las personas cambian; el apoyo también puede cambiar.",
-    "No olvides el «gracias» entre compañeros. El aire del equipo llega a la persona tal cual es."
+    "No olvides el «gracias» entre compañeros. El aire del equipo llega a la persona tal cual es.",
+    "Cambia el «No …» por un «Vamos a …». Si en casa, en el colegio y en el centro se dice igual, evitas que la persona se confunda.",
+    "Si te ayuda, dile en ese mismo momento: «¡Gracias, me has ayudado mucho!». La experiencia de haber sido útil hace crecer «cosas que sí se pueden hacer», que pueden ocupar el lugar de las conductas difíciles.",
+    "Cuando digas «Espera un momentito, ¿vale?», haz visible el final (un temporizador, «hasta que acabe esta canción»). Si consigue esperar, elogia justo eso, en concreto."
   ],
 
   quizzes: [
@@ -1011,6 +1030,24 @@ window.SHIEN_CONTENT.es = {
       options: ["La que puede parar la conducta por la fuerza", "La que sabe aumentar el tiempo en que la persona está tranquila", "La que se adelanta a todo y lo hace todo por ella"],
       answer: 1,
       explain: "Más que destrezas vistosas de crisis: construir un día a día que no hierva. Cuanto más tiempo pasa la persona sintiéndose segura, menos momentos difíciles hay en total. Parece sencillo — y es la pericia más verdadera."
+    },
+    {
+      q: "Un familiar te pide consejo: «Por más que le digo en casa “¡No corras!”, sigue corriendo». ¿Qué recurso le propondrías primero?",
+      options: ["Regañarle en voz aún más alta", "Cambiar a una forma de decirlo que exprese la conducta que se quiere: «Vamos andando, ¿vale?»", "Fijar un castigo para cuando corra"],
+      answer: 1,
+      explain: "Con solo un «no», cuesta entender qué hay que hacer. Decir en pocas palabras la conducta que se quiere, como «Vamos andando, ¿vale?», llega mejor. Si en casa, en el colegio y en el centro se dice igual, hay todavía menos confusión."
+    },
+    {
+      q: "La persona te ha ayudado a servir la comida. ¿Qué forma de relacionarte es buena?",
+      options: ["Es lo normal, así que no decir nada", "Decirle en ese mismo momento: «¡Gracias, me has ayudado mucho!»", "Pensar «puede hacer más» y añadirle otra tarea"],
+      answer: 1,
+      explain: "Haber sido útil y recibir las gracias da fuerza a la siguiente conducta. También en lo que parece normal, di «gracias» en ese mismo momento y en concreto."
+    },
+    {
+      q: "Un profesor del colegio te pide consejo: «No sabe esperar su turno y se cuela». ¿Qué propondrías primero?",
+      options: ["Reñirle con fuerza cada vez que se cuele", "Hacer visible cuántos quedan o qué número le toca, y elogiarle cuando consiga esperar", "No dejarle ponerse en la fila"],
+      answer: 1,
+      explain: "A quien le cuesta esperar, no ver el final le aumenta la ansiedad. Hazlo visible, como «quedan 2» o «te toca con el número de esta tarjeta», y cuando consiga esperar, elógiale en ese momento y en concreto. Solo con reñir, cuesta aprender a esperar."
     }
   ],
 

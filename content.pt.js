@@ -327,7 +327,9 @@ window.SHIEN_CONTENT.pt = {
       short: "Estilo social, fixações e sensorialidade próprios",
       what: [
         "Um perfil em que um estilo social/comunicativo próprio se sobrepõe a interesses e fixações intensos e a uma sensibilidade (ou hipossensibilidade) sensorial. Algumas pessoas têm deficiência intelectual; outras não.",
-        "Como se manifesta varia muito de pessoa para pessoa («espectro», um contínuo). Não presuma; olhe para esta pessoa.",
+        "Como se manifesta varia muito de pessoa para pessoa («espectro», um contínuo). Não presuma; olhe para esta pessoa."
+      ],
+      feel: [
         "Para ela, o mundo é difícil de prever e muito estimulante: reduzir essa ansiedade é o cerne do apoio."
       ],
       prepare: [
@@ -359,7 +361,9 @@ window.SHIEN_CONTENT.pt = {
       short: "Desatenção, hiperatividade e impulsividade marcadas",
       what: [
         "Um perfil em que a desatenção (distrai-se, esquece) e a hiperatividade/impulsividade (custa ficar parada, esperar) são fortes para a idade.",
-        "Não é preguiça nem caráter: uma diferença em como funcionam as «funções executivas» do cérebro.",
+        "Não é preguiça nem caráter: uma diferença em como funcionam as «funções executivas» do cérebro."
+      ],
+      feel: [
         "É fácil perder a confiança de tanto ser repreendida. Reparar no que consegue funciona."
       ],
       comm: [
@@ -385,7 +389,9 @@ window.SHIEN_CONTENT.pt = {
       short: "A compreensão e o juízo se desenvolvem devagar",
       what: [
         "Um perfil em que a compreensão, o juízo, ler/escrever/calcular e o manejo de dinheiro e tempo se desenvolvem devagar, com momentos cotidianos «difíceis de captar».",
-        "O grau e as forças/fraquezas variam de pessoa para pessoa. Não um trato infantil, mas um respeito conforme a idade.",
+        "O grau e as forças/fraquezas variam de pessoa para pessoa. Não um trato infantil, mas um respeito conforme a idade."
+      ],
+      feel: [
         "Muitas vezes não consegue dizer «não entendo» e fica travada em silêncio. Mude o modo de transmitir e chega."
       ],
       prepare: [
@@ -443,7 +449,9 @@ window.SHIEN_CONTENT.pt = {
       short: "Ondas de alucinações, delírios e queda de motivação",
       what: [
         "Uma doença mental em que podem ocorrer alucinações (p. ex. ouvir vozes que não estão), delírios, um pensamento difícil de encadear e queda de motivação.",
-        "Vai em ondas, também com épocas boas. Com o tratamento e o apoio certos, vive-se com calma.",
+        "Vai em ondas, também com épocas boas. Com o tratamento e o apoio certos, vive-se com calma."
+      ],
+      feel: [
         "«Para a pessoa é real»: não discuta; acompanhe a ansiedade. Essa é a base."
       ],
       comm: [
@@ -469,8 +477,10 @@ window.SHIEN_CONTENT.pt = {
       short: "Quedas intensas / oscilações do humor",
       what: [
         "Há a «depressão» — uma queda intensa e duradoura com perda de vontade e interesse — e o «bipolar», que oscila entre depressão e euforia (mania).",
-        "Não se cura pela vontade. «Força» às vezes encurrala a pessoa.",
         "Entender as ondas, não forçar e acompanhar: é isso que sustenta."
+      ],
+      feel: [
+        "Não se cura pela vontade. «Força» às vezes encurrala a pessoa."
       ],
       comm: [
         "Não diga «força» nem «é questão de atitude». Primeiro acolha a dor",
@@ -521,8 +531,10 @@ window.SHIEN_CONTENT.pt = {
       short: "Experiências dolorosas do passado ainda agindo hoje",
       what: [
         "Um estado em que experiências dolorosas passadas (maltrato, catástrofe, acidente) continuam como memórias intrusivas, hipervigilância e evitação. Algumas pessoas carregam feridas do apego.",
-        "Não é «exagero» nem «coisa do passado»: é uma reação que ainda acontece hoje.",
         "A segurança, a tranquilidade e acumular confiança — «esta pessoa é de confiança» — são a base da recuperação."
+      ],
+      feel: [
+        "Não é «exagero» nem «coisa do passado»: é uma reação que ainda acontece hoje."
       ],
       comm: [
         "Não a toque de repente nem se aproxime por trás (não a assuste)",
@@ -573,8 +585,10 @@ window.SHIEN_CONTENT.pt = {
       short: "Uma deficiência pouco visível após acidente ou doença",
       what: [
         "Um estado em que, após um acidente ou doença (traumatismo craniano, AVC, etc.), a memória, a atenção, o planejamento e o controle emocional ficam afetados de modo pouco visível.",
-        "Difícil de notar por fora e fácil de mal interpretar como «mudou». A pessoa também está desconcertada.",
         "Muita capacidade permanece. Com apoios para suprir o fraco, a vida se abre."
+      ],
+      feel: [
+        "Difícil de notar por fora e fácil de mal interpretar como «mudou». A pessoa também está desconcertada."
       ],
       comm: [
         "Um de cada vez, curto. Apoie-se em notas e lembretes",
@@ -599,8 +613,10 @@ window.SHIEN_CONTENT.pt = {
       short: "Autolesão, agressão, etc. tão intensas que exigem apoio especial",
       what: [
         "Um «estado» em que a autolesão, a agressão, as fixações intensas e a destruição ocorrem com frequência e intensidade muito altas, de modo que se precisa de um apoio especialmente intensivo (não é um diagnóstico).",
-        "A pessoa não é «difícil»: está em dificuldade. Por trás há uma falta de vias para se comunicar e um descompasso com o ambiente.",
         "Com Apoio Comportamental Positivo (PBS) — ler o motivo do comportamento e adaptar o ambiente — muda muito."
+      ],
+      feel: [
+        "A pessoa não é «difícil»: está em dificuldade. Por trás há uma falta de vias para se comunicar e um descompasso com o ambiente."
       ],
       prepare: [
         "O verdadeiro trabalho do apoio é «antes de acontecer». Uma saída ou um evento começa por planejá-lo com cuidado, dentro dos limites dela.",
@@ -708,7 +724,10 @@ window.SHIEN_CONTENT.pt = {
     "Depois de um atendimento difícil, sempre passe o bastão. Cansaço e informação pesam menos compartilhados.",
     "O dinheiro e as coisas dela: não «administrar», mas «pensar juntos como usar». Os direitos são dela.",
     "O que funcionou no ano passado pode não funcionar hoje. As pessoas mudam — o apoio também pode mudar.",
-    "Não esqueça o «obrigado» entre colegas. O ar da equipe chega à pessoa exatamente como é."
+    "Não esqueça o «obrigado» entre colegas. O ar da equipe chega à pessoa exatamente como é.",
+    "Troque o «Não pode …» por «Vamos …». Se em casa, na escola e na instituição se fala do mesmo jeito, a pessoa não fica confusa.",
+    "Se ela ajudar, diga na hora: «Obrigado, você me ajudou muito!». A experiência de ter sido útil faz crescer «comportamentos permitidos», que podem ocupar o lugar dos comportamentos difíceis.",
+    "Ao dizer «Espera um pouquinho, tá?», deixe o fim visível (timer, «até essa música acabar»). Se ela conseguir esperar, elogie isso de forma concreta."
   ],
 
   quizzes: [
@@ -1011,6 +1030,24 @@ window.SHIEN_CONTENT.pt = {
       options: ["A que consegue parar o comportamento na força", "A que sabe aumentar o tempo em que a pessoa fica tranquila", "A que se antecipa a tudo e faz tudo por ela"],
       answer: 1,
       explain: "Mais que habilidade vistosa de crise: construir um cotidiano que nem chega a ferver. Quanto mais tempo a pessoa passa em segurança, menos momentos difíceis existem ao todo. Parece simples — e é a perícia mais verdadeira."
+    },
+    {
+      q: "Um familiar pede orientação: «Em casa eu falo mil vezes “Não pode correr!”, e ele corre do mesmo jeito». Qual dica você passaria primeiro?",
+      options: ["Chamar a atenção falando ainda mais alto", "Mudar para um jeito de falar que diga o comportamento desejado: «Vamos andar, tá?»", "Definir um castigo para quando ele correr"],
+      answer: 1,
+      explain: "Só com o «não», fica difícil entender o que fazer. Dizer em poucas palavras o comportamento desejado, como «Vamos andar, tá?», chega mais fácil. Se em casa, na escola e na instituição se fala do mesmo jeito, a confusão diminui ainda mais."
+    },
+    {
+      q: "A pessoa ajudou a servir a refeição. Qual é um bom jeito de interagir?",
+      options: ["É o normal, então não dizer nada", "Dizer na hora: «Obrigado, você me ajudou muito!»", "Pensar «dá para fazer mais» e acrescentar outra tarefa"],
+      answer: 1,
+      explain: "A experiência de ter sido útil e de receber um obrigado dá força para a próxima ação. Mesmo no que parece óbvio, diga «obrigado» na hora e de forma concreta."
+    },
+    {
+      q: "Um professor da escola pede orientação: «Ele não consegue esperar a vez e fura a fila». O que você proporia primeiro?",
+      options: ["Dar uma bronca forte toda vez que ele furar a fila", "Deixar visível quantas pessoas faltam ou qual é a posição dele, e elogiar quando conseguir esperar", "Não deixar que ele entre na fila"],
+      answer: 1,
+      explain: "Para quem tem dificuldade de esperar, não ver o fim aumenta a ansiedade. Deixe visível, como «faltam 2» ou «sua vez é o número desta ficha», e, quando conseguir esperar, elogie na hora e de forma concreta. Só com bronca, fica difícil aprender a esperar."
     }
   ],
 

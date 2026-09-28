@@ -31,7 +31,7 @@ function flatKeys(o, pre) {
 function sig(C) {
   return {
     scenes: (C.scenes || []).map(s => s.id + "|" + s.emoji + "|" + (s.medical ? "M" : "") + "|" + (s.call119 ? "119" : "") + "|" + (s.outdoor ? "O" : "")),
-    traits: (C.traits || []).map(t => t.id + "|" + t.emoji + "|" + (t.prepare ? "P" : "") + "|" + (t.scenes || []).join(",")),
+    traits: (C.traits || []).map(t => t.id + "|" + t.emoji + "|" + (t.prepare ? "P" : "") + "|" + (t.feel ? "F" + t.feel.length : "") + "|" + (t.what || []).length + "|" + (t.scenes || []).join(",")),
     hints: (C.hints || []).length,
     quizzes: (C.quizzes || []).map(q => q.answer + "/" + (q.options || []).length),
     phrases: (C.phraseGroups || []).map(g => g.id + "|" + g.emoji + "|" + (g.items || []).length),
@@ -56,6 +56,7 @@ function checkLang(code, C) {
     ["name", "emoji", "short", "src"].forEach(k => { if (!t[k]) flag(`${tag} ${k}欠け`); });
     ["what", "comm", "env", "ng"].forEach(k => { if (!Array.isArray(t[k]) || !t[k].length) flag(`${tag} ${k}が空`); });
     if ("prepare" in t && (!Array.isArray(t.prepare) || !t.prepare.length)) flag(`${tag} prepareが空`);
+    if ("feel" in t && (!Array.isArray(t.feel) || !t.feel.length)) flag(`${tag} feelが空`);
     (t.scenes || []).forEach(sid => { if (!sceneIds.includes(sid)) flag(`${tag} 未知のscene id: ${sid}`); });
     if (/[�]/.test(JSON.stringify(t))) flag(`${tag} 文字化け`);
   });

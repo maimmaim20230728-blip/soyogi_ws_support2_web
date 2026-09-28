@@ -344,7 +344,9 @@ window.SHIEN_CONTENT.id = {
       short: "Kekhasan relasi, kelekatan, dan sensorik",
       what: [
         "Kekhasan yang memadukan cara berelasi dan berkomunikasi yang unik, minat dan kelekatan yang kuat, serta kepekaan sensorik yang tinggi (atau rendah). Ada yang disertai keterlambatan intelektual, ada yang tidak.",
-        "Wujudnya sangat berbeda pada tiap orang (\"spektrum\" = kontinum). Jangan menghakimi; lihatlah orangnya.",
+        "Wujudnya sangat berbeda pada tiap orang (\"spektrum\" = kontinum). Jangan menghakimi; lihatlah orangnya."
+      ],
+      feel: [
         "Bagi dirinya, dunia sulit diprediksi dan rangsangannya kuat — mengurangi kecemasan itulah inti dukungan."
       ],
       prepare: [
@@ -376,7 +378,9 @@ window.SHIEN_CONTENT.id = {
       short: "Kurang perhatian, hiperaktif, impulsif yang kuat",
       what: [
         "Kurang perhatian (mudah teralih, lupa) serta hiperaktif-impulsif (sulit diam, sulit menunggu) yang jauh lebih kuat dibanding usianya.",
-        "Bukan malas, bukan watak, melainkan perbedaan cara kerja \"fungsi eksekutif\" otak.",
+        "Bukan malas, bukan watak, melainkan perbedaan cara kerja \"fungsi eksekutif\" otak."
+      ],
+      feel: [
         "Karena terus dimarahi, mudah kehilangan percaya diri. Keterlibatan yang menyoroti keberhasilan itu manjur."
       ],
       comm: [
@@ -402,7 +406,9 @@ window.SHIEN_CONTENT.id = {
       short: "Pemahaman dan penilaian berjalan pelan",
       what: [
         "Perkembangan pemahaman-penilaian, baca-tulis-hitung, pengelolaan uang dan waktu yang lebih lambat, sehingga keseharian terasa \"sulit dimengerti\".",
-        "Derajat serta kekuatan-kelemahan tiap orang berbeda. Jangan perlakukan seperti anak kecil; hormati sesuai usia.",
+        "Derajat serta kekuatan-kelemahan tiap orang berbeda. Jangan perlakukan seperti anak kecil; hormati sesuai usia."
+      ],
+      feel: [
         "Sering kesulitan karena tak bisa berkata \"tidak mengerti\". Ubah cara menyampaikan, maka akan sampai."
       ],
       prepare: [
@@ -460,7 +466,9 @@ window.SHIEN_CONTENT.id = {
       short: "Halusinasi, waham, gelombang penurunan minat",
       what: [
         "Penyakit jiwa yang bisa menimbulkan halusinasi (mendengar suara yang tak ada), waham, pikiran sulit runtut, dan penurunan minat.",
-        "Ada gelombangnya; ada juga masa kondisi baik. Dengan pengobatan dan dukungan tepat, bisa hidup tenang.",
+        "Ada gelombangnya; ada juga masa kondisi baik. Dengan pengobatan dan dukungan tepat, bisa hidup tenang."
+      ],
+      feel: [
         "\"Bagi orangnya itu nyata\" — jangan berdebat; mendampingi kecemasannya adalah dasar."
       ],
       comm: [
@@ -486,8 +494,10 @@ window.SHIEN_CONTENT.id = {
       short: "Keterpurukan berat / gelombang suasana hati",
       what: [
         "\"Depresi\": keterpurukan dan hilangnya minat yang berkepanjangan. \"Bipolar\": bolak-balik antara depresi dan fase naik (mania).",
-        "Tidak sembuh dengan kemauan. Kata \"semangat!\" justru bisa memojokkan.",
         "Memahami gelombangnya, tidak memaksakan, dan menemani — itulah penopangnya."
+      ],
+      feel: [
+        "Tidak sembuh dengan kemauan. Kata \"semangat!\" justru bisa memojokkan."
       ],
       comm: [
         "Jangan ucapkan \"semangat\" atau \"cuma perasaanmu\". Terima dulu penderitaannya",
@@ -538,8 +548,10 @@ window.SHIEN_CONTENT.id = {
       short: "Pengalaman pahit yang terus berlanjut kini",
       what: [
         "Pengalaman pahit di masa lalu (kekerasan, bencana, kecelakaan…) berlanjut sebagai kilas balik, kepekaan berlebih, dan penghindaran. Ada pula yang membawa luka kelekatan.",
-        "Bukan \"berlebihan\" ataupun \"urusan masa lalu\": reaksi itu masih berlangsung sekarang.",
         "Rasa aman-nyaman dan tumpukan kepercayaan \"orang ini tidak apa-apa\" adalah landasan pemulihan."
+      ],
+      feel: [
+        "Bukan \"berlebihan\" ataupun \"urusan masa lalu\": reaksi itu masih berlangsung sekarang."
       ],
       comm: [
         "Jangan sentuh tiba-tiba, jangan dekati dari belakang (jangan kagetkan)",
@@ -590,8 +602,10 @@ window.SHIEN_CONTENT.id = {
       short: "Disabilitas tak kasatmata pasca kecelakaan/penyakit",
       what: [
         "Setelah kecelakaan atau penyakit (cedera otak, stroke, dll.), memori, atensi, perencanaan, dan kendali emosi terganggu secara tak kasatmata.",
-        "Dari luar sulit terlihat; mudah disalahpahami \"orangnya berubah\". Dirinya sendiri pun kebingungan.",
         "Banyak kemampuan yang tersisa. Kiat mengompensasi kelemahan memperluas kehidupannya."
+      ],
+      feel: [
+        "Dari luar sulit terlihat; mudah disalahpahami \"orangnya berubah\". Dirinya sendiri pun kebingungan."
       ],
       comm: [
         "Satu per satu, singkat. Padukan memo dan pengingat",
@@ -616,8 +630,10 @@ window.SHIEN_CONTENT.id = {
       short: "Melukai diri/orang lain dst.; butuh dukungan ekstra",
       what: [
         "\"Keadaan\" — bukan nama penyakit — ketika melukai diri, menyakiti orang, kelekatan kuat, perusakan terjadi dengan frekuensi dan intensitas sangat tinggi sehingga butuh dukungan ekstra tebal.",
-        "Orangnya bukan \"orang yang merepotkan\", melainkan \"sedang kesulitan\". Latar belakangnya: tak tersampaikan, ketidakcocokan dengan lingkungan.",
         "Dengan Positive Behaviour Support (PBS), membaca alasan perilaku dan menata lingkungan bisa banyak mengubah keadaan."
+      ],
+      feel: [
+        "Orangnya bukan \"orang yang merepotkan\", melainkan \"sedang kesulitan\". Latar belakangnya: tak tersampaikan, ketidakcocokan dengan lingkungan."
       ],
       prepare: [
         "Panggung utama dukungan adalah \"sebelum perilaku terjadi\". Bepergian dan acara dimulai dari menyusun rencana yang realistis dengan saksama.",
@@ -726,7 +742,10 @@ window.SHIEN_CONTENT.id = {
     "Setelah penanganan berat, selalu lakukan serah terima. Lelah dan informasi jadi ringan bila dibagi.",
     "Uang dan barang miliknya: bukan \"dikelola\", melainkan \"dipikirkan bersama cara memakainya\". Haknya ada padanya.",
     "Yang manjur tahun lalu belum tentu manjur hari ini. Orang berubah — dukungan pun boleh berubah.",
-    "Jangan lupakan \"terima kasih\" antar pendamping. Suasana tim sampai ke orangnya apa adanya."
+    "Jangan lupakan \"terima kasih\" antar pendamping. Suasana tim sampai ke orangnya apa adanya.",
+    "Ubah \"jangan ...\" menjadi \"ayo ...\". Bila rumah, sekolah, dan lembaga memakai kalimat yang sama, orangnya tidak bingung.",
+    "Kalau ia membantu, saat itu juga katakan \"Terima kasih, ya, sangat membantu!\" Pengalaman ketika dirinya bisa berguna menumbuhkan \"perilaku yang boleh dilakukan\" sebagai pengganti perilaku yang menyulitkan.",
+    "Saat bilang \"tunggu sebentar, ya\", buat akhirnya terlihat (timer, \"sampai lagu ini selesai\"). Kalau ia berhasil menunggu, puji hal itu secara konkret."
   ],
 
   /* ===== Belajar: kuis kasus (belajar \"mengapa\", bukan benar-salah) ===== */
@@ -1030,6 +1049,24 @@ window.SHIEN_CONTENT.id = {
       options: ["Yang bisa menghentikan perilaku dengan kekuatan", "Yang bisa menambah waktu orangnya merasa tenang", "Yang mendahului segalanya dan mengerjakan semua untuknya"],
       answer: 1,
       explain: "Lebih dari kecakapan krisis yang mencolok: membangun keseharian yang memang tak mendidih. Makin panjang waktu orangnya merasa aman, makin sedikit pula momen sulit itu sendiri. Tampak sederhana — dan itulah keahlian yang paling sejati."
+    },
+    {
+      q: "Keluarga berkonsultasi: \"Di rumah sudah berkali-kali dibilang 'jangan lari-lari', tetap saja lari.\" Kiat apa yang pertama ingin disampaikan?",
+      options: ["Menegur dengan suara lebih keras", "Ganti dengan kalimat yang menyampaikan perilaku yang diharapkan, seperti \"Jalan pelan-pelan, yuk\"", "Menetapkan hukuman kalau ia berlari"],
+      answer: 1,
+      explain: "Dengan \"jangan\" saja, sulit menyampaikan apa yang sebaiknya dilakukan. Menyampaikan perilaku yang diharapkan secara singkat, seperti \"Jalan pelan-pelan, yuk\", lebih mudah sampai. Bila rumah, sekolah, dan lembaga memakai kalimat yang sama, kebingungan makin berkurang."
+    },
+    {
+      q: "Ia membantu menyajikan makanan. Cara bersikap yang baik?",
+      options: ["Tidak berkata apa-apa karena itu hal yang wajar", "Saat itu juga katakan \"Terima kasih, ya, sangat membantu!\"", "Menambah tugas berikutnya karena \"pasti bisa lebih\""],
+      answer: 1,
+      explain: "Pengalaman ketika dirinya berguna dan menerima ucapan terima kasih menjadi tenaga bagi tindakan berikutnya. Bahkan untuk hal yang tampak wajar, sampaikan \"terima kasih\" secara konkret saat itu juga."
+    },
+    {
+      q: "Guru sekolah berkonsultasi: \"Ia tidak bisa menunggu giliran dan menyerobot antrean.\" Kiat apa yang pertama ingin diusulkan?",
+      options: ["Memarahi keras setiap kali menyerobot", "Membuat terlihat tinggal berapa orang atau urutan ke berapa, lalu memuji bila ia berhasil menunggu", "Tidak menyuruhnya ikut mengantre"],
+      answer: 1,
+      explain: "Bagi yang sulit menunggu, kecemasan menguat bila akhirnya tak terlihat. Buat terlihat, seperti \"tinggal 2 orang\" atau \"giliran sesuai nomor di kartu ini\", dan bila ia berhasil menunggu, puji secara konkret saat itu juga. Kalau hanya dimarahi, cara menunggu sulit dipelajari."
     }
   ]
 };
