@@ -346,6 +346,19 @@
 
   .app-foot{ text-align:center; font-size:.72rem; color:var(--muted); padding:16px 12px 8px; }
   .app-foot .dev-credit{ display:inline-block; margin-top:10px; color:var(--brand); text-decoration:underline; }
+
+  /* ===== 確かめの窓（Play版だけ・Android の戻るボタン・app.js askBox・2026-09-30）。きろくの窓・みせる より上 ===== */
+  .ask-ov{
+    position:fixed; inset:0; z-index:200; background:rgba(51,71,90,.55);
+    display:flex; align-items:center; justify-content:center;
+    padding:calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom));
+  }
+  .ask-box{ background:var(--card); color:var(--text); border:1px solid var(--line); border-radius:22px; padding:20px 18px 18px; width:min(100%, 460px); }
+  .ask-msg{ font-size:1.05rem; font-weight:700; color:var(--brand-deep); line-height:1.7; margin-bottom:16px; overflow-wrap:anywhere; }
+  .ask-row{ display:flex; gap:10px; }
+  .ask-row button{ flex:1; border-radius:var(--radius); padding:13px; min-height:52px; font-weight:700; font-size:.98rem; }
+  .ask-no{ background:#eef2f6; color:var(--muted); }
+  .ask-yes{ background:var(--brand); color:#fff; }
 </style>
 </head>
 <body>

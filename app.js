@@ -767,6 +767,87 @@
     window.addEventListener("pointerdown", firstGesture, true);
   })();
 
+  /* ========== Android の戻るボタン（Play版だけ・2026-09-30） ==========
+   * @capacitor/app が無いと、戻るでアプリごと後ろに下がっていた（Android 11 以前は閉じる）。
+   * 押したときの順：①確かめの窓 → 「いいえ」
+   *               ②みせる（大きく表示）→ 閉じる（画面タップと同じ）
+   *               ③きろくの窓 → 「やめる」と同じ。チップを選んだか備考に字を入れていたら、先に確かめの窓（いいえ＝そのまま）
+   *               ④しらべるの特性ページ・根拠ページ → 「← 特性一覧へ」「← しらべるへ」と同じ
+   *               ⑤カード詳細・きろく一覧 → 「← もどる」と同じ（こまった へ）／しらべる・まなぶ・つたえる → こまった
+   *               ⑥こまった → アプリを後ろに下げる（minimizeApp。中身はそのまま）
+   * つたえるの もじばん・ひつだん の字や絵、動いているタイマーは、画面を移っても消えない（描き直さない）ので確かめは出さない。
+   * 🔴 プラグインはネイティブが注入する Capacitor.Plugins.App を使う（registerPlugin は WebView に無い）。
+   * Web版（ブラウザ）は何も変えない（戻るはブラウザのまま） */
+  function isNativeApp() {
+    try { var c = window.Capacitor; return !!(c && typeof c.isNativePlatform === "function" && c.isNativePlatform()); } catch (e) { return false; }
+  }
+  function nativePlugin(name, fn) {
+    if (!isNativeApp()) return null;
+    try {
+      var c = window.Capacitor;
+      if (typeof c.isPluginAvailable === "function" && !c.isPluginAvailable(name)) return null;
+      var p = c.Plugins && c.Plugins[name];
+      return (p && typeof p[fn] === "function") ? p : null;
+    } catch (e) { return null; }
+  }
+  function minimizeApp() {
+    var ap = nativePlugin("App", "minimizeApp");
+    try { if (ap) { var p = ap.minimizeApp(); if (p && p.catch) p.catch(function () {}); } } catch (e) {}
+  }
+  /* 確かめの窓：Play版の window.confirm は、Capacitor（BridgeWebChromeClient）がボタンを英語の OK / Cancel に決め打ちしている。
+   * Play版だけ、アプリの中に「いいえ / はい」（T.askNo / T.askYes・14言語）の窓を出す。Web版は window.confirm（ブラウザの言葉）。
+   * done(true=はい / false=いいえ)。戻るボタン＝いいえ */
+  function askBox(msg, done) {
+    if (!isNativeApp()) {
+      var r = false;
+      try { r = !!window.confirm(msg); } catch (e) {}
+      done(r); return;
+    }
+    var ov = document.createElement("div");
+    ov.className = "ask-ov";
+    ov.setAttribute("role", "alertdialog");
+    ov.setAttribute("aria-modal", "true");
+    var box = document.createElement("div"); box.className = "ask-box";
+    var p = document.createElement("p"); p.className = "ask-msg"; p.textContent = msg;
+    var row = document.createElement("div"); row.className = "ask-row";
+    var no = document.createElement("button"); no.type = "button"; no.className = "ask-no"; no.textContent = T.askNo;
+    var yes = document.createElement("button"); yes.type = "button"; yes.className = "ask-yes"; yes.textContent = T.askYes;
+    var closed = false;
+    function close(v) { if (closed) return; closed = true; if (ov.parentNode) ov.parentNode.removeChild(ov); done(v); }
+    no.addEventListener("click", function () { close(false); });
+    yes.addEventListener("click", function () { close(true); });
+    row.appendChild(no); row.appendChild(yes);
+    box.appendChild(p); box.appendChild(row); ov.appendChild(box);
+    document.body.appendChild(ov);
+    try { no.focus(); } catch (e) {}
+  }
+  function onBack() {
+    var ask = document.querySelector(".ask-ov");
+    if (ask) { var an = ask.querySelector(".ask-no"); if (an) an.click(); return; }
+    if ($("#showOverlay").classList.contains("open")) { $("#showOverlay").click(); return; }
+    if ($("#modalWrap").classList.contains("open")) {
+      /* 書きかけ＝備考に字がある、またはチップを1つでも選んだ（きろくはタップだけで仕上がるので、チップも書きかけ）。
+       * 戻るボタンは画面の端をなぞるだけで出ることがあるので、選んだものが確かめなしで消えないようにする */
+      var memo = $("#memoInput");
+      var dirty = (memo && memo.value.trim()) || document.querySelector("#recordModal .chip.on");
+      if (dirty && T) { askBox(T.recBackAsk, function (ok) { if (ok) closeRecord(); }); return; }
+      closeRecord(); return;
+    }
+    if (currentView === "lookup") {
+      var lb = $("#lkBack") || $("#bsBack");
+      if (lb) { lb.click(); return; }
+    }
+    if (currentView === "detail" && $("#backBtn")) { $("#backBtn").click(); return; }
+    if (currentView === "logs" && $("#logsBack")) { $("#logsBack").click(); return; }
+    if (currentView !== "scenes") { show("scenes"); return; }
+    minimizeApp();
+  }
+  (function watchBack() {
+    var ap = nativePlugin("App", "addListener");
+    if (!ap) return;
+    try { ap.addListener("backButton", function () { onBack(); }); } catch (e) {}
+  })();
+
   /* ========== 起動 ========== */
   LANG = resolveLang();
   buildLangSelect();
