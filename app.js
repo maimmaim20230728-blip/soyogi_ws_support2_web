@@ -59,6 +59,10 @@
       buildTypePane();
       renderScenes();
       show("scenes");
+      /* はじめての つかいかた：開いていれば、いまのページのまま訳し直す／起動のときは、読み終えるまで毎回出す（2026-09-30） */
+      var gov = document.querySelector(".guide-ov");
+      if (gov && gov._draw) gov._draw();
+      if (!guideBooted) { guideBooted = true; if (!guideDone()) openGuide(true); }
     });
   }
   function buildLangSelect() {
@@ -141,7 +145,8 @@
         '<span class="e">' + s.emoji + '</span><span class="t">' + esc(s.title) + "</span></button>";
     });
     html += "</div>";
-    html += '<div class="footer-links"><button id="openLogs">' + esc(T.seeLogs) + "</button></div>";
+    html += '<div class="footer-links"><button id="openLogs">' + esc(T.seeLogs) + "</button><br>" +
+      '<button id="openGuide">' + esc(T.guide.again) + "</button></div>";   /* つかいかたを もう一度（2026-09-30） */
     html += '<div class="app-foot">' + esc(T.footMedical) + "<br>" + esc(T.footPrivacy) +
       '<br><a class="dev-credit" href="https://soudansoyogi.com/" target="_blank" rel="noopener">アプリ開発：介護と支援の相談どころ・そよぎ</a></div>';
     $("#view-scenes").innerHTML = html;
@@ -149,6 +154,7 @@
       b.addEventListener("click", function () { renderDetail(b.dataset.id); show("detail"); });
     });
     $("#openLogs").addEventListener("click", function () { renderLogs(); show("logs"); });
+    $("#openGuide").addEventListener("click", function () { openGuide(false); });
   }
 
   /* ========== こまった：カード詳細 ========== */
@@ -761,6 +767,8 @@
       bgmPaint(); bgmRefresh();
     });
     function firstGesture() {
+      /* つかいかた（初回の案内）が出ているあいだの操作は数えない＝読んでいるうちに鳴り出さない。閉じたあと最初にふれたときに今までどおり（2026-09-30） */
+      if (document.querySelector(".guide-ov")) return;
       A.unlock(); audioUnlocked = true; bgmRefresh(); bgmPaint();
       window.removeEventListener("pointerdown", firstGesture, true);
     }
@@ -824,6 +832,9 @@
   function onBack() {
     var ask = document.querySelector(".ask-ov");
     if (ask) { var an = ask.querySelector(".ask-no"); if (an) an.click(); return; }
+    /* つかいかた：2ページ目から=前のページ／1ページ目=初回は後ろに下げる（閉じない）・「もう一度 みる」から開いたときは閉じる */
+    var gov = document.querySelector(".guide-ov");
+    if (gov && gov._back) { gov._back(); return; }
     if ($("#showOverlay").classList.contains("open")) { $("#showOverlay").click(); return; }
     if ($("#modalWrap").classList.contains("open")) {
       /* 書きかけ＝備考に字がある、またはチップを1つでも選んだ（きろくはタップだけで仕上がるので、チップも書きかけ）。
@@ -847,6 +858,98 @@
     if (!ap) return;
     try { ap.addListener("backButton", function () { onBack(); }); } catch (e) {}
   })();
+
+  /* ========== はじめての つかいかた（初回の案内・2026-09-30） ==========
+   * ヒロさん「ひとつずつ・そよぎ みたいなタイプのアプリは、必ず最初に使い方の丁寧な説明を出してほしい。10代の情報室のように」。
+   * ・初回起動で必ず出す（最後まで読むまで、開くたびに出る）。文言は i18n.js の SHIEN_UI.<言語>.guide（title / step / prev / next / start / again / heads[] / bodies[]）
+   *   本文の {キー} は、その言語の画面の文字（T の同じ表・nav.scenes のような「.」区切りも可）に、{@med} は医療カードの名前に置きかえる＝ボタン名が画面とずれない
+   * ・1ページずつ「つぎ」「まえ」。閉じるのは最後のページの「はじめる」だけ（× は置かない）。1ページ目に、ことば（上の 🌐 と同じ選択肢）
+   * ・戻るボタン（Play版）：2ページ目から=前のページ／1ページ目=初回は後ろに下げる（閉じない）・「もう一度 みる」から開いたときは閉じる（onBack）
+   * ・読み終えたら shien.guide.v1 に "1"。こまった のいちばん下の「つかいかたを もう一度 みる」でいつでも開ける
+   * ・出ているあいだは BGM を始めない（firstGesture）。読み上げは案内の中には無い */
+  var GUIDE_KEY = "shien.guide.v1";
+  var guideBooted = false;
+  function guideDone() { try { return !!localStorage.getItem(GUIDE_KEY); } catch (e) { return false; } }
+  function tget(path) {
+    if (path === "@med") { var m = C && C.scenes.filter(function (s) { return s.medical; })[0]; return m ? m.title : undefined; }
+    function walk(o) { return path.split(".").reduce(function (a, c) { return (a && a[c] !== undefined) ? a[c] : undefined; }, o); }
+    var v = walk(T || {}); if (v === undefined) v = walk(window.SHIEN_UI.en || {});
+    return v;
+  }
+  function gtext(s) {
+    return String(s == null ? "" : s).replace(/\{(@?[\w.]+)\}/g, function (m, k) { var v = tget(k); return (typeof v === "string") ? v : m; });
+  }
+  function mk(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
+  function openGuide(first) {
+    if (!T || !T.guide || !T.guide.bodies || !T.guide.bodies.length) return;
+    if (document.querySelector(".guide-ov")) return;   /* 二重に出さない */
+    var i = 0;
+    var ov = mk("div", "guide-ov");
+    ov.setAttribute("role", "dialog"); ov.setAttribute("aria-modal", "true");
+    var box = mk("div", "guide-box"), top = mk("div", "guide-top"), ttl = mk("p", "guide-title"), step = mk("p", "guide-step");
+    step.setAttribute("dir", "ltr");   /* 「1 / 8」は右から左の言葉（ar）でも左から */
+    top.appendChild(ttl); top.appendChild(step);
+    var card = mk("div", "guide-card");
+    /* ことば（1ページ目だけ）：案内は上の 🌐 も覆うので、ここで同じ選択肢から選べるように */
+    var langRow = mk("div", "guide-lang"), langLbl = mk("span", "guide-lang-lbl"), sel = mk("select", "lang-select");
+    sel.setAttribute("aria-label", "言語 / Language");
+    var src = $("#langSelect");
+    Array.prototype.forEach.call(src ? src.options : [], function (o) { var op = document.createElement("option"); op.value = o.value; op.textContent = o.textContent; sel.appendChild(op); });
+    sel.addEventListener("change", function () { if (sel.value !== LANG) setLang(sel.value); });
+    langRow.appendChild(langLbl); langRow.appendChild(sel);
+    var h = mk("h2", "guide-h"), p = mk("p", "guide-p"), dots = mk("div", "guide-dots");
+    dots.setAttribute("aria-hidden", "true");
+    card.appendChild(langRow); card.appendChild(h); card.appendChild(p); card.appendChild(dots);
+    box.appendChild(top); box.appendChild(card);
+    var row = mk("div", "guide-row"), rin = mk("div", "guide-row-in");
+    var prevB = mk("button", "guide-prev"), nextB = mk("button", "guide-next");
+    prevB.type = "button"; nextB.type = "button";
+    rin.appendChild(prevB); rin.appendChild(nextB); row.appendChild(rin);
+    ov.appendChild(box); ov.appendChild(row);
+    function fitPad() {   /* 本文の最後の行が下の帯に隠れないよう、余白を帯より高くする（文字を大きくしている端末でも） */
+      var rh = row.getBoundingClientRect ? row.getBoundingClientRect().height : 0;
+      if (rh > 0) ov.style.paddingBottom = Math.ceil(rh + 24) + "px";
+    }
+    function draw() {
+      var G = T.guide, n = G.bodies.length;
+      if (i > n - 1) i = n - 1;
+      ov.setAttribute("aria-label", G.title);
+      ttl.textContent = G.title;
+      step.textContent = String(G.step).replace("{n}", i + 1).replace("{m}", n);
+      langRow.style.display = (i === 0) ? "" : "none";
+      langLbl.textContent = T.langLabel;
+      sel.value = LANG;
+      h.textContent = gtext(G.heads[i]);
+      p.textContent = gtext(G.bodies[i]);
+      dots.innerHTML = "";
+      for (var k = 0; k < n; k++) dots.appendChild(mk("span", "guide-dot" + (k === i ? " on" : "")));
+      prevB.textContent = G.prev;
+      prevB.style.visibility = (i === 0) ? "hidden" : "visible";   /* 「つぎ」の位置を変えない */
+      nextB.textContent = (i === n - 1) ? G.start : G.next;
+      ov.scrollTop = 0;
+      fitPad();
+    }
+    function close() {
+      if (ov.parentNode) ov.parentNode.removeChild(ov);
+      document.documentElement.classList.remove("guide-open");
+      window.removeEventListener("resize", fitPad);
+      try { localStorage.setItem(GUIDE_KEY, "1"); } catch (e) {}
+    }
+    ov._draw = draw;
+    ov._back = function () {
+      if (i > 0) { i--; draw(); return; }
+      if (first) minimizeApp(); else close();
+    };
+    prevB.addEventListener("click", function () { if (i > 0) { i--; draw(); } });
+    nextB.addEventListener("click", function () { if (i < T.guide.bodies.length - 1) { i++; draw(); } else close(); });
+    /* 下の画面が横にはみ出す言語（de・ru の幅360、文字を大きくした en など）でも、案内が画面の幅からはみ出さないように、
+       出ているあいだは下の画面の はみ出し を切る（閉じたら元どおり） */
+    document.documentElement.classList.add("guide-open");
+    document.body.appendChild(ov);
+    draw();
+    window.addEventListener("resize", fitPad);
+    try { nextB.focus(); } catch (e) {}
+  }
 
   /* ========== 起動 ========== */
   LANG = resolveLang();

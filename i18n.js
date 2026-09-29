@@ -114,7 +114,34 @@ window.SHIEN_UI.ja = {
 
   bgmOn: "BGM オン（タップで消音）",
   bgmOff: "BGM オフ（タップで再生）",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  /* はじめての つかいかた（初回の案内・app.js openGuide・2026-09-30）。
+   * 本文の {キー} は、この言語の画面の文字（SHIEN_UI の同じ言語・nav.scenes のような「.」区切りも可）に置きかわる＝ボタン名が画面とずれない。
+   * {@med} は content の医療カード（いちばん上のボタン）の名前。ページ数は全言語で同じ（_check.js がキーの一致を見る） */
+  guide: {
+    title: "つかいかた", step: "{n} / {m}", prev: "← まえ", next: "つぎ →", start: "はじめる", again: "📘 つかいかたを もう一度 みる",
+    heads: [
+      "{appName} へ ようこそ",
+      "まず、ここから",
+      "{nav.scenes}",
+      "きろく（この端末の中だけ）",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "音と、この案内"
+    ],
+    bodies: [
+      "障害福祉の現場で働く人が、困った場面で まず何をするかを、すぐに確かめるための道具です。ふだんから読んでおくと、支援のヒントも学べます。\n書いてあるのは、傾向とヒントです。いちばんの手がかりは、目の前のその人です。\nこのアプリは医療判断をしません。緊急時は現地の緊急番号へ。\nことばは、上で選べます。あとから画面の上の 🌐 でも変えられます。",
+      "画面の下に「{nav.scenes}」「{nav.lookup}」「{nav.learn}」「{nav.talk}」の4つがあります。\n困ったときは、まず「{nav.scenes}」を開いて、いまの場面のカードを選びます。\n時間のあるときに「{nav.lookup}」と「{nav.learn}」を読んでおくと、いざというときの そなえになります。",
+      "場面のカードを選ぶと、「{blkDo}」「{blkDont}」「{blkAfter}」などが出ます。外出先での動き方が のっているカードもあります。\n医療のことは、いちばん上の「{@med}」から。\n「{blkWhy}」は、タップすると開きます。「{back}」で一覧に戻ります。",
+      "カードの「{recordBtn}」を押すと、きっかけ・つづいた時間・対応したことなどを タップだけで選べて、「{recSave}」で残せます。名前を書く欄はありません。\n「{nav.scenes}」のいちばん下の「{seeLogs}」で見返せます。「{logsCopy}」で、まとめてコピーできます。\nきろくは この端末の中だけに保存され（最大200件）、どこにも送られません。登録もいりません。スマホを変えると引きつげないので、残したいものは コピーしておきます。",
+      "「{byTrait}」から、特性ごとのページを開けます。\n「{trWhat}」「{trComm}」「{trEnv}」「{trNg}」などが、1ページにまとまっています。そこから、よくある場面のカードへも移れます。\n「{aboutBasis}」では、このアプリが もとにしている考え方を確かめられます。",
+      "「{todayHint}」を読み、「{anotherHint}」で 次のヒントへ。\nケースクイズは、答えを選ぶと 解説が出ます。正解よりも、なぜそうするのかを 大事にしています。\n「{quizNext}」で 次の問題へ。",
+      "ことばで伝えにくい人との やりとりに使います。\n「{talkPhrases}」は、タップすると 読み上げて、大きく表示します。\n「{talkType}」は、50音の字を押して、「{read}」で読み上げ、「{showBig}」で大きく表示します。\n「{talkDraw}」は、指で書いて見せます。「{talkTimer}」は、のこり時間を 目で見せます。\n大きく表示した画面は、タップすると戻ります。",
+      "画面の上の 🎵 で、BGM を消したり 流したりできます。BGM は、この案内を閉じたあと 画面にふれると流れ始めます（🔇 のときは流れません）。\n「{nav.talk}」を開いているあいだは、BGM が止まります（タイマーが動いているあいだだけ流れます）。\nこの案内は、「{nav.scenes}」のいちばん下の「{guide.again}」で、いつでも もう一度 見られます。"
+    ]
+  }
 };
 
 window.SHIEN_UI.en = {
@@ -206,7 +233,31 @@ window.SHIEN_UI.en = {
 
   bgmOn: "Music on (tap to mute)",
   bgmOff: "Music off (tap to play)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "How to use", step: "{n} / {m}", prev: "← Back", next: "Next →", start: "Start", again: "📘 Show how to use again",
+    heads: [
+      "Welcome to {appName}",
+      "Start here",
+      "{nav.scenes}",
+      "Records (this device only)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "Sound and this guide"
+    ],
+    bodies: [
+      "A tool for people working in disability support to check quickly what to do first when a situation gets difficult. Reading it in calm times also helps you learn ideas for support.\nWhat you find here are tendencies and hints. Your best guide is always the person in front of you.\nThis app does not make medical decisions. In an emergency, call your local emergency number.\nChoose a language above. You can change it later with 🌐 at the top of the screen.",
+      "At the bottom there are four tabs: “{nav.scenes}”, “{nav.lookup}”, “{nav.learn}” and “{nav.talk}”.\nWhen something happens, open “{nav.scenes}” first and choose the card for the situation.\nReading “{nav.lookup}” and “{nav.learn}” when you have time helps you be prepared.",
+      "Choose a situation card to see “{blkDo}”, “{blkDont}”, “{blkAfter}” and more. Some cards also say what to do when you are out.\nFor medical matters, use “{@med}” at the very top.\nTap “{blkWhy}” to open it. “{back}” returns to the list.",
+      "On a card, tap “{recordBtn}”. Choose the trigger, how long it lasted, what you did and so on with taps only, then tap “{recSave}”. There is no field for names.\nLook back with “{seeLogs}” at the bottom of “{nav.scenes}”. “{logsCopy}” copies them all at once.\nRecords are stored only on this device (up to 200) and are never sent anywhere. No sign-up is needed. Records do not move to a new phone, so copy anything you want to keep.",
+      "Open a page for each trait from “{byTrait}”.\n“{trWhat}”, “{trComm}”, “{trEnv}”, “{trNg}” and more are gathered on one page. From there you can also jump to the cards for common situations.\n“{aboutBasis}” shows the ideas this app is based on.",
+      "Read “{todayHint}” and tap “{anotherHint}” for the next one.\nIn the case quiz, choose an answer to see the explanation. Understanding why matters more than getting it right.\n“{quizNext}” goes to the next question.",
+      "Use it with people for whom words are hard.\n“{talkPhrases}”: tap a phrase to hear it read aloud and see it shown large.\n“{talkType}”: type with the keyboard, then use “{read}” to read it aloud or “{showBig}” to show it large.\n“{talkDraw}”: write with your finger to show it. “{talkTimer}”: makes the time left easy to see.\nTap a large display to go back.",
+      "Tap 🎵 at the top to turn the music off or on. The music starts when you touch the screen after closing this guide (not while it shows 🔇).\nWhile “{nav.talk}” is open, the music stops (it plays only while the timer is running).\nYou can see this guide again at any time with “{guide.again}” at the bottom of “{nav.scenes}”."
+    ]
+  }
 };
 
 window.SHIEN_UI.zh = {
@@ -288,7 +339,31 @@ window.SHIEN_UI.zh = {
   overlayHint: "点一下屏幕即可返回",
   bgmOn: "背景音乐 开（点一下静音）",
   bgmOff: "背景音乐 关（点一下播放）",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "使用方法", step: "{n} / {m}", prev: "← 上一页", next: "下一页 →", start: "开始", again: "📘 再看一次使用方法",
+    heads: [
+      "欢迎使用{appName}",
+      "从这里开始",
+      "{nav.scenes}",
+      "记录（只在本设备）",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "声音与本说明"
+    ],
+    bodies: [
+      "这是为残障福祉一线工作者准备的工具，遇到难题时，能马上确认首先该做什么。平时读一读，也能学到支援的提示。\n这里写的是倾向与提示。最好的线索，永远是眼前这个人。\n本应用不做医疗判断。紧急时请拨打当地急救电话。\n语言可以在上面选择。之后也可以用画面上方的 🌐 更改。",
+      "画面下方有“{nav.scenes}”“{nav.lookup}”“{nav.learn}”“{nav.talk}”四个标签。\n遇到情况时，先打开“{nav.scenes}”，选择当下场景的卡片。\n有空时读一读“{nav.lookup}”和“{nav.learn}”，关键时刻就有准备。",
+      "选择场景卡片后，会显示“{blkDo}”“{blkDont}”“{blkAfter}”等内容。有些卡片还写了在外面时怎么做。\n医疗的事，请点最上面的“{@med}”。\n“{blkWhy}”点一下就会展开。点“{back}”回到一览。",
+      "在卡片上点“{recordBtn}”，只要点选诱因、持续时间、做了什么等，再点“{recSave}”即可。没有填写姓名的栏。\n在“{nav.scenes}”最下方的“{seeLogs}”可以回看。用“{logsCopy}”可以一次全部复制。\n记录只保存在本设备中（最多200条），不会发送到任何地方。也不需要注册。换手机时记录无法转移，想保留的请先复制。",
+      "从“{byTrait}”可以打开各个特质的页面。\n“{trWhat}”“{trComm}”“{trEnv}”“{trNg}”等都集中在一页。从那里也能跳到常见场景的卡片。\n在“{aboutBasis}”可以确认本应用所依据的思路。",
+      "阅读“{todayHint}”，点“{anotherHint}”看下一条。\n案例小测选择答案后会显示解说。比起答对，更看重为什么这样做。\n点“{quizNext}”进入下一题。",
+      "用于和难以用语言表达的人沟通。\n“{talkPhrases}”：点一下就会读出来并放大显示。\n“{talkType}”：用键盘输入，点“{read}”读出，点“{showBig}”放大显示。\n“{talkDraw}”：用手指写给对方看。“{talkTimer}”：让剩余时间一目了然。\n放大显示的画面，点一下即可返回。",
+      "点画面上方的 🎵 可以关闭或打开背景音乐。关闭本说明后，触碰画面时背景音乐开始播放（显示 🔇 时不播放）。\n打开“{nav.talk}”期间，背景音乐会停止（只在计时器运行时播放）。\n本说明可以随时通过“{nav.scenes}”最下方的“{guide.again}”再看一次。"
+    ]
+  }
 };
 
 window.SHIEN_UI.es = {
@@ -370,7 +445,31 @@ window.SHIEN_UI.es = {
   overlayHint: "Toca la pantalla para volver",
   bgmOn: "Música activada (toca para silenciar)",
   bgmOff: "Música desactivada (toca para reproducir)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "Cómo se usa", step: "{n} / {m}", prev: "← Atrás", next: "Siguiente →", start: "Empezar", again: "📘 Ver de nuevo cómo se usa",
+    heads: [
+      "Te damos la bienvenida a {appName}",
+      "Empieza aquí",
+      "{nav.scenes}",
+      "Registros (solo en este dispositivo)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "Sonido y esta guía"
+    ],
+    bodies: [
+      "Una herramienta para quienes trabajan en el apoyo a la discapacidad, para comprobar enseguida qué hacer primero ante una situación difícil. Leerla en momentos tranquilos también ayuda a aprender ideas de apoyo.\nLo que hay aquí son tendencias y pistas. Tu mejor guía es siempre la persona que tienes delante.\nEsta app no toma decisiones médicas. En una emergencia, llama al número de emergencias local.\nElige el idioma aquí arriba. Luego podrás cambiarlo con 🌐 en la parte de arriba.",
+      "Abajo hay cuatro pestañas: «{nav.scenes}», «{nav.lookup}», «{nav.learn}» y «{nav.talk}».\nCuando pase algo, abre primero «{nav.scenes}» y elige la tarjeta de la situación.\nLeer «{nav.lookup}» y «{nav.learn}» cuando tengas tiempo te ayuda a prepararte.",
+      "Al elegir una tarjeta verás «{blkDo}», «{blkDont}», «{blkAfter}» y más. Algunas tarjetas también explican qué hacer fuera de casa.\nPara lo médico, usa «{@med}», arriba del todo.\nToca «{blkWhy}» para abrirlo. «{back}» vuelve a la lista.",
+      "En una tarjeta, toca «{recordBtn}». Elige el desencadenante, cuánto duró, qué hiciste, etc., solo con toques, y luego toca «{recSave}». No hay ningún campo para nombres.\nRevísalos con «{seeLogs}», al final de «{nav.scenes}». «{logsCopy}» los copia todos de una vez.\nLos registros se guardan solo en este dispositivo (hasta 200) y no se envían a ningún sitio. No hace falta registrarse. No pasan a un teléfono nuevo, así que copia lo que quieras conservar.",
+      "Desde «{byTrait}» abres la página de cada rasgo.\n«{trWhat}», «{trComm}», «{trEnv}», «{trNg}» y más están reunidos en una página. Desde ahí también puedes ir a las tarjetas de situaciones frecuentes.\n«{aboutBasis}» muestra las ideas en las que se basa esta app.",
+      "Lee el «{todayHint}» y toca «{anotherHint}» para ver el siguiente.\nEn el caso práctico, elige una respuesta para ver la explicación. Importa más entender el porqué que acertar.\n«{quizNext}» pasa a la siguiente pregunta.",
+      "Sirve para comunicarse con personas a las que les cuesta usar palabras.\n«{talkPhrases}»: toca una frase para oírla en voz alta y verla en grande.\n«{talkType}»: escribe con el teclado y usa «{read}» para leerlo en voz alta o «{showBig}» para mostrarlo en grande.\n«{talkDraw}»: escribe con el dedo para mostrarlo. «{talkTimer}»: deja ver el tiempo que queda.\nToca la pantalla en grande para volver.",
+      "Toca 🎵 arriba para apagar o encender la música. La música empieza cuando tocas la pantalla después de cerrar esta guía (no si muestra 🔇).\nMientras «{nav.talk}» está abierto, la música se detiene (solo suena mientras el temporizador está en marcha).\nPuedes volver a ver esta guía cuando quieras con «{guide.again}», al final de «{nav.scenes}»."
+    ]
+  }
 };
 
 window.SHIEN_UI.hi = {
@@ -452,7 +551,31 @@ window.SHIEN_UI.hi = {
   overlayHint: "वापस जाने के लिए स्क्रीन टैप करें",
   bgmOn: "संगीत चालू (म्यूट के लिए टैप)",
   bgmOff: "संगीत बंद (चलाने के लिए टैप)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "उपयोग कैसे करें", step: "{n} / {m}", prev: "← पिछला", next: "अगला →", start: "शुरू करें", again: "📘 उपयोग का तरीका फिर से देखें",
+    heads: [
+      "{appName} में आपका स्वागत है",
+      "यहाँ से शुरू करें",
+      "{nav.scenes}",
+      "रिकॉर्ड (केवल इस डिवाइस में)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "आवाज़ और यह गाइड"
+    ],
+    bodies: [
+      "यह दिव्यांगजन सहायता में काम करने वालों के लिए एक साधन है, ताकि मुश्किल स्थिति में तुरंत देख सकें कि पहले क्या करना है। शांत समय में पढ़ने से सहायता के संकेत भी सीखे जा सकते हैं।\nयहाँ जो लिखा है, वह रुझान और संकेत हैं। सबसे अच्छा मार्गदर्शक हमेशा आपके सामने वाला व्यक्ति है।\nयह ऐप चिकित्सकीय निर्णय नहीं लेता। आपात स्थिति में अपने स्थानीय आपातकालीन नंबर पर कॉल करें।\nभाषा ऊपर चुनें। बाद में स्क्रीन के ऊपर 🌐 से भी बदल सकते हैं।",
+      "नीचे चार टैब हैं: “{nav.scenes}”, “{nav.lookup}”, “{nav.learn}” और “{nav.talk}”।\nकुछ होने पर पहले “{nav.scenes}” खोलें और उस स्थिति का कार्ड चुनें।\nसमय मिलने पर “{nav.lookup}” और “{nav.learn}” पढ़ लें, इससे ज़रूरत के समय तैयारी रहती है।",
+      "स्थिति का कार्ड चुनने पर “{blkDo}”, “{blkDont}”, “{blkAfter}” आदि दिखते हैं। कुछ कार्डों में यह भी लिखा है कि बाहर होने पर क्या करें।\nचिकित्सा से जुड़ी बात के लिए सबसे ऊपर “{@med}” खोलें।\n“{blkWhy}” टैप करने पर खुलता है। “{back}” से सूची पर लौटें।",
+      "कार्ड पर “{recordBtn}” टैप करें। कारण, कितनी देर चला, आपने क्या किया आदि केवल टैप से चुनें, फिर “{recSave}” टैप करें। नाम लिखने की कोई जगह नहीं है।\n“{nav.scenes}” में सबसे नीचे “{seeLogs}” से दोबारा देख सकते हैं। “{logsCopy}” से सब एक साथ कॉपी हो जाते हैं।\nरिकॉर्ड केवल इस डिवाइस में सहेजे जाते हैं (अधिकतम 200) और कहीं नहीं भेजे जाते। पंजीकरण की ज़रूरत नहीं। नया फ़ोन लेने पर रिकॉर्ड साथ नहीं जाते, इसलिए जो रखना हो उसे कॉपी कर लें।",
+      "“{byTrait}” से हर विशेषता का पेज खोलें।\n“{trWhat}”, “{trComm}”, “{trEnv}”, “{trNg}” आदि एक ही पेज पर हैं। वहाँ से आम स्थितियों के कार्ड पर भी जा सकते हैं।\n“{aboutBasis}” में देखें कि यह ऐप किन विचारों पर आधारित है।",
+      "“{todayHint}” पढ़ें और अगले के लिए “{anotherHint}” टैप करें।\nकेस-प्रश्न में उत्तर चुनने पर व्याख्या दिखती है। सही उत्तर से ज़्यादा ज़रूरी यह समझना है कि ऐसा क्यों।\n“{quizNext}” से अगले प्रश्न पर जाएँ।",
+      "यह उन लोगों से बात करने के लिए है जिन्हें शब्दों से बताना कठिन लगता है।\n“{talkPhrases}”: वाक्यांश टैप करें, वह पढ़कर सुनाया जाएगा और बड़ा दिखेगा।\n“{talkType}”: कीबोर्ड से लिखें, फिर पढ़कर सुनाने के लिए “{read}” या बड़ा दिखाने के लिए “{showBig}” टैप करें।\n“{talkDraw}”: उँगली से लिखकर दिखाएँ। “{talkTimer}”: बचा हुआ समय आँखों से दिखता है।\nबड़े दिखाए गए स्क्रीन को टैप करने पर वापस आ जाते हैं।",
+      "संगीत बंद या चालू करने के लिए ऊपर 🎵 टैप करें। यह गाइड बंद करने के बाद स्क्रीन छूने पर संगीत शुरू होता है (🔇 दिखने पर नहीं)।\n“{nav.talk}” खुला रहने तक संगीत रुका रहता है (केवल टाइमर चलने के दौरान बजता है)।\nयह गाइड कभी भी “{nav.scenes}” में सबसे नीचे “{guide.again}” से फिर देख सकते हैं।"
+    ]
+  }
 };
 
 window.SHIEN_UI.pt = {
@@ -534,7 +657,31 @@ window.SHIEN_UI.pt = {
   overlayHint: "Toque na tela para voltar",
   bgmOn: "Música ligada (toque para silenciar)",
   bgmOff: "Música desligada (toque para tocar)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "Como usar", step: "{n} / {m}", prev: "← Voltar", next: "Próximo →", start: "Começar", again: "📘 Ver de novo como usar",
+    heads: [
+      "Boas-vindas ao {appName}",
+      "Comece aqui",
+      "{nav.scenes}",
+      "Registros (só neste dispositivo)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "Som e este guia"
+    ],
+    bodies: [
+      "Uma ferramenta para quem trabalha no apoio à deficiência, para conferir logo o que fazer primeiro numa situação difícil. Ler com calma no dia a dia também ajuda a aprender ideias de apoio.\nO que há aqui são tendências e pistas. Seu melhor guia é sempre a pessoa à sua frente.\nEste app não toma decisões médicas. Numa emergência, ligue para o número de emergência local.\nEscolha o idioma aqui em cima. Depois, você pode mudar com 🌐 no alto da tela.",
+      "Embaixo há quatro abas: “{nav.scenes}”, “{nav.lookup}”, “{nav.learn}” e “{nav.talk}”.\nQuando algo acontecer, abra primeiro “{nav.scenes}” e escolha o cartão da situação.\nLer “{nav.lookup}” e “{nav.learn}” quando tiver tempo ajuda você a se preparar.",
+      "Ao escolher um cartão, aparecem “{blkDo}”, “{blkDont}”, “{blkAfter}” e mais. Alguns cartões também dizem o que fazer fora de casa.\nPara questões médicas, use “{@med}”, bem no alto.\nToque em “{blkWhy}” para abrir. “{back}” volta à lista.",
+      "No cartão, toque em “{recordBtn}”. Escolha o desencadeante, quanto durou, o que você fez etc. só com toques e depois toque em “{recSave}”. Não há campo para nomes.\nReveja com “{seeLogs}”, no fim de “{nav.scenes}”. “{logsCopy}” copia todos de uma vez.\nOs registros ficam salvos só neste dispositivo (até 200) e não são enviados a lugar nenhum. Não é preciso cadastro. Eles não passam para um celular novo, então copie o que quiser guardar.",
+      "Em “{byTrait}”, abra a página de cada característica.\n“{trWhat}”, “{trComm}”, “{trEnv}”, “{trNg}” e mais ficam reunidos numa página. De lá, você também pode ir aos cartões de situações frequentes.\n“{aboutBasis}” mostra as ideias em que este app se baseia.",
+      "Leia a “{todayHint}” e toque em “{anotherHint}” para a próxima.\nNo caso prático, escolha uma resposta para ver a explicação. Entender o porquê importa mais que acertar.\n“{quizNext}” vai para a próxima pergunta.",
+      "Serve para se comunicar com pessoas que têm dificuldade com as palavras.\n“{talkPhrases}”: toque numa frase para ouvi-la em voz alta e vê-la em tamanho grande.\n“{talkType}”: digite com o teclado e use “{read}” para ler em voz alta ou “{showBig}” para mostrar em tamanho grande.\n“{talkDraw}”: escreva com o dedo para mostrar. “{talkTimer}”: deixa ver o tempo que falta.\nToque na tela grande para voltar.",
+      "Toque em 🎵 no alto para desligar ou ligar a música. A música começa quando você toca na tela depois de fechar este guia (não quando aparece 🔇).\nEnquanto “{nav.talk}” estiver aberto, a música para (só toca enquanto o temporizador está correndo).\nVocê pode ver este guia de novo quando quiser com “{guide.again}”, no fim de “{nav.scenes}”."
+    ]
+  }
 };
 
 window.SHIEN_UI.fr = {
@@ -616,7 +763,31 @@ window.SHIEN_UI.fr = {
   overlayHint: "Touchez l'écran pour revenir",
   bgmOn: "Musique activée (toucher pour couper)",
   bgmOff: "Musique coupée (toucher pour écouter)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "Mode d'emploi", step: "{n} / {m}", prev: "← Retour", next: "Suivant →", start: "Commencer", again: "📘 Revoir le mode d'emploi",
+    heads: [
+      "Bienvenue dans {appName}",
+      "Pour commencer",
+      "{nav.scenes}",
+      "Registre (sur cet appareil uniquement)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "Son et ce guide"
+    ],
+    bodies: [
+      "Un outil pour les personnes qui travaillent dans l'accompagnement du handicap, pour vérifier tout de suite quoi faire en premier dans une situation difficile. Le lire au calme aide aussi à apprendre des pistes d'accompagnement.\nCe que vous trouvez ici, ce sont des tendances et des pistes. Votre meilleur guide reste la personne en face de vous.\nCette appli ne prend pas de décision médicale. En urgence, appelez le numéro d'urgence local.\nChoisissez la langue ci-dessus. Vous pourrez la changer plus tard avec 🌐 en haut de l'écran.",
+      "En bas, il y a quatre onglets : « {nav.scenes} », « {nav.lookup} », « {nav.learn} » et « {nav.talk} ».\nQuand quelque chose arrive, ouvrez d'abord « {nav.scenes} » et choisissez la carte de la situation.\nLire « {nav.lookup} » et « {nav.learn} » quand vous avez le temps aide à se préparer.",
+      "En choisissant une carte, vous voyez « {blkDo} », « {blkDont} », « {blkAfter} », etc. Certaines cartes disent aussi quoi faire à l'extérieur.\nPour le médical, utilisez « {@med} », tout en haut.\nTouchez « {blkWhy} » pour l'ouvrir. « {back} » revient à la liste.",
+      "Sur une carte, touchez « {recordBtn} ». Choisissez le déclencheur, la durée, ce que vous avez fait, etc., uniquement en touchant, puis touchez « {recSave} ». Il n'y a aucun champ pour les noms.\nRelisez-les avec « {seeLogs} », en bas de « {nav.scenes} ». « {logsCopy} » copie tout en une fois.\nLe registre est conservé uniquement sur cet appareil (200 entrées max) et n'est envoyé nulle part. Aucune inscription n'est nécessaire. Il ne passe pas sur un nouveau téléphone : copiez ce que vous voulez garder.",
+      "Depuis « {byTrait} », ouvrez la page de chaque particularité.\n« {trWhat} », « {trComm} », « {trEnv} », « {trNg} », etc. sont réunis sur une page. De là, vous pouvez aussi aller aux cartes des situations fréquentes.\n« {aboutBasis} » présente les idées sur lesquelles repose cette appli.",
+      "Lisez le « {todayHint} » et touchez « {anotherHint} » pour le suivant.\nDans le cas pratique, choisissez une réponse pour voir l'explication. Comprendre pourquoi compte plus que trouver la bonne réponse.\n« {quizNext} » passe à la question suivante.",
+      "Pour échanger avec des personnes pour qui les mots sont difficiles.\n« {talkPhrases} » : touchez une phrase pour l'entendre lue à voix haute et la voir en grand.\n« {talkType} » : écrivez avec le clavier, puis « {read} » pour la lecture à voix haute ou « {showBig} » pour l'afficher en grand.\n« {talkDraw} » : écrivez avec le doigt pour montrer. « {talkTimer} » : rend visible le temps qui reste.\nTouchez l'affichage en grand pour revenir.",
+      "Touchez 🎵 en haut pour couper ou remettre la musique. La musique démarre quand vous touchez l'écran après avoir fermé ce guide (pas si 🔇 est affiché).\nTant que « {nav.talk} » est ouvert, la musique s'arrête (elle ne joue que pendant que le minuteur tourne).\nVous pouvez revoir ce guide à tout moment avec « {guide.again} », en bas de « {nav.scenes} »."
+    ]
+  }
 };
 
 window.SHIEN_UI.ru = {
@@ -698,7 +869,31 @@ window.SHIEN_UI.ru = {
   overlayHint: "Коснитесь экрана, чтобы вернуться",
   bgmOn: "Музыка вкл. (касание — выкл.)",
   bgmOff: "Музыка выкл. (касание — вкл.)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "Как пользоваться", step: "{n} / {m}", prev: "← Назад", next: "Далее →", start: "Начать", again: "📘 Показать инструкцию ещё раз",
+    heads: [
+      "Добро пожаловать в «{appName}»",
+      "С чего начать",
+      "{nav.scenes}",
+      "Записи (только на этом устройстве)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "Звук и эта инструкция"
+    ],
+    bodies: [
+      "Это инструмент для тех, кто работает в поддержке людей с инвалидностью: чтобы в трудный момент сразу проверить, что сделать в первую очередь. Если читать его в спокойное время, можно узнать и идеи для поддержки.\nЗдесь собраны тенденции и подсказки. Ваш лучший ориентир: человек перед вами.\nПриложение не принимает медицинских решений. В экстренном случае звоните по местному номеру экстренных служб.\nВыберите язык выше. Позже его можно сменить через 🌐 вверху экрана.",
+      "Внизу четыре вкладки: «{nav.scenes}», «{nav.lookup}», «{nav.learn}» и «{nav.talk}».\nКогда что-то случилось, сначала откройте «{nav.scenes}» и выберите карточку ситуации.\nЕсли в свободное время читать «{nav.lookup}» и «{nav.learn}», в нужный момент вы будете готовы.",
+      "В карточке ситуации есть «{blkDo}», «{blkDont}», «{blkAfter}» и другое. В некоторых карточках сказано и о том, что делать вне помещения.\nПо медицинским вопросам откройте «{@med}» в самом верху.\n«{blkWhy}» раскрывается касанием. «{back}» возвращает к списку.",
+      "В карточке нажмите «{recordBtn}». Выберите пусковой фактор, сколько длилось, что вы сделали и т. п. одними касаниями, затем нажмите «{recSave}». Поля для имени нет.\nПросмотреть записи можно через «{seeLogs}» внизу вкладки «{nav.scenes}». «{logsCopy}» копирует всё сразу.\nЗаписи хранятся только на этом устройстве (до 200) и никуда не отправляются. Регистрация не нужна. На новый телефон записи не переносятся, поэтому скопируйте то, что хотите сохранить.",
+      "Через «{byTrait}» открывается страница каждой особенности.\n«{trWhat}», «{trComm}», «{trEnv}», «{trNg}» и другое собраны на одной странице. Оттуда можно перейти и к карточкам частых ситуаций.\n«{aboutBasis}» показывает, на каких идеях основано приложение.",
+      "Прочитайте «{todayHint}» и нажмите «{anotherHint}», чтобы увидеть следующий.\nВ разборе случая выберите ответ, и появится пояснение. Понять, почему так, важнее, чем ответить верно.\n«{quizNext}» переходит к следующему вопросу.",
+      "Для общения с теми, кому трудно выразить себя словами.\n«{talkPhrases}»: нажмите фразу, и она прозвучит вслух и покажется крупно.\n«{talkType}»: наберите текст на клавиатуре, затем «{read}», чтобы прочитать вслух, или «{showBig}», чтобы показать крупно.\n«{talkDraw}»: пишите пальцем, чтобы показать. «{talkTimer}»: оставшееся время видно глазами.\nКоснитесь крупного показа, чтобы вернуться.",
+      "Нажмите 🎵 вверху, чтобы выключить или включить музыку. Музыка начинается, когда вы касаетесь экрана после закрытия этой инструкции (но не при 🔇).\nПока открыта вкладка «{nav.talk}», музыка останавливается (играет только пока идёт таймер).\nЭту инструкцию можно снова открыть в любое время: «{guide.again}» внизу вкладки «{nav.scenes}»."
+    ]
+  }
 };
 
 window.SHIEN_UI.id = {
@@ -780,7 +975,31 @@ window.SHIEN_UI.id = {
   overlayHint: "Ketuk layar untuk kembali",
   bgmOn: "Musik nyala (ketuk untuk senyap)",
   bgmOff: "Musik mati (ketuk untuk putar)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "Cara pakai", step: "{n} / {m}", prev: "← Sebelumnya", next: "Berikutnya →", start: "Mulai", again: "📘 Lihat lagi cara pakai",
+    heads: [
+      "Selamat datang di {appName}",
+      "Mulai dari sini",
+      "{nav.scenes}",
+      "Catatan (hanya di perangkat ini)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "Suara dan panduan ini"
+    ],
+    bodies: [
+      "Alat bagi orang yang bekerja di pendampingan disabilitas, untuk segera memeriksa apa yang dilakukan pertama kali saat situasi sulit. Membacanya di waktu tenang juga membantu mempelajari ide pendampingan.\nIsinya adalah kecenderungan dan petunjuk. Panduan terbaik Anda selalu orang di hadapan Anda.\nAplikasi ini tidak membuat keputusan medis. Dalam keadaan darurat, hubungi nomor darurat setempat.\nPilih bahasa di atas. Nanti bisa diganti lewat 🌐 di bagian atas layar.",
+      "Di bawah ada empat tab: “{nav.scenes}”, “{nav.lookup}”, “{nav.learn}”, dan “{nav.talk}”.\nSaat terjadi sesuatu, buka dulu “{nav.scenes}” lalu pilih kartu situasinya.\nMembaca “{nav.lookup}” dan “{nav.learn}” saat ada waktu membantu Anda bersiap.",
+      "Setelah memilih kartu situasi, muncul “{blkDo}”, “{blkDont}”, “{blkAfter}”, dan lainnya. Beberapa kartu juga menjelaskan apa yang dilakukan saat di luar.\nUntuk urusan medis, gunakan “{@med}” di paling atas.\nKetuk “{blkWhy}” untuk membukanya. “{back}” kembali ke daftar.",
+      "Di kartu, ketuk “{recordBtn}”. Pilih pemicu, berapa lama, apa yang Anda lakukan, dan lainnya cukup dengan ketukan, lalu ketuk “{recSave}”. Tidak ada kolom untuk nama.\nLihat kembali lewat “{seeLogs}” di bagian bawah “{nav.scenes}”. “{logsCopy}” menyalin semuanya sekaligus.\nCatatan tersimpan hanya di perangkat ini (maks. 200) dan tidak dikirim ke mana pun. Tidak perlu mendaftar. Catatan tidak ikut pindah ke ponsel baru, jadi salin yang ingin Anda simpan.",
+      "Dari “{byTrait}”, buka halaman tiap karakteristik.\n“{trWhat}”, “{trComm}”, “{trEnv}”, “{trNg}”, dan lainnya ada dalam satu halaman. Dari sana Anda juga bisa pindah ke kartu situasi yang umum.\n“{aboutBasis}” menunjukkan gagasan yang menjadi dasar aplikasi ini.",
+      "Baca “{todayHint}” dan ketuk “{anotherHint}” untuk kiat berikutnya.\nDi kuis kasus, pilih jawaban untuk melihat penjelasannya. Memahami alasannya lebih penting daripada menjawab benar.\n“{quizNext}” lanjut ke pertanyaan berikutnya.",
+      "Dipakai untuk berkomunikasi dengan orang yang sulit menyampaikan sesuatu lewat kata-kata.\n“{talkPhrases}”: ketuk frasa untuk mendengarnya dibacakan dan melihatnya dalam ukuran besar.\n“{talkType}”: ketik dengan papan ketik, lalu “{read}” untuk membacakan atau “{showBig}” untuk menampilkannya besar.\n“{talkDraw}”: tulis dengan jari untuk ditunjukkan. “{talkTimer}”: sisa waktu terlihat oleh mata.\nKetuk tampilan besar untuk kembali.",
+      "Ketuk 🎵 di atas untuk mematikan atau menyalakan musik. Musik mulai saat Anda menyentuh layar setelah menutup panduan ini (tidak saat tampil 🔇).\nSelama “{nav.talk}” terbuka, musik berhenti (hanya diputar selama timer berjalan).\nPanduan ini bisa dilihat lagi kapan saja lewat “{guide.again}” di bagian bawah “{nav.scenes}”."
+    ]
+  }
 };
 
 window.SHIEN_UI.de = {
@@ -862,7 +1081,31 @@ window.SHIEN_UI.de = {
   overlayHint: "Bildschirm antippen, um zurückzukehren",
   bgmOn: "Musik an (Tippen: stumm)",
   bgmOff: "Musik aus (Tippen: abspielen)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "Anleitung", step: "{n} / {m}", prev: "← Zurück", next: "Weiter →", start: "Los geht's", again: "📘 Anleitung noch einmal ansehen",
+    heads: [
+      "Willkommen bei {appName}",
+      "So fangen Sie an",
+      "{nav.scenes}",
+      "Protokolle (nur auf diesem Gerät)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "Ton und diese Anleitung"
+    ],
+    bodies: [
+      "Ein Werkzeug für Menschen, die in der Behindertenhilfe arbeiten: In schwierigen Momenten sehen Sie sofort, was zuerst zu tun ist. Wer es in ruhigen Zeiten liest, lernt dabei auch Ideen für die Begleitung.\nHier stehen Tendenzen und Hinweise. Ihr bester Wegweiser ist immer der Mensch vor Ihnen.\nDiese App trifft keine medizinischen Entscheidungen. Im Notfall den örtlichen Notruf wählen.\nWählen Sie oben eine Sprache. Später können Sie sie oben mit 🌐 ändern.",
+      "Unten gibt es vier Bereiche: „{nav.scenes}“, „{nav.lookup}“, „{nav.learn}“ und „{nav.talk}“.\nWenn etwas passiert, öffnen Sie zuerst „{nav.scenes}“ und wählen die Karte zur Situation.\nWer „{nav.lookup}“ und „{nav.learn}“ in ruhigen Momenten liest, ist im Ernstfall besser vorbereitet.",
+      "Auf jeder Karte stehen „{blkDo}“, „{blkDont}“, „{blkAfter}“ und mehr. Manche Karten sagen auch, was unterwegs zu tun ist.\nBei Medizinischem nutzen Sie „{@med}“ ganz oben.\n„{blkWhy}“ öffnet sich durch Antippen. „{back}“ führt zurück zur Liste.",
+      "Tippen Sie auf einer Karte auf „{recordBtn}“. Wählen Sie Auslöser, Dauer, was Sie getan haben usw. nur durch Antippen und tippen Sie dann auf „{recSave}“. Ein Feld für Namen gibt es nicht.\nMit „{seeLogs}“ ganz unten in „{nav.scenes}“ sehen Sie sie wieder. „{logsCopy}“ kopiert alles auf einmal.\nProtokolle werden nur auf diesem Gerät gespeichert (max. 200) und nirgendwohin gesendet. Eine Anmeldung ist nicht nötig. Auf ein neues Handy werden sie nicht übertragen. Kopieren Sie also, was Sie behalten möchten.",
+      "Über „{byTrait}“ öffnen Sie die Seite zu jeder Besonderheit.\n„{trWhat}“, „{trComm}“, „{trEnv}“, „{trNg}“ und mehr stehen auf einer Seite. Von dort gelangen Sie auch zu den Karten häufiger Situationen.\n„{aboutBasis}“ zeigt, auf welchen Grundlagen diese App beruht.",
+      "Lesen Sie den „{todayHint}“ und tippen Sie auf „{anotherHint}“ für den nächsten.\nIm Fallquiz erscheint nach der Wahl einer Antwort die Erklärung. Zu verstehen, warum, zählt mehr als die richtige Antwort.\n„{quizNext}“ führt zur nächsten Frage.",
+      "Für die Verständigung mit Menschen, denen Worte schwerfallen.\n„{talkPhrases}“: Tippen Sie einen Satz an, dann wird er vorgelesen und groß angezeigt.\n„{talkType}“: Mit der Tastatur schreiben, dann „{read}“ zum Vorlesen oder „{showBig}“ zum großen Anzeigen.\n„{talkDraw}“: Mit dem Finger schreiben und zeigen. „{talkTimer}“: Macht die verbleibende Zeit sichtbar.\nTippen Sie auf die große Anzeige, um zurückzukehren.",
+      "Mit 🎵 oben schalten Sie die Musik aus oder ein. Die Musik beginnt, wenn Sie nach dem Schließen dieser Anleitung den Bildschirm berühren (nicht bei 🔇).\nSolange „{nav.talk}“ geöffnet ist, pausiert die Musik (sie spielt nur, während der Timer läuft).\nDiese Anleitung sehen Sie jederzeit wieder mit „{guide.again}“ ganz unten in „{nav.scenes}“."
+    ]
+  }
 };
 
 window.SHIEN_UI.ko = {
@@ -944,7 +1187,31 @@ window.SHIEN_UI.ko = {
   overlayHint: "화면을 탭하면 돌아갑니다",
   bgmOn: "BGM 켜짐(탭하면 소거)",
   bgmOff: "BGM 꺼짐(탭하면 재생)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "사용법", step: "{n} / {m}", prev: "← 이전", next: "다음 →", start: "시작하기", again: "📘 사용법 다시 보기",
+    heads: [
+      "{appName}에 오신 것을 환영합니다",
+      "먼저 여기부터",
+      "{nav.scenes}",
+      "기록(이 기기 안에만)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "소리와 이 안내"
+    ],
+    bodies: [
+      "장애복지 현장에서 일하는 사람이 곤란한 장면에서 먼저 무엇을 할지 바로 확인하기 위한 도구입니다. 평소에 읽어 두면 지원의 힌트도 배울 수 있습니다.\n여기 있는 것은 경향과 힌트입니다. 가장 큰 단서는 눈앞의 그 사람입니다.\n이 앱은 의료 판단을 하지 않습니다. 긴급 시에는 현지 응급 번호로 연락하세요.\n언어는 위에서 고를 수 있습니다. 나중에 화면 위의 🌐 로도 바꿀 수 있습니다.",
+      "화면 아래에 “{nav.scenes}” “{nav.lookup}” “{nav.learn}” “{nav.talk}” 네 가지가 있습니다.\n곤란할 때는 먼저 “{nav.scenes}”를 열고 지금 장면의 카드를 고릅니다.\n시간이 있을 때 “{nav.lookup}”와 “{nav.learn}”를 읽어 두면 만일의 대비가 됩니다.",
+      "장면 카드를 고르면 “{blkDo}” “{blkDont}” “{blkAfter}” 등이 나옵니다. 외출했을 때의 대응이 실린 카드도 있습니다.\n의료에 관한 것은 맨 위의 “{@med}”에서.\n“{blkWhy}”는 탭하면 열립니다. “{back}”를 누르면 목록으로 돌아갑니다.",
+      "카드의 “{recordBtn}”를 누르면 계기·지속된 시간·대응한 것 등을 탭만으로 고를 수 있고, “{recSave}”으로 남깁니다. 이름을 적는 칸은 없습니다.\n“{nav.scenes}”의 맨 아래 “{seeLogs}”에서 다시 볼 수 있습니다. “{logsCopy}”로 한꺼번에 복사할 수 있습니다.\n기록은 이 기기 안에만 저장되며(최대 200건) 어디에도 보내지 않습니다. 가입도 필요 없습니다. 휴대폰을 바꾸면 이어지지 않으니, 남기고 싶은 것은 복사해 두세요.",
+      "“{byTrait}”에서 특성별 페이지를 열 수 있습니다.\n“{trWhat}” “{trComm}” “{trEnv}” “{trNg}” 등이 한 페이지에 모여 있습니다. 거기서 흔한 장면의 카드로도 옮겨 갈 수 있습니다.\n“{aboutBasis}”에서는 이 앱이 바탕으로 삼은 생각을 확인할 수 있습니다.",
+      "“{todayHint}”를 읽고 “{anotherHint}”로 다음 힌트로 넘어갑니다.\n사례 퀴즈는 답을 고르면 해설이 나옵니다. 정답보다 왜 그렇게 하는지를 소중히 합니다.\n“{quizNext}”로 다음 문제로 넘어갑니다.",
+      "말로 전하기 어려운 사람과 주고받을 때 씁니다.\n“{talkPhrases}”는 탭하면 소리 내어 읽고 크게 표시합니다.\n“{talkType}”은 키보드로 입력한 뒤, “{read}”로 읽어 주고 “{showBig}”로 크게 보여 줍니다.\n“{talkDraw}”은 손가락으로 써서 보여 줍니다. “{talkTimer}”는 남은 시간을 눈으로 보여 줍니다.\n크게 표시한 화면은 탭하면 돌아갑니다.",
+      "화면 위의 🎵 로 배경음악을 끄거나 켤 수 있습니다. 배경음악은 이 안내를 닫은 뒤 화면을 터치하면 흐르기 시작합니다(🔇 일 때는 흐르지 않습니다).\n“{nav.talk}”를 열어 둔 동안에는 배경음악이 멈춥니다(타이머가 움직이는 동안에만 흐릅니다).\n이 안내는 “{nav.scenes}” 맨 아래의 “{guide.again}”로 언제든 다시 볼 수 있습니다."
+    ]
+  }
 };
 
 window.SHIEN_UI.it = {
@@ -1026,7 +1293,31 @@ window.SHIEN_UI.it = {
   overlayHint: "Toccate lo schermo per tornare",
   bgmOn: "Musica attiva (tocca per silenziare)",
   bgmOff: "Musica spenta (tocca per riprodurre)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "Come si usa", step: "{n} / {m}", prev: "← Indietro", next: "Avanti →", start: "Inizia", again: "📘 Rivedi come si usa",
+    heads: [
+      "Benvenuti in {appName}",
+      "Per iniziare",
+      "{nav.scenes}",
+      "Registro (solo su questo dispositivo)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "Suoni e questa guida"
+    ],
+    bodies: [
+      "Uno strumento per chi lavora nel supporto alla disabilità, per controllare subito cosa fare per prima cosa in una situazione difficile. Leggerlo nei momenti tranquilli aiuta anche a imparare spunti di supporto.\nQui trovate tendenze e suggerimenti. La guida migliore è sempre la persona davanti a voi.\nQuesta app non prende decisioni mediche. In emergenza, chiamate il numero di emergenza locale.\nScegliete la lingua qui sopra. Potrete cambiarla poi con 🌐 in alto.",
+      "In basso ci sono quattro schede: «{nav.scenes}», «{nav.lookup}», «{nav.learn}» e «{nav.talk}».\nQuando succede qualcosa, aprite prima «{nav.scenes}» e scegliete la scheda della situazione.\nLeggere «{nav.lookup}» e «{nav.learn}» quando avete tempo aiuta a prepararsi.",
+      "Scegliendo una scheda compaiono «{blkDo}», «{blkDont}», «{blkAfter}» e altro. Alcune schede dicono anche cosa fare fuori casa.\nPer le questioni mediche, usate «{@med}» in cima.\nToccate «{blkWhy}» per aprirlo. «{back}» torna all'elenco.",
+      "Nella scheda toccate «{recordBtn}». Scegliete innesco, durata, cosa avete fatto ecc. solo con dei tocchi, poi toccate «{recSave}». Non c'è nessun campo per i nomi.\nRivedeteli con «{seeLogs}» in fondo a «{nav.scenes}». «{logsCopy}» copia tutto in una volta.\nIl registro è salvato solo su questo dispositivo (max 200 voci) e non viene inviato da nessuna parte. Non serve registrarsi. Non passa a un nuovo telefono, quindi copiate ciò che volete tenere.",
+      "Da «{byTrait}» aprite la pagina di ogni caratteristica.\n«{trWhat}», «{trComm}», «{trEnv}», «{trNg}» e altro sono raccolti in una pagina. Da lì potete anche passare alle schede delle situazioni frequenti.\n«{aboutBasis}» mostra le idee su cui si basa questa app.",
+      "Leggete il «{todayHint}» e toccate «{anotherHint}» per il successivo.\nNel quiz di casi, scegliete una risposta per vedere la spiegazione. Capire il perché conta più che rispondere giusto.\n«{quizNext}» passa alla domanda successiva.",
+      "Serve a comunicare con persone per cui le parole sono difficili.\n«{talkPhrases}»: toccate una frase per sentirla letta ad alta voce e vederla in grande.\n«{talkType}»: scrivete con la tastiera, poi «{read}» per leggerla ad alta voce o «{showBig}» per mostrarla in grande.\n«{talkDraw}»: scrivete con il dito per mostrarlo. «{talkTimer}»: rende visibile il tempo che resta.\nToccate la schermata grande per tornare.",
+      "Toccate 🎵 in alto per spegnere o accendere la musica. La musica parte quando toccate lo schermo dopo aver chiuso questa guida (non con 🔇).\nMentre «{nav.talk}» è aperto, la musica si ferma (suona solo mentre il timer è in corso).\nPotete rivedere questa guida quando volete con «{guide.again}» in fondo a «{nav.scenes}»."
+    ]
+  }
 };
 
 window.SHIEN_UI.bn = {
@@ -1108,7 +1399,31 @@ window.SHIEN_UI.bn = {
   overlayHint: "স্ক্রিনে ট্যাপ করলে ফিরে যাবে",
   bgmOn: "BGM চালু (ট্যাপে নীরব)",
   bgmOff: "BGM বন্ধ (ট্যাপে চালু)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  guide: {
+    title: "ব্যবহারের নিয়ম", step: "{n} / {m}", prev: "← আগের", next: "পরের →", start: "শুরু করুন", again: "📘 ব্যবহারের নিয়ম আবার দেখুন",
+    heads: [
+      "{appName}-এ স্বাগতম",
+      "এখান থেকে শুরু",
+      "{nav.scenes}",
+      "রেকর্ড (কেবল এই ডিভাইসে)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "শব্দ ও এই নির্দেশিকা"
+    ],
+    bodies: [
+      "প্রতিবন্ধী সহায়তায় যাঁরা কাজ করেন, তাঁদের জন্য একটি সরঞ্জাম, যাতে কঠিন পরিস্থিতিতে আগে কী করতে হবে তা সঙ্গে সঙ্গে দেখে নেওয়া যায়। শান্ত সময়ে পড়লে সহায়তার ইঙ্গিতও শেখা যায়।\nএখানে যা আছে তা প্রবণতা ও ইঙ্গিত। সবচেয়ে বড় সূত্র সামনে থাকা মানুষটিই।\nএই অ্যাপ চিকিৎসাগত সিদ্ধান্ত নেয় না। জরুরি অবস্থায় স্থানীয় জরুরি নম্বরে যোগাযোগ করুন।\nউপরে ভাষা বেছে নিন। পরে স্ক্রিনের উপরের 🌐 দিয়েও বদলাতে পারবেন।",
+      "নিচে চারটি ট্যাব আছে: “{nav.scenes}”, “{nav.lookup}”, “{nav.learn}” ও “{nav.talk}”।\nকিছু ঘটলে আগে “{nav.scenes}” খুলে সেই পরিস্থিতির কার্ড বেছে নিন।\nসময় পেলে “{nav.lookup}” ও “{nav.learn}” পড়ে রাখলে দরকারের সময় প্রস্তুত থাকা যায়।",
+      "পরিস্থিতির কার্ড বাছলে “{blkDo}”, “{blkDont}”, “{blkAfter}” ইত্যাদি দেখা যায়। কিছু কার্ডে বাইরে থাকলে কী করবেন তাও লেখা আছে।\nচিকিৎসার ব্যাপারে সবচেয়ে উপরের “{@med}” খুলুন।\n“{blkWhy}” ট্যাপ করলে খোলে। “{back}” দিয়ে তালিকায় ফিরুন।",
+      "কার্ডে “{recordBtn}” ট্যাপ করুন। কারণ, কতক্ষণ চলল, আপনি কী করেছেন ইত্যাদি শুধু ট্যাপ করে বেছে নিন, তারপর “{recSave}” ট্যাপ করুন। নাম লেখার কোনো ঘর নেই।\n“{nav.scenes}”-এর একদম নিচে “{seeLogs}” দিয়ে আবার দেখা যায়। “{logsCopy}” দিয়ে সব একসঙ্গে কপি করা যায়।\nরেকর্ড কেবল এই ডিভাইসেই সংরক্ষিত হয় (সর্বোচ্চ ২০০টি), কোথাও পাঠানো হয় না। নিবন্ধনও লাগে না। নতুন ফোনে রেকর্ড যায় না, তাই যা রাখতে চান তা কপি করে রাখুন।",
+      "“{byTrait}” থেকে প্রতিটি বৈশিষ্ট্যের পাতা খুলুন।\n“{trWhat}”, “{trComm}”, “{trEnv}”, “{trNg}” ইত্যাদি এক পাতায় আছে। সেখান থেকে সাধারণ পরিস্থিতির কার্ডেও যাওয়া যায়।\n“{aboutBasis}”-এ দেখা যায় এই অ্যাপ কোন ভাবনার উপর দাঁড়িয়ে।",
+      "“{todayHint}” পড়ুন, পরেরটির জন্য “{anotherHint}” ট্যাপ করুন।\nকেস কুইজে উত্তর বাছলে ব্যাখ্যা দেখা যায়। সঠিক উত্তরের চেয়ে কেন তা বোঝা বেশি জরুরি।\n“{quizNext}” দিয়ে পরের প্রশ্নে যান।",
+      "কথায় বলা যাঁদের পক্ষে কঠিন, তাঁদের সঙ্গে যোগাযোগে কাজে লাগে।\n“{talkPhrases}”: বাক্য ট্যাপ করলে পড়ে শোনায় ও বড় করে দেখায়।\n“{talkType}”: কীবোর্ডে লিখুন, তারপর পড়ে শোনাতে “{read}” বা বড় করে দেখাতে “{showBig}” ট্যাপ করুন।\n“{talkDraw}”: আঙুল দিয়ে লিখে দেখান। “{talkTimer}”: বাকি সময় চোখে দেখা যায়।\nবড় করে দেখানো স্ক্রিনে ট্যাপ করলে ফিরে আসবেন।",
+      "সংগীত বন্ধ বা চালু করতে উপরের 🎵 ট্যাপ করুন। এই নির্দেশিকা বন্ধ করার পর স্ক্রিন ছুঁলে সংগীত শুরু হয় (🔇 দেখালে নয়)।\n“{nav.talk}” খোলা থাকার সময় সংগীত থেমে থাকে (শুধু টাইমার চলার সময় বাজে)।\nএই নির্দেশিকা যেকোনো সময় “{nav.scenes}”-এর একদম নিচের “{guide.again}” দিয়ে আবার দেখতে পারবেন।"
+    ]
+  }
 };
 
 window.SHIEN_UI.ar = {
@@ -1190,5 +1505,30 @@ window.SHIEN_UI.ar = {
   overlayHint: "المس الشاشة للعودة",
   bgmOn: "الموسيقى تعمل (المس للكتم)",
   bgmOff: "الموسيقى متوقفة (المس للتشغيل)",
-  langLabel: "言語 / Language"
+  langLabel: "言語 / Language",
+
+  /* ar は右から左。ページ番号「1 / 8」は app.js が左から右で出す。まえ=→（右）・つぎ=←（左） */
+  guide: {
+    title: "طريقة الاستخدام", step: "{n} / {m}", prev: "→ السابق", next: "التالي ←", start: "ابدأ", again: "📘 عرض طريقة الاستخدام مرة أخرى",
+    heads: [
+      "مرحبًا بك في {appName}",
+      "ابدأ من هنا",
+      "{nav.scenes}",
+      "السجلات (على هذا الجهاز فقط)",
+      "{nav.lookup}",
+      "{nav.learn}",
+      "{nav.talk}",
+      "الصوت وهذا الدليل"
+    ],
+    bodies: [
+      "أداة للعاملين في دعم ذوي الإعاقة، للتحقق بسرعة مما يجب فعله أولاً في المواقف الصعبة. وقراءتها في أوقات الهدوء تساعد أيضًا على تعلّم أفكار للدعم.\nما تجده هنا ميول وإشارات. أعظم دليل لك هو الشخص الذي أمامك.\nهذا التطبيق لا يتخذ قرارات طبية. في الطوارئ اتصل برقم الطوارئ المحلي.\nاختر اللغة في الأعلى. ويمكنك تغييرها لاحقًا من 🌐 أعلى الشاشة.",
+      "في أسفل الشاشة أربعة أقسام: «{nav.scenes}» و«{nav.lookup}» و«{nav.learn}» و«{nav.talk}».\nعندما يحدث أمر ما، افتح «{nav.scenes}» أولاً واختر بطاقة الموقف.\nقراءة «{nav.lookup}» و«{nav.learn}» حين يتوفر الوقت تساعدك على الاستعداد.",
+      "عند اختيار بطاقة موقف تظهر «{blkDo}» و«{blkDont}» و«{blkAfter}» وغيرها. وبعض البطاقات تذكر أيضًا ما تفعله خارج المكان.\nللأمور الطبية استخدم «{@med}» في أعلى القائمة.\nالمس «{blkWhy}» لفتحه. و«{back}» يعيدك إلى القائمة.",
+      "في البطاقة المس «{recordBtn}». اختر المحفّز والمدة وما فعلته وغير ذلك باللمس فقط، ثم المس «{recSave}». لا توجد خانة للأسماء.\nراجعها من «{seeLogs}» في أسفل «{nav.scenes}». و«{logsCopy}» ينسخ كل شيء دفعة واحدة.\nتُحفظ السجلات على هذا الجهاز فقط (حتى 200) ولا تُرسل إلى أي مكان. ولا حاجة إلى تسجيل حساب. لا تنتقل السجلات إلى هاتف جديد، فانسخ ما تريد الاحتفاظ به.",
+      "من «{byTrait}» افتح صفحة كل سمة.\n«{trWhat}» و«{trComm}» و«{trEnv}» و«{trNg}» وغيرها مجموعة في صفحة واحدة. ومنها يمكنك الانتقال إلى بطاقات المواقف الشائعة.\n«{aboutBasis}» يعرض الأفكار التي يقوم عليها هذا التطبيق.",
+      "اقرأ «{todayHint}» والمس «{anotherHint}» للإشارة التالية.\nفي اختبار الحالات، اختر إجابة ليظهر الشرح. فهم السبب أهم من الإجابة الصحيحة.\n«{quizNext}» ينقلك إلى السؤال التالي.",
+      "يُستخدم للتواصل مع من يصعب عليهم التعبير بالكلام.\n«{talkPhrases}»: المس العبارة لتُقرأ بصوت عالٍ وتُعرض كبيرة.\n«{talkType}»: اكتب بلوحة المفاتيح، ثم «{read}» للقراءة بصوت عالٍ أو «{showBig}» لعرضه كبيرًا.\n«{talkDraw}»: اكتب بإصبعك لتُريه. «{talkTimer}»: يُظهر الوقت المتبقي للعين.\nالمس الشاشة المكبّرة للعودة.",
+      "المس 🎵 في الأعلى لإيقاف الموسيقى أو تشغيلها. تبدأ الموسيقى عندما تلمس الشاشة بعد إغلاق هذا الدليل (لا تعمل حين يظهر 🔇).\nأثناء فتح «{nav.talk}» تتوقف الموسيقى (تعمل فقط أثناء تشغيل المؤقّت).\nيمكنك رؤية هذا الدليل مرة أخرى في أي وقت من «{guide.again}» في أسفل «{nav.scenes}»."
+    ]
+  }
 };

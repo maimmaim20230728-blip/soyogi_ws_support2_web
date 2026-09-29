@@ -347,6 +347,39 @@
   .app-foot{ text-align:center; font-size:.72rem; color:var(--muted); padding:16px 12px 8px; }
   .app-foot .dev-credit{ display:inline-block; margin-top:10px; color:var(--brand); text-decoration:underline; }
 
+  /* ===== はじめての つかいかた（初回の案内・app.js openGuide・2026-09-30）=====
+     下のナビ・きろくの窓・みせる より上（z-index 150）、確かめの窓より下の全画面。閉じるのは最後のページの「はじめる」だけ（× は置かない）。
+     下の「まえ / つぎ」は地の色のついた帯に固定（長いページでも本文が透けない）。案内の下の余白は帯の高さから app.js が決める */
+  .guide-ov{
+    position:fixed; inset:0; z-index:150; background:var(--bg); color:var(--text);
+    overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain;
+    padding:calc(18px + env(safe-area-inset-top)) 14px calc(128px + env(safe-area-inset-bottom));
+  }
+  .guide-box{ max-width:612px; margin:0 auto; }
+  .guide-top{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin:0 4px; }
+  .guide-title{ font-size:.95rem; font-weight:700; color:var(--brand-deep); min-width:0; overflow-wrap:anywhere; }
+  .guide-step{ font-size:.9rem; font-weight:700; color:var(--muted); white-space:nowrap; unicode-bidi:isolate; }
+  .guide-card{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px 16px; margin-top:10px; box-shadow:0 1px 4px rgba(78,142,196,.10); }
+  .guide-lang{ display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px; margin-bottom:16px; padding-bottom:16px; border-bottom:1px dashed var(--line); }
+  .guide-lang-lbl{ font-size:.88rem; font-weight:700; color:var(--brand-deep); }
+  .guide-lang .lang-select{ flex:1 1 12em; min-height:44px; }
+  .guide-h{ font-size:1.25rem; line-height:1.5; color:var(--brand-deep); margin-bottom:12px; overflow-wrap:anywhere; }
+  .guide-p{ font-size:1.05rem; line-height:1.9; white-space:pre-line; overflow-wrap:anywhere; }
+  :lang(ko) .guide-h, :lang(ko) .guide-p{ word-break:keep-all; }
+  .guide-dots{ display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:20px; }
+  .guide-dot{ width:10px; height:10px; border-radius:50%; background:var(--line); }
+  .guide-dot.on{ background:var(--brand); }
+  .guide-row{
+    position:fixed; left:0; right:0; bottom:0; z-index:151; background:var(--bg); border-top:1px solid var(--line);
+    padding:10px 14px calc(14px + env(safe-area-inset-bottom));
+  }
+  .guide-row-in{ max-width:612px; margin:0 auto; display:flex; gap:10px; }
+  html.guide-open{ overflow:hidden; }
+  .guide-row button{ flex:1 1 0; min-width:0; min-height:58px; border-radius:var(--radius); font-weight:700; font-size:1.05rem; padding:10px 8px; overflow-wrap:anywhere; }
+  .guide-prev{ background:var(--card); border:1.5px solid var(--line); color:var(--brand-deep); }
+  .guide-next{ background:var(--brand); color:#fff; }
+  .guide-next:active{ background:var(--brand-deep); }
+
   /* ===== 確かめの窓（Play版だけ・Android の戻るボタン・app.js askBox・2026-09-30）。きろくの窓・みせる より上 ===== */
   .ask-ov{
     position:fixed; inset:0; z-index:200; background:rgba(51,71,90,.55);
