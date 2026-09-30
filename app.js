@@ -108,7 +108,24 @@
     var oh = document.querySelector("#showOverlay .hint"); if (oh) oh.textContent = T.overlayHint;
     var ls = $("#langSelect"); if (ls) ls.value = LANG;
     bgmPaint();
+    fitNav();
   }
+  /* 下のナビ：4つの名前が画面の幅に入らないとき（端末の文字を大きくしたとき・fr の「Communiquer」など）だけ .tight を付け、
+     語の中で折って画面の幅に収める（index.html の nav.tight）。入るときは今までどおり。2026-09-30
+     つたえる の「よみあげ・おおきく・けす」の列とタイマーの「スタート・リセット」も同じ（ru「Стереть всё」など）。
+     隠れている列は幅0で測れないので、画面・つたえる のタブを出したときにも測り直す。
+     🔴 ナビは いちばん最後に測る（ほかの はみ出しが画面を広げたままだと、ナビが「入る」と見えてしまう） */
+  function fitNav() {
+    /* 定型文・タイマーの小さいボタン：語がボタンの枠の外まで出るときだけ、そのボタンの中で折る（枠の中の余白に入るだけなら今までどおり） */
+    var bs = Array.prototype.slice.call(document.querySelectorAll(".phrase-grid button, .tm-presets button, .tm-sounds button"));
+    bs.forEach(function (b) { b.classList.remove("wrapw"); });
+    bs.filter(function (b) { return b.scrollWidth > b.clientWidth + 1; }).forEach(function (b) { b.classList.add("wrapw"); });
+    document.querySelectorAll(".kana-actions, .tm-controls, nav").forEach(function (n) {
+      n.classList.remove("tight");
+      if (n.scrollWidth > n.clientWidth + 1) n.classList.add("tight");
+    });
+  }
+  window.addEventListener("resize", fitNav);
 
   /* ========== ビュー切替 ========== */
   var views = ["scenes", "detail", "lookup", "learn", "talk", "logs"];
@@ -122,6 +139,7 @@
     window.scrollTo(0, 0);
     currentView = view;
     bgmRefresh();
+    fitNav();
   }
   document.querySelectorAll("nav button").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -419,6 +437,7 @@
       if (b.dataset.pane === "draw") initCanvas();
       if (b.dataset.pane === "timer") tmPaint();
       bgmRefresh();
+      fitNav();
     });
   });
   var talkPane = "phrases";
@@ -551,6 +570,7 @@
     var b = $("#tmStart"); if (!b || !T) return;
     b.textContent = tmRunning ? T.tmPause : T.tmStart;
     b.classList.toggle("running", tmRunning);
+    fitNav();   /* 字が変わる(スタート ↔ いちじていし)ので測り直す */
   }
   function tmPaintCustom() {
     var v = $("#tmCustomVal"); if (v) v.textContent = tmCustomMin + (T ? " " + T.tmMinSuffix : "");
