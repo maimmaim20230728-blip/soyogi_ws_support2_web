@@ -20,6 +20,12 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
+  /* 読み上げソフトへの知らせ(#liveMsg・画面には出ない・2026-10-30)。同じ文が続いても読まれるよう いったん空にする */
+  function announce(msg) {
+    var el = $("#liveMsg"); if (!el) return;
+    el.textContent = "";
+    setTimeout(function () { el.textContent = msg || ""; }, 50);
+  }
   function list(items) {
     return "<ul>" + items.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>";
   }
@@ -221,6 +227,7 @@
     html += chipRow(T.recInjury, "injury", C.logOptions.injuries, false);
     html += '<div class="q"><div class="label">' + esc(T.recMemo) + "</div>" +
       '<input class="memo-input" id="memoInput" type="text" maxlength="60" placeholder="' + esc(T.recMemoPh) + '"></div>';
+    html += '<div class="rec-msg" id="recMsg" role="status" aria-live="polite"></div>';   /* 保存できなかったときの知らせ(2026-10-30) */
     html += '<div class="modal-actions"><button class="btn-cancel" id="recCancel">' + esc(T.recCancel) + "</button>" +
       '<button class="btn-save" id="recSave">' + esc(T.recSave) + "</button></div>";
     $("#recordModal").innerHTML = html;
@@ -249,7 +256,13 @@
     var logs = loadLogs();
     logs.unshift(rec);
     if (logs.length > 200) logs.length = 200;
-    localStorage.setItem(LOG_KEY, JSON.stringify(logs));
+    /* 保存できない(容量がいっぱい・プライベートモードなど)ときは、窓を開いたまま・選んだものも そのまま残して知らせる(2026-10-30)。
+       前は例外で止まり、窓が固まって入力も消えていた */
+    try { localStorage.setItem(LOG_KEY, JSON.stringify(logs)); }
+    catch (e) {
+      var m = $("#recMsg"); if (m) m.textContent = T.recSaveFail;
+      return;
+    }
     closeRecord();
     renderLogs(); show("logs");
   }
@@ -257,7 +270,7 @@
 
   /* ========== きろく：一覧 ========== */
   function loadLogs() {
-    try { return JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); } catch (e) { return []; }
+    try { var v = JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); return Array.isArray(v) ? v : []; } catch (e) { return []; }
   }
   function fmtLog(l) {
     var parts = ["[" + stamp(l.ts) + "] " + l.scene];
@@ -289,15 +302,31 @@
     var cp = $("#copyLogs");
     if (cp) cp.addEventListener("click", function () {
       var text = loadLogs().map(fmtLog).join("\n");
-      navigator.clipboard.writeText(text).then(function () {
-        cp.textContent = T.logsCopied;
-        setTimeout(function () { cp.textContent = T.logsCopy; }, 1600);
-      });
+      /* コピーできたか・できなかったかを ボタンの文字と 読み上げソフトに知らせる(2026-10-30)。
+         クリップボードが使えない・ことわられたときは、前は何も起きなかった */
+      function done(ok) {
+        var msg = ok ? T.logsCopied : T.logsCopyFail;
+        cp.textContent = msg; announce(msg);
+        setTimeout(function () { cp.textContent = T.logsCopy; }, ok ? 1600 : 3000);
+      }
+      function fallback() {
+        var ok = false, ta = document.createElement("textarea");
+        ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        ta.remove();
+        done(ok);
+      }
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+        else fallback();
+      } catch (e) { fallback(); }
     });
     document.querySelectorAll("#view-logs .del").forEach(function (b) {
       b.addEventListener("click", function () {
         var logs2 = loadLogs(); logs2.splice(Number(b.dataset.i), 1);
-        localStorage.setItem(LOG_KEY, JSON.stringify(logs2)); renderLogs();
+        try { localStorage.setItem(LOG_KEY, JSON.stringify(logs2)); } catch (e) {}
+        renderLogs();   /* けせなかったときは そのままの一覧(端末に残っているもの)を出す */
       });
     });
   }
@@ -405,7 +434,7 @@
     var correctPos = order.indexOf(q.answer);
     var html = '<div class="quiz-card"><div class="quiz-q">' + esc(q.q) + '</div><div class="quiz-opts">';
     order.forEach(function (oi, pos) { html += '<button class="quiz-opt" data-i="' + pos + '">' + esc(q.options[oi]) + "</button>"; });
-    html += '</div><div class="quiz-explain" id="quizExplain"></div></div>';
+    html += '</div><div class="quiz-explain" id="quizExplain" aria-live="polite"></div></div>';   /* 正誤と解説を読み上げソフトにも(2026-10-30) */
     $("#quizArea").innerHTML = html;
     var answered = false;
     document.querySelectorAll("#quizArea .quiz-opt").forEach(function (b) {
@@ -719,31 +748,70 @@
   }
 
   /* --- みせる（全画面表示） --- */
+  var bigFrom = null;   /* 見せる前に フォーカスが あった ボタン(閉じたら戻す) */
   function showBig(text) {
     var el = $("#showTxt"); el.textContent = text;
     el.style.fontSize = text.length <= 4 ? "5rem" : text.length <= 8 ? "3.6rem" : text.length <= 16 ? "2.6rem" : "1.9rem";
+    bigFrom = document.activeElement;
     $("#showOverlay").classList.add("open");
+    try { $("#showOverlay").focus(); } catch (e) {}
   }
-  $("#showOverlay").addEventListener("click", function () { this.classList.remove("open"); });
+  function closeBig() {
+    $("#showOverlay").classList.remove("open");
+    var f = bigFrom; bigFrom = null;
+    if (f && f.focus && f.isConnected !== false) { try { f.focus(); } catch (e) {} }
+  }
+  $("#showOverlay").addEventListener("click", closeBig);
+  /* キーボードでも閉じる(Esc・Enter・スペース・2026-10-30) */
+  document.addEventListener("keydown", function (e) {
+    if (!$("#showOverlay").classList.contains("open")) return;
+    if (e.key === "Escape" || e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+      e.preventDefault();
+      if (!e.repeat) closeBig();
+    }
+  });
 
   /* --- ひつだん（手書きキャンバス） --- */
   var canvas = $("#drawCanvas"), ctx = null, drawing = false;
-  var penWidth = 9, inverted = false, canvasReady = false;
+  var penWidth = 9, inverted = false, canvasReady = false, canvasDpr = 1;
   function initCanvas() {
-    if (canvasReady) return;
+    if (canvasReady) { fitCanvas(); return; }
     var rect = canvas.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr; canvas.height = rect.height * dpr;
+    if (!rect.width || !rect.height) return;   /* まだ見えていない(ほかのタブ) */
+    canvas.width = Math.round(rect.width * dpr); canvas.height = Math.round(rect.height * dpr);
+    canvasDpr = dpr;
     ctx = canvas.getContext("2d"); ctx.scale(dpr, dpr);
     ctx.lineCap = "round"; ctx.lineJoin = "round";
     paintBg(); canvasReady = true;
   }
+  /* 画面を回したとき(縦⇔横)・大きさが変わったとき(2026-10-30): 中の絵の大きさを いまの見た目に合わせ直す。
+     前は はじめの大きさのままで、指と線がずれていた。書いた線は 左上を そろえて そのまま残す(はみ出たぶんは切れる) */
+  function fitCanvas() {
+    if (!canvasReady) return;
+    var rect = canvas.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    var w = Math.round(rect.width * dpr), h = Math.round(rect.height * dpr);
+    if (!w || !h || (w === canvas.width && h === canvas.height)) return;
+    var keep = document.createElement("canvas");
+    keep.width = canvas.width; keep.height = canvas.height;
+    keep.getContext("2d").drawImage(canvas, 0, 0);
+    var oldDpr = canvasDpr;
+    canvas.width = w; canvas.height = h; canvasDpr = dpr;
+    ctx = canvas.getContext("2d"); ctx.scale(dpr, dpr);
+    ctx.lineCap = "round"; ctx.lineJoin = "round";
+    paintBg();
+    ctx.drawImage(keep, 0, 0, keep.width / oldDpr, keep.height / oldDpr);
+    drawing = false;
+  }
+  window.addEventListener("resize", fitCanvas);
+  window.addEventListener("orientationchange", function () { setTimeout(fitCanvas, 200); });
   function paintBg() {
     var rect = canvas.getBoundingClientRect();
     ctx.fillStyle = inverted ? "#111" : "#fff"; ctx.fillRect(0, 0, rect.width, rect.height);
   }
   function pos(e) { var r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
   canvas.addEventListener("pointerdown", function (e) {
-    if (!canvasReady) initCanvas();
+    initCanvas();   /* はじめて / 大きさが変わっていたら合わせ直す */
+    if (!canvasReady) return;
     drawing = true; canvas.setPointerCapture(e.pointerId);
     var p = pos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y);
     ctx.strokeStyle = inverted ? "#fff" : "#222"; ctx.lineWidth = penWidth;
