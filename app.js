@@ -7,6 +7,11 @@
   var $ = function (s) { return document.querySelector(s); };
   var LOG_KEY = "shien.logs";
   var LANG_KEY = "shien.lang";
+  var LOG_MAX = 200;                    /* きろくの上限(これを超えると古いものから消える) */
+  var LOG_WARN_AT = 180;                /* ここから「あと N けん」の知らせを出す */
+  var RECENT_KEY = "shien.recent.v1";   /* さいきん ひらいた場面(id を2つまで・端末の中だけ・2026-11-11) */
+  var TIMER_KEY = "shien.timer.v1";     /* タイマーの前回の設定(時間・形・音・自由設定の分・2026-11-11) */
+  var recentDirty = false;
   var C = null, T = null, LANG = "ja", SEP = "・";
 
   var SPEAK_LANG = {
@@ -112,6 +117,9 @@
     $("#penThin").textContent = T.drawThin; $("#penThick").textContent = T.drawThick;
     $("#penInvert").textContent = T.drawInvert; $("#penClear").textContent = T.drawClear;
     var oh = document.querySelector("#showOverlay .hint"); if (oh) oh.textContent = T.overlayHint;
+    var smx = $("#showMax"); if (smx) smx.textContent = T.showMax;
+    var sct = $("#showContrast"); if (sct) sct.textContent = T.showContrast;
+    var dsv = $("#drawSave"); if (dsv) dsv.textContent = T.drawSave;
     var ls = $("#langSelect"); if (ls) ls.value = LANG;
     bgmPaint();
     fitNav();
@@ -137,6 +145,7 @@
   var views = ["scenes", "detail", "lookup", "learn", "talk", "logs"];
   var currentView = "scenes";
   function show(view) {
+    if (view === "scenes" && recentDirty && C) { recentDirty = false; renderScenes(); }   /* さいきん ひらいた場面を 先頭に反映 */
     views.forEach(function (v) { $("#view-" + v).classList.toggle("active", v === view); });
     document.querySelectorAll("nav button").forEach(function (b) {
       b.classList.toggle("on", b.dataset.view === view ||
@@ -156,6 +165,18 @@
   });
 
   /* ========== こまった：一覧 ========== */
+  function loadRecent() {
+    try {
+      var v = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
+      return Array.isArray(v) ? v.filter(function (x) { return typeof x === "string"; }).slice(0, 2) : [];
+    } catch (e) { return []; }
+  }
+  function pushRecent(id) {
+    var r = loadRecent().filter(function (x) { return x !== id; });
+    r.unshift(id); r = r.slice(0, 2);
+    try { localStorage.setItem(RECENT_KEY, JSON.stringify(r)); } catch (e) {}
+    recentDirty = true;
+  }
   function renderScenes() {
     var med = C.scenes.filter(function (s) { return s.medical; })[0];
     var rest = C.scenes.filter(function (s) { return !s.medical; });
@@ -163,6 +184,18 @@
     html += '<button class="medical-btn" data-id="' + med.id + '">' +
       '<span style="font-size:1.8rem">' + med.emoji + "</span>" +
       '<span><span class="t">' + esc(med.title) + '</span><br><span class="s">' + esc(T.medicalSub) + "</span></span></button>";
+    /* さいきん ひらいた場面(1〜2個)を、医療カードの下・一覧の上に。医療カードは今までどおり先頭に固定 */
+    var recents = loadRecent().map(function (id) {
+      return rest.filter(function (x) { return x.id === id; })[0];
+    }).filter(Boolean);
+    if (recents.length) {
+      html += '<div class="lookup-lead">' + esc(T.recentLabel) + '</div><div class="scene-grid">';
+      recents.forEach(function (s) {
+        html += '<button class="scene-btn" data-id="' + s.id + '">' +
+          '<span class="e">' + s.emoji + '</span><span class="t">' + esc(s.title) + "</span></button>";
+      });
+      html += "</div>";
+    }
     html += '<div class="scene-grid">';
     rest.forEach(function (s) {
       html += '<button class="scene-btn" data-id="' + s.id + '">' +
@@ -185,6 +218,7 @@
   function renderDetail(id) {
     var s = C.scenes.filter(function (x) { return x.id === id; })[0];
     if (!s) return;
+    if (!s.medical) pushRecent(s.id);
     var html = '<button class="back-btn" id="backBtn">' + esc(T.back) + "</button>";
     html += '<div class="card-title">' + s.emoji + " " + esc(s.title) + "</div>";
     if (s.medical && s.lead) html += '<div class="lead-med">' + esc(s.lead) + "</div>";
@@ -218,7 +252,7 @@
   }
   function openRecord(sceneId) {
     var scene = C.scenes.filter(function (x) { return x.id === sceneId; })[0];
-    rec = { ts: Date.now(), scene: scene ? scene.title : "", triggers: [], duration: "", responses: [], injury: "", memo: "" };
+    rec = { ts: Date.now(), scene: scene ? scene.title : "", sceneId: sceneId, triggers: [], duration: "", responses: [], injury: "", memo: "" };
     var html = "<h2>📝 " + esc(T.recTitle) + "</h2>" +
       '<div class="sub">' + stamp(rec.ts) + "・" + esc(rec.scene) + esc(T.recSaveNote) + "</div>";
     html += chipRow(T.recTriggers, "triggers", C.logOptions.triggers, true);
@@ -255,7 +289,7 @@
     rec.memo = ($("#memoInput").value || "").trim();
     var logs = loadLogs();
     logs.unshift(rec);
-    if (logs.length > 200) logs.length = 200;
+    if (logs.length > LOG_MAX) logs.length = LOG_MAX;
     /* 保存できない(容量がいっぱい・プライベートモードなど)ときは、窓を開いたまま・選んだものも そのまま残して知らせる(2026-10-30)。
        前は例外で止まり、窓が固まって入力も消えていた */
     try { localStorage.setItem(LOG_KEY, JSON.stringify(logs)); }
@@ -272,8 +306,16 @@
   function loadLogs() {
     try { var v = JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); return Array.isArray(v) ? v : []; } catch (e) { return []; }
   }
+  /* 場面の名前は、id があれば いまの言葉で出す(前の版の きろくは 保存した言葉のまま・2026-11-11) */
+  function logScene(l) {
+    if (l && l.sceneId && C) {
+      var s = C.scenes.filter(function (x) { return x.id === l.sceneId; })[0];
+      if (s) return s.title;
+    }
+    return (l && l.scene) || "";
+  }
   function fmtLog(l) {
-    var parts = ["[" + stamp(l.ts) + "] " + l.scene];
+    var parts = ["[" + stamp(l.ts) + "] " + logScene(l)];
     if (l.triggers.length) parts.push(T.logTrigger + ": " + l.triggers.join(SEP));
     if (l.duration) parts.push(T.logDur + ": " + l.duration);
     if (l.responses.length) parts.push(T.logResp + ": " + l.responses.join(SEP));
@@ -288,10 +330,14 @@
     if (!logs.length) {
       html += '<div class="empty">' + esc(T.logsEmpty) + "</div>";
     } else {
+      html += '<div class="log-count">' + esc(T.logsCount.replace("{n}", logs.length).replace("{m}", LOG_MAX)) + "</div>";
+      if (logs.length >= LOG_MAX) html += '<div class="log-warn" role="status">' + esc(T.logsFull) + "</div>";
+      else if (logs.length >= LOG_WARN_AT) html += '<div class="log-warn" role="status">' + esc(T.logsNear.replace("{r}", LOG_MAX - logs.length)) + "</div>";
       html += '<button class="copy-btn" id="copyLogs">' + esc(T.logsCopy) + "</button>";
+      html += '<button class="save-btn" id="saveLogs" type="button">' + esc(T.logsSave) + "</button>";
       logs.forEach(function (l, i) {
         html += '<div class="log-item"><button type="button" class="del" data-i="' + i + '" aria-label="' + esc(T.logDel) + '">✕</button>' +
-          '<span class="when">' + stamp(l.ts) + "・" + esc(l.scene) + "</span><br>" +
+          '<span class="when">' + stamp(l.ts) + "・" + esc(logScene(l)) + "</span><br>" +
           esc([l.triggers.join(SEP), l.duration, l.responses.join(SEP), l.injury, l.memo]
             .filter(Boolean).join(" ｜ ")) + "</div>";
       });
@@ -322,6 +368,13 @@
         else fallback();
       } catch (e) { fallback(); }
     });
+    var sv = $("#saveLogs");
+    if (sv) sv.addEventListener("click", function () {
+      var d = new Date();
+      var name = "shien-kiroku-" + d.getFullYear() + pad2(d.getMonth() + 1) + pad2(d.getDate()) + ".txt";
+      var bom = String.fromCharCode(0xFEFF);
+      saveFile(name, bom + loadLogs().map(fmtLog).join("\r\n") + "\r\n", true, "text/plain;charset=utf-8", T.logsSave, sv, T.logsSave);
+    });
     document.querySelectorAll("#view-logs .del").forEach(function (b) {
       /* けす前に確かめる(2026-11-11)。誤タップで きろくが消えないように。窓は askBox(Play版=アプリの中の はい/いいえ・Web版=confirm) */
       b.addEventListener("click", function () {
@@ -333,6 +386,64 @@
         });
       });
     });
+  }
+
+  /* ---- ファイルの ほぞん(2026-11-11) ----
+   * Capacitor 8 の Android には DownloadListener が無く、<a download> では何も保存されない。
+   * Play版だけ、端末の一時フォルダ(CACHE)に書いてから Android の共有の画面を出し、保存先は利用者が選ぶ(Filesystem + Share)。Web版は <a download>。
+   * 🔴 プラグインはネイティブが注入する Capacitor.Plugins.Filesystem / Share を使う(registerPlugin は WebView に無い) */
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function shareQuiet(err) {
+    var m = String((err && (err.message || err.errorMessage)) || err || "");
+    return !!err && (err.name === "AbortError" || /cancel|in progress/i.test(m));
+  }
+  /* done("ok") = 共有の画面で送り先を選べた / done("quiet") = 閉じた / done("fail") = 書けない・共有できない・プラグインが無い */
+  function nativeSaveFile(name, data, utf8, label, done) {
+    var fsp = nativePlugin("Filesystem", "writeFile"), shp = nativePlugin("Share", "share");
+    if (!fsp || !shp) { done("fail"); return; }
+    var opt = { path: name, data: data, directory: "CACHE" };
+    if (utf8) opt.encoding = "utf8";
+    var w;
+    try { w = fsp.writeFile(opt); } catch (e) { done("fail"); return; }
+    if (!w || typeof w.then !== "function") { done("fail"); return; }
+    w.then(function (r) {
+      if (!r || !r.uri) { done("fail"); return; }
+      var sh;
+      try { sh = shp.share({ title: name, files: [r.uri], dialogTitle: label }); }
+      catch (err) { done(shareQuiet(err) ? "quiet" : "fail"); return; }
+      if (sh && typeof sh.then === "function") sh.then(function () { done("ok"); }, function (err) { done(shareQuiet(err) ? "quiet" : "fail"); });
+      else done("ok");
+    }, function () { done("fail"); });
+  }
+  function webDownload(name, blob) {
+    try {
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = name; a.style.display = "none";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { try { URL.revokeObjectURL(url); } catch (e) {} }, 1500);
+      return true;
+    } catch (e) { return false; }
+  }
+  /* data = 文字(utf8=true) か base64(utf8=false) / btn の字を 少しのあいだ 結果に変える+読み上げソフトへ知らせる */
+  function saveFile(name, data, utf8, mime, label, btn, btnText) {
+    function done(res) {
+      if (res === "quiet") return;
+      var msg = res === "ok" ? T.saved : T.saveFail;
+      btn.textContent = msg; announce(msg);
+      setTimeout(function () { btn.textContent = btnText; }, res === "ok" ? 1600 : 3000);
+    }
+    if (isNativeApp()) { nativeSaveFile(name, data, utf8, label, done); return; }
+    var blob;
+    try {
+      if (utf8) blob = new Blob([data], { type: mime });
+      else {
+        var bin = atob(data), arr = new Uint8Array(bin.length);
+        for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+        blob = new Blob([arr], { type: mime });
+      }
+    } catch (e) { done("fail"); return; }
+    done(webDownload(name, blob) ? "ok" : "fail");
   }
 
   /* ========== しらべる：特性リファレンス ========== */
@@ -481,6 +592,17 @@
    * 音はWeb Audio合成＝完全オフライン。実行中は画面スリープを抑止（Wake Lock・非対応環境では無視）。 */
   var tmTotal = 5 * 60, tmRemain = 5 * 60, tmRunning = false, tmEndAt = 0, tmTimerId = null;
   var tmMode = "digital", tmSoundSel = "beep", tmCustomMin = 20, tmWake = null, tmActx = null;
+  var tmWarned = false;   /* 終わりの1分前の予告を出したか(2026-11-11) */
+  var TM_WARN_SEC = 60;
+  /* 前回の設定を覚える(時間・形・音・自由設定の分。端末の中だけ・2026-11-11) */
+  function tmSave() {
+    try {
+      localStorage.setItem(TIMER_KEY, JSON.stringify({
+        min: Math.round(tmTotal / 60), mode: tmMode, sound: tmSoundSel,
+        custom: !!($("#tmCustomBtn") && $("#tmCustomBtn").classList.contains("on")), customMin: tmCustomMin
+      }));
+    } catch (e) {}
+  }
   function tmFmt(s) {
     s = Math.max(0, Math.ceil(s));
     var m = Math.floor(s / 60), ss = s % 60;
@@ -517,6 +639,19 @@
       o.type = "sine"; o.frequency.value = p[0];
       g.gain.setValueAtTime(0.0001, t);
       g.gain.linearRampToValueAtTime(p[1], t + 0.006);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + p[2]);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t); o.stop(t + p[2] + 0.1);
+    });
+  }
+  function tmSoftSound() { /* 終わりの1分前の予告: やさしい 低めの一打(びっくりさせない) */
+    var ctx = tmAudio(); if (!ctx) return;
+    var t = ctx.currentTime + 0.03;
+    [[660, 0.07, 1.2], [990, 0.03, 0.9]].forEach(function (p) {
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = "sine"; o.frequency.value = p[0];
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(p[1], t + 0.05);
       g.gain.exponentialRampToValueAtTime(0.0001, t + p[2]);
       o.connect(g); g.connect(ctx.destination);
       o.start(t); o.stop(t + p[2] + 0.1);
@@ -577,20 +712,29 @@
   });
   function tmSetTotal(sec) {
     tmHalt(); tmTotal = sec; tmRemain = sec;
-    $("#tmDisplay").classList.remove("alarm");
+    tmWarned = false; $("#tmDisplay").classList.remove("alarm", "warn");
     tmPaint();
   }
   function tmTick() {
     tmRemain = (tmEndAt - Date.now()) / 1000;
     if (tmRemain <= 0) {
       tmRemain = 0; tmHalt();
+      $("#tmDisplay").classList.remove("warn");
       $("#tmDisplay").classList.add("alarm");
       tmPlaySound(tmSoundSel);
+    } else if (!tmWarned && tmTotal > TM_WARN_SEC && tmRemain <= TM_WARN_SEC) {
+      /* 残り1分: 画面の色が やさしく変わり、小さな音が一度だけ鳴る(切り替えが苦手な人への見通し・2026-11-11) */
+      tmWarned = true;
+      $("#tmDisplay").classList.add("warn");
+      tmSoftSound();
+      if (T) announce(T.tmWarn);
     }
     tmPaint();
   }
   function tmGo() {
     if (tmRemain <= 0) { tmRemain = tmTotal; $("#tmDisplay").classList.remove("alarm"); }
+    if (tmRemain > TM_WARN_SEC) { tmWarned = false; $("#tmDisplay").classList.remove("warn"); }
+    else tmWarned = true;   /* 残りが1分以内から始めるときは、予告は出さない */
     tmAudio(); /* ユーザー操作中にAudioContextを起こす（自動再生制限対策） */
     tmEndAt = Date.now() + tmRemain * 1000;
     tmRunning = true;
@@ -618,7 +762,7 @@
   function tmSetMode(m, btn) {
     tmMode = m;
     document.querySelectorAll(".tm-modes button").forEach(function (x) { x.classList.toggle("on", x === btn); });
-    tmPaint();
+    tmPaint(); tmSave();
   }
   $("#tmModeDigital").addEventListener("click", function () { tmSetMode("digital", this); });
   $("#tmModeAnalog").addEventListener("click", function () { tmSetMode("analog60", this); });
@@ -628,36 +772,64 @@
       document.querySelectorAll(".tm-preset, #tmCustomBtn").forEach(function (x) { x.classList.remove("on"); });
       b.classList.add("on");
       $("#tmCustomRow").classList.remove("show");
-      tmSetTotal(Number(b.dataset.min) * 60);
+      tmSetTotal(Number(b.dataset.min) * 60); tmSave();
     });
   });
   $("#tmCustomBtn").addEventListener("click", function () {
     document.querySelectorAll(".tm-preset, #tmCustomBtn").forEach(function (x) { x.classList.remove("on"); });
     $("#tmCustomBtn").classList.add("on");
     $("#tmCustomRow").classList.add("show");
-    tmPaintCustom();
+    tmPaintCustom(); tmSave();
   });
   document.querySelectorAll(".tm-step").forEach(function (b) {
     b.addEventListener("click", function () {
       tmCustomMin = Math.max(1, Math.min(90, tmCustomMin + Number(b.dataset.d)));
-      tmPaintCustom();
+      tmPaintCustom(); tmSave();
     });
   });
-  $("#tmCustomSet").addEventListener("click", function () { tmSetTotal(tmCustomMin * 60); });
+  $("#tmCustomSet").addEventListener("click", function () { tmSetTotal(tmCustomMin * 60); tmSave(); });
   $("#tmStart").addEventListener("click", function () {
     if (tmRunning) { tmRemain = Math.max(0, (tmEndAt - Date.now()) / 1000); tmHalt(); tmPaint(); }
     else tmGo();
   });
   $("#tmReset").addEventListener("click", function () {
-    tmHalt(); tmRemain = tmTotal; $("#tmDisplay").classList.remove("alarm"); tmPaint();
+    tmHalt(); tmRemain = tmTotal; tmWarned = false; $("#tmDisplay").classList.remove("alarm", "warn"); tmPaint();
   });
   document.querySelectorAll(".tm-sound").forEach(function (b) {
     b.addEventListener("click", function () {
       document.querySelectorAll(".tm-sound").forEach(function (x) { x.classList.remove("on"); });
-      b.classList.add("on"); tmSoundSel = b.dataset.s;
+      b.classList.add("on"); tmSoundSel = b.dataset.s; tmSave();
       tmPlaySound(tmSoundSel); /* 選んだ音をその場で試聴できる */
     });
   });
+
+  /* 前回のタイマーの設定を戻す(起動のとき一度だけ・音は鳴らさない・2026-11-11) */
+  function tmRestore() {
+    var v = null;
+    try { v = JSON.parse(localStorage.getItem(TIMER_KEY) || "null"); } catch (e) { v = null; }
+    if (!v || typeof v !== "object") return;
+    var min = Math.round(Number(v.min));
+    if (isFinite(min) && min >= 1 && min <= 90) { tmTotal = min * 60; tmRemain = tmTotal; }
+    var cm = Math.round(Number(v.customMin));
+    if (isFinite(cm) && cm >= 1 && cm <= 90) tmCustomMin = cm;
+    var modeBtn = { digital: "#tmModeDigital", analog60: "#tmModeAnalog", full: "#tmModeFull" }[v.mode];
+    if (typeof modeBtn === "string") {
+      tmMode = v.mode;
+      document.querySelectorAll(".tm-modes button").forEach(function (x) { x.classList.toggle("on", x === $(modeBtn)); });
+    }
+    if (v.sound === "beep" || v.sound === "chime" || v.sound === "voice") {
+      tmSoundSel = v.sound;
+      document.querySelectorAll(".tm-sound").forEach(function (x) { x.classList.toggle("on", x.dataset.s === tmSoundSel); });
+    }
+    document.querySelectorAll(".tm-preset, #tmCustomBtn").forEach(function (x) { x.classList.remove("on"); });
+    if (v.custom) {
+      $("#tmCustomBtn").classList.add("on"); $("#tmCustomRow").classList.add("show");
+    } else {
+      var pm = document.querySelectorAll(".tm-preset");
+      for (var i = 0; i < pm.length; i++) if (Number(pm[i].dataset.min) * 60 === tmTotal) pm[i].classList.add("on");
+    }
+    tmPaintCustom(); tmPaint();
+  }
 
   /* Play版(Capacitor)のWebViewはWeb Speech API非対応の端末が多い。
      その場合は端末内蔵のTTSエンジン(ネイティブ)へ橋渡しして読み上げる。 */
@@ -760,11 +932,49 @@
 
   /* --- みせる（全画面表示） --- */
   var bigFrom = null;   /* 見せる前に フォーカスが あった ボタン(閉じたら戻す) */
+  var showMaxOn = false, showHcOn = false;   /* 文字を最大に・色をはっきり(2026-11-11・アプリを開いているあいだだけ) */
+  function baseShowSize(text) {
+    return text.length <= 4 ? "5rem" : text.length <= 8 ? "3.6rem" : text.length <= 16 ? "2.6rem" : "1.9rem";
+  }
+  /* 文字を最大に: 画面(上のボタンと下の案内を除く)に収まる いちばん大きい字にする。向きを変えたときも合わせ直す */
+  function fitShowText() {
+    var el = $("#showTxt"), ov = $("#showOverlay");
+    el.style.maxWidth = "";
+    el.style.fontSize = baseShowSize(el.textContent);
+    if (!showMaxOn) return;
+    var availH = ov.clientHeight - 130, availW = ov.clientWidth - 48;
+    if (!(availH > 0) || !(availW > 0)) return;   /* まだ見えていない */
+    el.style.maxWidth = availW + "px";
+    var lo = 16, hi = 640;
+    while (hi - lo > 2) {
+      var mid = Math.floor((lo + hi) / 2);
+      el.style.fontSize = mid + "px";
+      if (el.scrollHeight <= availH && el.scrollWidth <= availW + 1) lo = mid; else hi = mid;
+    }
+    el.style.fontSize = lo + "px";
+  }
+  function paintShowTools() {
+    var ov = $("#showOverlay");
+    ov.classList.toggle("hc", showHcOn);
+    $("#showMax").setAttribute("aria-pressed", showMaxOn ? "true" : "false");
+    $("#showContrast").setAttribute("aria-pressed", showHcOn ? "true" : "false");
+  }
+  ["#showMax", "#showContrast"].forEach(function (sel) {
+    $(sel).addEventListener("click", function (e) {
+      e.stopPropagation();   /* 画面のどこをタップしても閉じる、の中で このボタンだけは閉じない */
+      if (sel === "#showMax") showMaxOn = !showMaxOn; else showHcOn = !showHcOn;
+      paintShowTools(); fitShowText();
+    });
+  });
+  function refitShow() { if ($("#showOverlay").classList.contains("open")) fitShowText(); }
+  window.addEventListener("resize", refitShow);
+  window.addEventListener("orientationchange", function () { setTimeout(refitShow, 200); });
   function showBig(text) {
     var el = $("#showTxt"); el.textContent = text;
-    el.style.fontSize = text.length <= 4 ? "5rem" : text.length <= 8 ? "3.6rem" : text.length <= 16 ? "2.6rem" : "1.9rem";
+    paintShowTools();
     bigFrom = document.activeElement;
     $("#showOverlay").classList.add("open");
+    fitShowText();
     try { $("#showOverlay").focus(); } catch (e) {}
   }
   function closeBig() {
@@ -776,6 +986,8 @@
   /* キーボードでも閉じる(Esc・Enter・スペース・2026-10-30) */
   document.addEventListener("keydown", function (e) {
     if (!$("#showOverlay").classList.contains("open")) return;
+    /* 上のボタン(文字を最大に・色をはっきり)にいるときの Enter・スペースは、そのボタンを押す(閉じない) */
+    if (e.target && e.target.closest && e.target.closest(".show-tools") && e.key !== "Escape") return;
     if (e.key === "Escape" || e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
       e.preventDefault();
       if (!e.repeat) closeBig();
@@ -834,6 +1046,17 @@
   function toolOn(btn) { $("#penThin").classList.remove("on"); $("#penThick").classList.remove("on"); btn.classList.add("on"); }
   $("#penInvert").addEventListener("click", function () { inverted = !inverted; this.classList.toggle("on", inverted); if (canvasReady) paintBg(); });
   $("#penClear").addEventListener("click", function () { if (canvasReady) paintBg(); });
+  /* 書き終えた絵を 画像(PNG)で ほぞん・共有(2026-11-11)。耳が不自由な人・話すのが難しい人とのやり取りの記録に */
+  $("#drawSave").addEventListener("click", function () {
+    var btn = this;
+    initCanvas();
+    var data = "";
+    try { if (canvasReady) data = String(canvas.toDataURL("image/png")).split(",")[1] || ""; } catch (e) { data = ""; }
+    if (!data) { var m = T.saveFail; btn.textContent = m; announce(m); setTimeout(function () { btn.textContent = T.drawSave; }, 3000); return; }
+    var d = new Date();
+    var name = "shien-hitsudan-" + d.getFullYear() + pad2(d.getMonth() + 1) + pad2(d.getDate()) + "-" + pad2(d.getHours()) + pad2(d.getMinutes()) + ".png";
+    saveFile(name, data, false, "image/png", T.drawSave, btn, T.drawSave);
+  });
 
   /* ========== BGM ==========
    * ・ヘッダー🎵で即ミュート（ON/OFF設定は保存）
@@ -1054,6 +1277,7 @@
   }
 
   /* ========== 起動 ========== */
+  tmRestore();
   LANG = resolveLang();
   buildLangSelect();
   setLang(LANG);
