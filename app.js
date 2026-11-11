@@ -942,7 +942,14 @@
     el.style.maxWidth = "";
     el.style.fontSize = baseShowSize(el.textContent);
     if (!showMaxOn) return;
-    var availH = ov.clientHeight - 130, availW = ov.clientWidth - 48;
+    /* 字は 上下まん中に置かれるので、上のボタン(iPhoneのカメラの穴の分も)と 下の案内の 大きいほうを 上下両方に あける */
+    var tb = ov.querySelector(".show-tools"), hn = ov.querySelector(".hint"), reserve = 65;
+    try {
+      var tr = tb && tb.getBoundingClientRect(), hr = hn && hn.getBoundingClientRect();
+      if (tr && tr.height > 0) reserve = Math.max(reserve, tr.bottom + 8);
+      if (hr && hr.height > 0) reserve = Math.max(reserve, ov.clientHeight - hr.top + 8);
+    } catch (e) {}
+    var availH = ov.clientHeight - 2 * reserve, availW = ov.clientWidth - 48;
     if (!(availH > 0) || !(availW > 0)) return;   /* まだ見えていない */
     el.style.maxWidth = availW + "px";
     var lo = 16, hi = 640;
