@@ -560,10 +560,17 @@
   }
   function tmWakeLock(on) {
     try {
-      if (on && navigator.wakeLock) navigator.wakeLock.request("screen").then(function (w) { tmWake = w; }).catch(function () {});
+      if (on && navigator.wakeLock) {
+        if (tmWake) { var old = tmWake; tmWake = null; old.release().catch(function () {}); }
+        navigator.wakeLock.request("screen").then(function (w) { tmWake = w; }).catch(function () {});
+      }
       else if (!on && tmWake) { tmWake.release().catch(function () {}); tmWake = null; }
     } catch (e) {}
   }
+  /* 画面が見えなくなると Wake Lock は自動で外れるので、戻ってきたときタイマー実行中なら取り直す */
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible" && tmRunning) tmWakeLock(true);
+  });
   function tmSetTotal(sec) {
     tmHalt(); tmTotal = sec; tmRemain = sec;
     $("#tmDisplay").classList.remove("alarm");
@@ -834,7 +841,10 @@
     var on = A.getBgmVolume() > 0;
     bgmBtn.textContent = on ? "🎵" : "🔇";
     bgmBtn.classList.toggle("off", !on);
-    bgmBtn.title = on ? (T ? T.bgmOn : "BGM") : (T ? T.bgmOff : "BGM");
+    var bgmLabel = on ? (T ? T.bgmOn : "BGM") : (T ? T.bgmOff : "BGM");
+    bgmBtn.title = bgmLabel;
+    bgmBtn.setAttribute("aria-label", bgmLabel);
+    bgmBtn.setAttribute("aria-pressed", on ? "true" : "false");
   }
   function bgmRefresh() {
     var A = window.SoyogiAudio; if (!A) return;
