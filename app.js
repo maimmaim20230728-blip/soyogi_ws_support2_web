@@ -290,7 +290,7 @@
     } else {
       html += '<button class="copy-btn" id="copyLogs">' + esc(T.logsCopy) + "</button>";
       logs.forEach(function (l, i) {
-        html += '<div class="log-item"><button class="del" data-i="' + i + '">✕</button>' +
+        html += '<div class="log-item"><button type="button" class="del" data-i="' + i + '" aria-label="' + esc(T.logDel) + '">✕</button>' +
           '<span class="when">' + stamp(l.ts) + "・" + esc(l.scene) + "</span><br>" +
           esc([l.triggers.join(SEP), l.duration, l.responses.join(SEP), l.injury, l.memo]
             .filter(Boolean).join(" ｜ ")) + "</div>";
@@ -323,10 +323,14 @@
       } catch (e) { fallback(); }
     });
     document.querySelectorAll("#view-logs .del").forEach(function (b) {
+      /* けす前に確かめる(2026-11-11)。誤タップで きろくが消えないように。窓は askBox(Play版=アプリの中の はい/いいえ・Web版=confirm) */
       b.addEventListener("click", function () {
-        var logs2 = loadLogs(); logs2.splice(Number(b.dataset.i), 1);
-        try { localStorage.setItem(LOG_KEY, JSON.stringify(logs2)); } catch (e) {}
-        renderLogs();   /* けせなかったときは そのままの一覧(端末に残っているもの)を出す */
+        askBox(T.logDelConfirm, function (ok) {
+          if (!ok) return;
+          var logs2 = loadLogs(); logs2.splice(Number(b.dataset.i), 1);
+          try { localStorage.setItem(LOG_KEY, JSON.stringify(logs2)); } catch (e) {}
+          renderLogs();   /* けせなかったときは そのままの一覧(端末に残っているもの)を出す */
+        });
       });
     });
   }
